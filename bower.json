@@ -1,0 +1,23 @@
+{
+  "name": "gulp",
+  "description": "Start gulpfile",
+  "main": "index.js",
+  "authors": [
+    "Lopachenok Sofya"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "bootstrap": "^3.3.6",
+    "normalize-css": "normalize.css#^4.1.1"
+  }
+}
