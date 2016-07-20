@@ -78,7 +78,7 @@
       "length-zero-no-unit": true,
       "property-case": "lower",
       "property-no-vendor-prefix": true,
-      "rule-nested-empty-line-before": "always",
+      
       "selector-max-empty-lines": 1,
       "selector-no-attribute": true,
       "selector-no-combinator": true,

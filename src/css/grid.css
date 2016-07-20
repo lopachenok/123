@@ -1,4 +1,4 @@
-/*@define-mixin */.container {
+@define-mixin container {
   padding-left: $small-grid-padding;
   padding-right: $small-grid-padding;
   max-width: 600px;
@@ -16,7 +16,7 @@
   
 }
 
-/*@define-mixin*/ .row {
+.row {
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -45,7 +45,7 @@
   box-sizing: border-box;
   width: 66.6667%;
   padding: 0 $grid-gutter;
-}
+} 
 
 .small-column5 {
   box-sizing: border-box;
@@ -72,7 +72,7 @@
     width: 16.6667%;
     padding: 0 $grid-gutter;
   }
-  
+    
   .medium-column3 {
     box-sizing: border-box;
     width: 25%;

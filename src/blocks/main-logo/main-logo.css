@@ -1,0 +1,11 @@
+.main-logo {
+  height: 30px;
+  width: 50px;
+  display: inline-block;
+  
+  &__img {
+    height: 100%;
+    width: 100%;
+  }
+  
+}

@@ -1,0 +1,11 @@
+.page-header {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  
+  &__inner {
+    @mixin container;
+    padding-top: 1rem;
+  }
+  
+}

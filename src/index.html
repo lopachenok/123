@@ -1,18 +1,415 @@
 <!DOCTYPE html>
 <html lang="en">
 @@include('include/head.html')
+
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="small-column1">Lorem ipsum dolor sit.</div>
-      <div class="small-column1">Lorem ipsum dolor sit.</div>
-      <div class="small-column1">Lorem ipsum dolor sit.</div>
-      <div class="small-column1">Lorem ipsum dolor sit.</div>
-      <div class="small-column1">Lorem ipsum dolor sit.</div>
-      <div class="small-column1">Lorem ipsum dolor sit.</div>
-      <div class="small-column6 medium-column3 large-column2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam laboriosam numquam nemo dolorum reiciendis deleniti culpa ab delectus, eveniet exercitationem molestiae, totam asperiores sequi facere corporis in et fuga earum.</div>
-      <div class="small-column6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias quae repudiandae beatae adipisci dicta quas minus aliquid, hic inventore incidunt maiores sit odit velit natus quibusdam tempora vero, animi officiis.</div>
+  <header class="page-header">
+    <div class="page-header__inner">
+      <div class="row">
+        <div class="small-column6">
+
+          <div class="main-logo">
+            <img src="img/main-logo.svg" alt="Logo" class="main-logo__img">
+          </div>
+
+          <nav class="main-menu">
+            <ul class="main-menu__current-page-list">
+              <li class="main-menu__current-page-item"><a href="" class="main-menu__current-page-link">Проекты</a></li>
+              <li class="main-menu__current-page-item"><a href="" class="main-menu__current-page-link">Волонтёрство</a></li>
+              <li class="main-menu__current-page-item"><a href="" class="main-menu__current-page-link">О фонде</a></li>
+            </ul>
+
+            <ul class="main-menu__list">
+              <li class="main-menu__item"><a href="" class="main-menu__link">Партнёры</a></li>
+              <li class="main-menu__item"><a href="" class="main-menu__link">Документы</a></li>
+              <li class="main-menu__item"><a href="" class="main-menu__link">Блог</a></li>
+            </ul>
+
+            <a class="main-menu__toggler">
+              <p class="main-menu__toggler-text">Меню</p>
+              <span class="main-menu__toggler-icon"></span>
+            </a>
+          </nav>
+
+        </div>
+      </div>
     </div>
-  </div>
+  </header>
+
+  <main>
+
+    <section class="main-banner">
+      <div class="main-banner__inner">
+        <div class="row">
+          <div class="small-column6">
+
+            <p class="main-banner__name">Фонд «Нить Добра»</p>
+            <h1 class="main-banner__caption">Поддерживаем детей вместе, чтобы они могли жить полноценно.</h1>
+            <p class="main-banner__description">Оказываем психологическую поддержку онкобольным детям и подросткам и помогаем им вернуться в жизнь. Организуем работу волонтёров и продвигаем идею реабилитации в России.</p>
+
+            <div class="payment-block">
+              <input type="text" class="payment-block__input" value="100">
+              <div class="dropdown">
+                <ul class="dropdown__list">
+                  <li class="dropdown__item  dropdown__item--selected">Ежемесячно</li>
+                  <li class="dropdown__item">Разово</li>
+                </ul>
+              </div>
+              <button class="btn">Пожертвовать</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-section">
+      <div class="video-section__inner">
+        <div class="row">
+          <div class="small-column6">
+
+            <video src="" class="video"></video>
+            <p class="video-section__text">Александр Солоковский рассказывает о фонде «Нить Добра» (2 минуты)</p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rehab">
+      <div class="rehab__inner">
+        <div class="row">
+          <div class="small-column6">
+
+            <h2 class="section-title">Реабилитация и психологическая поддержка</h2>
+            <p class="section-heading">Реабилитация — это важно. Cтоит написать большой красивый заголовок.</p>
+            <p class="section-text">Поддерживаем детей во время лечения, чтобы они не теряли веру в себя и в своё будущее. Чтобы дети могли вернуться в жизнь после лечения, мы проводим мероприятия и исполняем их мечты.</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel">
+
+        <div class="carousel__tabs">
+          <a href="" class="carousel__tab"></a>
+          <a href="" class="carousel__tab  carousel__tab--active"></a>
+          <a href="" class="carousel__tab"></a>
+        </div>
+
+        <section class="carousel__content">
+          <div class="row">
+
+            <div class="small-column6">
+              <div class="project-card">
+                <img src="" alt="" class="project-card__img">
+                <div class="project-card__logo"></div>
+                <h3 class="project-card__title">Заветная мечта</h3>
+                <p class="project-card__description">Уникальная возможность для детей и подростков попробовать себя в профессии мечты.</p>
+                <a href="" class="link">Смотреть проект</a>
+              </div>
+            </div>
+
+            <div class="small-column6">
+              <div class="project-card">
+                <img src="" alt="" class="project-card__img">
+                <div class="project-card__logo"></div>
+                <h3 class="project-card__title">Козмас</h3>
+                <p class="project-card__description">Первый в росcии благотворительный проект помощи онкобольным детям полететь в открытый космос.</p>
+                <a href="" class="link">Смотреть проект</a>
+              </div>
+            </div>
+
+            <a href="" class="link">смотреть Все проекты</a>
+
+          </div>
+        </section>
+
+        <section class="carousel__content">
+          <div class="row">
+
+            <div class="small-column6">
+              <div class="event-card">
+                <div class="event-card__main">
+                  <img src="" alt="" class="event-card__img">
+                  <p class="event-card__date">17 сентября</p>
+                  <h3 class="event-card__title">Парижский вечер</h3>
+                  <p class="event-card__description">Окунёмся в атмосферу мягких французских булок и выпьем чаю. Специальными гостями будут какие-то французы.</p>
+                </div>
+                <div class="event-card__footer"><a href="" class="link">Записаться</a></div>
+              </div>
+            </div>
+
+            <div class="small-column6">
+              <div class="event-card">
+                <div class="event-card__main">
+                  <img src="" alt="" class="event-card__img">
+                  <p class="event-card__date">22 сентября</p>
+                  <h3 class="event-card__title">Большой субботник во Всеволожске</h3>
+                  <p class="event-card__description">В эту субботу мы едем помогать ребятам из 31-й больницы Всеволожского района делать свой город чище.</p>
+                </div>
+                <div class="event-card__footer"><a href="" class="link">Записаться</a></div>
+              </div>
+            </div>
+
+            <div class="small-column6">
+              <div class="event-card">
+                <div class="event-card__main">
+                  <img src="" alt="" class="event-card__img">
+                  <p class="event-card__date">2 октября</p>
+                  <h3 class="event-card__title">Вечер караоке</h3>
+                  <p class="event-card__description">Каждый четверг наши ребята устраивают настоящий концерт! Готовьте тексты, у нас будет весело.</p>
+                </div>
+                <div class="event-card__footer"><a href="" class="link">Записаться</a></div>
+              </div>
+            </div>
+
+            <a href="" class="link">смотреть Все мероприятия</a>
+          </div>
+        </section>
+
+        <section class="carousel__content">
+          <div class="row">
+
+            <div class="small-column6">
+              <div class="event-card">
+                <div class="event-card__main">
+                  <img src="" alt="" class="event-card__img">
+                  <h3 class="event-card__title">Лиза</h3>
+                  <p class="event-card__description">18 лет, мечтает сниматься в кино.</p>
+                </div>
+                <div class="event-card__footer"><a href="" class="link">Читать историю</a></div>
+              </div>
+            </div>
+
+            <div class="small-column6">
+              <div class="event-card">
+                <div class="event-card__main">
+                  <img src="" alt="" class="event-card__img">
+                  <h3 class="event-card__title">Дима</h3>
+                  <p class="event-card__description">6 лет, мечтает стать инженером и уже собрал свого первого робота ЛЕГО.</p>
+                </div>
+                <div class="event-card__footer"><a href="" class="link">Читать историю</a></div>
+              </div>
+            </div>
+
+            <div class="small-column6">
+              <div class="event-card">
+                <div class="event-card__main">
+                  <img src="" alt="" class="event-card__img">
+                  <h3 class="event-card__title">Ваня</h3>
+                  <p class="event-card__description">17 лет, мечтает готовить, как настоящий шеф-повар.</p>
+                </div>
+                <div class="event-card__footer"><a href="" class="link">Читать историю</a></div>
+              </div>
+            </div>
+
+            <a href="" class="link">смотреть все истории</a>
+
+          </div>
+        </section>
+
+      </div>
+
+    </section>
+
+    <section class="volunteer">
+      <div class="volunteer__inner">
+        <div class="row">
+          <div class="small-column6">
+
+            <h2 class="section-title">Продвижение сообщества реабилитации</h2>
+            <p class="section-heading">Полномасштабное наступление на фронте борьбы с болезнью. Волонтёрим на все сто.</p>
+            <p class="section-text">Мало кто понимает, что возвращение детей к обычной жизни возможно только после всесторонней помощи ребенку. Мы собираем вокруг себя единомышленников, чтобы помогать детям вместе.</p>
+
+            <div class="volunteer__btn-wrap">
+              <a href="" class="link">Узнать больше</a>
+              <button href="" class="btn">Заполнить анкету</button>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="partners">
+      <div class="partners__inner">
+        <div class="row">
+          <div class="small-column6">
+
+            <h2 class="section-title">Наши партнёры и спонсоры</h2>
+            <p class="section-heading">Стабильные организации помогают нампомогать. Вместе, мы сделаем мир лучше.</p>
+            <p class="section-text">Мы помогаем делать бизнес в России социально ответственным. Такие организации, как «Таксовичков», «Бона Капона» и «Марчеллис» доверяют нам и уже поддержали нашу идею.</p>
+
+            <div class="partners__img-block">
+              <img src="" alt="" class="partners__img">
+              <img src="" alt="" class="partners__img">
+              <a href="" class="link">Смотреть всех партнёров</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="see-also">
+      <div class="see-also__inner">
+
+        <section class="blog-card">
+          <div class="row">
+            <div class="small-column6">
+              <p class="blog-card__text">Новости, истории, полезные советы и все яркие моменты жизни нашего фонда.</p>
+              <a href="" class="link">Читать блог</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="docs-card">
+          <div class="row">
+            <div class="small-column6">
+              <p class="docs-card__text">Мы — за прозрачность. Все наши документы находятся в открытом доступе.</p>
+              <a href="" class="link">Смотреть документы</a>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <section class="donate">
+      <div class="donate__inner">
+        <div class="row">
+          <div class="small-column6">
+
+            <h2 class="section-title">Пожертвовать в фонд</h2>
+            <p class="section-heading">Минута вашего времени поможет нам исполнять еще больше детских мечт.</p>
+            <p class="section-text">Все пожертвования уходят на реализацию наших проектов по оказанию психологической поддержки и реабилитации детей и подростков с онкологическими заболеваниями.</p>
+            <button class="btn">Пожертвовать</button>
+
+          </div>
+        </div>
+
+        <div class="donate-action">
+          <div class="row">
+
+            <div class="medium-column4">
+              <p class="donate-action__count">300</p>
+              <p class="donate-action__text">Вы также можете указать другую сумму.</p>
+              <button class="btn">Пожертвовать</button>
+            </div>
+
+            <div class="medium-column4">
+              <p class="donate-action__count">100</p>
+              <p class="donate-action__text">Помогайте каждый месяц. Вы также можете указать другую сумму.</p>
+              <button class="btn">Пожертвовать</button>
+            </div>
+          </div>
+        </div>
+
+        <section class="donate-sms">
+          <div class="row">
+            <div class="small-column6">
+              <p class="section-heading  section-heading--white">Пожертвовать через СМС</p>
+              <p class="section-text  section-text--white">Отправьте сообщение на номер 7715 с кодовым словом «Нить» и суммой пожертвования.</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="page-footer">
+    <div class="page-footer__inner">
+      <div class="row">
+        <div class="small-column6">
+
+          <div class="main-logo">
+            <img src="" alt="" class="main-logo__img">
+          </div>
+
+          <div class="contact-info">
+            <p class="contact-info__copyright">© «Нить Добра», 2016.</p>
+            <p class="contact-info__text">ИНН 7864131528, КПП 781307501, ОГРН 1126800004708. Распространение материалов разрешается только при указании ссылки на первоисточник.</p>
+            <button class="btn">Связаться с нами</button>
+          </div>
+
+          <nav class="detiled-menu">
+
+            <ul class="detiled-menu__list">
+              <li class="detiled-menu__item">Главная</li>
+              <li class="detiled-menu__item">
+                 Проекты
+                <ul class="detiled-menu__sublist">
+                  <li class="detiled-menu__subitem">Заветная мечта</li>
+                  <li class="detiled-menu__subitem">Вечер приключений</li>
+                  <li class="detiled-menu__subitem">О наших проектах</li>
+                </ul>
+              </li>
+              <li class="detiled-menu__item">
+                Волонтёрство
+                <ul class="detiled-menu__sublist">
+                  <li class="detiled-menu__subitem">Волонтёрство в фонде</li>
+                  <li class="detiled-menu__subitem">Уже с нами</li>
+                  <li class="detiled-menu__subitem">Стать волонтёром</li>
+                </ul>
+              </li>
+              <li class="detiled-menu__item">
+                О фонде
+                <ul class="detiled-menu__sublist">
+                  <li class="detiled-menu__subitem">Попечительский совет</li>
+                  <li class="detiled-menu__subitem">Команда администрации</li>
+                  <li class="detiled-menu__subitem">Вакансии</li>
+                </ul>
+              </li>
+              <li class="detiled-menu__item">
+                Партнёры
+                <ul class="detiled-menu__sublist">
+                  <li class="detiled-menu__subitem">Партнёры</li>
+                  <li class="detiled-menu__subitem">Спонсоры</li>
+                  <li class="detiled-menu__subitem">Стать партнёром</li>
+                </ul>
+              </li>
+              <li class="detiled-menu__item">
+                документы
+                <ul class="detiled-menu__sublist">
+                  <li class="detiled-menu__subitem">Категория документов</li>
+                  <li class="detiled-menu__subitem">Категория документов</li>
+                  <li class="detiled-menu__subitem">Категория документов</li>
+                </ul>
+              </li>
+              <li class="detiled-menu__item">
+                блог
+                <ul class="detiled-menu__sublist">
+                  <li class="detiled-menu__subitem">Новости</li>
+                  <li class="detiled-menu__subitem">Спонсоры</li>
+                  <li class="detiled-menu__subitem">Стать партнёром</li>
+                </ul>
+              </li>
+            </ul>
+
+            <div class="main-menu__toggler">
+              <p class="main-menu__text">Меню</p>
+              <span class="main-menu__icon"></span>
+            </div>
+
+          </nav>
+
+          <div class="social">
+            <a href="" class="social__link"><span class="social__icon"></span></a>
+            <a href="" class="social__link"><span class="social__icon"></span></a>
+            <a href="" class="social__link"><span class="social__icon"></span></a>
+            <a href="" class="social__link"><span class="social__icon"></span></a>
+            <a href="" class="social__link"><span class="social__icon"></span></a>
+            <a href="" class="social__link"><span class="social__icon"></span></a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
+
 </html>

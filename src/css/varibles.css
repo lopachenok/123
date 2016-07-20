@@ -1,12 +1,15 @@
-/*----Breakpoints-------*/
+/*-------Breakpoints-------*/
 
 $medium-breakpoint: 768px;
 $large-breakpoint: 1280px;
 
-/*----Grid--------------*/
+/*----------Grid-----------*/
 
 $small-grid-padding: .5rem;
 $medium-grid-padding: 2rem;
 $large-grid-padding: 3rem;
 $grid-gutter: .5rem;
 
+/*---------Colors----------*/
+
+$scarlet: #FA325A;

@@ -98,7 +98,7 @@ gulp.task('clean', function () {
 //TODO: Newer не работает, т к меняется путь.
 // Копирование и оптимизация изображений из папки img
 gulp.task('img', function () { 
-  return gulp.src(dirs.source + '/blocks/**/*.{png,jpg}',  {since: gulp.lastRun('img')}) // только для изменившихся с последнего запуска файлов   
+  return gulp.src(dirs.source + '/blocks/**/*.{png,jpg,svg}',  {since: gulp.lastRun('img')}) // только для изменившихся с последнего запуска файлов   
     .pipe(debug({title: 'img'}))
     .pipe(newer(dirs.build + '/img'))  
     .pipe(debug({title: 'cached'}))
@@ -118,28 +118,28 @@ gulp.task('img', function () {
 });
 
 // Сборка SVG-спрайта
-gulp.task('svgsprite', function() {
-  return gulp.src(dirs.source + '/blocks/**/*.svg')
-      .pipe(svgSprite({
-        mode: {
-          css: {
-            dest:       '.', 
-            bust:       false,
-            sprite:     'sprite.svg', 
-            layout:     'vertical',
-            prefix:     '.', 
-            dimensions: true,
-            render:     {
-              css: {
-                dest: 'sprite.css'  
-              }
-            }
-          }
-        }
-      }))
-      .pipe(debug({title: 'styles:svg'}))
-      .pipe(gulpIf('*.css', gulp.dest(dirs.source + '/css'), gulp.dest(dirs.build + '/img')));
-});
+//gulp.task('svgsprite', function() {
+//  return gulp.src(dirs.source + '/blocks/**/*.svg')
+//      .pipe(svgSprite({
+//        mode: {
+//          css: {
+//            dest:       '.', 
+//            bust:       false,
+//            sprite:     'sprite.svg', 
+//            layout:     'vertical',
+//            prefix:     '.', 
+//            dimensions: true,
+//            render:     {
+//              css: {
+//                dest: 'sprite.css'  
+//              }
+//            }
+//          }
+//        }
+//      }))
+//      .pipe(debug({title: 'styles:svg'}))
+//      .pipe(gulpIf('*.css', gulp.dest(dirs.source + '/css'), gulp.dest(dirs.build + '/img')));
+//});
 
 // Сборка HTML
 gulp.task('html', function() {
@@ -182,7 +182,7 @@ gulp.task('js', function () {
 // Сборка 
 gulp.task('build', gulp.series(
   'clean',
-  'svgsprite',
+//  'svgsprite',
   gulp.parallel('css', 'img', 'js'),
   'html'
 ));
