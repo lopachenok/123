@@ -13,3 +13,11 @@ $grid-gutter: .5rem;
 /*---------Colors----------*/
 
 $scarlet: #FA325A;
+
+
+/*----------Fonts----------*/
+
+$ptsans: 'PT Sans', sans-serif;
+$ptserif: 'PT Serif', serif;
+$ptsans-caption: 'PT Sans Caption', sans-serif;
+$ptserif-caption: 'PT Serif Caption', serif;

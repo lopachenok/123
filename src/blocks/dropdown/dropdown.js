@@ -21,4 +21,3 @@ function selectOption(e) {
   option[0].classList.remove('dropdown__item--selected');
   elem.classList.add('dropdown__item--selected');
 }
-//# sourceMappingURL=main.js.map

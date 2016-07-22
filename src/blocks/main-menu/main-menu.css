@@ -4,13 +4,80 @@
   height: 30px;
   display: flex;
   align-items: center;
+  height: 100%;
   
   &__current-page-list {
     display: none;
+    
+    @media (min-width: $medium-breakpoint) {
+      display: inline-block;
+    }
+    
+  }
+  
+  &__current-page-item {
+    display: inline-block;
+    font-family: $ptsans; 
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-right: 40px;
+    letter-spacing: 1.6px;
+    
+    @media (min-width: $large-breakpoint) {
+      margin-right: 70px;
+      font-size: 20px;
+    }
+    
+  }
+  
+  &__current-page-link {
+    color: #fff;
+    
+    transition: color .2s ease;
+    
+    &:hover {
+      color: $scarlet;
+    }
+    
   }
   
   &__list {
     display: none;
+    
+    @media (min-width: $large-breakpoint) {
+      display: inline-block;
+    }
+    
+  }
+  
+  &__item {
+    
+    @media (min-width: $large-breakpoint) {
+      display: inline-block;
+      font-family: $ptsans; 
+      font-weight: 600;
+      font-size: 20px;
+      text-transform: uppercase;
+      margin-right: 70px;
+      letter-spacing: 1.6px;
+      
+      &:last-of-type {
+        margin-right: 0;
+      }
+      
+    }  
+    
+  }
+  
+  &__link {
+    color: #fff;
+    transition: color .2s ease;
+    
+    &:hover {
+      color: $scarlet;
+    }
+    
   }
   
   &__toggler {
@@ -18,15 +85,21 @@
     display: block;
     display: flex;
     align-items: center;
+    
+    @media (min-width: $large-breakpoint) {
+      display: none;
+    }
+    
   }
   
   &__toggler-text {
-    font-family: 'PT Sans', sans-serif; 
+    font-family: $ptsans; 
     font-weight: 600;
     font-size: 16px;
     color: #fff;
     text-transform: uppercase;
     margin-right: 10px;
+    letter-spacing: 1.6px;
   }
   
   &__toggler-icon {

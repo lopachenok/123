@@ -1,0 +1,33 @@
+.btn {
+  border: none;
+  background: $scarlet;
+  padding: .5rem 1rem;
+  border-radius: 15px;
+  color: #fff;
+  font-family: $ptsans;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  outline: none;
+  letter-spacing : 1.6px;
+  cursor: pointer;
+  line-height: 1;
+  vertical-align: top; 
+  border: 0px solid $scarlet;
+  
+  @media (min-width: $medium-breakpoint) {
+    border-radius: 19px;
+  }
+  
+  @media (min-width: $large-breakpoint) {
+    border-radius: 24px;    
+    transition: border .2s ease;
+    
+    &:hover {
+      border: 5px solid $scarlet;
+      border-radius: 26px;      
+    }
+    
+  }
+  
+}

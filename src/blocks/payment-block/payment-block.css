@@ -1,0 +1,48 @@
+.payment-block {  
+  position: relative;
+  z-index: 1;
+  
+  @media (min-width: $large-breakpoint) {
+    height: 58px;
+    display: flex;
+    align-items: center;
+  }
+  
+  &__input {
+    display: none;
+    
+    @media (min-width: $medium-breakpoint) {
+      display: inline-block;
+      margin-right: 20px;
+    }
+    
+    @media (min-width: $large-breakpoint){
+      margin-right: 36px;
+    }
+    
+  }
+  
+  &__dropdown {
+    display: none;
+    
+    @media (min-width: $medium-breakpoint) {
+      display: inline-block;      
+      margin-right: 20px;     
+    }
+    
+    @media (min-width: $large-breakpoint){
+      margin-right: 36px;
+      position: absolute;
+      top: 5px;
+    }
+    
+  }
+  
+  &__btn {
+    
+    @media (min-width: $large-breakpoint){
+      margin-left: 261px;
+    }
+      
+  }
+}

@@ -57,7 +57,7 @@ gulp.task('css', function(){
                   }
                 });
               },
-              stylelint(),
+              //stylelint(),
               reporter({ clearMessages: true }),
               autoprefixer({browsers: ['last 2 version']}),
               mqpacker,

@@ -3,6 +3,11 @@
   width: 50px;
   display: inline-block;
   
+  @media (min-width: $large-breakpoint) {
+    height: 36px;
+    width: 60px;
+  }
+  
   &__img {
     height: 100%;
     width: 100%;

@@ -5,6 +5,14 @@
   background-position: center;
   position: relative;
   
+  @media (min-width: $medium-breakpoint) {
+    height: 793px;
+  }
+  
+  @media (min-width: $large-breakpoint) {
+    height: 688px;
+  }  
+  
   &:after {
     content: '';
     position: absolute;
@@ -17,6 +25,90 @@
 
   &__inner {
     @mixin container;
+    padding-top: 130px;
+    
+    @media (min-width: $medium-breakpoint) {
+      padding-top: 260px;
+    }
+    
+    @media (min-width: $medium-breakpoint) {
+      padding-top: 185px;
+    }
+    
+  }
+  
+  &__name {
+    font-family: $ptsans;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    font-weight: 600;   
+  }
+  
+  &__caption {
+    margin-top: 1.5rem;
+    font-family: $ptsans-caption;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 27px;
+    letter-spacing : 1px;
+    max-width: 380px;
+    
+    @media (min-width: $medium-breakpoint) {
+      font-size: 45px;
+      line-height: 49px;
+      max-width: 610px;
+    }
+    
+    @media (min-width: $large-breakpoint) {
+      font-size: 36px;
+      line-height: 40px;
+      max-width: 780px;
+    }
+    
+  }
+  
+  &__description {
+    font-family: $ptserif;
+    position: relative;
+    z-index: 1;
+    line-height: 24px;
+    color: #F0F1F2;;
+    margin-top: 1rem;
+    max-width: 320px;
+    
+    @media (min-width: $medium-breakpoint) {
+      display: none;
+      line-height: 34px;
+      max-width: 668px;
+    }
+    
+    @media (min-width: $large-breakpoint) {
+      max-width: 922px;
+      line-height : 41px;
+    }
+    
+    &--hide-for-small {
+      display: none;
+      
+      @media (min-width: $medium-breakpoint) {
+        display: block;
+      }
+      
+    }
+    
+  }
+  
+  &__payment-block {
+    margin-top: 32px;
+    
+    @media (min-width: $medium-breakpoint) {
+      margin-top: 60px;
+    }
+        
   }
   
 }

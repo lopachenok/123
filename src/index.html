@@ -41,23 +41,28 @@
     <section class="main-banner">
       <div class="main-banner__inner">
         <div class="row">
-          <div class="small-column6">
+          <div class="small-column5  medium-column11">
 
             <p class="main-banner__name">Фонд «Нить Добра»</p>
-            <h1 class="main-banner__caption">Поддерживаем детей вместе, чтобы они могли жить полноценно.</h1>
-            <p class="main-banner__description">Оказываем психологическую поддержку онкобольным детям и подросткам и помогаем им вернуться в жизнь. Организуем работу волонтёров и продвигаем идею реабилитации в России.</p>
+            <h1 class="main-banner__caption">Поддерживаем детей вместе, чтобы они могли жить полноценно.</h1>            
 
-            <div class="payment-block">
-              <input type="text" class="payment-block__input" value="100">
-              <div class="dropdown">
+          </div>
+          <div class="small-column6">
+           
+            <p class="main-banner__description  main-banner__description--hide-for-small">Оказываем психологическую поддержку онкобольным детям и подросткам и помогаем им вернуться в жизнь. Организуем работу волонтёров и продвигаем идею реабилитации в России.</p>
+            <p class="main-banner__description">Оказываем поддержку онкобольным детям и подросткам, организуем работу волонтёров</p>
+            
+            <div class="payment-block  main-banner__payment-block">
+              <input type="text" class="input  payment-block__input" value="100" maxlength="6">
+              <div class="dropdown  payment-block__dropdown">
                 <ul class="dropdown__list">
                   <li class="dropdown__item  dropdown__item--selected">Ежемесячно</li>
                   <li class="dropdown__item">Разово</li>
                 </ul>
               </div>
-              <button class="btn">Пожертвовать</button>
+              <button class="btn payment-block__btn">Пожертвовать</button>
             </div>
-
+            
           </div>
         </div>
       </div>
@@ -410,6 +415,7 @@
       </div>
     </div>
   </footer>
+  @@include('include/bottom.html')
 </body>
 
 </html>

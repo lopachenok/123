@@ -5,3 +5,7 @@
 @import '../.././src/blocks/main-logo/main-logo.css';
 @import '../.././src/blocks/main-menu/main-menu.css';
 @import '../.././src/blocks/main-banner/main-banner.css';
+@import '../.././src/blocks/payment-block/payment-block.css';
+@import '../.././src/blocks/btn/btn.css';
+@import '../.././src/blocks/dropdown/dropdown.css';
+@import '../.././src/blocks/input/input.css';
