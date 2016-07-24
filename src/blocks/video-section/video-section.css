@@ -1,0 +1,42 @@
+.video-section {
+  height: 280px;
+  position: relative;
+  
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;  
+    filter: grayscale(1);
+    position: absolute;
+  }
+  
+  &:after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: $midnight;
+    opacity: .9;
+  }
+  
+  &__inner {
+    @mixin container;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  
+  &__text {
+    font-family: $ptsans;
+    font-size: 13px;
+    line-height: 17px;
+    color: #969BA0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 0 10px;
+    margin-top: 1rem;
+  }
+  
+}

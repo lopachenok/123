@@ -153,6 +153,16 @@ gulp.task('html', function() {
     .pipe(gulp.dest(dirs.build))
 });
 
+gulp.task('video', function() {
+  return gulp.src(dirs.source + '/blocks/**/*.mp4')
+  .pipe(debug({title: 'video'}))
+   .pipe(rename(function(path){  // удаляем текущий dirname
+      path.dirname = '';
+      return path;
+    }))
+  .pipe(gulp.dest(dirs.build+'/video'))
+});
+
 //Конкатенация и минификация js
 
 gulp.task('js', function () {      
@@ -183,7 +193,7 @@ gulp.task('js', function () {
 gulp.task('build', gulp.series(
   'clean',
 //  'svgsprite',
-  gulp.parallel('css', 'img', 'js'),
+  gulp.parallel('css', 'img', 'js', 'video'),
   'html'
 ));
 
