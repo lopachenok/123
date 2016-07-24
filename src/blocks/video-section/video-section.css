@@ -1,5 +1,4 @@
 .video-section {
-  height: 280px;
   position: relative;
   
   &__image {
@@ -25,6 +24,11 @@
     @mixin container;
     padding-top: 40px;
     padding-bottom: 40px;
+    
+    @media (min-width: $medium-breakpoint) {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
   }
   
   &__text {
@@ -37,6 +41,22 @@
     z-index: 1;
     padding: 0 10px;
     margin-top: 1rem;
+    
+    @media (min-width: $medium-breakpoint) {
+      font-size: 16px;
+      line-height: 23px;
+    }
+    
+    @media (min-width: $large-breakpoint) {
+      font-size: 19px;
+    }
+    
+    @media (min-width: $large-breakpoint) {
+      width: 530px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
   }
   
 }

@@ -21,6 +21,11 @@
   width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
+  
+  &--centred {
+    justify-content: center;
+  }
+  
 }
 
 .small-column1 {

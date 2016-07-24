@@ -3,6 +3,24 @@
   height: 150px;
   position: relative;
   z-index: 1; 
+  overflow: hidden;
+  
+  @media (min-width: 480px) {
+    height: 200px;
+  }
+  
+  @media (min-width: $medium-breakpoint) {
+    height: 220px;
+  }
+  
+  @media (min-width: 840px) {
+    height: 250px;
+  }
+  
+  @media (min-width: $large-breakpoint) {
+    height: 264px;
+    cursor: pointer;
+  }
   
   &:after {
     position: absolute;
@@ -13,6 +31,7 @@
     left: 0;
     width: 100%;
     height: 100%;
+    transition: background .2s ease;
   }
   
   &__item {
@@ -23,13 +42,61 @@
     position: relative;
   }
   
+  &__preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+    transition: transform .2s ease;
+  }
+  
   &__controls-play {
     height: 60px;
     width: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    
+    @media (min-width: $large-breakpoint) {
+      height: 72px;
+      width: 72px;
+    }
+    
+    svg {
+      @media (min-width: $large-breakpoint) {
+        height: 72px;
+        width: 72px;
+      }
+    }
     
     svg .cls-2{
       stroke:#f0f1f2;
+      transition: stroke .2s ease;
     }
+  }
+  
+  @media (min-width: $large-breakpoint) {
+    
+    &:hover {
+      
+      .video__preview {
+        transform: scale(1.1);
+      }
+      
+      &:after {
+        background: transparent;
+      }
+      
+      svg .cls-2{
+        stroke: $scarlet;
+      }
+    }
+    
   }
   
 }
