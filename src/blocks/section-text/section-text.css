@@ -1,0 +1,15 @@
+.section-text {
+  font-family: $ptserif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #485155;
+  
+  @media (min-width: $medium-breakpoint) {
+    line-height: 34px;
+  }
+  
+  @media (min-width: $large-breakpoint) {
+    line-height: 41px;
+  }
+  
+}

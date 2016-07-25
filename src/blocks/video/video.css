@@ -99,4 +99,20 @@
     
   }
   
+  &--played {
+    
+    .video__preview {
+      display: none;
+    }
+    
+    &:after {
+      background: transparent;
+    }
+    
+    .video__controls-play {
+      display: none;
+    }
+    
+  }
+  
 }

@@ -1,0 +1,8 @@
+.section-title {
+  font-family: $ptsans;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1;
+  color: $scarlet;
+  letter-spacing: 0.02em;
+}

@@ -1,0 +1,37 @@
+.rehab {
+  
+  &__inner {
+    @mixin container;
+    padding-top: 2.5rem;
+  }
+  
+  &__title {
+    width: 215px;
+    
+    @media (min-width: $medium-breakpoint) {
+      width: 100%;
+    }
+    
+    @media (min-width: $large-breakpoint) {
+      width: 480px;
+    }
+    
+  }
+  
+  &__heading {
+    margin-top: 1.5rem;
+    
+    @media (min-width: $large-breakpoint) {
+      margin-top: 20px;
+    }
+  }
+  
+  &__text {
+    margin-top: 1rem;
+  }
+  
+  &__carousel {
+    margin-top: 2rem;
+  }
+  
+}

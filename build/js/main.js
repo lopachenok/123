@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   var dropdown = document.querySelectorAll('.dropdown');
   for(var i = 0; i < dropdown.length; i++) {
-    dropdown[i].addEventListener("click", toggleDropdown)
+    dropdown[i].addEventListener("click", toggleDropdown);
   }
 });
 
@@ -11,7 +11,7 @@ function toggleDropdown(e) {
   var options = document.querySelectorAll('.dropdown--open .dropdown__item');
   
   for(var i = 0; i < options.length; i++) {
-    options[i].addEventListener("click", selectOption)
+    options[i].addEventListener("click", selectOption);
   }
 }
 
@@ -21,4 +21,5 @@ function selectOption(e) {
   option[0].classList.remove('dropdown__item--selected');
   elem.classList.add('dropdown__item--selected');
 }
+//= ../blocks/video/video.js//= ../blocks/carousel/carousel.js
 //# sourceMappingURL=main.js.map

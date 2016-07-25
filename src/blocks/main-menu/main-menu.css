@@ -22,7 +22,7 @@
     font-size: 16px;
     text-transform: uppercase;
     margin-right: 40px;
-    letter-spacing: 1.6px;
+    letter-spacing: 0.1em;
     
     @media (min-width: $large-breakpoint) {
       margin-right: 70px;
@@ -60,7 +60,7 @@
       font-size: 20px;
       text-transform: uppercase;
       margin-right: 70px;
-      letter-spacing: 1.6px;
+      letter-spacing: 0.1em;
       
       &:last-of-type {
         margin-right: 0;

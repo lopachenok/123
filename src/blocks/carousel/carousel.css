@@ -1,0 +1,37 @@
+.carousel {
+  overflow: hidden;
+  
+  &__tabs {
+    display: flex;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+  }
+  
+  &__tab {
+    font-family: $ptsans;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6B7277;
+    margin-right: 2rem;
+    white-space: nowrap;
+    
+    &:last-of-type {
+      margin-right: 0;
+    }
+    
+    &--active {
+      color: $midnight;
+    }
+    
+  }
+  
+  &__content {
+    @mixin container;
+    margin-top: 47px;
+  }
+  
+}

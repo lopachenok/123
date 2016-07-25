@@ -11,3 +11,8 @@
 @import '../.././src/blocks/input/input.css';
 @import '../.././src/blocks/video-section/video-section.css';
 @import '../.././src/blocks/video/video.css';
+@import '../.././src/blocks/rehab/rehab.css';
+@import '../.././src/blocks/section-title/section-title.css';
+@import '../.././src/blocks/section-heading/section-heading.css';
+@import '../.././src/blocks/section-text/section-text.css';
+@import '../.././src/blocks/carousel/carousel.css';

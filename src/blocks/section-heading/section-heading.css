@@ -1,0 +1,7 @@
+.section-heading {
+  font-family: $ptsans-caption;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: $midnight;
+}
