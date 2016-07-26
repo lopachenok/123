@@ -3,9 +3,37 @@
   
   &__tabs {
     display: flex;
+    position: relative;
+    justify-content: center;
+    
+    &:before {
+      content: '';
+      position: absolute;
+      height: 53px;
+      width: 40px;          
+      background: -webkit-linear-gradient(right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+      background: -o-linear-gradient(right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+      background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+      left: 0;
+      top: -17px;
+    }
+    
+    &:after {
+      content: '';
+      position: absolute;
+      height: 53px;
+      width: 40px;          
+      background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+      background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+      right: 0;
+      top: -17px;
+    }
+/*
     position: absolute;
     transform: translateX(-50%);
     left: 50%;
+*/
   }
   
   &__tab {
@@ -16,11 +44,39 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #6B7277;
-    margin-right: 2rem;
-    white-space: nowrap;
+    padding-right: 2rem;
+    white-space: nowrap;    
     
     &:last-of-type {
-      margin-right: 0;
+      padding-right: 0;
+      position: relative;
+      
+      &:before {
+        content: '';
+        border-bottom: 2px solid $scarlet;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        border-radius: 1px;
+        transition: left .5s ease;
+      }    
+      
+    }
+    
+    &:nth-of-type(2):hover ~ &:last-of-type:before, &:nth-of-type(2).carousel__tab--active ~ &:last-of-type:before{
+      width: 126px;
+      left: -159px;
+    }
+    
+    &:first-of-type:hover ~ &:last-of-type:before{
+      width: 80px;
+      left: -272px;
+    }
+    
+    &:last-of-type:hover:before{
+      width: 100% !important;
+      left: 0 !important;
     }
     
     &--active {
@@ -29,9 +85,43 @@
     
   }
   
+  &__container {
+    padding-top: 1rem;
+    display: flex;
+    width: 300vw;
+    position: relative;
+    left: -100vw;
+    transition: transform .8s ease;
+  }
+  
+  &__column {
+    display: none;
+    
+    &:first-of-type, &:nth-of-type(2) {
+      display: block;
+    }
+    
+    @media (min-width: $medium-breakpoint) {
+      display: block;
+    }
+    
+  }
+  
   &__content {
-    @mixin container;
-    margin-top: 47px;
+    @mixin container;   
+    width: 100vw;
+  }
+  
+  &__project {
+    margin-top: 1rem;
+  }
+  
+  &__event {
+    margin-top: 1rem;
+  }
+  
+  &__link {
+    margin-top: 1.5rem;
   }
   
 }

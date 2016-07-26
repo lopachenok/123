@@ -3,9 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {
   var control = document.querySelector('.video__controls-play');
   var video = document.querySelector('.video__item');
   var flag = false;
+ 
+  video.addEventListener("loadedmetadata", function() {
+    var duration = Math.round(video.duration)/100;
+    document.querySelector('.video-section__duration').innerHTML = duration;
+  });
   
   player.addEventListener("click", function() {
-    player.classList.toggle('video--played');
+    player.classList.add('video--played');
     flag = !flag;
     
     if(flag) {

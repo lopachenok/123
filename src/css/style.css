@@ -16,3 +16,7 @@
 @import '../.././src/blocks/section-heading/section-heading.css';
 @import '../.././src/blocks/section-text/section-text.css';
 @import '../.././src/blocks/carousel/carousel.css';
+@import '../.././src/blocks/link/link.css';
+@import '../.././src/blocks/project-card/project-card.css';
+
+@import '../.././src/blocks/event-card/event-card.css';

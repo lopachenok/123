@@ -1,0 +1,102 @@
+.link {
+  font-family: $ptsans;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #485155;
+  position: relative;
+  display: inline-block;
+  transition: color .2s ease;
+  
+  &:after {
+    content: '';
+    display: inline-block;
+    background: url(chevron.svg);
+    height: 1rem;
+    width: 9px;
+    position: absolute;
+    top: 0px;
+    right: -14px;
+    
+    @media (min-width: $medium-breakpoint) {
+      width: 11px;
+      right: -18px;
+    }
+    
+    @media (min-width: $large-breakpoint) {
+      width: 14px;
+      right: -22px;
+    }
+    
+  }
+  
+  &:hover {
+    @media (min-width: $large-breakpoint) {
+      color: $scarlet;
+    }
+  }
+  
+  
+  &--white {
+    color: #F0F1F2;
+    
+    &:hover {
+      @media (min-width: $large-breakpoint) {
+        color: #F0F1F2;
+      }
+    }
+  }
+  
+  &--small {
+    font-size: 13px;
+    line-height: 13px;
+    
+    &:after {
+      width: 7px;
+      height: 12px;
+      right: -11px;
+    }
+    
+    @media (min-width: $medium-breakpoint) {
+      font-size: 16px;
+      line-height: 16px;
+    
+      &:after {
+        width: 9px;
+        height: 16px;
+        right: -14px;
+      }
+    }
+    
+    @media (min-width: $large-breakpoint) {
+      font-size: 19px;
+      line-height: 19px;
+      
+      &:after {
+        width: 11px;
+        height: 19px;
+        right: -19px;
+      }
+      
+    }      
+    
+  }
+  
+  &--carousel {
+    letter-spacing: 1.3px;
+    color: #969BA0;    
+    font-size: 13px;
+    line-height: 13px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    &:after {
+      width: 7px;
+      height: 12px;
+      right: -11px;
+    }
+  }
+  
+}

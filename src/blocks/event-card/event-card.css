@@ -1,0 +1,226 @@
+.event-card {
+  width: 100%;
+  height: 160px;
+  border-radius: 3px;
+  box-shadow: 0px 1px 3px rgba(0,0,0,.3);
+  position: relative;
+  cursor: pointer;  
+  
+  @media (min-width: 480px) {
+    height: 240px;
+  }
+  
+  @media (min-width: $medium-breakpoint) {
+    height: 360px;
+  }
+  
+  &:hover {
+    
+    @media (min-width: $large-breakpoint) {
+      .event-card__main:before {
+        opacity: .35;
+      }
+      
+      .event-card__main--gradient:before {
+        opacity: .45;
+      }
+      
+      .event-card__img {
+        transform: scale(1.1);
+      }
+      
+      .event-card__link {
+        color: $scarlet;
+      }
+      
+    }
+    
+  }
+  
+  &__main {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+    
+    @media (min-width: $medium-breakpoint) {
+      height: 300px;
+      border-radius: 3px 3px 0 0;
+    }
+    
+    @media (min-width: $large-breakpoint) {
+      height: 292px;
+    }
+    
+    &:before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      border-radius: 3px;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 1);
+      opacity: 0.5;
+      transition: opacity .2s ease;
+      z-index: 1;
+      
+      @media (min-width: $medium-breakpoint) {          
+        border-radius: 3px 3px 0 0;
+      }
+      
+    }  
+    
+    &--gradient {
+      
+      &:before {
+        background: -moz-linear-gradient(50% 100% 90deg,rgba(0, 0, 0, 1) 0%,rgba(0, 0, 0, 0) 100%);
+        background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        background : -webkit-gradient(linear,50% 100% ,50% 0% ,color-stop(0,rgba(0, 0, 0, 1) ),color-stop(1,rgba(0, 0, 0, 0) ));
+        background: -o-linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        background: -ms-linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); 
+        background : linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        opacity : 0.6;
+    }
+      
+    }    
+    
+  }
+  
+  
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+    transition: transform .2s ease;
+    
+    @media (min-width: $medium-breakpoint) {          
+      border-radius: 3px 3px 0 0;
+    }
+  }
+  
+  &__date {
+    font-family: $ptsans;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 13px;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    color: #F0F1F2;
+    position: absolute;
+    z-index: 2;
+    left: 1rem;
+    top: 25px;
+    
+    @media (min-width: $medium-breakpoint) {
+      font-size: 12px;
+      line-height: 12px;
+      top: 20px;      
+    }
+    
+    @media (min-width: $large-breakpoint) {
+       font-size: 15px;
+       letter-spacing : 1.5px;
+    }
+    
+    &:after {
+      content: '';
+      position: absolute;
+      border-bottom: 2px solid $scarlet;
+      width: 100%;
+      bottom: -12px;
+      left: 0;
+      border-radius: 1px;
+      
+      @media (min-width: $medium-breakpoint) {
+        bottom: -8px;
+      }
+    }
+    
+  }
+  
+  &__content {
+    position: absolute;
+    z-index: 2;
+    left: 1rem;
+    bottom: 50px;    
+    
+    @media (min-width: $medium-breakpoint) {
+      bottom: 1.5rem;      
+    }
+    
+  }
+  
+  &__title {
+    font-family: $ptsans;
+    font-weight: bold;
+    font-size: 24px;
+    color: #fff;  
+    margin-right: 60px;
+    
+    @media (min-width: $medium-breakpoint) {
+      font-size: 20px;
+    }
+    
+    @media (min-width: $large-breakpoint){
+       font-size : 24px;
+       line-height : 28px;
+    }
+    
+  }
+  
+  &__description {
+    display: none;
+    
+    @media (min-width: $medium-breakpoint) {
+      display: block;
+      font-family: $ptserif;
+      font-size : 16px;
+      line-height : 24px;      
+      color: #F0F1F2;
+      margin-top: 15px;
+      margin-right: 20px;
+    }
+    
+    @media (min-width: $large-breakpoint) {
+      font-size: 19px;
+      line-height: 28px;
+    }
+    
+  }
+  
+  &__footer {
+    
+    @media (min-width: $medium-breakpoint) {
+      background: #fff;
+      height: 60px;
+      width: 100%;
+    }
+    
+    @media (min-width: $large-breakpoint) {
+      height: 68px;
+    }
+    
+  }
+  
+  &__link {
+    position: absolute;
+    z-index: 2;
+    left: 1rem;
+    bottom: 20px;
+    transition: color .2s ease;
+    
+    @media (min-width: $medium-breakpoint) {
+      color: #485155;
+      letter-spacing: 1.6px;
+    }
+    
+    @media (min-width: $large-breakpoint) {
+      bottom: 23px;
+    }
+    
+  }
+  
+}
