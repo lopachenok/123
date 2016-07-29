@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
   })();
 
   function dirProp(direction, hProp, vProp) {
-    return (direction & Hammer.DIRECTION_HORIZONTAL) ? hProp : vProp
+    return (direction & Hammer.DIRECTION_HORIZONTAL) ? hProp : vProp;
   }
 
 
@@ -110,11 +110,18 @@ document.addEventListener("DOMContentLoaded", function () {
       tabs.children[showIndex].classList.add("carousel__tab--active");
       
       if(showIndex === 0) {
-          tabs.style.transform = 'translate3d(9.5%, 0, 0)';
+          tabs.style.transform = 'translate3d(17%, 0, 0)';
+//         tabs.classList.remove("carousel__tabs--end");
+//         tabs.classList.add("carousel__tabs--start");
       } else if(showIndex === 1) {
+//        tabs.classList.remove("carousel__tabs--start");
+//        tabs.classList.remove("carousel__tabs--end");
         tabs.style.transform = 'translate3d(0, 0, 0)';  
       } else if(showIndex === 2) {
-        tabs.style.transform = 'translate3d(-9.5%, 0, 0)';   
+//        tabs.classList.remove("carousel__tabs--start");
+//        tabs.classList.add("carousel__tabs--end");
+        
+        tabs.style.transform = 'translate3d(-17%, 0, 0)';   
       }
      
 

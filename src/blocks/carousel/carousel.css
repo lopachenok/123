@@ -2,15 +2,14 @@
   overflow: hidden;
   
   &__tabs {
+    @mixin container; 
     display: flex;
-    position: relative;
-    justify-content: center;
-    @mixin container;   
+    position: relative;      
     padding-left: 1rem;
     padding-right: 1rem;    
     transition: transform .3s ease;
+    justify-content: center;
     
-/*
     &--start {
       justify-content: flex-start;
     }
@@ -18,7 +17,7 @@
     &--end {
       justify-content: flex-end;
     }
-*/
+    
     
     &:before {
       content: '';
@@ -43,11 +42,7 @@
       right: 0;
       top: -17px;
     }
-/*
-    position: absolute;
-    transform: translateX(-50%);
-    left: 50%;
-*/
+
   }
   
   &__tab {
@@ -58,9 +53,11 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #6B7277;
-    padding-right: 2rem;
+    padding-right: 36px;
     white-space: nowrap; 
-    width: 158px;
+    //width: 127px;
+    flex-grow: 1;
+    flex-shrink: 0;
     
     &:first-of-type {
       text-align: right;
@@ -90,7 +87,7 @@
     
     &:first-of-type.carousel__tab--active ~ &:last-of-type:before{
       width: 80px;
-      left: -272px;
+      left: -280px;
     }
     
     &--active {
@@ -101,13 +98,6 @@
   
   &__container {
     padding-top: 1rem;
-/*
-    display: flex;
-    width: 300vw;
-    position: relative;
-    left: -100vw;
-    transition: transform .8s ease;
-*/
     height: 389px;
     position: relative;
     
