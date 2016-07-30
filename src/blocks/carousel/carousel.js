@@ -2,10 +2,11 @@ document.addEventListener("DOMContentLoaded", function () {
   var carousel = document.getElementById("carousel");
   var carouselContainer = document.getElementById("carousel-container");
   var tabs = document.getElementById("tabs");
-  
-  tabs.addEventListener("click", function(e) {
+  var tabletSize = 768;
+
+  tabs.addEventListener("click", function (e) {
     e.preventDefault();
-    if(e.target.tagName !== "A") {
+    if (e.target.tagName !== "A") {
       return;
     }
 
@@ -15,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var reqAnimationFrame = (function () {
     return window[Hammer.prefixed(window, "requestAnimationFrame")] || function (callback) {
       setTimeout(callback, 1000 / 60);
-    }
+    };
   })();
 
   function dirProp(direction, hProp, vProp) {
@@ -33,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     this.container = container;
     this.direction = direction;
 
-    this.panes = Array.prototype.slice.call(this.container.children, 0);
+    this.panes = Array.prototype.slice.apply(this.container.children, [0, length - 1]);
     this.containerSize = this.container[dirProp(direction, "offsetWidth", "offsetHeight")];
 
     this.currentIndex = 1;
@@ -59,48 +60,56 @@ document.addEventListener("DOMContentLoaded", function () {
     show: function (showIndex, percent, animate) {
       showIndex = Math.max(0, Math.min(showIndex, this.panes.length - 1));
       percent = percent || 0;
-      
+
       document.querySelector(".carousel__tab--active").classList.remove("carousel__tab--active");
       tabs.children[showIndex].classList.add("carousel__tab--active");
-      
-      if(showIndex === 0) {
+
+      if (screen.width < 430) {
+        if (showIndex === 0) {
           tabs.style.transform = 'translate3d(17%, 0, 0)';
-//         tabs.classList.remove("carousel__tabs--end");
-//         tabs.classList.add("carousel__tabs--start");
-      } else if(showIndex === 1) {
-//        tabs.classList.remove("carousel__tabs--start");
-//        tabs.classList.remove("carousel__tabs--end");
-        tabs.style.transform = 'translate3d(0, 0, 0)';  
-      } else if(showIndex === 2) {
-//        tabs.classList.remove("carousel__tabs--start");
-//        tabs.classList.add("carousel__tabs--end");
-        
-        tabs.style.transform = 'translate3d(-17%, 0, 0)';   
+        } else if (showIndex === 1) {
+          tabs.style.transform = 'translate3d(0, 0, 0)';
+        } else if (showIndex === 2) {
+          tabs.style.transform = 'translate3d(-17%, 0, 0)';
+        }
       }
-     
-
       var className = this.container.className;
-      if (animate) {
-        if (className.indexOf("animate") === -1) {
-          this.container.className += " animate";
-        }
-      } else {
-        if (className.indexOf("animate") !== -1) {
-          this.container.className = className.replace("animate", "").trim();
-        }
-      }
-
-      var paneIndex, pos, translate;
-      for (paneIndex = 0; paneIndex < this.panes.length; paneIndex++) {
-        pos = (this.containerSize / 100) * (((paneIndex - showIndex) * 100) + percent);
-        if (this.direction & Hammer.DIRECTION_HORIZONTAL) {
-          translate = "translate3d(" + pos + "px, 0, 0)";
+        if (animate) {
+          if (className.indexOf("animate") === -1) {
+            this.container.className += " animate";
+          }
         } else {
-          translate = "translate3d(0, " + pos + "px, 0)"
+          if (className.indexOf("animate") !== -1) {
+            this.container.className = className.replace("animate", "").trim();
+          }
         }
-        this.panes[paneIndex].style.transform = translate;
-        this.panes[paneIndex].style.mozTransform = translate;
-        this.panes[paneIndex].style.webkitTransform = translate;
+
+      if (screen.width < tabletSize) {
+        
+
+        var paneIndex, pos, translate;
+        for (paneIndex = 0; paneIndex < this.panes.length; paneIndex++) {
+          pos = (this.containerSize / 100) * (((paneIndex - showIndex) * 100) + percent);
+          if (this.direction & Hammer.DIRECTION_HORIZONTAL) {
+            translate = "translate3d(" + pos + "px, 0, 0)";
+          } else {
+            translate = "translate3d(0, " + pos + "px, 0)";
+          }
+          this.panes[paneIndex].style.transform = translate;
+          this.panes[paneIndex].style.mozTransform = translate;
+          this.panes[paneIndex].style.webkitTransform = translate;
+        }
+
+      } else {
+        for (paneIndex = 0; paneIndex < this.panes.length; paneIndex++) {
+          translate = "translate3d(0, 0, 0)";
+          this.panes[paneIndex].style.transform = translate;
+          this.panes[paneIndex].style.mozTransform = translate;
+          this.panes[paneIndex].style.webkitTransform = translate;
+        }
+        document.querySelector(".carousel__content--active").classList.remove("carousel__content--active");
+        console.log()
+        this.panes[showIndex].classList.add("carousel__content--active");
       }
 
       this.currentIndex = showIndex;
@@ -111,22 +120,30 @@ document.addEventListener("DOMContentLoaded", function () {
      * @param {Object} ev
      */
     onPan: function (ev) {
-      var delta = dirProp(this.direction, ev.deltaX, ev.deltaY);
-      var percent = (100 / this.containerSize) * delta;
-      var animate = false;
 
-      if (ev.type == "panend" || ev.type == "pancancel") {
-        if (Math.abs(percent) > 20 && ev.type == "panend") {
-          this.currentIndex += (percent < 0) ? 1 : -1;
+      if (screen.width < tabletSize) {
+        var delta = dirProp(this.direction, ev.deltaX, ev.deltaY);
+        var percent = (100 / this.containerSize) * delta;
+        var animate = false;
+
+        if (ev.type == "panend" || ev.type == "pancancel") {
+          if (Math.abs(percent) > 20 && ev.type == "panend") {
+            this.currentIndex += (percent < 0) ? 1 : -1;
+          }
+          percent = 0;
+          animate = true;
         }
-        percent = 0;
-        animate = true;
+
+        this.show(this.currentIndex, percent, animate);
       }
 
-      this.show(this.currentIndex, percent, animate);
     }
   };
 
   // the horizontal pane scroller
   var outer = new HammerCarousel(carouselContainer, Hammer.DIRECTION_HORIZONTAL);
+
+  window.onresize = function () {
+    var outer = new HammerCarousel(carouselContainer, Hammer.DIRECTION_HORIZONTAL);
+  };
 });

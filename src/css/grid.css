@@ -26,6 +26,21 @@
     justify-content: center;
   }
   
+  @media (min-width: $medium-breakpoint) {
+  
+    &--no-wrap {
+      flex-wrap: nowrap;
+      height: 100%;
+    
+      .medium-column5, .medium-column8 {
+        flex-shrink: 0;
+        flex-grow: 1;
+      }
+    
+    }
+    
+  }
+  
 }
 
 .small-column1 {
@@ -162,7 +177,7 @@
   
   .large-column4 {
     box-sizing: border-box;
-    width: 33.3333%;
+    width: 32.3333%;
     padding: 0 $grid-gutter;
   }
   
@@ -174,7 +189,7 @@
   
   .large-column6 {
     box-sizing: border-box;
-    width: 50%;
+    width: 49%;
     padding: 0 $grid-gutter;
   }
   

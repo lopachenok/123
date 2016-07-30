@@ -1,6 +1,14 @@
 .rehab {
   padding-bottom: 2.5rem;
   
+  @media (min-width: $medium-breakpoint) {
+    padding-bottom: 70px;
+  }
+  
+  @media (min-width: $large-breakpoint) {
+    padding-bottom: 3rem;
+  }
+  
   &__inner {
     @mixin container;
     padding-top: 2.5rem;
@@ -33,6 +41,15 @@
   
   &__carousel {
     margin-top: 2rem;
+    
+    @media (min-width: $medium-breakpoint) {
+      margin-top: 3rem;
+    }
+    
+    @media (min-width: $large-breakpoint) {
+      margin-top: 60px;
+    }
+    
   }
   
 }
