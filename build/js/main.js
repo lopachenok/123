@@ -45,19 +45,41 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 document.addEventListener("DOMContentLoaded", function () {
-  var carousel = document.getElementById("carousel");
   var carouselContainer = document.getElementById("carousel-container");
   var tabs = document.getElementById("tabs");
   var tabletSize = 768;
-
+  var scrollButtonCount = 2;
+  var carouselContent = document.querySelectorAll(".carousel__content");
+  var currentContent = 1;
+  var scrollButtonRight = document.querySelector(".carousel__scroll-button--right");
+  var scrollButtonLeft = document.querySelector(".carousel__scroll-button--left");
+  
   tabs.addEventListener("click", function (e) {
     e.preventDefault();
     if (e.target.tagName !== "A") {
       return;
     }
-
-    HammerCarousel.prototype.show.apply(outer, [e.target.getAttribute("data-tab"), 0, true]);
+    
+    currentContent = e.target.getAttribute("data-tab");
+    
+    addRemoveScrollButton(carouselContent[currentContent]);
+    
+    HammerCarousel.prototype.show.apply(outer, [currentContent, 0, true]);
   });
+  
+  scrollButtonRight.addEventListener("click", function(e) {
+    var el = carouselContent[currentContent];
+    smooth_scroll_to(el, el.scrollLeft + 420, 400);
+  });
+  
+  scrollButtonLeft.addEventListener("click", function(e) {
+    var el = carouselContent[currentContent];
+    smooth_scroll_to(el, el.scrollLeft - 420, 400);
+  });
+  
+  for(var i = 0; i < carouselContent.length; i++) {
+    carouselContent[i].addEventListener("scroll", contentScroll);
+  }
 
   var reqAnimationFrame = (function () {
     return window[Hammer.prefixed(window, "requestAnimationFrame")] || function (callback) {
@@ -80,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
     this.container = container;
     this.direction = direction;
 
-    this.panes = Array.prototype.slice.apply(this.container.children, [0, length - 1]);
+    this.panes = Array.prototype.slice.apply(this.container.children, [0, length - scrollButtonCount]);
     this.containerSize = this.container[dirProp(direction, "offsetWidth", "offsetHeight")];
 
     this.currentIndex = 1;
@@ -94,7 +116,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     this.show(this.currentIndex);
   }
-
 
   HammerCarousel.prototype = {
     /**
@@ -118,7 +139,10 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (showIndex === 2) {
           tabs.style.transform = 'translate3d(-17%, 0, 0)';
         }
+      } else {
+        tabs.style.transform = 'translate3d(0, 0, 0)';
       }
+      
       var className = this.container.className;
         if (animate) {
           if (className.indexOf("animate") === -1) {
@@ -186,11 +210,111 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  // the horizontal pane scroller
   var outer = new HammerCarousel(carouselContainer, Hammer.DIRECTION_HORIZONTAL);
-
-  window.onresize = function () {
-    var outer = new HammerCarousel(carouselContainer, Hammer.DIRECTION_HORIZONTAL);
+  
+  var windowSize = {
+    x: screen.width,
+    y: screen.height
   };
+  
+  window.onresize = function () {
+    if(windowSize.x !== screen.width) {
+      var outer = new HammerCarousel(carouselContainer, Hammer.DIRECTION_HORIZONTAL);
+    }
+    windowSize.x = screen.width;
+  };
+  
+  function contentScroll(e) {    
+    //console.dir(e.target.scrollLeft);
+    var elem = e.target;
+    addRemoveScrollButton(elem);
+  }
+  
+  function addRemoveScrollButton(elem) {
+    if(elem.clientWidth + elem.scrollLeft === elem.scrollWidth) {
+      carouselContainer.classList.remove("carousel__container--start");
+      carouselContainer.classList.add("carousel__container--end");
+    } else if(elem.scrollLeft === 0) {
+      carouselContainer.classList.add("carousel__container--start");
+      carouselContainer.classList.remove("carousel__container--end");
+    } else {      
+      carouselContainer.classList.remove("carousel__container--start");
+      carouselContainer.classList.remove("carousel__container--end");
+    }
+    
+    if(elem.clientWidth  === elem.scrollWidth) {
+      carouselContainer.classList.add("carousel__container--start");
+      carouselContainer.classList.add("carousel__container--end");
+    }
+  }
+  
+  var smooth_scroll_to = function(element, target, duration) {
+    target = Math.round(target);
+    duration = Math.round(duration);
+    if (duration < 0) {
+        return Promise.reject("bad duration");
+    }
+    if (duration === 0) {
+        element.scrollLeft = target;
+        return Promise.resolve();
+    }
+
+    var start_time = Date.now();
+    var end_time = start_time + duration;
+
+    var start_top = element.scrollLeft;
+    var distance = target - start_top;
+
+    // based on http://en.wikipedia.org/wiki/Smoothstep
+    var smooth_step = function(start, end, point) {
+        if(point <= start) { return 0; }
+        if(point >= end) { return 1; }
+        var x = (point - start) / (end - start); // interpolation
+        return x*x*(3 - 2*x);
+    }
+
+    return new Promise(function(resolve, reject) {
+        // This is to keep track of where the element's scrollLeft is
+        // supposed to be, based on what we're doing
+        var previous_top = element.scrollLeft;
+
+        // This is like a think function from a game loop
+        var scroll_frame = function() {
+            if(element.scrollLeft != previous_top) {
+                reject("interrupted");
+                return;
+            }
+
+            // set the scrollLeft for this frame
+            var now = Date.now();
+            var point = smooth_step(start_time, end_time, now);
+            var frameTop = Math.round(start_top + (distance * point));
+            element.scrollLeft = frameTop;
+
+            // check if we're done!
+            if(now >= end_time) {
+                resolve();
+                return;
+            }
+
+            // If we were supposed to scroll but didn't, then we
+            // probably hit the limit, so consider it done; not
+            // interrupted.
+            if(element.scrollLeft === previous_top
+                && element.scrollLeft !== frameTop) {
+                resolve();
+                return;
+            }
+            previous_top = element.scrollLeft;
+
+            // schedule next frame for execution
+            setTimeout(scroll_frame, 0);
+        }
+
+        // boostrap the animation process
+        setTimeout(scroll_frame, 0);
+    });
+}
+  
 });
 //# sourceMappingURL=main.js.map

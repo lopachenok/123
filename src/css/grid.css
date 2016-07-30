@@ -177,7 +177,7 @@
   
   .large-column4 {
     box-sizing: border-box;
-    width: 32.3333%;
+    width: 33.3333%;
     padding: 0 $grid-gutter;
   }
   
@@ -189,7 +189,7 @@
   
   .large-column6 {
     box-sizing: border-box;
-    width: 49%;
+    width: 50%;
     padding: 0 $grid-gutter;
   }
   
