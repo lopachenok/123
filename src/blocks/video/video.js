@@ -16,7 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if(flag) {
       video.play();
     } else {
-      video.pause();
+      if(window.innerWidth > 768) {
+        video.pause();
+      }      
     }
     
   });

@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       
       var paneIndex, pos, translate;
-      if (screen.width < tabletSize) {      
+      if (window.innerWidth < tabletSize) {      
         for (paneIndex = 0; paneIndex < this.panes.length; paneIndex++) {
           pos = (this.containerSize / 100) * (((paneIndex - showIndex) * 100) + percent);
           if (this.direction & Hammer.DIRECTION_HORIZONTAL) {
@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     onPan: function (ev) {
 
-      if (screen.width < tabletSize) {
+      if (window.innerWidth < tabletSize) {
         var delta = dirProp(this.direction, ev.deltaX, ev.deltaY);
         var percent = (100 / this.containerSize) * delta;
         var animate = false;
@@ -165,8 +165,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
   };
-
-  var outer = new HammerCarousel(carouselContainer, Hammer.DIRECTION_HORIZONTAL);
+  
+  if(window.innerWidth >= tabletSize) {
+    var outer = new HammerCarousel(carouselContainer);
+  } else {
+    var outer = new HammerCarousel(carouselContainer, Hammer.DIRECTION_HORIZONTAL);
+  } 
   
   var windowSize = {
     x: screen.width,
@@ -176,7 +180,11 @@ document.addEventListener("DOMContentLoaded", function () {
   window.onresize = function () {
     
     if(windowSize.x !== window.innerWidth) {
-      var outer = new HammerCarousel(carouselContainer, Hammer.DIRECTION_HORIZONTAL);
+      if(window.innerWidth >= tabletSize) {
+        var outer = new HammerCarousel(carouselContainer);
+      } else {
+        var outer = new HammerCarousel(carouselContainer, Hammer.DIRECTION_HORIZONTAL);
+      } 
     }
     windowSize.x = screen.width;
   };
@@ -211,7 +219,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
     if (duration === 0) {
-      console.log(2)
         element.scrollLeft = target;
         return scroll();
     }
