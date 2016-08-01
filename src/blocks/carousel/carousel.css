@@ -335,9 +335,9 @@
       max-width: 1536px;
       padding-left: 0;
       padding-right: 0;
-      margin-right: 2rem;
-      margin-left: 2rem;
-      width: calc(100% - 4rem);
+      margin-right: 3rem;
+      margin-left: 3rem;
+      width: calc(100% - 6rem);
     }
     
   }
@@ -394,7 +394,7 @@
     }
     
     @media (min-width: $large-breakpoint) {
-      right: 43px;     
+      right: 63px;     
       cursor: pointer;
       
       &:hover {
@@ -408,7 +408,7 @@
       left: 20px;
       
       @media (min-width: $large-breakpoint) {
-        left: 32px;
+        left: 42px;
       }
     }
     

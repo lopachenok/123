@@ -12,6 +12,8 @@
   
   @media (min-width: $large-breakpoint) {
     max-width: 1440px;
+    padding-left: $large-grid-padding;
+    padding-right: $large-grid-padding;
   }
   
 }

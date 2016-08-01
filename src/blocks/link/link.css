@@ -3,7 +3,7 @@
   font-weight: 600;
   font-size: 1rem;
   line-height: 1rem;
-  letter-spacing: 2px;
+  letter-spacing: 1.6px;
   text-transform: uppercase;
   color: #485155;
   position: relative;
@@ -18,7 +18,7 @@
     width: 9px;
     position: absolute;
     top: 0px;
-    right: -14px;
+    right: -16px;
     
     @media (min-width: $medium-breakpoint) {
       width: 11px;
