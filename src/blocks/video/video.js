@@ -11,14 +11,17 @@ document.addEventListener("DOMContentLoaded", function () {
   
   player.addEventListener("click", function() {
     player.classList.add('video--played');
-    flag = !flag;
+    
+    if(window.innerWidth > 768) {
+      flag = !flag;
+    } else {
+      flag = true;
+    }    
     
     if(flag) {
       video.play();
-    } else {
-      if(window.innerWidth > 768) {
-        video.pause();
-      }      
+    } else {      
+      video.pause();
     }
     
   });

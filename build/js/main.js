@@ -1,3 +1,12 @@
+if ('objectFit' in document.documentElement.style === false) {
+	document.addEventListener('DOMContentLoaded', function () {
+		Array.prototype.forEach.call(document.querySelectorAll('img[data-object-fit]'), function (image) {
+			(image.runtimeStyle || image.style).background = 'url("' + image.src + '") no-repeat 50%/' + (image.currentStyle ? image.currentStyle['object-fit'] : image.getAttribute('data-object-fit'));
+
+			image.src = 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'' + image.width + '\' height=\'' + image.height + '\'%3E%3C/svg%3E';
+		});
+	});
+}
 document.addEventListener("DOMContentLoaded", function () {
   var dropdown = document.querySelectorAll('.dropdown');
   for(var i = 0; i < dropdown.length; i++) {
@@ -6,7 +15,15 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function toggleDropdown(e) {
-  var elem = e.target.closest('.dropdown');
+  var elem;  
+  var classList = Array.prototype.slice.call(e.target.classList, 0);
+  
+  if(classList.indexOf("dropdown") !== -1) {
+    elem = e.target;    
+  } else {
+    elem = e.target.parentElement.parentNode;
+  }
+  
   elem.classList.toggle('dropdown--open');
   var options = document.querySelectorAll('.dropdown--open .dropdown__item');
   
@@ -34,14 +51,17 @@ document.addEventListener("DOMContentLoaded", function () {
   
   player.addEventListener("click", function() {
     player.classList.add('video--played');
-    flag = !flag;
+    
+    if(window.innerWidth > 768) {
+      flag = !flag;
+    } else {
+      flag = true;
+    }    
     
     if(flag) {
       video.play();
-    } else {
-      if(window.innerWidth > 768) {
-        video.pause();
-      }      
+    } else {      
+      video.pause();
     }
     
   });
@@ -229,9 +249,9 @@ document.addEventListener("DOMContentLoaded", function () {
     
     if(windowSize.x !== window.innerWidth) {
       if(window.innerWidth >= tabletSize) {
-        var outer = new HammerCarousel(carouselContainer);
+        outer = new HammerCarousel(carouselContainer);
       } else {
-        var outer = new HammerCarousel(carouselContainer, Hammer.DIRECTION_HORIZONTAL);
+        outer = new HammerCarousel(carouselContainer, Hammer.DIRECTION_HORIZONTAL);
       } 
     }
     windowSize.x = screen.width;

@@ -318,7 +318,8 @@
     max-width: 616px;    
     
     @media (min-width: $medium-breakpoint) {
-      overflow: scroll;
+      overflow-x: scroll;
+      overflow-y: hidden;
       max-width: 1104px;
       opacity: 0;
       z-index: -1;

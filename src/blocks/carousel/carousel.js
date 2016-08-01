@@ -181,9 +181,9 @@ document.addEventListener("DOMContentLoaded", function () {
     
     if(windowSize.x !== window.innerWidth) {
       if(window.innerWidth >= tabletSize) {
-        var outer = new HammerCarousel(carouselContainer);
+        outer = new HammerCarousel(carouselContainer);
       } else {
-        var outer = new HammerCarousel(carouselContainer, Hammer.DIRECTION_HORIZONTAL);
+        outer = new HammerCarousel(carouselContainer, Hammer.DIRECTION_HORIZONTAL);
       } 
     }
     windowSize.x = screen.width;

@@ -6,7 +6,15 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function toggleDropdown(e) {
-  var elem = e.target.closest('.dropdown');
+  var elem;  
+  var classList = Array.prototype.slice.call(e.target.classList, 0);
+  
+  if(classList.indexOf("dropdown") !== -1) {
+    elem = e.target;    
+  } else {
+    elem = e.target.parentElement.parentNode;
+  }
+  
   elem.classList.toggle('dropdown--open');
   var options = document.querySelectorAll('.dropdown--open .dropdown__item');
   
