@@ -190,7 +190,7 @@
     }
     
     @media (min-width: $large-breakpoint) {
-      max-width: 1536px;
+      max-width: 1584px;
     }
     
     &:before {
@@ -332,7 +332,7 @@
     }
     
     @media (min-width: $large-breakpoint) {
-      max-width: 1536px;
+      max-width: 1584px;
       padding-left: 0;
       padding-right: 0;
       margin-right: 3rem;
