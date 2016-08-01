@@ -130,18 +130,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
       document.querySelector(".carousel__tab--active").classList.remove("carousel__tab--active");
       tabs.children[showIndex].classList.add("carousel__tab--active");
-
-      if (screen.width < 430) {
+     
+      var tabTransform;
+      if (window.innerWidth < 430) {        
         if (showIndex === 0) {
-          tabs.style.transform = 'translate3d(17%, 0, 0)';
+          tabTransform = 'translate3d(14%, 0, 0)';
         } else if (showIndex === 1) {
-          tabs.style.transform = 'translate3d(0, 0, 0)';
+          tabTransform = 'translate3d(0, 0, 0)';
         } else if (showIndex === 2) {
-          tabs.style.transform = 'translate3d(-17%, 0, 0)';
+          tabTransform = 'translate3d(-20%, 0, 0)';
         }
       } else {
-        tabs.style.transform = 'translate3d(0, 0, 0)';
+        tabTransform = 'translate3d(0, 0, 0)';
       }
+      
+      tabs.style.transform = tabTransform;
+      tabs.style.mozTransform = tabTransform;
+      tabs.style.webkitTransform = tabTransform;
       
       var className = this.container.className;
         if (animate) {
@@ -153,11 +158,9 @@ document.addEventListener("DOMContentLoaded", function () {
             this.container.className = className.replace("animate", "").trim();
           }
         }
-
-      if (screen.width < tabletSize) {
-        
-
-        var paneIndex, pos, translate;
+      
+      var paneIndex, pos, translate;
+      if (screen.width < tabletSize) {      
         for (paneIndex = 0; paneIndex < this.panes.length; paneIndex++) {
           pos = (this.containerSize / 100) * (((paneIndex - showIndex) * 100) + percent);
           if (this.direction & Hammer.DIRECTION_HORIZONTAL) {
@@ -178,7 +181,6 @@ document.addEventListener("DOMContentLoaded", function () {
           this.panes[paneIndex].style.webkitTransform = translate;
         }
         document.querySelector(".carousel__content--active").classList.remove("carousel__content--active");
-        console.log()
         this.panes[showIndex].classList.add("carousel__content--active");
       }
 
@@ -218,14 +220,14 @@ document.addEventListener("DOMContentLoaded", function () {
   };
   
   window.onresize = function () {
-    if(windowSize.x !== screen.width) {
+    
+    if(windowSize.x !== window.innerWidth) {
       var outer = new HammerCarousel(carouselContainer, Hammer.DIRECTION_HORIZONTAL);
     }
     windowSize.x = screen.width;
   };
   
   function contentScroll(e) {    
-    //console.dir(e.target.scrollLeft);
     var elem = e.target;
     addRemoveScrollButton(elem);
   }
@@ -242,7 +244,7 @@ document.addEventListener("DOMContentLoaded", function () {
       carouselContainer.classList.remove("carousel__container--end");
     }
     
-    if(elem.clientWidth  === elem.scrollWidth) {
+    if(elem.clientWidth === elem.scrollWidth) {
       carouselContainer.classList.add("carousel__container--start");
       carouselContainer.classList.add("carousel__container--end");
     }
@@ -252,11 +254,12 @@ document.addEventListener("DOMContentLoaded", function () {
     target = Math.round(target);
     duration = Math.round(duration);
     if (duration < 0) {
-        return Promise.reject("bad duration");
+        return;
     }
     if (duration === 0) {
+      console.log(2)
         element.scrollLeft = target;
-        return Promise.resolve();
+        return scroll();
     }
 
     var start_time = Date.now();
@@ -272,8 +275,8 @@ document.addEventListener("DOMContentLoaded", function () {
         var x = (point - start) / (end - start); // interpolation
         return x*x*(3 - 2*x);
     }
-
-    return new Promise(function(resolve, reject) {
+    
+    function scroll() {
         // This is to keep track of where the element's scrollLeft is
         // supposed to be, based on what we're doing
         var previous_top = element.scrollLeft;
@@ -281,7 +284,6 @@ document.addEventListener("DOMContentLoaded", function () {
         // This is like a think function from a game loop
         var scroll_frame = function() {
             if(element.scrollLeft != previous_top) {
-                reject("interrupted");
                 return;
             }
 
@@ -293,7 +295,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // check if we're done!
             if(now >= end_time) {
-                resolve();
+                scroll();
                 return;
             }
 
@@ -302,7 +304,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // interrupted.
             if(element.scrollLeft === previous_top
                 && element.scrollLeft !== frameTop) {
-                resolve();
+                scroll();
                 return;
             }
             previous_top = element.scrollLeft;
@@ -313,7 +315,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // boostrap the animation process
         setTimeout(scroll_frame, 0);
-    });
+    }
+
+    return scroll();
 }
   
 });

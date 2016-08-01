@@ -204,7 +204,7 @@ gulp.task('server', gulp.series('build', function() {
     server: {
         baseDir: dirs.build
     },
-    //tunnel: true,
+    tunnel: true,
     host: 'localhost',
     port: 9000,
     injectChanges: true,
