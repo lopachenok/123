@@ -22,7 +22,7 @@
     
     @media (min-width: $medium-breakpoint) {
       width: 11px;
-      right: -18px;
+      right: -20px;
     }
     
     @media (min-width: $large-breakpoint) {
@@ -92,10 +92,31 @@
     left: 50%;
     transform: translateX(-50%);
     
+    @media (min-width: $medium-breakpoint) {
+      color: #485155;
+      letter-spacing: 1.6px;
+      font-size: 1rem;
+      left: 0;
+      transform: translateX(0);
+      line-height: 1rem;
+    }
+    
     &:after {
       width: 7px;
       height: 12px;
       right: -11px;
+      
+      @media (min-width: $medium-breakpoint) {
+        width: 11px;
+        right: -20px;
+        height: 1rem;
+      }
+      
+      @media (min-width: $large-breakpoint) {
+        width: 14px;
+        right: -22px;
+      }
+      
     }
   }
   

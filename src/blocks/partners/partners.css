@@ -1,0 +1,112 @@
+.partners {  
+  
+  &__background {
+    position: absolute;
+    height: 190px;
+    width: 100%;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%),  url(hands.jpg);
+    background-repeat: no-repeat;
+    background-size: 130%;
+    background-position: center;
+    z-index: -1;
+    
+    @media (min-width: 480px) {
+      height: 260px;
+    }
+    
+    @media (min-width: $medium-breakpoint) {
+      height: 360px;
+    }
+    
+  }
+  
+  
+  &__inner {
+    @mixin container;
+    padding-top: 96px;
+    padding-bottom: 40px;
+    
+    @media (min-width: 480px) {
+      padding-top: 120px;
+    }
+    
+    @media (min-width: $medium-breakpoint) {
+      padding-top: 160px;
+      padding-bottom: 60px;
+    }
+    
+    @media (min-width: $large-breakpoint) {
+      padding-top: 192px;
+      padding-bottom: 70px;
+    }
+    
+  }
+ 
+  &__heading {
+    margin-top: 30px;
+  }
+  
+  &__text {
+    margin-top: 1rem;
+  }
+  
+  &__img-block {
+    margin-top: 40px;
+    height: 40px;
+    display: flex;
+    overflow: auto;
+    
+    @media (min-width: $medium-breakpoint) {
+      margin-top: 50px;
+      flex-wrap: wrap;
+      height: auto;
+    }
+    
+  }
+  
+  &__img {
+    height: 30px;
+    width: auto;
+    display: inline-block;
+    margin-right: 20px;    
+    
+    &:last-of-type {
+      margin-right: 0;
+    }
+    
+    @media (min-width: $medium-breakpoint) {
+      height: 35px;
+      margin-right: 70px;
+      width: 175px;
+      margin-bottom: 50px;
+      
+      &:nth-of-type(3n) {
+        margin-right: 0;
+      }
+      
+    }
+    
+    @media (min-width: 1090px) { 
+      margin-right: 30px;
+      
+      &:nth-of-type(3n) {
+        margin-right: 30px;
+      }
+    }
+    
+    @media (min-width: $large-breakpoint) {
+      margin-bottom: 60px;
+    }
+    
+  }
+  
+  &__link {
+    margin-top: 30px;
+    
+    @media (min-width: $medium-breakpoint) {
+      margin-top: 0;
+    }
+    
+  }
+  
+}
