@@ -1,6 +1,7 @@
 @import "varibles.css";
 @import "reset.css";
 @import "grid.css";
+@import "fonts.css";
 @import '../.././src/blocks/page-header/page-header.css';
 @import '../.././src/blocks/main-logo/main-logo.css';
 @import '../.././src/blocks/main-menu/main-menu.css';

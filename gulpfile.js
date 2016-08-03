@@ -101,6 +101,11 @@ gulp.task('clean', function () {
   ]);
 });
 
+gulp.task('fonts', function() {
+  return gulp.src(dirs.source + '/fonts/*.*')
+         .pipe(gulp.dest(dirs.build + '/fonts'))
+});
+
 
 //TODO: Newer не работает, т к меняется путь.
 // Копирование и оптимизация изображений из папки img
@@ -200,6 +205,7 @@ gulp.task('js', function () {
 gulp.task('build', gulp.series(
   'clean',
 //  'svgsprite',
+  'fonts',
   gulp.parallel('css', 'img', 'js', 'video'),
   'html'
 ));

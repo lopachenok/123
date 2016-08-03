@@ -2,6 +2,73 @@
   display: none;
   
   @media (min-width: $medium-breakpoint) {
+    display: block;
+  }
+  
+  &__count {
+    font-family: $ptsans;
+    font-weight: bold;
+    font-size: 68px;
+    line-height: 68px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #969BA0;
+    position: relative;
+    
+    @media (min-width: $large-breakpoint) {
+      font-size: 81px;
+    }
+    
+    &:after {
+      content: '';
+      position: absolute;
+      width: 21px;
+      height: 27px;
+      background: url(rubl.svg);
+      top: 7px;
+    }
+  }
+  
+  &__text {
+    margin-top: 15px;
+    font-family: 'Myriad Pro';
+    font-size: 16px;
+    line-height: 22px;
+    color: #485155;
+    
+    @media (min-width: $large-breakpoint) {
+      font-size: 19px;
+      line-height : 28.5px;
+      margin-top: 20px;
+    }
+    
+  }
+  
+  &__highlight {
+    font-weight: bold;
+  }
+  
+  &__item {
+    height: 215px;
+    position: relative;    
+  }
+  
+  &__separate {
+    position: relative;
+      
+      &:after {
+        content: '';
+        position: absolute;
+        border-right: 1px solid rgba(4, 27, 38, .1);;
+        height: 235px;
+        top: 0;
+        right: 0;
+      }
+  }
+  
+  &__btn {
+    position: absolute;
+    bottom: 0;
   }
   
 }

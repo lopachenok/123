@@ -163,6 +163,14 @@
     padding: 0 $grid-gutter;
   }
   
+  .medium-column-offset1 {
+    margin-left: 8.3333%;
+  }
+  
+  .medium-column-offset2 {
+    margin-left: 16.6667%;
+  }
+  
 }
 
 @media (min-width: $large-breakpoint) {
@@ -237,10 +245,6 @@
     box-sizing: border-box;
     width: 100%;
     padding: 0 $grid-gutter;
-  }
-  
-  .large-column-offset4 {
-    margin-left: 33.3333%;
   }
   
 }
