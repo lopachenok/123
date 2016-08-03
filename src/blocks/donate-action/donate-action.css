@@ -1,3 +1,7 @@
 .donate-action {
   display: none;
+  
+  @media (min-width: $medium-breakpoint) {
+  }
+  
 }
