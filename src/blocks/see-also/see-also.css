@@ -1,0 +1,7 @@
+.see-also {
+  
+  @media (min-width: $medium-breakpoint) {
+    display: flex;
+  }
+  
+}
