@@ -5,6 +5,7 @@
   box-shadow: 0px 1px 3px rgba(0,0,0,.3);
   position: relative;
   cursor: pointer;  
+  user-select: none;
   
   @media (min-width: 480px) {
     height: 240px;
@@ -16,7 +17,7 @@
   
   &:hover {
     
-    @media (min-width: $large-breakpoint) {
+   
       .event-card__main:before {
         opacity: .35;
       }
@@ -26,14 +27,14 @@
       }
       
       .event-card__img {
-        transform: scale(1.1);
+        transform: scale(1.05);
       }
       
       .event-card__link {
         color: $scarlet;
       }
       
-    }
+   
     
   }
   
@@ -95,6 +96,7 @@
     object-fit: cover;
     border-radius: 3px;
     transition: transform .2s ease;
+    user-select: none;
     
     @media (min-width: $medium-breakpoint) {          
       border-radius: 3px 3px 0 0;
@@ -113,6 +115,7 @@
     z-index: 2;
     left: 1rem;
     top: 25px;
+    user-select: initial;
     
     @media (min-width: $medium-breakpoint) {
       font-size: 12px;
@@ -159,6 +162,7 @@
     font-size: 24px;
     color: #fff;  
     margin-right: 60px;
+    user-select: initial;
     
     @media (min-width: $medium-breakpoint) {
       font-size: 20px;
@@ -173,6 +177,7 @@
   
   &__description {
     display: none;
+    user-select: initial;
     
     @media (min-width: $medium-breakpoint) {
       display: block;

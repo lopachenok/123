@@ -9,6 +9,7 @@
   position: relative;
   display: inline-block;
   transition: color .2s ease;
+  user-select: none;
   
   &:after {
     content: '';
@@ -33,20 +34,22 @@
   }
   
   &:hover {
-    @media (min-width: $large-breakpoint) {
+    
       color: $scarlet;
-    }
+    
   }
   
   
   &--white {
     color: #F0F1F2;
     
+/*
     &:hover {
       @media (min-width: $large-breakpoint) {
         color: #F0F1F2;
       }
     }
+*/
   }
   
   &--small {

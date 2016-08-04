@@ -2,6 +2,12 @@
   height: 30px;
   width: 50px;
   display: inline-block;
+  transform: scale(1);
+  transition: transform 0.2s ease;
+  
+  &:hover {
+    transform: scale(1.1);    
+  }
   
   @media (min-width: $large-breakpoint) {
     height: 36px;

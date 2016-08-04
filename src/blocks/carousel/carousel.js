@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   var carouselContainer = document.getElementById("carousel-container");
   var tabs = document.getElementById("tabs");
+  var tabsContainer = document.querySelector(".carousel__tabs-container");
   var tabletSize = 768;
   var scrollButtonCount = 2;
   var carouselContent = document.querySelectorAll(".carousel__content");
@@ -88,10 +89,16 @@ document.addEventListener("DOMContentLoaded", function () {
       var tabTransform;
       if (window.innerWidth < 430) {        
         if (showIndex === 0) {
+          tabsContainer.classList.remove("carousel__tabs-container--end");
+          tabsContainer.classList.add("carousel__tabs-container--start");
           tabTransform = 'translate3d(14%, 0, 0)';
         } else if (showIndex === 1) {
-          tabTransform = 'translate3d(0, 0, 0)';
+          tabsContainer.classList.remove("carousel__tabs-container--end");
+          tabsContainer.classList.remove("carousel__tabs-container--start");
+          tabTransform = 'translate3d(0, 0, 0)';          
         } else if (showIndex === 2) {
+          tabsContainer.classList.remove("carousel__tabs-container--start");
+          tabsContainer.classList.add("carousel__tabs-container--end");       
           tabTransform = 'translate3d(-20%, 0, 0)';
         }
       } else {

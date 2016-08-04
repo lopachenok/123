@@ -1,10 +1,14 @@
 .main-menu {
   display: inline-block;
   float: right;
-  height: 30px;
   display: flex;
   align-items: center;
-  height: 100%;
+  height: 30px;
+  
+  @media (min-width: $large-breakpoint) {
+    height: 36px;
+  }
+  
   
   &__current-page-list {
     display: none;
@@ -19,21 +23,19 @@
     display: inline-block;
     font-family: $ptsans; 
     font-weight: 600;
-    font-size: 16px;
+    font-size: 0.8rem;
     text-transform: uppercase;
     margin-right: 40px;
     letter-spacing: 0.1em;
     
     @media (min-width: $large-breakpoint) {
       margin-right: 70px;
-      font-size: 20px;
     }
     
   }
   
   &__current-page-link {
-    color: #fff;
-    
+    color: #fff;    
     transition: color .2s ease;
     
     &:hover {
@@ -57,7 +59,7 @@
       display: inline-block;
       font-family: $ptsans; 
       font-weight: 600;
-      font-size: 20px;
+      font-size: 0.8rem;
       text-transform: uppercase;
       margin-right: 70px;
       letter-spacing: 0.1em;
@@ -85,6 +87,9 @@
     display: block;
     display: flex;
     align-items: center;
+    cursor: pointer;
+    flex-grow: 0;
+    flex-shrink: 0;
     
     @media (min-width: $large-breakpoint) {
       display: none;
@@ -95,11 +100,16 @@
   &__toggler-text {
     font-family: $ptsans; 
     font-weight: 600;
-    font-size: 16px;
+    font-size: 0.8rem;
     color: #fff;
     text-transform: uppercase;
     margin-right: 10px;
     letter-spacing: 1.6px;
+    
+    &:hover {
+      color: $scarlet;
+    }
+    
   }
   
   &__toggler-icon {

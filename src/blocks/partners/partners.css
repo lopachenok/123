@@ -55,6 +55,7 @@
     height: 40px;
     display: flex;
     overflow: auto;
+    -webkit-overflow-scrolling: touch;
     
     @media (min-width: $medium-breakpoint) {
       margin-top: 50px;
@@ -71,6 +72,8 @@
     margin-right: 30px;   
     flex-grow: 0;
     flex-shrink: 0;
+    user-select: none;
+    object-fit: contain;
     
     &:last-of-type {
       margin-right: 0;

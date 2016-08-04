@@ -4,6 +4,7 @@
   position: relative;
   z-index: 1; 
   overflow: hidden;
+  user-select: none;
   
   @media (min-width: 480px) {
     height: 200px;
@@ -80,12 +81,10 @@
     }
   }
   
-  @media (min-width: $large-breakpoint) {
-    
-    &:hover {
+  &:hover {
       
       .video__preview {
-        transform: scale(1.1);
+        transform: scale(1.05);
       }
       
       &:after {
@@ -96,8 +95,6 @@
         stroke: $scarlet;
       }
     }
-    
-  }
   
   &--played {
     

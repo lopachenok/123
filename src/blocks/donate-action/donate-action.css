@@ -14,6 +14,7 @@
     text-transform: uppercase;
     color: #969BA0;
     position: relative;
+    user-select: none;
     
     @media (min-width: $large-breakpoint) {
       font-size: 81px;

@@ -34,6 +34,7 @@ td {
 html, body {
   line-height: 1;
   font-size: 16px;
+  -webkit-font-smoothing: antialiased;
   
   @media (min-width: $medium-breakpoint) {
     font-size: 20px;
