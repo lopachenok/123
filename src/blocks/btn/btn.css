@@ -18,6 +18,7 @@
   user-select: none;
   transition: border .2s ease;
   transform-origin: center;
+  -webkit-tap-highlight-color: transparent;
   
   &:hover {
       border: 5px solid $scarlet;

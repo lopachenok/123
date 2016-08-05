@@ -37,11 +37,13 @@
   
   &__btn-wrap {
     margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    
     
     @media (min-width: $medium-breakpoint) {
       margin-top: 50px;
-      display: flex;
-      align-items: center;
+      height: 50px;
     }
     
     @media (min-width: $large-breakpoint) {

@@ -30,10 +30,12 @@
         transform: scale(1.05);
       }
       
+/*
       .event-card__link {
         color: $scarlet;
       }
       
+*/
    
     
   }
@@ -220,6 +222,10 @@
     @media (min-width: $medium-breakpoint) {
       color: #485155;
       letter-spacing: 1.6px;
+      
+      &:hover {
+        color: #485155;
+      }
     }
     
     @media (min-width: $large-breakpoint) {
@@ -228,4 +234,8 @@
     
   }
   
+}
+
+.touch .event-card:hover .event-card__img {
+  transform: scale(1);
 }

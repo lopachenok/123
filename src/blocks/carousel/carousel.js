@@ -124,8 +124,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (window.innerWidth < tabletSize) {      
         for (paneIndex = 0; paneIndex < this.panes.length; paneIndex++) {
           pos = (this.containerSize / 100) * (((paneIndex - showIndex) * 100) + percent);
-         console.log(Math.abs(percent));
-          if(Math.abs(percent) > 10 || Math.abs(percent) == 0) {
+        
+         // if(Math.abs(percent) > 10 || Math.abs(percent) == 0) {
              if (this.direction & Hammer.DIRECTION_HORIZONTAL) {
             translate = "translate3d(" + pos + "px, 0, 0)";
           } else {
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
           this.panes[paneIndex].style.transform = translate;
           this.panes[paneIndex].style.mozTransform = translate;
           this.panes[paneIndex].style.webkitTransform = translate;
-          }
+         // }
           
         }
 

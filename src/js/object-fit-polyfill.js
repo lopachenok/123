@@ -7,3 +7,4 @@ if ('objectFit' in document.documentElement.style === false) {
 		});
 	});
 }
+

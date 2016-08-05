@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
   var control = document.querySelector('.video__controls-play');
   var video = document.querySelector('.video__item');
   var flag = false;
+  
+  if(!mobileGlobal) {
+    video.setAttribute("preload", "true");
+  }
  
   video.addEventListener("loadedmetadata", function() {
     var duration = Math.round(video.duration)/100;

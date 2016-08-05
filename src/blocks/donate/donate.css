@@ -26,6 +26,12 @@
     margin-top: 1rem;
   }
   
+  &__btn-wrap {
+    display: flex;
+    align-items: center;
+    height: 42px;
+  }
+  
   &__btn {
     margin-top: 2rem;
     

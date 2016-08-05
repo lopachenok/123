@@ -81,16 +81,16 @@
     white-space: nowrap; 
     flex-grow: 0;
     flex-shrink: 0;
+    user-select: none;
     -webkit-tap-highlight-color: transparent;
     transition: all .2s ease;
     
+    &:hover {
+      color: $scarlet;
+    }
+    
     @media (min-width: $large-breakpoint) {
       padding-right: 3rem;
-      
-      &:hover {
-        color: $scarlet;
-      }
-      
     }
     
     &:last-of-type {
@@ -144,42 +144,14 @@
       
     }
     
-/*
-    &:nth-of-type(2):hover ~ &:last-of-type:before {
-      
-      @media (min-width: $large-breakpoint) {
-        width: 190px;
-        left: -263px;
-      }
-      
-    }
-    
-    &:first-of-type:hover ~ &:last-of-type:before {
-      
-      @media (min-width: $large-breakpoint) {
-        width: 120px;
-        left: -455px;
-      }
-      
-    }
-    
-    &:last-of-type:hover:before {
-      
-      @media (min-width: $large-breakpoint) {
-        left: 0 !important;
-        width: 100% !important;
-      }
-      
-    }
-*/
-    
     &--active {
       color: $midnight;
       position: relative;
       z-index: 2;
     }
     
-  }
+  }  
+
   
   &__inner {
     height: 405px;
@@ -418,6 +390,7 @@
       opacity: 1;
       z-index: 3;
       transition: all .2s ease;
+      cursor: pointer;
     }
     
     @media (min-width: $large-breakpoint) {
@@ -441,4 +414,8 @@
     
   }
   
+}
+
+.touch .carousel__tab:hover {
+  color: #6B7277;
 }

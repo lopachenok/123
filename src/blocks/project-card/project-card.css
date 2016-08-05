@@ -150,3 +150,7 @@
   }
   
 }
+
+.touch .project-card:hover .project-card__img {
+  transform: scale(1);
+}

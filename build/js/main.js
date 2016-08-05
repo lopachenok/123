@@ -1,3 +1,18 @@
+function is_touch_device() {
+ return (('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || navigator.msMaxTouchPoints > 0);
+}
+
+var mobileGlobal, touchGlobal;
+
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+ document.body.classList.add("mobile");
+ mobileGlobal = true; 
+}
+
+if(is_touch_device()) {
+  document.body.classList.add("touch");
+  touchGlobal = true;
+}
 if ('objectFit' in document.documentElement.style === false) {
 	document.addEventListener('DOMContentLoaded', function () {
 		Array.prototype.forEach.call(document.querySelectorAll('img[data-object-fit]'), function (image) {
@@ -12,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
   for(var i = 0; i < dropdown.length; i++) {
     dropdown[i].addEventListener("click", toggleDropdown);
   }
+  
 });
 
 function toggleDropdown(e) {
@@ -43,6 +59,10 @@ document.addEventListener("DOMContentLoaded", function () {
   var control = document.querySelector('.video__controls-play');
   var video = document.querySelector('.video__item');
   var flag = false;
+  
+  if(!mobileGlobal) {
+    video.setAttribute("preload", "true");
+  }
  
   video.addEventListener("loadedmetadata", function() {
     var duration = Math.round(video.duration)/100;
@@ -192,8 +212,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (window.innerWidth < tabletSize) {      
         for (paneIndex = 0; paneIndex < this.panes.length; paneIndex++) {
           pos = (this.containerSize / 100) * (((paneIndex - showIndex) * 100) + percent);
-         console.log(Math.abs(percent));
-          if(Math.abs(percent) > 10 || Math.abs(percent) == 0) {
+        
+         // if(Math.abs(percent) > 10 || Math.abs(percent) == 0) {
              if (this.direction & Hammer.DIRECTION_HORIZONTAL) {
             translate = "translate3d(" + pos + "px, 0, 0)";
           } else {
@@ -202,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
           this.panes[paneIndex].style.transform = translate;
           this.panes[paneIndex].style.mozTransform = translate;
           this.panes[paneIndex].style.webkitTransform = translate;
-          }
+         // }
           
         }
 

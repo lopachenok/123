@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   for(var i = 0; i < dropdown.length; i++) {
     dropdown[i].addEventListener("click", toggleDropdown);
   }
+  
 });
 
 function toggleDropdown(e) {
