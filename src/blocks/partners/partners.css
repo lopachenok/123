@@ -1,5 +1,10 @@
 .partners {  
   
+  @media (min-width: $medium-breakpoint) {
+    background: url(nd-pattern.svg);
+    background-size: 1000%;
+  }
+  
   &__background {
     position: absolute;
     height: 190px;
@@ -8,7 +13,7 @@
     background-repeat: no-repeat;
     background-size: 130%;
     background-position: center;
-    z-index: -1;
+    z-index: 1;
     
     @media (min-width: 480px) {
       height: 260px;
@@ -41,13 +46,22 @@
     }
     
   }
+  
+  &__title {
+    position: relative;
+    z-index: 2;
+  }
  
   &__heading {
     margin-top: 30px;
+    position: relative;
+    z-index: 2;
   }
   
   &__text {
     margin-top: 1rem;
+    position: relative;
+    z-index: 2;
   }
   
   &__img-block {
@@ -56,6 +70,8 @@
     display: flex;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
+    position: relative;
+    z-index: 2;
     
     @media (min-width: $medium-breakpoint) {
       margin-top: 50px;      
@@ -84,7 +100,7 @@
     
     @media (min-width: $medium-breakpoint) {
       height: 35px;
-      margin-right: 70px;
+      margin-right: 72px;
       margin-bottom: 30px;
     }
     

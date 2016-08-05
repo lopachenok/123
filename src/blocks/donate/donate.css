@@ -1,6 +1,12 @@
 .donate {
   background: $colder;
   
+  @media (min-width: $medium-breakpoint) {
+    background: $colder url(nd-pattern.svg);
+    background-size: 1000%;
+    background-position: 1000%;
+  }
+  
   &__inner {
     @mixin container;
     padding-top: 40px;
