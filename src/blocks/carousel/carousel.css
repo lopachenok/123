@@ -85,12 +85,15 @@
     -webkit-tap-highlight-color: transparent;
     transition: all .2s ease;
     
-    &:hover {
-      color: $scarlet;
-    }
+    
     
     @media (min-width: $large-breakpoint) {
       padding-right: 3rem;
+      
+      &:hover {
+        color: $scarlet;
+      }
+      
     }
     
     &:last-of-type {
@@ -414,8 +417,4 @@
     
   }
   
-}
-
-.touch .carousel__tab:hover {
-  color: #6B7277;
 }

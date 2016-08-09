@@ -103,7 +103,7 @@
     }
     
     &:after {
-      background: transparent;
+     display: none;
     }
     
     .video__controls-play {

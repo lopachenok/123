@@ -73,16 +73,12 @@ document.addEventListener("DOMContentLoaded", function () {
     player.classList.add('video--played');
     
     if(window.innerWidth > 768) {
-      flag = !flag;
-    } else {
       flag = true;
-    }    
+    }   
     
     if(flag) {
       video.play();
-    } else {      
-      video.pause();
-    }
+    } 
     
   });
 });
@@ -165,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
     this.panes = Array.prototype.slice.apply(this.container.children, [0, length - scrollButtonCount]);
     this.containerSize = this.container[dirProp(direction, "offsetWidth", "offsetHeight")];
 
-    this.currentIndex = 1;
+    this.currentIndex = 0;
 
     this.hammer = new Hammer.Manager(this.container);
     this.hammer.add(new Hammer.Pan({

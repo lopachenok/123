@@ -17,16 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
     player.classList.add('video--played');
     
     if(window.innerWidth > 768) {
-      flag = !flag;
-    } else {
       flag = true;
-    }    
+    }   
     
     if(flag) {
       video.play();
-    } else {      
-      video.pause();
-    }
+    } 
     
   });
 });

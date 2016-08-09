@@ -5,6 +5,19 @@
     padding-bottom: 70px;
     background: url(nd-pattern.svg);
     background-size: 1000%;
+    position: relative;
+    
+/*
+    &:after {
+      position: absolute;
+      content: '';
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.3;
+    }
+*/
   }
   
   @media (min-width: $large-breakpoint) {

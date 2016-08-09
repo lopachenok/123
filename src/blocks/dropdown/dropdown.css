@@ -39,15 +39,20 @@
     content: '';
     position: absolute;
     border: 6px solid transparent;	
-    border-top: 6px solid $scarlet;
+    border-top: 6px solid $midnight;
     top: 18px;
     right: 25px;
+    transition: border-top .2s ease;
     
     @media (min-width: $large-breakpoint) {
       right: 30px;
       top: 21px;
     }
       
+  }
+  
+  &:hover:after {
+    border-top: 6px solid $scarlet;
   }
   
   &__list {
