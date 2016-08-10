@@ -16,10 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
   player.addEventListener("click", function() {
     player.classList.add('video--played');
     
-    if(window.innerWidth > 768) {
-      flag = true;
-    }   
-    
+    flag = true;
+        
     if(flag) {
       video.play();
     } 
