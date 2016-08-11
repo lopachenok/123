@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
   var desctopSize = 1280;
   var scrollButtonCount = 2;
   var carouselContent = document.querySelectorAll(".carousel__content");
-  var currentContent = 1;
+  var currentContent = 0;
   var scrollButtonRight = document.querySelector(".carousel__scroll-button--right");
   var scrollButtonLeft = document.querySelector(".carousel__scroll-button--left");
-  
+  console.log(scrollButtonRight)
   tabs.addEventListener("click", function (e) {
     e.preventDefault();
     if (e.target.tagName !== "A") {
@@ -17,11 +17,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     currentContent = e.target.getAttribute("data-tab");
-    
-    if(currentContent == 0) {
-      k = 1.75;
-      scrollOffset = parseInt(window.getComputedStyle(document.querySelector(".medium-column5"), null).width) * k;
-    }
+//    
+//    if(currentContent == 0) {
+//      k = 1.75;
+//      scrollOffset = parseInt(window.getComputedStyle(document.querySelector(".medium-column5"), null).width) * k;
+//    }
     
     addRemoveScrollButton(carouselContent[currentContent]);
     
@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
   scrollButtonRight.addEventListener("click", function(e) {    
     
     var el = carouselContent[currentContent];
+    console.log(currentContent)
     smooth_scroll_to(el, el.scrollLeft + scrollOffset, 500);
   });
   

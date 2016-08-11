@@ -30,6 +30,7 @@
     @media (min-width: $large-breakpoint) {
       width: 14px;
       right: -22px;
+      top: -1px;
     }
     
   }
