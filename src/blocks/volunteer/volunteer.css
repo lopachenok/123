@@ -59,16 +59,19 @@
     
   }
   
-  &__btn {
+  &__btn-inner {
     display: none;
     
     @media (min-width: $medium-breakpoint) {
-      display: inline-block;
-      margin-left: 58px;
+      display: flex;
+      justify-content: center;
+      width: 269px;
+      margin-left: 53px;
     }
     
     @media (min-width: $large-breakpoint) {
-      margin-left: 75px;
+      margin-left: 70px;
+      width: 320px;
     }
     
   }

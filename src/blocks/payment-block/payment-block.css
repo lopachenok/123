@@ -43,14 +43,20 @@
     
   }
   
-  &__btn {
+  &__btn-wrap {
+    display: flex;    
+    justify-content: center;
+    width: 177px;
+    margin-left: -5px;
     
     @media (min-width: $medium-breakpoint){
-      margin-left: 205px;
+      margin-left: 200px;
+      width: 220px;
     }
     
     @media (min-width: $large-breakpoint){
-      margin-left: 261px;
+      margin-left: 256px;
+      width: 262px;
     }
       
   }

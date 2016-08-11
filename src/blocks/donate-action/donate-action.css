@@ -67,9 +67,21 @@
       }
   }
   
-  &__btn {
+  &__btn-wrap {
     position: absolute;
     bottom: 0;
+    height: 50px;
+    width: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -5px;
+    
+    @media (min-width: $large-breakpoint) {
+      width: 262px;
+      height: 58px;
+    }
+    
   }
   
 }
