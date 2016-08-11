@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", function () {
   } 
   
   var windowSize = {
-    x: screen.width,
+    x: window.innerWidth,
     y: screen.height
   };
   
@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
         outer = new HammerCarousel(carouselContainer, Hammer.DIRECTION_HORIZONTAL);
       } 
     }
-    windowSize.x = screen.width;
+    windowSize.x = window.innerWidth;
   };
   
   function contentScroll(e) {    
