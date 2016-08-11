@@ -28,8 +28,7 @@
   
   &__inner {
     @mixin container;
-    padding-top: 96px;
-    padding-bottom: 40px;
+    padding-top: 96px;   
     
     @media (min-width: 480px) {
       padding-top: 120px;
@@ -37,12 +36,10 @@
     
     @media (min-width: $medium-breakpoint) {
       padding-top: 160px;
-      padding-bottom: 60px;
     }
     
     @media (min-width: $large-breakpoint) {
       padding-top: 192px;
-      padding-bottom: 70px;
     }
     
   }
@@ -72,14 +69,20 @@
     -webkit-overflow-scrolling: touch;
     position: relative;
     z-index: 2;
+    padding-left: 1rem;
+    padding-right: 1rem;
     
     @media (min-width: $medium-breakpoint) {
       margin-top: 50px;      
       height: auto;
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
     }
     
     @media (min-width: $large-breakpoint) {
       flex-wrap: wrap;
+      padding-left: 3.5rem;
+      padding-right: 3.5rem;
     }
     
   }
@@ -96,12 +99,18 @@
     
     &:last-of-type {
       margin-right: 0;
+      padding-right: 1rem;
     }
     
     @media (min-width: $medium-breakpoint) {
       height: 35px;
       margin-right: 72px;
       margin-bottom: 30px;
+      
+      &:last-of-type {
+        padding-right: 2.5rem;
+      }
+      
     }
     
     @media (min-width: 1024px) { 
@@ -111,17 +120,28 @@
     @media (min-width: $large-breakpoint) {
       margin-bottom: 60px;
       margin-right: auto;
+      
+      &:last-of-type {
+        padding-right: 0;
+      }
+      
     }
     
   }
   
-  &__link {
+  &__link-wrapper {
+    @mixin container;
+    padding-bottom: 40px;
     margin-top: 10px;
     
-    @media (min-width: $medium-breakpoint) {
-      margin-top: 20px;
+    @media (min-width: $medium-breakpoint) {      
+      padding-bottom: 60px;
+       margin-top: 20px;
     }
     
+    @media (min-width: $large-breakpoint) {
+      padding-bottom: 70px;
+    }
   }
   
 }
