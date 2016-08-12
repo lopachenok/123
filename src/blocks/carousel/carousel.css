@@ -349,6 +349,12 @@
     
   }
   
+  &__content::-webkit-scrollbar { width: 0; }
+  
+  &__content { -ms-overflow-style: none; }
+  
+  &__content { overflow: -moz-scrollbars-none; }
+  
   &__project {
     margin-top: 1rem;
     
