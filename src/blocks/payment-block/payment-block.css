@@ -35,10 +35,12 @@
       margin-right: 16px;     
       position: absolute;
       top: 5px;
+      left: 186px;
     }
     
     @media (min-width: $large-breakpoint){
       margin-right: 36px;
+      left: 241px;
     }
     
   }

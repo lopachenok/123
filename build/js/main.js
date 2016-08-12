@@ -23,9 +23,11 @@ if ('objectFit' in document.documentElement.style === false) {
 	});
 }
 document.addEventListener("DOMContentLoaded", function () {
-  var dropdown = document.querySelectorAll('.dropdown');
+  var dropdown = document.querySelectorAll(".dropdown");
+  document.addEventListener("click", closeDropdown);
+  
   for(var i = 0; i < dropdown.length; i++) {
-    dropdown[i].addEventListener("click", toggleDropdown);
+    dropdown[i].addEventListener("click", toggleDropdown);    
   }
   
 });
@@ -40,19 +42,29 @@ function toggleDropdown(e) {
     elem = e.target.parentElement.parentNode;
   }
   
-  elem.classList.toggle('dropdown--open');
-  var options = document.querySelectorAll('.dropdown--open .dropdown__item');
+  elem.classList.toggle("dropdown--open");
+  var options = document.querySelectorAll(".dropdown--open .dropdown__item");
   
   for(var i = 0; i < options.length; i++) {
     options[i].addEventListener("click", selectOption);
   }
 }
 
+function closeDropdown(e) {
+  var classList = Array.prototype.slice.call(e.target.classList, 0);
+  var parentClassList = Array.prototype.slice.call(e.target.parentElement.parentNode.classList, 0);
+  
+  if(classList.indexOf("dropdown") == -1 && parentClassList.indexOf("dropdown") == -1) {
+    document.querySelector(".dropdown--open").classList.remove("dropdown--open");
+  }
+  
+}
+
 function selectOption(e) {
   var elem = e.target;
-  var option = document.querySelectorAll('.dropdown .dropdown__item--selected');
-  option[0].classList.remove('dropdown__item--selected');
-  elem.classList.add('dropdown__item--selected');
+  var option = document.querySelectorAll(".dropdown .dropdown__item--selected");
+  option[0].classList.remove("dropdown__item--selected");
+  elem.classList.add("dropdown__item--selected");
 }
 document.addEventListener("DOMContentLoaded", function () {
   var player = document.getElementById('video-player');
@@ -91,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var currentContent = 0;
   var scrollButtonRight = document.querySelector(".carousel__scroll-button--right");
   var scrollButtonLeft = document.querySelector(".carousel__scroll-button--left");
-  console.log(scrollButtonRight)
+
   tabs.addEventListener("click", function (e) {
     e.preventDefault();
     if (e.target.tagName !== "A") {
@@ -285,7 +297,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
   var windowSize = {
     x: window.innerWidth,
-    y: screen.height
+    y: window.innerHeight
   };
   
   window.onresize = function () {

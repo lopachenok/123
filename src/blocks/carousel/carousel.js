@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var currentContent = 0;
   var scrollButtonRight = document.querySelector(".carousel__scroll-button--right");
   var scrollButtonLeft = document.querySelector(".carousel__scroll-button--left");
-  console.log(scrollButtonRight)
+
   tabs.addEventListener("click", function (e) {
     e.preventDefault();
     if (e.target.tagName !== "A") {
@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
   var windowSize = {
     x: window.innerWidth,
-    y: screen.height
+    y: window.innerHeight
   };
   
   window.onresize = function () {
