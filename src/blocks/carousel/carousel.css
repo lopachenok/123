@@ -172,6 +172,10 @@
       height: 403px;
     }
     
+    @media (min-width: $large-breakpoint) {
+      height: 425px;
+    }
+    
   }
   
   &__container {    

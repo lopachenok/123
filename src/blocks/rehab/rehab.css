@@ -21,7 +21,7 @@
   }
   
   @media (min-width: $large-breakpoint) {
-    padding-bottom: 3rem;
+    padding-bottom: 50px;
   }
   
   &__inner {
