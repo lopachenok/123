@@ -23,6 +23,10 @@
       
     }
     
+    @media (min-width: 430px) {
+      left: 0;
+    }
+    
     &:after {
       content: '';
       position: absolute;
@@ -106,7 +110,7 @@
         width: 100%;
         position: absolute;
         left: 0;
-        bottom: -8px;
+        bottom: -9px;
         border-radius: 1px;
         transition: left .5s ease;
       }    
@@ -159,7 +163,6 @@
   &__inner {
     height: 405px;
     position: relative;
-    padding-top: 1rem;
     
     @media (min-width: 480px) {
       height: 564px;
@@ -325,6 +328,7 @@
       max-width: 1104px;
       opacity: 0;
       z-index: -1;
+      padding-top: 2rem;
       
       &--active {
         opacity: 1;
@@ -340,6 +344,7 @@
       margin-right: 3rem;
       margin-left: 3rem;
       width: calc(100% - 6rem);
+      padding-top: 45px;
     }
     
   }
@@ -375,8 +380,8 @@
     
     @media (min-width: $medium-breakpoint) {
       position: absolute;
-      top: 50%;
-      right: 20px;
+      top: 54%;
+      right: 15px;
       transform: translateY(-50%) !important;
       z-index: 3;
       width: 50px;
@@ -386,14 +391,14 @@
       display: flex;
       
       @media (min-width: $large-breakpoint) {
-        right: 63px;    
+        right: 60px;    
       }      
       
       &--left {
-        left: 20px;
+        left: 15px;
         
         @media (min-width: $large-breakpoint) {
-          left: 63px;
+          left: 60px;
         }
         
       }
@@ -425,6 +430,11 @@
         border: 5px solid $scarlet;
       }
       
+    }
+    
+    @media (min-width: $large-breakpoint) {
+      height: 45px;
+      width: 45px;
     }
     
     &--left {

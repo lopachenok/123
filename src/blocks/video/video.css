@@ -19,7 +19,7 @@
   }
   
   @media (min-width: $large-breakpoint) {
-    height: 264px;
+    height: 266px;
     cursor: pointer;
   }
   

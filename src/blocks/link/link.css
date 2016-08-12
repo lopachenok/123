@@ -12,6 +12,10 @@
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   
+  @media (min-width: $large-breakpoint) {
+    letter-spacing: 2.4px;
+  }
+  
   &:after {
     content: '';
     display: inline-block;
@@ -100,6 +104,10 @@
       left: 0;
       transform: translateX(0);
       line-height: 1rem;
+    }
+    
+    @media (min-width: $large-breakpoint) {
+      letter-spacing: 2.4px;
     }
     
     &:after {

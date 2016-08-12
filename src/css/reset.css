@@ -75,5 +75,22 @@ a:hover {
 .mobile *:focus {
   outline: none;
 }
+/*
+
+body {
+  position: relative;
+  
+  &:after {
+    position: absolute;
+    background: url(index@1280px.png);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    content: '';
+  }
+}
+*/
 
 /* stylelint-enable */

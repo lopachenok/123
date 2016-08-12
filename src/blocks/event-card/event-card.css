@@ -209,7 +209,7 @@
     position: absolute;
     z-index: 2;
     left: 1rem;
-    bottom: 20px;
+    bottom: 24px;
     transition: color .2s ease;
     
     @media (min-width: $medium-breakpoint) {

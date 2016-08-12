@@ -15,8 +15,8 @@
   
   &__inner {
     @mixin container;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 38px;
+    padding-bottom: 38px;
     
     @media (min-width: 480px) {
       padding-top: 60px;
@@ -24,14 +24,14 @@
     }
     
     @media (min-width: $medium-breakpoint) {
-      padding-top: 255px;
-      padding-bottom: 50px;
+      padding-top: 250px;
+      padding-bottom: 51px;
     }
     
     @media (min-width: $large-breakpoint) {
-      padding-top: 78px;
-      padding-bottom: 48px;
-      padding-left: 44px;
+      padding-top: 75px;
+      padding-bottom: 49px;
+      padding-left: 46px;
     }
     
   }
@@ -41,7 +41,7 @@
     font-size: 13px;
     line-height: 19px;
     color: #FFFFFF;
-    letter-spacing: 0.03em;
+/*    letter-spacing: 0.03em;*/
     
     @media (min-width: $medium-breakpoint) {
       font-size: 20px;
@@ -64,6 +64,10 @@
     
     @media (min-width: $medium-breakpoint) {
       margin-top: 1.5rem;
+    }
+    
+    @media (min-width: $large-breakpoint) {      
+      margin-top: 1.3rem;
     }
     
   }

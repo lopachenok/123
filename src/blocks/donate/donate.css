@@ -13,23 +13,33 @@
     padding-bottom: 35px;
     
     @media (min-width: $medium-breakpoint) {
-      padding-top: 50px;
+      padding-top: 69px;
       padding-bottom: 65px;
     }
     
     @media (min-width: $large-breakpoint) {
-      padding-top: 58px;
+      padding-top: 72px;
       padding-bottom: 70px;
     }
     
   }
   
   &__heading {
-    margin-top: 1.5rem;
+    margin-top: 1.8rem;
+    
+    @media (min-width: $medium-breakpoint) {
+      margin-top: 1.5rem;
+    }
+    
   }
   
   &__text {
-    margin-top: 1rem;
+    margin-top: 0.8rem;
+    
+    @media (min-width: $medium-breakpoint) {
+      margin-top: 1rem;
+    }
+    
   }
   
   &__btn-wrap {
@@ -37,7 +47,7 @@
     align-items: center;
     justify-content: center;
     height: 42px;
-    margin-top: 2rem;
+    margin-top: 1.7rem;
     width: 178px;
     margin-left: -5px;
     

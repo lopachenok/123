@@ -67,7 +67,7 @@
     
     @media (min-width: $medium-breakpoint) {
       left: 0;
-      bottom: 105px;
+      bottom: 110px;
       transform: translate(0, 0);
       height: auto;
       width: 100%;
@@ -135,7 +135,7 @@
     @media (min-width: $medium-breakpoint) {
       display: inline-block;
       position: absolute;
-      bottom: 45px;
+      bottom: 54px;
       left: 30px;
       z-index: 2;
     }

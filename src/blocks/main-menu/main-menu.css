@@ -7,45 +7,9 @@
   
   @media (min-width: $large-breakpoint) {
     height: 36px;
-    width: calc(92% - 60px);
+    width: calc(92% - 43px);
+    padding-top: 0;
   }
-  
-  
-/*
-  &__current-page-list {
-    display: none;
-    
-    @media (min-width: $medium-breakpoint) {
-      display: inline-block;
-    }
-    
-  }
-  
-  &__current-page-item {
-    display: inline-block;
-    font-family: $ptsans; 
-    font-weight: 600;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    margin-right: 40px;
-    letter-spacing: 0.1em;
-    
-    @media (min-width: $large-breakpoint) {
-      margin-right: 70px;
-    }
-    
-  }
-  
-  &__current-page-link {
-    color: #fff;    
-    transition: color .2s ease;
-    
-    &:hover {
-      color: $scarlet;
-    }
-    
-  }
-*/
   
   &__list {
     display: none;
@@ -75,7 +39,7 @@
       margin-right: 40px;
       letter-spacing: 0.1em;
       
-      &:nth-child(2n+1) {
+      &:nth-child(n+4) {
         display: none;
       }
       
@@ -84,7 +48,7 @@
     @media (min-width: $large-breakpoint) {
       margin-right: 0;
       
-      &:nth-child(2n+1) {
+      &:nth-child(n+4) {
         display: inline-block;
       }
       
@@ -120,7 +84,7 @@
   &__toggler-text {
     font-family: $ptsans; 
     font-weight: 600;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #fff;
     text-transform: uppercase;
     margin-right: 10px;
@@ -128,6 +92,10 @@
     
     &:hover {
       color: $scarlet;
+    }
+    
+    @media (min-width: $medium-breakpoint) {
+      font-size: 0.8rem;
     }
     
   }

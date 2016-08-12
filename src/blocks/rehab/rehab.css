@@ -1,8 +1,8 @@
 .rehab {
-  padding-bottom: 2.5rem;  
+  padding-bottom: 42px;  
   
   @media (min-width: $medium-breakpoint) {
-    padding-bottom: 70px;
+    padding-bottom: 66px;
     background: url(nd-pattern.svg);
     background-size: 1000%;
     position: relative;
@@ -27,6 +27,15 @@
   &__inner {
     @mixin container;
     padding-top: 2.5rem;
+    
+    @media (min-width: $medium-breakpoint) {
+      padding-top: 69px;
+    }
+    
+    @media (min-width: $large-breakpoint) {
+      padding-top: 74px;
+    }
+    
   }
   
   &__title {
@@ -46,23 +55,28 @@
     margin-top: 1.5rem;
     
     @media (min-width: $large-breakpoint) {
-      margin-top: 20px;
+      margin-top: 34px;
     }
   }
   
   &__text {
     margin-top: 1rem;
+    
+    @media (min-width: $large-breakpoint) {
+      margin-top: .6rem;
+    }
+    
   }
   
   &__carousel {
-    margin-top: 2rem;
+    margin-top: 26px;
     
     @media (min-width: $medium-breakpoint) {
       margin-top: 3rem;
     }
     
     @media (min-width: $large-breakpoint) {
-      margin-top: 60px;
+      margin-top: 56px;
     }
     
   }
