@@ -247,4 +247,8 @@
     padding: 0 $grid-gutter;
   }
   
+  .large-column-offset1 {
+    margin-left: 8.3333%;
+  }
+  
 }

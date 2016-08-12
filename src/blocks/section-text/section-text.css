@@ -12,4 +12,8 @@
     line-height: 41px;
   }
   
+  &--white {
+    color: $colder;
+  }
+  
 }

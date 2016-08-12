@@ -9,4 +9,8 @@
     line-height: 1.18;
   }
   
+  &--white {
+    color: #fff;
+  }
+  
 }
