@@ -1,11 +1,47 @@
 .detiled-menu {  
   
+  @media (min-width: $medium-breakpoint) {
+    padding-left: 20px;
+  }
+  
   &__list {
     display: none;
     
     @media (min-width: $medium-breakpoint) {
       display: block;
     }
+    
+  }
+  
+  &__item {
+    
+    @media (min-width: $medium-breakpoint) {
+      margin-bottom: 29px;
+    }
+    
+  }
+  
+  &__link {
+    
+    @media (min-width: $medium-breakpoint) {
+      font-family: $ptsans;
+      font-weight: bold;
+      font-size: 1rem;
+      line-height: 20px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: $colder;
+      transition: color .2s ease;
+    
+      &--active {
+        color: $scarlet;
+      }
+    
+      &:hover {
+        color: $scarlet;
+      }
+    }
+    
   }
   
   &__sublist {

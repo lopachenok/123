@@ -3,16 +3,38 @@
   
   &__inner {
     @mixin container;
-    padding-top: 35px;
+    padding-top: 38px;
     padding-bottom: 39px;
+    
+    @media (min-width: $medium-breakpoint) {
+      padding-top: 70px;
+    }
+    
   }
   
   &__container {
     
+    @media (min-width: $medium-breakpoint) {
+      display: flex;
+    }
+    
+  }
+  
+  &__content {
+    
+    @media (min-width: $medium-breakpoint) {
+      margin-left: 80px;
+    }
+    
   }
   
   &__contact-info {
-    margin-top: 24px;
+    margin-top: 20px;
+    
+    @media (min-width: $medium-breakpoint) {
+      margin-top: 12px;
+    }
+    
   }
   
 }

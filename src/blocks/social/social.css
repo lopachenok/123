@@ -6,6 +6,11 @@
   height: 26px;
   align-items: center;
   
+  @media (min-width: $medium-breakpoint) {
+    padding-top: 20px;
+    width: calc(100% - 21px);
+  }
+  
   &:before {
     content: '';
     position: absolute;
@@ -22,37 +27,47 @@
   &__icon {
     display: block;
     
+    &:hover {
+      svg .cls-1 {
+        opacity: 1;
+      }
+    }
+    
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+    
+    & svg .cls-1 {
+      opacity: .7;
+      transition: opacity .2s ease;
+    }
+    
+    & svg .cls-2 {
+      fill: $colder;
+    }
+    
     &--vk {
-      background: url(vk.svg);
-      background-size: cover;
       height: 17px;
       width: 31px;
     }
     
     &--ok {
-      background: url(ok.svg);
-      background-size: cover;
       height: 26px;
       width: 15px;
     }
     
     &--insta {
-      background: url(insta.svg);
-      background-size: cover;
       height: 22px;
       width: 22px;
     }
     
     &--fb {
-      background: url(fb.svg);
-      background-size: cover;
       height: 25px;
       width: 12px;
     }
     
     &--tw {
-      background: url(tw.svg);
-      background-size: cover;
       height: 22px;
       width: 26px;
     }

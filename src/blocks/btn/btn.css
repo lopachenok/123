@@ -21,9 +21,18 @@
   -webkit-tap-highlight-color: transparent;
   
   &:hover {
-      border: 5px solid $scarlet;
-           
+    border: 5px solid $scarlet;       
+  }
+  
+  &--small {
+    font-size: 0.8rem;
+    padding: 7px 15px;
+    
+    &:hover {
+      border: 2px solid $scarlet;       
     }
+    
+  }
   
 /*
   @media (min-width: $medium-breakpoint) {

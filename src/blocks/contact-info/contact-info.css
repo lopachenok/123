@@ -1,11 +1,21 @@
 .contact-info {
-  padding-bottom: 32px;
+  padding-bottom: 30px;
+  
+  @media (min-width: $medium-breakpoint) {
+    padding-bottom: 39px;
+  }
   
   &__copyright {
     font-family: $ptserif;
     font-size: 13px;
     line-height: 19px;
     color: rgba(240, 241, 242, .7);
+    
+    @media (min-width: $medium-breakpoint) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    
   }
   
   &__text {
@@ -13,11 +23,34 @@
     font-size: 13px;
     line-height: 19px;
     color: rgba(240, 241, 242, .7);
-    margin-top: 15px;
+    margin-top: 10px;
+    
+    @media (min-width: $medium-breakpoint) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    
   }
   
   &__btn-wrap {
     display: none;
+    
+    @media (min-width: $medium-breakpoint) {
+      display: block;
+      margin-top: 18px;
+      height: 34px;
+      width: 202px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: -2px;
+    }
+    
+    @media (min-width: $medium-breakpoint) {
+      width: auto;
+      justify-content: flex-start;
+    }
+    
   }
   
 }
