@@ -4,11 +4,22 @@
     padding-left: 20px;
   }
   
+  @media (min-width: $large-breakpoint) {
+    padding-left: 63px;
+    padding-right: 0;
+  }
+  
   &__list {
     display: none;
     
     @media (min-width: $medium-breakpoint) {
       display: block;
+    }
+    
+    @media (min-width: $large-breakpoint) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
     
   }
@@ -17,6 +28,46 @@
     
     @media (min-width: $medium-breakpoint) {
       margin-bottom: 29px;
+    }
+    
+    @media (min-width: $large-breakpoint) {
+      margin-bottom: 58px;
+      flex-basis: 210px;
+      
+      &:first-of-type {
+        display: none;
+      }
+      
+      &:nth-of-type(2) {
+        order: 1;
+      }
+      
+      &:nth-of-type(3) {
+        order: 2;
+      }
+      
+      &:nth-of-type(4) {
+        order: 4;        
+      }
+      
+      &:nth-of-type(5) {
+        order: 3;
+        flex-basis: 140px;
+      }
+      
+      &:nth-of-type(6) {
+        order: 5;
+      }
+      
+      &:nth-of-type(7) {
+        order: 6;
+        flex-basis: 140px;
+      }
+      
+      &:nth-of-type(n + 5) {
+        margin-bottom: 0;
+      }
+      
     }
     
   }
@@ -42,10 +93,36 @@
       }
     }
     
+    @media (min-width: $large-breakpoint) {
+      font-size: 19px;
+      line-height: 19px;
+    }
+    
   }
   
   &__sublist {
     display: none;
+    
+    @media (min-width: $large-breakpoint) {
+      display: block;
+      margin-top: 16px;
+    }
+    
+  }
+  
+  &__subitem {
+    margin-bottom: 8px;
+    
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  
+  &__sublink {
+    font-family: $ptsans;
+    font-size: 0.8rem;
+    line-height: 1;
+    color: #969BA0;
   }
   
   &__toggler {

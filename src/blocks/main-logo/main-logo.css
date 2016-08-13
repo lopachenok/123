@@ -5,15 +5,6 @@
   transform: scale(1);
   transition: transform 0.2s ease;
   
-  &--bigger {
-    
-    @media (min-width: $medium-breakpoint) {
-      height: 40px;
-      width: 67px;
-    }
-    
-  }
-  
   &:hover {
     transform: scale(1.1);    
   }
@@ -21,6 +12,15 @@
   @media (min-width: $large-breakpoint) {
     height: 36px;
     width: 60px;
+  }
+  
+  &--bigger {
+    
+    @media (min-width: $medium-breakpoint) {
+      height: 40px;
+      width: 67px;
+    }
+    
   }
   
   &__img {

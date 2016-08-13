@@ -11,6 +11,11 @@
     width: calc(100% - 21px);
   }
   
+  @media (min-width: $large-breakpoint) {
+    padding-top: 19px;
+    width: calc(100% - 16px);
+  }
+  
   &:before {
     content: '';
     position: absolute;

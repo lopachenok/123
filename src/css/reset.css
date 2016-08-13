@@ -82,8 +82,8 @@ body {
   
   &:after {
     position: absolute;
-    background: url(index@768px.png);
-    top: -90px;
+    background: url(index@1280px.png);
+    top: -5px;
     left: 0;
     width: 100%;
     height: 100%;
