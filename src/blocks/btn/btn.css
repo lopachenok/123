@@ -27,6 +27,8 @@
   &--small {
     font-size: 0.8rem;
     padding: 7px 15px;
+    border: 0px solid $scarlet;
+    transition: border .2s ease;
     
     &:hover {
       border: 2px solid $scarlet;       

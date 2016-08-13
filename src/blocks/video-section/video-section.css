@@ -53,6 +53,7 @@
     
     @media (min-width: $large-breakpoint) {
       font-size: 19px;
+      line-height: 22px;
     }
     
     @media (min-width: $large-breakpoint) {
