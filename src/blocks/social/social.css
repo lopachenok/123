@@ -1,0 +1,62 @@
+.social {
+  padding-top: 24px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 26px;
+  align-items: center;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-top: 1px solid rgba(240, 241, 242, .15);
+  }
+  
+  &__link {
+    display: block;
+  }
+  
+  &__icon {
+    display: block;
+    
+    &--vk {
+      background: url(vk.svg);
+      background-size: cover;
+      height: 17px;
+      width: 31px;
+    }
+    
+    &--ok {
+      background: url(ok.svg);
+      background-size: cover;
+      height: 26px;
+      width: 15px;
+    }
+    
+    &--insta {
+      background: url(insta.svg);
+      background-size: cover;
+      height: 22px;
+      width: 22px;
+    }
+    
+    &--fb {
+      background: url(fb.svg);
+      background-size: cover;
+      height: 25px;
+      width: 12px;
+    }
+    
+    &--tw {
+      background: url(tw.svg);
+      background-size: cover;
+      height: 22px;
+      width: 26px;
+    }
+    
+  }
+  
+}

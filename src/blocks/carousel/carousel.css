@@ -169,7 +169,7 @@
     }
     
     @media (min-width: $medium-breakpoint) {
-      height: 403px;
+      height: 412px;
     }
     
     @media (min-width: $large-breakpoint) {

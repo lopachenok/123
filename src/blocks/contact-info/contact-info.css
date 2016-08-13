@@ -1,0 +1,23 @@
+.contact-info {
+  padding-bottom: 32px;
+  
+  &__copyright {
+    font-family: $ptserif;
+    font-size: 13px;
+    line-height: 19px;
+    color: rgba(240, 241, 242, .7);
+  }
+  
+  &__text {
+    font-family: $ptserif;
+    font-size: 13px;
+    line-height: 19px;
+    color: rgba(240, 241, 242, .7);
+    margin-top: 15px;
+  }
+  
+  &__btn-wrap {
+    display: none;
+  }
+  
+}

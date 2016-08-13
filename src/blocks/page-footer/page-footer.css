@@ -1,0 +1,18 @@
+.page-footer {
+  background: $midnight;
+  
+  &__inner {
+    @mixin container;
+    padding-top: 35px;
+    padding-bottom: 39px;
+  }
+  
+  &__container {
+    
+  }
+  
+  &__contact-info {
+    margin-top: 24px;
+  }
+  
+}
