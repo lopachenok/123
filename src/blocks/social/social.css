@@ -5,6 +5,7 @@
   justify-content: space-between;
   height: 26px;
   align-items: center;
+  overflow: hidden;
   
   @media (min-width: $medium-breakpoint) {
     padding-top: 20px;
@@ -27,6 +28,12 @@
   
   &__link {
     display: block;
+    flex-grow: 1;
+    
+    &:last-of-type {
+      flex-grow: 0;
+    }
+    
   }
   
   &__icon {
@@ -53,7 +60,7 @@
     }
     
     &--vk {
-      height: 17px;
+      height: 18px;
       width: 31px;
     }
     
