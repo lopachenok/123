@@ -25,6 +25,7 @@ if ('objectFit' in document.documentElement.style === false) {
 document.addEventListener("DOMContentLoaded", function () {
   var dropdown = document.querySelectorAll(".dropdown");
   document.addEventListener("click", closeDropdown);
+  document.addEventListener("touchstart", closeDropdown);
   
   for(var i = 0; i < dropdown.length; i++) {
     dropdown[i].addEventListener("click", toggleDropdown);    
