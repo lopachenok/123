@@ -1,7 +1,13 @@
 .detiled-menu {  
+  flex: 1 0;
   
   @media (min-width: $medium-breakpoint) {
     padding-left: 20px;
+    flex-basis: 189px;
+  }
+  
+  @media (min-width: $footer-medium-breakpoint) {
+    padding-left: .4rem;
   }
   
   @media (min-width: $large-breakpoint) {
@@ -16,7 +22,7 @@
       display: block;
     }
     
-    @media (min-width: $large-breakpoint) {
+    @media (min-width: $footer-medium-breakpoint) {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -30,33 +36,47 @@
       margin-bottom: 29px;
     }
     
-    @media (min-width: $large-breakpoint) {
-      margin-bottom: 58px;
-      flex-basis: 210px;
+    @media (min-width: $footer-medium-breakpoint) {
+      margin-bottom: 63px;
+      flex-basis: 175px;
       
       &:first-of-type {
         display: none;
       }
       
       &:nth-of-type(2) {
+        flex-basis: 165px;
+      }
+      
+      &:nth-of-type(5) {
+        flex-basis: 165px;
+      } 
+      
+    }  
+    
+    @media (min-width: $large-breakpoint) {
+      margin-bottom: 58px;
+      flex-basis: 210px;
+      
+      &:nth-of-type(2) {
         flex-basis: 175px;
       }
       
       &:nth-of-type(5) {
         flex-basis: 175px;
-      }   
+      } 
       
     }
     
     @media (min-width: 1400px) {
-      flex-basis: 230px;
+      flex-basis: 210px;
       
       &:nth-of-type(2) {
-        flex-basis: 211px;
+        flex-basis: 190px;
       }
       
       &:nth-of-type(5) {
-        flex-basis: 211px;
+        flex-basis: 190px;
       } 
       
     }
@@ -84,9 +104,9 @@
       }
     }
     
-    @media (min-width: $large-breakpoint) {
-      font-size: 19px;
-      line-height: 19px;
+    @media (min-width: $footer-medium-breakpoint) {
+      font-size: 0.8rem;
+      line-height: 0.8rem;
     }
     
   }
@@ -94,19 +114,31 @@
   &__sublist {
     display: none;
     
-    @media (min-width: $large-breakpoint) {
+    @media (min-width: $footer-medium-breakpoint) {
       display: block;
+      margin-top: 18px;
+    }
+    
+    @media (min-width: $large-breakpoint) {
       margin-top: 16px;
     }
     
   }
   
   &__subitem {
-    margin-bottom: 8px;
     
-    &:last-of-type {
-      margin-bottom: 0;
+    @media (min-width: $footer-medium-breakpoint) {
+      margin-bottom: 13px;
+      
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
+    
+    @media (min-width: $large-breakpoint) {
+      margin-bottom: 8px;
+    }
+    
   }
   
   &__sublink {

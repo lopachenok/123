@@ -12,9 +12,15 @@
     width: calc(100% - 21px);
   }
   
+  @media (min-width: $footer-medium-breakpoint) {
+    width: 100%;
+    height: 21px;
+  }
+  
   @media (min-width: $large-breakpoint) {
     padding-top: 19px;
     width: calc(100% - 16px);
+    height: 26px;
   }
   
   &:before {
@@ -60,28 +66,82 @@
     }
     
     &--vk {
-      height: 18px;
+      height: 20px;
       width: 31px;
+      
+      @media (min-width: $footer-medium-breakpoint) {
+        height: 18px;
+        width: 26px;
+      }
+      
+      @media (min-width: $large-breakpoint) {
+        height: 20px;
+        width: 31px;
+      }
+      
     }
     
     &--ok {
       height: 26px;
       width: 15px;
+      
+      @media (min-width: $footer-medium-breakpoint) {
+        height: 21px;
+        width: 15px;
+      }
+      
+      @media (min-width: $large-breakpoint) {
+        height: 26px;
+        width: 15px;
+      }
+      
     }
     
     &--insta {
       height: 22px;
       width: 22px;
+      
+      @media (min-width: $footer-medium-breakpoint) {
+        height: 19px;
+        width: 19px;
+      }
+      
+      @media (min-width: $large-breakpoint) {
+        height: 22px;
+        width: 22px;
+      }
+      
     }
     
     &--fb {
       height: 25px;
       width: 12px;
+      
+      @media (min-width: $footer-medium-breakpoint) {
+        height: 20px;
+      }
+      
+      @media (min-width: $large-breakpoint) {
+        height: 25px;
+        width: 12px;
+      }
+      
     }
     
     &--tw {
       height: 22px;
       width: 26px;
+      
+      @media (min-width: $footer-medium-breakpoint) {
+        height: 17px;
+        width: 28px;
+      }
+      
+      @media (min-width: $large-breakpoint) {
+        height: 22px;
+        width: 26px;
+      }
+      
     }
     
   }
