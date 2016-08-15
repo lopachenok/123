@@ -79,7 +79,8 @@
     }
     
     @media (min-width: $large-breakpoint) {
-      bottom: 153px;
+      top: 85px;
+      bottom: auto;
     }
     
   }

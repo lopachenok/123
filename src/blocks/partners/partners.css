@@ -72,7 +72,7 @@
   }
   
   &__img-block {
-    margin-top: 35px;
+    margin: 35px auto 0;
     height: 60px;
     display: flex;
     overflow: auto;
@@ -81,18 +81,22 @@
     z-index: 2;
     padding-left: 1rem;
     padding-right: 1rem;
+    box-sizing: border-box;
+    max-width: 600px;
     
     @media (min-width: $medium-breakpoint) {
-      margin-top: 50px;      
+      margin: 50px auto 0;      
       height: auto;
       padding-left: 2.5rem;
       padding-right: 2.5rem;
+      max-width: 1024px;
     }
     
     @media (min-width: $large-breakpoint) {
       flex-wrap: wrap;
       padding-left: 3.5rem;
       padding-right: 3.5rem;
+      max-width: 1440px;
     }
     
   }

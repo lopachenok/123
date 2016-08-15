@@ -3,6 +3,7 @@
   padding-right: $small-grid-padding;
   max-width: 600px;
   margin: 0 auto;
+  box-sizing: border-box;
   
   @media (min-width: $medium-breakpoint) {
     padding-left: $medium-grid-padding;
