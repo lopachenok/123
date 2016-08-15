@@ -8,25 +8,33 @@
   &__count {
     font-family: $ptsans;
     font-weight: bold;
-    font-size: 68px;
+    font-size: 3.4rem;
     line-height: 68px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #969BA0;
     position: relative;
     user-select: none;
-    
+    left: -2px;
+/*
     @media (min-width: $large-breakpoint) {
       font-size: 81px;
     }
+*/
     
     &:after {
-      content: '';
+      content: '\20BD';
       position: absolute;
-      width: 21px;
-      height: 27px;
-      background: url(rubl.svg);
-      top: 7px;
+      font-size: 1.5rem;      
+      color: #485155;
+      line-height: 41px;
+      left: 143px;
+      
+      @media (min-width: $large-breakpoint) {
+        left: 175px;
+        line-height: 37px;
+      }
+      
     }
   }
   

@@ -30,7 +30,7 @@ function closeDropdown(e) {
   var classList = Array.prototype.slice.call(e.target.classList, 0);
   var parentClassList = Array.prototype.slice.call(e.target.parentElement.parentNode.classList, 0);
   
-  if(classList.indexOf("dropdown") == -1 && parentClassList.indexOf("dropdown") == -1) {
+  if(document.querySelector(".dropdown--open") && classList.indexOf("dropdown") == -1 && parentClassList.indexOf("dropdown") == -1) {
     document.querySelector(".dropdown--open").classList.remove("dropdown--open");
   }
   
