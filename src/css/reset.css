@@ -77,13 +77,13 @@ a:hover {
 }
 
 /*
-body {
+.page-footer {
   position: relative;
   
   &:after {
     position: absolute;
-    background: url(index@1280px.png);
-    top: -5px;
+    background: url(index@940px.footer.png);
+    bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;

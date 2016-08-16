@@ -65,16 +65,16 @@
       display: block;
       margin-top: 18px;
       height: 34px;
-      width: 202px;
+      width: 212px;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-left: -2px;
+      margin-left: -4px;
     }
     
     @media (min-width: $footer-medium-breakpoint) {
-      width: 197px;
-      margin-left: -3px;
+      width: 212px;
+      margin-left: -13px;
       margin-top: 14px;
     }
     
