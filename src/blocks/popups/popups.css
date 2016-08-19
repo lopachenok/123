@@ -70,13 +70,15 @@
   visibility: hidden;
   opacity: 0;
   z-index: -10;
-  transition: opacity .3s ease, visibility .3s ease, z-index .5s ease;
+  transition: opacity .3s ease, visibility .3s ease, z-index .5s ease, top .5s .3s ease;
+  top: -100%;
   
   &--open {
     z-index: 10;
     visibility: visible;
     opacity: 1;
     transition: opacity .3s ease, visibility .3s ease;
+    top: 0;
   }
   
   @media (min-width: $medium-breakpoint) {
