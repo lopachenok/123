@@ -34,6 +34,15 @@
     
     @media (min-width: $medium-breakpoint) {
       margin-bottom: 29px;
+      
+      &--active {
+        
+        .detiled-menu__link {
+          color: $scarlet;
+        }
+        
+      }
+      
     }
     
     @media (min-width: $footer-medium-breakpoint) {
@@ -93,11 +102,7 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       color: $colder;
-      transition: color .2s ease;
-    
-      &--active {
-        color: $scarlet;
-      }
+      transition: color .2s ease;      
     
       &:hover {
         color: $scarlet;

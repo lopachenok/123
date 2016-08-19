@@ -1,0 +1,146 @@
+.donate-form {
+  padding-bottom: 63px;
+  
+  &__item {
+    margin-bottom: 31px;    
+    
+    &:nth-last-child(2) {
+      margin-bottom: 25px;
+    }
+    
+    &--divider {
+      padding-top: 32px;
+      position: relative;
+      
+      &:before {
+        content: '';
+        position: relative;
+        display: block;
+        top: -32px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        border-radius: 1px;
+        background: rgba(0, 0, 0, .15);
+      }
+      
+    }
+    
+    &--flex {
+      display: flex;
+      justify-content: space-between;
+    }   
+    
+  }
+  
+  &__title {
+    font-family: $ptsans;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1rem;
+    color: $colder;
+  }
+  
+  &__input-block {
+    margin-top: 18px;
+  }
+  
+  &__description {
+    font-family: $ptsans;
+    font-size: 13px;
+    line-height: 17px;
+    color: $colder;
+    margin-top: 13px;
+  }
+  
+  &__count-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  &__checkbox-label {
+    display: flex;
+    align-items: center;
+  }
+  
+  &__checkbox {
+    display: none;
+  }
+  
+  &__checkbox:checked ~ &__checkbox-icon:before {
+    opacity: 1;
+  }
+  
+  &__checkbox-icon {
+    display: block;
+    height: 24px;
+    width: 24px;
+    box-sizing: border-box;
+    border: 2px solid $colder;
+    border-radius : 3px;
+    margin-right: 12px;
+    margin-top: 16px;
+    text-align: center;
+    
+    &:before {
+      content: '\2764';
+      color: rgba(0, 0, 0, .5);
+      line-height: 22px;
+      opacity: 0;
+      transition: opacity .2s ease
+    }
+  }
+  
+  &__checkbox-description {
+    font-family: $ptsans;
+    font-size: 13px;
+    line-height: 17px;
+    color: $colder;
+    margin-top: 16px;
+    width: 90px;
+  }
+  
+  &__card-box {
+    display: flex;
+    margin-top: 14px;
+    padding-right: 10px;
+    justify-content: space-between;
+  }
+  
+  &__card-label {
+    display: block;
+  }
+  
+  &__card {
+    display: none;
+  }
+  
+  &__card:checked ~  &__card-text {
+    color: $colder;
+  }
+  
+  &__card-text {
+    font-family: $ptsans;
+    font-size: 0.85rem;
+    line-height : 17px;  
+    color: rgba(0, 0, 0, .5);
+  }
+  
+  &__input-wrap {
+    display: flex;
+    
+    .donate-form__input-block:first-of-type {
+      margin-right: 8px;
+    }
+    
+  }
+  
+  &__btn-wrap {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+}

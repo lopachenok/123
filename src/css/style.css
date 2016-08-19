@@ -33,3 +33,7 @@
 @import '../.././src/blocks/contact-info/contact-info.css';
 @import '../.././src/blocks/detiled-menu/detiled-menu.css';
 @import '../.././src/blocks/social/social.css';
+@import '../.././src/blocks/popups/popups.css';
+@import '../.././src/blocks/popup-menu/popup-menu.css';
+@import '../.././src/blocks/donate-form/donate-form.css';
+@import '../.././src/blocks/contacts/contacts.css';

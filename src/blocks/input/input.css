@@ -1,42 +1,78 @@
 .input-block {
   position: relative;
   
-  &:after {
-    @media (min-width: $medium-breakpoint) {
-      content: '\20BD'; 
+  &--icon {
+    
+    &:after {
+      content: '\20BD';
       position: absolute;
       font-family: $ptsans;
       font-weight: bold;
-      font-size: .8rem;
-      line-height: .8rem;
-      text-transform: uppercase;
       color: #485155;
-      top: 12px;
-      right: 25px;
+      text-transform: uppercase;
+      font-size: 1rem;
+      line-height: 1rem;
+      right: 15px;
+      top: 7px;
+      
+      @media (min-width: $medium-breakpoint) {        
+        font-size: .8rem;
+        line-height: .8rem; 
+        top: 12px;
+        right: 25px;
+      }
+      
+      @media (min-width: $large-breakpoint) {
+        right: 30px;
+        top: 14px;
+      }
     }
     
-    @media (min-width: $large-breakpoint) {
-      right: 30px;
-      top: 14px;
+    .input-block__input {
+      font-weight: bold;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      font-size: 22px;
     }
+    
+  }
+  
+  &--count {
+    width: 130px;
+  }
+  
+  &--month {
+    width: 50px;
+  }
+  
+  &--year {
+    width: 67px;
   }
   
   &__input {
-    @media (min-width: $medium-breakpoint) {
-      border-radius: 19px;
-      font-family: $ptsans;
+    font-family: $ptsans;
+    font-size: 1rem;
+    line-height: 31px;  
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 19px;    
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    color: #969BA0;
+    
+    @media (min-width: $medium-breakpoint) {        
       font-weight: 600;
       font-size: 28px;
       letter-spacing: 2.8px;
-      width: 170px;
-      color: #969BA0;
+      width: 170px;      
       vertical-align: top;
       line-height: 40px;
       padding-left: 25px;
       box-sizing: border-box;
       padding-right: 30px;
     }
-  
+    
     @media (min-width: $large-breakpoint) {
       font-size: 34px;
       line-height: 48px;
@@ -44,6 +80,11 @@
       border-radius: 24px;
       padding-left: 30px;
     }
+    
+    &--uppercase {
+      text-transform: uppercase;
+    }
+    
   }
   
 }

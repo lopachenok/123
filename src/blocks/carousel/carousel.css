@@ -180,7 +180,7 @@
   
   &__container {    
     height: 100%; 
-    max-width: 616px;
+    max-width: 600px;
     position: absolute;
     width: 100%;
     
@@ -191,14 +191,14 @@
     }  
     
     @media (min-width: $medium-breakpoint) {
-      max-width: 1104px;
+      max-width: 1024px;
       -webkit-user-select: initial !important;
       -webkit-user-drag: initial !important;
           touch-action: initial !important;
     }
     
     @media (min-width: $large-breakpoint) {
-      max-width: 1584px;
+      max-width: 1440px;
     }
     
     &:before {
@@ -456,4 +456,60 @@
     
   }
   
+}
+
+
+.carousel--popups {
+  padding-top: 55px;
+  
+  .carousel__tabs-container {
+    left: -5px;
+    
+    &:before {
+      display: none;
+    }
+    
+    &:after {
+      display: none;
+    }
+    
+  }
+  
+  .carousel__tab {
+    color: rgba(0, 0, 0, .5);
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    
+    &--active {
+      color: #fff;
+    }
+    
+  }
+  
+  .carousel__tab:last-of-type:before {
+    border-bottom-color: #fff;
+    bottom: -13px;
+  }
+  
+  .carousel__tab:nth-of-type(2).carousel__tab--active~.carousel__tab:last-of-type:before {
+    width: 204px;
+    left: -236px;
+  }
+  
+  .carousel__tab:first-of-type.carousel__tab--active~.carousel__tab:last-of-type:before {
+    width: 151px;
+    left: -420px;
+  }
+  
+  .carousel__inner {
+/*
+    min-height: calc(100vh - 45px - 59px - 24px);
+    height: 910px;
+*/
+  }
+  
+  .carousel__content {
+    padding-top: 44px;
+    height: auto;
+  }
 }

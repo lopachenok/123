@@ -40,6 +40,17 @@
     
   }
   
+  &--dark {
+    background: rgba(0, 0, 0, .5);
+    box-shadow: none;
+    border: 0px solid rgba(0, 0, 0, .01);
+    
+    &:hover {
+      border: 5px solid rgba(0, 0, 0, .01);       
+    }
+    
+  }
+  
 /*
   @media (min-width: $medium-breakpoint) {
     border-radius: 19px;

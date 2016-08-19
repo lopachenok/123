@@ -23,7 +23,7 @@
               <li class="main-menu__item"><a href="" class="main-menu__link">Блог</a></li>
             </ul>
 
-            <a class="main-menu__toggler">
+            <a class="main-menu__toggler" data-popups="0">
               <p class="main-menu__toggler-text">Меню</p>
               <span class="main-menu__toggler-icon"></span>
             </a>
@@ -51,7 +51,7 @@
             <p class="main-banner__description">Оказываем поддержку онкобольным детям и подросткам, организуем работу волонтёров</p>
 
             <div class="payment-block  main-banner__payment-block">
-              <div class="input-block  payment-block__input">
+              <div class="input-block  input-block--icon  payment-block__input">
                 <input type="text" class="input-block__input" value="100" maxlength="5">
               </div>              
               <div class="dropdown  payment-block__dropdown">
@@ -62,7 +62,7 @@
               </div>
 
               <div class="payment-block__btn-wrap">
-                <button class="btn payment-block__btn">Пожертвовать</button>
+                <button class="btn payment-block__btn" data-popups="1">Пожертвовать</button>
               </div>
 
             </div>
@@ -120,8 +120,8 @@
 
         <div class="carousel__tabs-container">
           <div class="carousel__tabs" id="tabs">
-            <a href="" class="carousel__tab" data-tab="0">проекты</a>
-            <a href="" class="carousel__tab  carousel__tab--active" data-tab="1">мероприятия</a>
+            <a href="" class="carousel__tab  carousel__tab--active" data-tab="0">проекты</a>
+            <a href="" class="carousel__tab" data-tab="1">мероприятия</a>
             <a href="" class="carousel__tab" data-tab="2">уже помогли</a>
           </div>
         </div>
@@ -464,7 +464,7 @@
           <div class="small-column6  large-column11">
             <p class="section-text  donate__text">Все пожертвования уходят на реализацию наших проектов по оказанию психологической поддержки и реабилитации детей и подростков с онкологическими заболеваниями.</p>
             <div class="donate__btn-wrap">
-              <button class="btn  donate__btn">Пожертвовать</button>
+              <button class="btn  donate__btn" data-popups="1">Пожертвовать</button>
             </div>
 
 
@@ -504,7 +504,7 @@
         <div class="row">
           <div class="small-column6  medium-column7  large-column9">
             <p class="section-heading  section-heading--white  donate-sms__heading">Пожертвовать через СМС</p>
-            <p class="section-text  section-text--white  donate-sms__text">Отправьте сообщение на номер <span class="donate-sms__highlight">7715</span> с кодовым словом «Нить» и суммой пожертвования.</p>
+            <p class="section-text  section-text--white  donate-sms__text">Отправьте сообщение на номер <a href="sms:7715" class="donate-sms__highlight">7715</a> с кодовым словом «Нить» и суммой пожертвования.</p>
           </div>
           <div class="small-column6  medium-column5  large-column3">
             <div class="donate-sms__img"></div>
@@ -523,7 +523,7 @@
           <nav class="detiled-menu  footer-medium-column8  large-column8">
 
             <ul class="detiled-menu__list">
-              <li class="detiled-menu__item"><a class="detiled-menu__link  detiled-menu__link--active" href="">Главная</a></li>
+              <li class="detiled-menu__item  detiled-menu__item--active"><a class="detiled-menu__link" href="">Главная</a></li>
               <li class="detiled-menu__item">
                 <a class="detiled-menu__link" href="">Проекты</a>
                 <ul class="detiled-menu__sublist">
@@ -574,10 +574,10 @@
               </li>
             </ul>
 
-            <div class="detiled-menu__toggler">
+            <a class="detiled-menu__toggler" data-popups="0">
               <p class="detiled-menu__toggler-text">Меню</p>
               <span class="detiled-menu__toggler-icon"></span>
-            </div>
+            </a>
 
           </nav>
 
@@ -629,6 +629,195 @@
       </div>
     </div>
   </footer>
+  <div class="popups-overlay" id="popups-overlay">
+    <div class="popups">
+   
+    <div class="popups__inner">
+      <div class="row">
+        <div class="popups__column  small-column6">
+          <div class="main-logo main-logo--dark">
+            <img src="img/logo-dark.svg" alt="" class="main-logo__img">
+          </div>
+          <p class="popups__closer">закрыть <span class="popups__closer-icon"></span></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="carousel carousel--popups popups__carousel" id="popups">
+     
+      <div class="carousel__tabs-container">
+        <div class="carousel__tabs" id="tabs">
+          <a href="" class="carousel__tab  carousel__tab--active" data-tab="0">навигация</a>
+          <a href="" class="carousel__tab" data-tab="1">пожертвовать</a>
+          <a href="" class="carousel__tab" data-tab="2">контакты</a>
+        </div>
+      </div>
+      
+      <div class="carousel__inner">
+        <div class="carousel__container" id="popup-container">
+         
+          <section class="carousel__content">
+            <div class="row">
+              <div class="small-column6">
+                
+                <nav class="popup-menu">
+                  <ul class="popup-menu__list">
+                    <li class="popup-menu__item  popup-menu__item--active"><a href="" class="popup-menu__link">Главная</a></li>
+                    <li class="popup-menu__item"><a href="" class="popup-menu__link">Проекты</a></li>
+                    <li class="popup-menu__item"><a href="" class="popup-menu__link">Волонтерство</a></li>
+                    <li class="popup-menu__item"><a href="" class="popup-menu__link">О фонде</a></li>
+                    <li class="popup-menu__item"><a href="" class="popup-menu__link">Партнеры</a></li>
+                    <li class="popup-menu__item"><a href="" class="popup-menu__link">Документы</a></li>
+                    <li class="popup-menu__item"><a href="" class="popup-menu__link">Блог</a></li>
+                  </ul>
+                </nav>
+                
+              </div>
+            </div>
+          </section>
+          
+          <section class="carousel__content">
+            <div class="row">
+              <div class="small-column6">
+               
+                <form action="" class="donate-form">
+                 
+                  <div class="donate-form__item">
+                    <p class="donate-form__title">Ваше имя</p>
+                    <div class="input-block  donate-form__input-block">
+                      <input type="text" class="input-block__input" placeholder="Константин Напримерный">
+                    </div>                    
+                    <p class="donate-form__description">Для анонимного пожертвования оставьте это поле незаполненным.</p>
+                  </div>
+                  
+                  <div class="donate-form__item">
+                    <p class="donate-form__title">Сумма пожертвования</p>
+                    
+                    <div class="donate-form__count-block">
+                      <div class="input-block  input-block--icon  input-block--count  donate-form__input-block">
+                        <input type="text" class="input-block__input" value="500" maxlength="5">
+                      </div>
+                      
+                      <label class="donate-form__checkbox-label">
+                        <input type="checkbox" class="donate-form__checkbox">
+                        <span class="donate-form__checkbox-icon"></span>
+                        <p class="donate-form__checkbox-description">Ежемесячное пожертвование</p>
+                      </label>
+                    </div>    
+                                    
+                  </div>
+                  
+                  <div class="donate-form__item  donate-form__item--divider">
+                    <p class="donate-form__title">Номер банковской карты</p>
+                    <div class="input-block  donate-form__input-block">
+                      <input type="text" class="input-block__input" placeholder="1234 5678 9012 3456 7890">
+                    </div>                    
+                    
+                    <div class="donate-form__card-box">
+                      <label class="donate-form__card-label">
+                        <input type="radio" name="card" class="donate-form__card">
+                        <p class="donate-form__card-text">Visa</p>
+                      </label>
+                      <label class="donate-form__card-label">
+                        <input type="radio" name="card" class="donate-form__card">
+                        <p class="donate-form__card-text">MasterCard</p>
+                      </label>
+                      <label class="donate-form__card-label">
+                        <input type="radio" name="card" class="donate-form__card">
+                        <p class="donate-form__card-text">Maestro</p>
+                      </label>
+                      <label class="donate-form__card-label">
+                        <input type="radio" name="card" class="donate-form__card">
+                        <p class="donate-form__card-text">American Express</p>
+                      </label>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="donate-form__item  donate-form__item--flex">
+                    <div class="donate-form__card-block">
+                      <p class="donate-form__title">Срок истечения</p>
+                      
+                      <div class="donate-form__input-wrap">
+                        <div class="input-block  input-block--month  donate-form__input-block">
+                          <input type="text" class="input-block__input" placeholder="04" maxlength="2">
+                        </div>
+                        <div class="input-block  input-block--year  donate-form__input-block">
+                          <input type="text" class="input-block__input" placeholder="2019" maxlength="4">
+                        </div>
+                      </div>                    
+                      
+                    </div>
+                    
+                    <div class="donate-form__card-block">
+                      <p class="donate-form__title">Код CVV</p>
+                      <div class="input-block  input-block--year  donate-form__input-block">
+                        <input type="text" class="input-block__input" placeholder="657">
+                      </div>
+                    </div>                    
+                  </div>
+                  
+                  <div class="donate-form__item">
+                    <p class="donate-form__title">Имя на карте</p>
+                    <div class="input-block  donate-form__input-block">
+                      <input type="text" class="input-block__input  input-block__input--uppercase" placeholder="KONSTANTIN NAPRIMERNIY">
+                    </div>
+                  </div>
+                  
+                  <div class="donate-form__item  donate-form__item--divider">
+                    <p class="donate-form__title">Электронная почта</p>
+                    <div class="input-block  donate-form__input-block">
+                      <input type="text" class="input-block__input" placeholder="example.email@domain.com">
+                    </div>
+                    <p class="donate-form__description">Мы вышлем квитанцию Вам на электронную почту. Никакого спама, обещаем.</p>
+                  </div>
+                  
+                  <div class="donate-form__btn-wrap">
+                    <button class="btn  btn--dark">подтвердить 500p/мес</button>
+                  </div>
+                  
+                  
+                </form>
+                
+              </div>
+            </div>
+          </section>
+          
+          <section class="carousel__content">
+            <div class="row">
+              <div class="small-column6">
+                <div class="contacts">
+                 
+                  <div class="contacts__item">
+                    <p class="contacts__title">Контактный телефон</p>
+                    <a class="contacts__name" href="tel:88125691474">+7 (812) 569-14-74</a>
+                    <p class="contacts__description">Нажмите на номер, чтобы позвонить. отвечаем стабильно с понедельника по воскресениес 10:00 до 22:00.</p>
+                  </div>
+                  
+                  <div class="contacts__item  contacts__item--divider">
+                    <p class="contacts__title">Электронная почта</p>
+                    <a class="contacts__name" href="mailto:inbox@nitdobra.fund">inbox@nitdobra.fund</a> 
+                    <p class="contacts__description">Нажмите на адрес, чтобы отправить письмо. Отвечаем каждый день, время ответа не более трех часов.</p>
+                  </div>
+                  
+                  <div class="contacts__item  contacts__item--divider">
+                    <p class="contacts__title">Наш офис</p>
+                    <a class="contacts__name">Пространство «Welcome», Невский проспект, 81, Санкт-Петербург, 194283</a>
+                    <p class="contacts__description">Нажмите, чтобы открыть на карте. Офис открыт для посещения по будням с 10:00 до 19:00, по субботам с 10:00 до 18:00.</p>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </section>
+          
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+  </div>
   @@include('include/bottom.html')
 </body>
 

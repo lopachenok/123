@@ -1,0 +1,24 @@
+.popup-menu {
+  padding-left: 30px;
+  padding-bottom: 18px;
+  
+  &__item {
+    padding-bottom: 27px;
+    
+    &--active {
+      
+      .popup-menu__link {
+        color: rgba(0, 0, 0, .5);
+      }
+      
+    }
+    
+  }
+  
+  &__link {
+    font-family: $ptsans;
+    font-size: 1.5rem;
+    color: #fff;    
+  }
+  
+}

@@ -47,6 +47,19 @@ html, body {
   
 }
 
+body {
+  
+  &.ov-hidden {
+    overflow: hidden;
+    
+    @media (min-width: $medium-breakpoint) {
+      overflow: visible;
+    }
+    
+  }
+  
+}
+
 h1,
 h2,
 h3,
@@ -77,12 +90,12 @@ a:hover {
 }
 
 /*
-.page-footer {
+.popups {
   position: relative;
   
   &:after {
     position: absolute;
-    background: url(index@940px.footer.png);
+    background: url(index@320px.menu.contacts.png);
     bottom: 0;
     left: 0;
     width: 100%;
