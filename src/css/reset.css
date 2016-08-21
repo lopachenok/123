@@ -51,6 +51,9 @@ body {
   
   &.ov-hidden {
     overflow: hidden;
+    position: fixed;
+    height: 100%;
+    width: 100%;
     
     @media (min-width: $medium-breakpoint) {
       overflow: visible;
