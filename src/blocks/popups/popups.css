@@ -1,14 +1,8 @@
 .popups {
   background: #E52E53;
-<<<<<<< HEAD
-  min-height: 100vh; 
-  -webkit-overflow-scrolling: touch;
-  overflow: scroll;
-=======
   min-height: 100vh;  
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
->>>>>>> parent of db23f9d... reset animation
   height: 100%;
   
   &__inner {
@@ -75,11 +69,7 @@
   left: 0;
   width: 100%;  
   height: 100vh;
-<<<<<<< HEAD
-  overflow: hidden;  
-=======
   overflow: hidden;
->>>>>>> parent of db23f9d... reset animation
   visibility: hidden;
   opacity: 0;
   z-index: -10;
