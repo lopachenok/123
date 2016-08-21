@@ -283,8 +283,16 @@ function addRemoveScrollButton(elem, container) {
       if (window.innerWidth < tabletSize) {      
         for (paneIndex = 0; paneIndex < this.panes.length; paneIndex++) {
           pos = (this.containerSize / 100) * (((paneIndex - showIndex) * 100) + percent);
-        
-          if (this.direction & Hammer.DIRECTION_HORIZONTAL) {
+          
+          var horizontalOffset;
+          if(this.container.id == "popup-container") {
+            popupInner.style.height = heightArray[showIndex] + 'px';
+            horizontalOffset = 25;
+          } else {
+            horizontalOffset = 0;
+          }
+          
+          if (this.direction & Hammer.DIRECTION_HORIZONTAL && Math.abs(pos) > horizontalOffset) {
             translate = "translate3d(" + pos + "px, 0, 0)";
           } else {
             translate = "translate3d(0, " + pos + "px, 0)";
@@ -292,10 +300,6 @@ function addRemoveScrollButton(elem, container) {
           this.panes[paneIndex].style.transform = translate;
           this.panes[paneIndex].style.mozTransform = translate;
           this.panes[paneIndex].style.webkitTransform = translate;          
-        }
-        
-        if(this.container.id == "popup-container") {
-          popupInner.style.height = heightArray[showIndex] + 'px';
         }
         
       } else {
