@@ -381,7 +381,7 @@ function addRemoveScrollButton(elem, container) {
           
           var horizontalOffset;
           if(this.container.id == "popup-container") {
-            popupInner.style.height = heightArray[showIndex] + 20 + 'px';
+            popupInner.style.height = heightArray[showIndex] + 50 + 'px';
             horizontalOffset = 25;
           } else {
             horizontalOffset = 0;
