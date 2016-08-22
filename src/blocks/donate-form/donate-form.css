@@ -82,13 +82,21 @@
     margin-right: 12px;
     margin-top: 16px;
     text-align: center;
+    position: relative;
     
     &:before {
-      content: '\2764';
+      content: '';
       color: rgba(0, 0, 0, .5);
       line-height: 22px;
+      background: url(icon-heard.svg);
+      display: block;
+      height: 12px;
+      width: 14px;   
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
       opacity: 0;
-      transition: opacity .2s ease
     }
   }
   

@@ -501,16 +501,13 @@
     left: -420px;
   }
   
-  .carousel__inner {
-/*
-    min-height: calc(100vh - 45px - 59px - 24px);
-    height: 910px;
-*/
-  }
-  
   .carousel__content {
     padding-top: 44px;
     height: auto;
     -webkit-overflow-scrolling: none;
+  }
+  
+  .carousel__container.animate .carousel__content {
+    transition: all 1s ease;
   }
 }

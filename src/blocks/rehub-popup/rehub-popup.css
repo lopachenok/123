@@ -1,0 +1,7 @@
+.rehub-popup {
+  
+  &__inner {
+    @mixin container;
+  }
+  
+}

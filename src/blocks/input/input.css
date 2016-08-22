@@ -33,6 +33,7 @@
       letter-spacing: 2.2px;
       text-transform: uppercase;
       font-size: 22px;
+      color: #969BA0;
     }
     
   }
@@ -59,7 +60,7 @@
     display: block;
     width: 100%;
     box-sizing: border-box;
-    color: #969BA0;
+    color: $midnight;
     
     @media (min-width: $medium-breakpoint) {        
       font-weight: 600;
