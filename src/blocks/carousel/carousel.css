@@ -511,5 +511,6 @@
   .carousel__content {
     padding-top: 44px;
     height: auto;
+    -webkit-overflow-scrolling: none;
   }
 }

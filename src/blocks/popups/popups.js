@@ -10,14 +10,19 @@ document.addEventListener("DOMContentLoaded", function() {
   
   closer.addEventListener("click", function(e) {
     document.body.classList.remove("ov-hidden");
+    document.body.scrollTop = scrollTopOffset;
     popupOverlay.classList.remove("popups-overlay--open");    
   });
   
 });
 var popupOverlay;
+var scrollTopOffset;
+
 function openPopup(e) {
   var popupNumber = e.currentTarget.getAttribute("data-popups");
-  document.body.classList.add("ov-hidden");
+  var body = document.body;
+  scrollTopOffset = body.scrollTop;
+  body.classList.add("ov-hidden"); 
   popupOverlay.classList.add("popups-overlay--open");  
   HammerCarousel.prototype.show.apply(popups, [popupNumber, 0, true]);
 }

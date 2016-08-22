@@ -286,7 +286,7 @@ function addRemoveScrollButton(elem, container) {
           
           var horizontalOffset;
           if(this.container.id == "popup-container") {
-            popupInner.style.height = heightArray[showIndex] + 'px';
+            popupInner.style.height = heightArray[showIndex] + 20 + 'px';
             horizontalOffset = 25;
           } else {
             horizontalOffset = 0;
@@ -327,6 +327,7 @@ function addRemoveScrollButton(elem, container) {
     onPan: function (ev) {
 
       if (window.innerWidth < tabletSize) {
+       
         var delta = dirProp(this.direction, ev.deltaX, ev.deltaY);
         var percent = (100 / this.containerSize) * delta;
         var animate = false;

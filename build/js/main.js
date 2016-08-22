@@ -381,7 +381,7 @@ function addRemoveScrollButton(elem, container) {
           
           var horizontalOffset;
           if(this.container.id == "popup-container") {
-            popupInner.style.height = heightArray[showIndex] + 'px';
+            popupInner.style.height = heightArray[showIndex] + 20 + 'px';
             horizontalOffset = 25;
           } else {
             horizontalOffset = 0;
@@ -422,6 +422,7 @@ function addRemoveScrollButton(elem, container) {
     onPan: function (ev) {
 
       if (window.innerWidth < tabletSize) {
+       
         var delta = dirProp(this.direction, ev.deltaX, ev.deltaY);
         var percent = (100 / this.containerSize) * delta;
         var animate = false;
@@ -451,14 +452,19 @@ document.addEventListener("DOMContentLoaded", function() {
   
   closer.addEventListener("click", function(e) {
     document.body.classList.remove("ov-hidden");
+    document.body.scrollTop = scrollTopOffset;
     popupOverlay.classList.remove("popups-overlay--open");    
   });
   
 });
 var popupOverlay;
+var scrollTopOffset;
+
 function openPopup(e) {
   var popupNumber = e.currentTarget.getAttribute("data-popups");
-  document.body.classList.add("ov-hidden");
+  var body = document.body;
+  scrollTopOffset = body.scrollTop;
+  body.classList.add("ov-hidden"); 
   popupOverlay.classList.add("popups-overlay--open");  
   HammerCarousel.prototype.show.apply(popups, [popupNumber, 0, true]);
 }
