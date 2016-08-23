@@ -25,9 +25,8 @@ function openRehabPopup(link, event) {
 }
 
 function closeRehabPopup(event) {
-  var body = document.body;
   event.preventDefault();
+  var body = document.body;  
   body.classList.remove("ov-hidden");
-  body.scrollTop = scrollTopOffsetRehab;
-  event.target.offsetParent.classList.remove("rehub-popup--open");
+  body.scrollTop = scrollTopOffsetRehab;  event.target.parentElement.parentElement.parentElement.parentElement.parentElement.classList.remove("rehub-popup--open");
 }
