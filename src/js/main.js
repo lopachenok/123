@@ -5,3 +5,4 @@
 //= ../blocks/carousel/carousel.js
 //= ../blocks/popups/popups.js
 //= ../blocks/donate-form/donate-form.js
+//= ../blocks/rehub-popup/rehub-popup.js

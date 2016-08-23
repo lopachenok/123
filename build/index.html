@@ -203,7 +203,7 @@
                   </div>
                 </div>
 
-                <a href="" class="carousel__link  link  link--carousel">смотреть Все проекты</a>
+                <a href="popup-projects" class="carousel__link  link  link--carousel" data-popup="true">смотреть Все проекты</a>
 
               </div>
             </section>
@@ -307,7 +307,7 @@
                   </div>
                 </div>
 
-                <a href="" class="carousel__link  link  link--carousel">смотреть Все мероприятия</a>
+                <a href="popup-events" class="carousel__link  link  link--carousel" data-popup="true">смотреть Все мероприятия</a>
               </div>
             </section>
 
@@ -359,7 +359,7 @@
                   </div>
                 </div>
 
-                <a href="" class="carousel__link  link  link--carousel">смотреть все истории</a>
+                <a href="popup-kids" class="carousel__link  link  link--carousel" data-popup="true">смотреть все истории</a>
 
               </div>
             </section>
@@ -828,15 +828,15 @@
     </div>
   </div>
 
-  <div class="rehub-popup">
+  <div class="rehub-popup" id="popup-projects">
     <div class="rehub-popup__inner">
       <div class="row">
         <div class="small-column6">
 
           <div class="rehub-popup__header">
-            <a href="" class="rehub-popup__back"></a>
-            <a href="index.html" class="main-logo">
-              <img src="img/logo-dark.svg" alt="Logo" class="main-logo__img">
+            <a href="" class="rehub-popup__back">назад</a>
+            <a href="index.html" class="main-logo  rehub-popup__main-logo">
+              <img src="img/logo-black.svg" alt="Logo" class="main-logo__img">
             </a>
             <a class="rehub-popup__toggler" data-popups="0">
               <p class="rehub-popup__toggler-text">Меню</p>
@@ -848,7 +848,7 @@
             <h3 class="rehub-popup__title">Проекты</h3>
             <p class="rehub-popup__text">Долгосрочные инициативы по поддержке и реабилитации детей с тяжелыми заболеваниями.</p>
 
-            <div class="project-card">
+            <div class="project-card  rehub-popup__project-card">
               <img src="img/project1.jpg" alt="" class="project-card__img" data-object-fit="cover">
 
               <div class="project-card__content">
@@ -862,7 +862,7 @@
 
             </div>
 
-            <div class="project-card">
+            <div class="project-card  rehub-popup__project-card">
               <img src="img/space-launch.jpg" alt="" class="project-card__img" data-object-fit="cover">
 
               <div class="project-card__content">
@@ -875,13 +875,181 @@
               <a href="" class="project-card__link  link  link--white  link--small">Смотреть проект</a>
             </div>
           </div>
-          
-          <a href="" class="link  link--carousel">больше проектов</a>
-          
+
+          <a href="" class="link  link--carousel  link--down  rehub-popup__link">больше проектов</a>
+
         </div>
       </div>
     </div>
   </div>
+
+  <div class="rehub-popup" id="popup-events">
+    <div class="rehub-popup__inner">
+      <div class="row">
+        <div class="small-column6">
+
+          <div class="rehub-popup__header">
+            <a href="" class="rehub-popup__back">назад</a>
+            <a href="index.html" class="main-logo  rehub-popup__main-logo">
+              <img src="img/logo-black.svg" alt="Logo" class="main-logo__img">
+            </a>
+            <a class="rehub-popup__toggler" data-popups="0">
+              <p class="rehub-popup__toggler-text">Меню</p>
+              <span class="rehub-popup__toggler-icon"></span>
+            </a>
+          </div>
+
+          <div class="rehub-popup__content">
+            <h3 class="rehub-popup__title">Мероприятия</h3>
+            <p class="rehub-popup__text">Каждую неделю мы устраиваем встречи в нашем пространстве, чтобы узнать друг друга лучше и хорошо проводить время.</p>
+
+            <div class="rehub-popup__container">
+              <h4 class="rehub-popup__subtitle">Близжайшие</h4>
+
+              <div class="event-card  rehub-popup__event">
+                <div class="event-card__main">
+                  <img src="img/paris.jpg" alt="" class="event-card__img" data-object-fit="cover">
+                  <p class="event-card__date">17 сентября</p>
+
+                  <div class="event-card__content">
+                    <h3 class="event-card__title">Парижский вечер</h3>
+                    <p class="event-card__description">Окунёмся в атмосферу мягких французских булок и выпьем чаю. Специальными гостями будут какие-то французы.</p>
+                  </div>
+
+                </div>
+                <div class="event-card__footer"><a href="" class="event-card__link  link link--white  link--small">Записаться</a></div>
+              </div>
+
+              <div class="event-card  rehub-popup__event">
+                <div class="event-card__main">
+                  <img src="img/volunteer-supplies.jpg" alt="" class="event-card__img" data-object-fit="cover">
+                  <p class="event-card__date">22 сентября</p>
+
+                  <div class="event-card__content">
+                    <h3 class="event-card__title">Большой субботник во Всеволожске</h3>
+                    <p class="event-card__description">В эту субботу мы едем помогать ребятам из 31-й больницы Всеволожского района делать свой город чище.</p>
+                  </div>
+
+                </div>
+                <div class="event-card__footer"><a href="" class="event-card__link  link link--white  link--small">Записаться</a></div>
+              </div>
+
+            </div>
+
+            <div class="rehub-popup__container">
+              <h4 class="rehub-popup__subtitle">Прошедшие</h4>
+              
+               <div class="event-card  rehub-popup__event">
+                <div class="event-card__main">
+                  <img src="img/kids-laptop.jpg" alt="" class="event-card__img" data-object-fit="cover">
+                  <p class="event-card__date">30 августа</p>
+
+                  <div class="event-card__content">
+                    <h3 class="event-card__title">Вечер приключений</h3>
+                    <p class="event-card__description">Окунёмся в атмосферу мягких французских булок и выпьем чаю. Специальными гостями будут какие-то французы.</p>
+                  </div>
+
+                </div>
+                <div class="event-card__footer"><a href="" class="event-card__link  link  link--white  link--disabled  link--small">мероприятие проведено</a></div>
+              </div>
+
+              <div class="event-card  rehub-popup__event">
+                <div class="event-card__main">
+                  <img src="img/sokolovsky.jpg" alt="" class="event-card__img" data-object-fit="cover">
+                  <p class="event-card__date">22 сентября</p>
+
+                  <div class="event-card__content">
+                    <h3 class="event-card__title">Чаепитие с Алексан-<br>дром Соколовским</h3>
+                    <p class="event-card__description">В эту субботу мы едем помогать ребятам из 31-й больницы Всеволожского района делать свой город чище.</p>
+                  </div>
+
+                </div>
+                <div class="event-card__footer"><a href="" class="event-card__link  link link--white  link--small">Смотреть отчет</a></div>
+              </div>
+              
+            </div>
+
+          </div>
+
+          <a href="" class="link  link--carousel  link--down  rehub-popup__link">больше мероприятий</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="rehub-popup" id="popup-kids">
+    <div class="rehub-popup__inner">
+      <div class="row">
+        <div class="small-column6">
+
+          <div class="rehub-popup__header">
+            <a href="" class="rehub-popup__back">назад</a>
+            <a href="index.html" class="main-logo  rehub-popup__main-logo">
+              <img src="img/logo-black.svg" alt="Logo" class="main-logo__img">
+            </a>
+            <a class="rehub-popup__toggler" data-popups="0">
+              <p class="rehub-popup__toggler-text">Меню</p>
+              <span class="rehub-popup__toggler-icon"></span>
+            </a>
+          </div>
+
+          <div class="rehub-popup__content">
+            <h3 class="rehub-popup__title">Уже помогли</h3>
+            <p class="rehub-popup__text">Посмотрите истории наших подопечных и узнайте, как наши проекты помогают им вернуться в жизнь.</p>
+
+
+            <div class="event-card  rehub-popup__event">
+              <div class="event-card__main  event-card__main--gradient">
+                <img src="img/lisa.jpg" alt="" class="event-card__img" data-object-fit="cover">
+
+                <div class="event-card__content">
+                  <h3 class="event-card__title">Лиза</h3>
+                  <p class="event-card__description">18 лет, мечтает сниматься в кино.</p>
+                </div>
+
+              </div>
+              <div class="event-card__footer"><a href="" class="event-card__link  link link--white  link--small">Читать историю</a></div>
+            </div>
+
+            <div class="event-card  rehub-popup__event">
+              <div class="event-card__main  event-card__main--gradient">
+                <img src="img/dima.jpg" alt="" class="event-card__img" data-object-fit="cover">
+
+                <div class="event-card__content">
+                  <h3 class="event-card__title">Дима</h3>
+                  <p class="event-card__description">6 лет, мечтает стать инженером и уже собрал свого первого робота ЛЕГО.</p>
+                </div>
+
+              </div>
+              <div class="event-card__footer"><a href="" class="event-card__link  link link--white  link--small">Читать историю</a></div>
+            </div>
+
+            <div class="event-card  rehub-popup__event">
+              <div class="event-card__main  event-card__main--gradient">
+                <img src="img/ivan.jpg" alt="" class="event-card__img" data-object-fit="cover">
+
+                <div class="event-card__content">
+                  <h3 class="event-card__title">Ваня</h3>
+                  <p class="event-card__description">17 лет, мечтает готовить, как настоящий шеф-повар.</p>
+                </div>
+
+              </div>
+              <div class="event-card__footer"><a href="" class="event-card__link  link link--white  link--small">Читать историю</a></div>
+            </div>
+
+
+          </div>
+
+          <a href="" class="link  link--carousel  link--down  rehub-popup__link">больше мероприятий</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
   <script src="js/vendor.js"></script>
   <script src="js/main.js"></script>

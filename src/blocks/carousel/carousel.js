@@ -236,7 +236,15 @@ function addRemoveScrollButton(elem, container) {
       this.tabs.children[showIndex].classList.add("carousel__tab--active");
      
       var tabTransform, persentTab;
-      if (window.innerWidth < 430) {        
+      
+      var stopTabTransform;
+      if(this.container.id == "popup-container") {
+        stopTabTransform = 600;
+      } else {
+         stopTabTransform = 430;
+       }
+      
+      if (window.innerWidth < stopTabTransform) {        
         if (showIndex === 0) {
           this.tabsContainer.classList.remove("carousel__tabs-container--end");
           this.tabsContainer.classList.add("carousel__tabs-container--start");
@@ -319,13 +327,8 @@ function addRemoveScrollButton(elem, container) {
 
       this.currentIndex = showIndex;
     },
-
-    /**
-     * handle pan
-     * @param {Object} ev
-     */
+    
     onPan: function (ev) {
-
       if (window.innerWidth < tabletSize) {
        
         var delta = dirProp(this.direction, ev.deltaX, ev.deltaY);
@@ -339,7 +342,9 @@ function addRemoveScrollButton(elem, container) {
           percent = 0;
           animate = true;
         }
-
+        if(Math.abs(ev.deltaY) > 20) {
+            percent = 0;
+        }
         this.show(this.currentIndex, percent, animate);
       }
 

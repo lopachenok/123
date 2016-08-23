@@ -93,12 +93,12 @@ a:hover {
 }
 
 /*
-.popups {
+.rehub-popup {
   position: relative;
   
   &:after {
     position: absolute;
-    background: url(index@320px.menu.contacts.png);
+    background: url(index@320px.sub.events.png);
     bottom: 0;
     left: 0;
     width: 100%;

@@ -9,7 +9,9 @@ document.addEventListener("DOMContentLoaded", function() {
   var closer = document.querySelector(".popups__closer");
   
   closer.addEventListener("click", function(e) {
-    document.body.classList.remove("ov-hidden");
+    if(flag === false) {
+      document.body.classList.remove("ov-hidden");
+    }    
     document.body.scrollTop = scrollTopOffset;
     popupOverlay.classList.remove("popups-overlay--open");    
   });
@@ -17,8 +19,12 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 var popupOverlay;
 var scrollTopOffset;
+var flag = false;
 
 function openPopup(e) {
+  if(e.target.offsetParent.id.indexOf("popup") !== -1) {
+    flag = true;
+  } 
   var popupNumber = e.currentTarget.getAttribute("data-popups");
   var body = document.body;
   scrollTopOffset = body.scrollTop;

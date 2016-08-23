@@ -331,7 +331,15 @@ function addRemoveScrollButton(elem, container) {
       this.tabs.children[showIndex].classList.add("carousel__tab--active");
      
       var tabTransform, persentTab;
-      if (window.innerWidth < 430) {        
+      
+      var stopTabTransform;
+      if(this.container.id == "popup-container") {
+        stopTabTransform = 600;
+      } else {
+         stopTabTransform = 430;
+       }
+      
+      if (window.innerWidth < stopTabTransform) {        
         if (showIndex === 0) {
           this.tabsContainer.classList.remove("carousel__tabs-container--end");
           this.tabsContainer.classList.add("carousel__tabs-container--start");
@@ -414,13 +422,8 @@ function addRemoveScrollButton(elem, container) {
 
       this.currentIndex = showIndex;
     },
-
-    /**
-     * handle pan
-     * @param {Object} ev
-     */
+    
     onPan: function (ev) {
-
       if (window.innerWidth < tabletSize) {
        
         var delta = dirProp(this.direction, ev.deltaX, ev.deltaY);
@@ -434,7 +437,9 @@ function addRemoveScrollButton(elem, container) {
           percent = 0;
           animate = true;
         }
-
+        if(Math.abs(ev.deltaY) > 20) {
+            percent = 0;
+        }
         this.show(this.currentIndex, percent, animate);
       }
 
@@ -451,7 +456,9 @@ document.addEventListener("DOMContentLoaded", function() {
   var closer = document.querySelector(".popups__closer");
   
   closer.addEventListener("click", function(e) {
-    document.body.classList.remove("ov-hidden");
+    if(flag === false) {
+      document.body.classList.remove("ov-hidden");
+    }    
     document.body.scrollTop = scrollTopOffset;
     popupOverlay.classList.remove("popups-overlay--open");    
   });
@@ -459,8 +466,12 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 var popupOverlay;
 var scrollTopOffset;
+var flag = false;
 
 function openPopup(e) {
+  if(e.target.offsetParent.id.indexOf("popup") !== -1) {
+    flag = true;
+  } 
   var popupNumber = e.currentTarget.getAttribute("data-popups");
   var body = document.body;
   scrollTopOffset = body.scrollTop;
@@ -471,4 +482,37 @@ function openPopup(e) {
 // (function(){
 // код
 // }());
+document.addEventListener("DOMContentLoaded", function() {
+  var links = document.querySelectorAll("*[data-popup]");
+  Array.prototype.forEach.call(links, function(link) {
+    link.addEventListener("click", openRehabPopup.bind(null, link));
+  });
+  
+  var backButtons = document.querySelectorAll(".rehub-popup__back");
+  Array.prototype.forEach.call(backButtons, function(button) {
+    button.addEventListener("click", closeRehabPopup);
+  });
+  
+});
+
+var scrollTopOffsetRehab;
+
+function openRehabPopup(link, event) {
+  event.preventDefault();  
+  var body = document.body;
+  scrollTopOffsetRehab = body.scrollTop;
+  setTimeout( function() {
+    body.classList.add("ov-hidden"); 
+  }, 300);
+  var popup = document.getElementById(link.getAttribute("href"));
+  popup.classList.add("rehub-popup--open");
+}
+
+function closeRehabPopup(event) {
+  var body = document.body;
+  event.preventDefault();
+  body.classList.remove("ov-hidden");
+  body.scrollTop = scrollTopOffsetRehab;
+  event.target.offsetParent.classList.remove("rehub-popup--open");
+}
 //# sourceMappingURL=main.js.map

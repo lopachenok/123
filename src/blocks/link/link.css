@@ -129,4 +129,23 @@
     }
   }
   
+  &--down {
+    
+    &:after {
+      transform: rotate(90deg);
+      right: -15px;
+      top: 1px;
+    }
+    
+  }
+  
+  &--disabled {
+     color: rgba(255, 255, 255, .5);
+    
+    &:after {
+      display: none;
+    }
+    
+  }
+  
 }
