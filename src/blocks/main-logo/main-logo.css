@@ -37,6 +37,22 @@
     
   }
   
+  &--dark {
+    
+    &:hover {
+      transform: scale(1);    
+    }
+    
+  }
+  
+  &--black {
+    
+    &:hover {
+      transform: scale(1);    
+    }
+    
+  }
+  
   &__img {
     height: 100%;
     width: 100%;

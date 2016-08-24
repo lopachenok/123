@@ -146,6 +146,10 @@
       display: none;
     }
     
+    &:hover {
+      color: rgba(255, 255, 255, .5);
+    }
+    
   }
   
 }

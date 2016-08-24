@@ -1,7 +1,7 @@
 .popups {
   background: #E52E53;
   min-height: 100vh;  
-  overflow: scroll;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   height: 100%;
   
@@ -26,6 +26,7 @@
     text-transform: uppercase;
     color: #F0F1F2;
     padding-top: 3px;
+    cursor: pointer;
   }
   
   &__closer-icon {
@@ -86,6 +87,14 @@
   
   @media (min-width: $medium-breakpoint) {
     display: none;
+  }
+  
+  &.no-animate {
+    
+    .carousel__content, .carousel__tabs, .carousel__tab:last-of-type:before {
+      transition: 0s all ease !important;
+    }
+    
   }
   
 }

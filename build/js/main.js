@@ -339,6 +339,8 @@ function addRemoveScrollButton(elem, container) {
          stopTabTransform = 430;
        }
       
+     
+      
       if (window.innerWidth < stopTabTransform) {        
         if (showIndex === 0) {
           this.tabsContainer.classList.remove("carousel__tabs-container--end");
@@ -471,13 +473,17 @@ var flag = false;
 function openPopup(e) {
   if(e.target.offsetParent.id.indexOf("popup") !== -1) {
     flag = true;
-  } 
+  } else {
+    flag = false;
+  }
   var popupNumber = e.currentTarget.getAttribute("data-popups");
+  popupOverlay.classList.add("no-animate");
+  HammerCarousel.prototype.show.apply(popups, [popupNumber, 0, true]);
   var body = document.body;
   scrollTopOffset = body.scrollTop;
   body.classList.add("ov-hidden"); 
-  popupOverlay.classList.add("popups-overlay--open");  
-  HammerCarousel.prototype.show.apply(popups, [popupNumber, 0, true]);
+  popupOverlay.classList.add("popups-overlay--open");
+  popupOverlay.classList.remove("no-animate");
 }
 // (function(){
 // код

@@ -244,6 +244,8 @@ function addRemoveScrollButton(elem, container) {
          stopTabTransform = 430;
        }
       
+     
+      
       if (window.innerWidth < stopTabTransform) {        
         if (showIndex === 0) {
           this.tabsContainer.classList.remove("carousel__tabs-container--end");
