@@ -7,7 +7,7 @@
   
   &__inner {
     @mixin container;
-    padding-top: 15px;
+    padding-top: 13px;
   }
   
   &__column {
@@ -61,6 +61,17 @@
     
   }
   
+}
+
+@media (max-width: $medium-breakpoint) {
+  .popups::-webkit-scrollbar { 
+    width: 0;
+  }
+  
+  .popups {
+    -ms-overflow-style: none; 
+  }
+ 
 }
 
 .popups-overlay {

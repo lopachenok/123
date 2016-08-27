@@ -61,13 +61,21 @@ document.addEventListener("DOMContentLoaded", function () {
   window.onresize = function () {
     
     if(windowSize.x !== window.innerWidth) {
-      if(window.innerWidth >= tabletSize) {
+      var i = outer.currentIndex;
+      var j = popups.currentIndex;
+      if(window.innerWidth >= tabletSize) {        
         outer = new HammerCarousel(carousel);
         popups = new HammerCarousel(popupsEl);
       } else {
         outer = new HammerCarousel(carousel, Hammer.DIRECTION_HORIZONTAL);
         popups = new HammerCarousel(popupsEl, Hammer.DIRECTION_HORIZONTAL);
-      } 
+      }
+      HammerCarousel.prototype.show.apply(outer, [i, 0, true]);
+      document.getElementById("popups-overlay").classList.add("no-animate");
+      HammerCarousel.prototype.show.apply(popups, [j, 0, true]);
+      setTimeout(function() {
+        document.getElementById("popups-overlay").classList.remove("no-animate");
+      }, 0);
     }
     windowSize.x = window.innerWidth;
   };
@@ -172,7 +180,7 @@ function addRemoveScrollButton(elem, container) {
     };
   })();
 
-  function dirProp(direction, hProp, vProp) {
+ function dirProp(direction, hProp, vProp) {
     return (direction & Hammer.DIRECTION_HORIZONTAL) ? hProp : vProp;
   }
 
@@ -294,15 +302,11 @@ function addRemoveScrollButton(elem, container) {
         for (paneIndex = 0; paneIndex < this.panes.length; paneIndex++) {
           pos = (this.containerSize / 100) * (((paneIndex - showIndex) * 100) + percent);
           
-          var horizontalOffset;
           if(this.container.id == "popup-container") {
             popupInner.style.height = heightArray[showIndex] + 50 + 'px';
-            horizontalOffset = 25;
-          } else {
-            horizontalOffset = 0;
-          }
+          } 
           
-          if (this.direction & Hammer.DIRECTION_HORIZONTAL && Math.abs(pos) > horizontalOffset) {
+          if (this.direction & Hammer.DIRECTION_HORIZONTAL) {
             translate = "translate3d(" + pos + "px, 0, 0)";
           } else {
             translate = "translate3d(0, " + pos + "px, 0)";
@@ -331,6 +335,9 @@ function addRemoveScrollButton(elem, container) {
     },
     
     onPan: function (ev) {
+      if(ev.pointers[0].type !== undefined) {
+        return;
+      }
       if (window.innerWidth < tabletSize) {
        
         var delta = dirProp(this.direction, ev.deltaX, ev.deltaY);
@@ -344,8 +351,9 @@ function addRemoveScrollButton(elem, container) {
           percent = 0;
           animate = true;
         }
-        if(Math.abs(ev.deltaY) > 20) {
-            percent = 0;
+        if(Math.abs(ev.deltaY) > 15) {
+          percent = 0;
+          animate = true;
         }
         this.show(this.currentIndex, percent, animate);
       }

@@ -92,10 +92,6 @@
     margin-right: 10px;
     letter-spacing: 1.6px;
     
-    &:hover {
-      color: $scarlet;
-    }
-    
     @media (min-width: $medium-breakpoint) {
       font-size: 0.8rem;
     }
@@ -184,4 +180,15 @@
     color: #6B7277;
   }
   
+}
+
+@media (max-width: $medium-breakpoint) {
+  .rehub-popup__inner::-webkit-scrollbar { 
+    width: 0;
+  }
+  
+  .rehub-popup__inner {
+    -ms-overflow-style: none; 
+  }
+
 }

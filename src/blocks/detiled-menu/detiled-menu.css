@@ -183,10 +183,6 @@
     margin-right: 10px;
     letter-spacing: 1.6px;
     
-    &:hover {
-      color: $scarlet;
-    }
-    
     @media (min-width: $medium-breakpoint) {
       font-size: 0.8rem;
     }

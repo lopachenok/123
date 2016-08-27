@@ -32,7 +32,15 @@
   
   @media (min-width: 1580px) {
     background-size: 1070px;
-    background-position: 830px 370px;
+    background-position: 60% 370px;
+  }
+  
+  @media (min-width: 1780px) {
+    background-position: 35% 370px;
+  }
+  
+  @media (min-width: 1880px) {
+    background-position: 0 370px;
   }
   
   &__inner {
@@ -57,7 +65,7 @@
       padding-top: 75px;
       padding-bottom: 49px;
       padding-right: 37px;
-      max-width: none;
+      max-width: 720px;
     }
     
   }
@@ -78,7 +86,7 @@
     @media (min-width: $large-breakpoint) {
       font-size: 24px;
       line-height: 36px;
-      padding-left: 176px;
+/*      padding-left: 176px;*/
       max-width: 500px;
     }
     
@@ -92,7 +100,6 @@
     }
     
     @media (min-width: $large-breakpoint) {
-      padding-left: 176px;
       margin-top: 1.3rem;
     }
     

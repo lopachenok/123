@@ -48,6 +48,17 @@ html, body {
   
 }
 
+@media (max-width: $medium-breakpoint) {
+  body::-webkit-scrollbar { 
+    width: 0;
+  }
+  
+  body {
+    -ms-overflow-style: none; 
+  }
+  
+}
+
 body {
   
   &.ov-hidden {
