@@ -2,10 +2,18 @@
   background: url(typewriter-landscape.jpg);
   background-size: 150%;
   background-position: 70%;
+  background-repeat: no-repeat;
   
-  @media (min-width: 600px) {
+  @media (min-width: 440px) {
+    background-size: 130%;
+    background-position: 93%;
+    background-repeat: no-repeat;
+  }
+  
+  
+  @media (min-width: 640px) {
     background-size: 120%;
-    background-position: 120%;
+    background-position: 90%;
   }
   
   @media (min-width: $medium-breakpoint) {
@@ -20,7 +28,11 @@
   }
   
   @media (min-width: 1060px) {
-    background-position: 79% 85%;
+    background-position: 79% 90%;
+    background-size: 600px;
+  }
+  
+  @media (min-width: 1200px) {
     background-size: 640px;
   }
   

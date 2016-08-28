@@ -106,11 +106,22 @@ gulp.task('fonts', function() {
          .pipe(gulp.dest(dirs.build + '/fonts'))
 });
 
+gulp.task('svg', function() {
+  return gulp.src(dirs.source + '/blocks/**/*.svg')
+         .pipe(debug({title: 'svg'}))
+  .pipe(rename(function(path){  // удаляем текущий dirname
+      path.dirname = '';
+      return path;
+    }))
+         .pipe(gulp.dest(dirs.build + '/img'));
+});
+
+
 
 //TODO: Newer не работает, т к меняется путь.
 // Копирование и оптимизация изображений из папки img
 gulp.task('img', function () { 
-  return gulp.src(dirs.source + '/blocks/**/*.{png,jpg,svg}',  {since: gulp.lastRun('img')}) // только для изменившихся с последнего запуска файлов   
+  return gulp.src(dirs.source + '/blocks/**/*.{png,jpg}',  {since: gulp.lastRun('img')}) // только для изменившихся с последнего запуска файлов   
     .pipe(debug({title: 'img'}))
     .pipe(newer(dirs.build + '/img'))  
     .pipe(debug({title: 'cached'}))
@@ -206,7 +217,7 @@ gulp.task('build', gulp.series(
   'clean',
 //  'svgsprite',
   'fonts',
-  gulp.parallel('css', 'img', 'js', 'video'),
+  gulp.parallel('css', 'img', 'svg', 'js', 'video'),
   'html'
 ));
 

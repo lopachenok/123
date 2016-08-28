@@ -88,6 +88,10 @@
 
 @media (min-width: $medium-breakpoint) {
   
+  .small-column-offset2 {
+  margin-left: 0;
+  }
+  
   .medium-column1 {
     box-sizing: border-box;
     width: 8.3333%;
@@ -188,6 +192,10 @@
 
 
 @media (min-width: $large-breakpoint) {
+  
+  .small-column-offset2 {
+  margin-left: 33.3333%;
+}
   
   .large-column1 {
     box-sizing: border-box;
