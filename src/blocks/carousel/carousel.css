@@ -4,6 +4,8 @@
   &__tabs-container {
     position: relative;
     left: 10px;
+    display: flex;
+    justify-content: center;
     
     &:before {
       content: '';
@@ -71,6 +73,9 @@
     padding-right: 1rem;    
     transition: transform .3s ease;
     justify-content: center;  
+    width: 426px;
+    flex-grow: 1;
+    flex-shrink: 0;
   }
   
   &__tab {
@@ -477,6 +482,7 @@
   
   .carousel__tabs {
     transition: transform .6s ease;
+    width: 588px;
   }
   
   .carousel__tab {

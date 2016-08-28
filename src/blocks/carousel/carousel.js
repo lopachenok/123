@@ -197,7 +197,9 @@ function addRemoveScrollButton(elem, container) {
     } else {      
       this.panes = Array.prototype.slice.call(this.container.children, 0);
     }
-    
+   
+    this.tabsOffset = ((this.tabs.clientWidth - 16 - window.innerWidth)/2);
+
     var self = this;
     this.tabs.addEventListener("click", function(e) {
       
@@ -250,19 +252,18 @@ function addRemoveScrollButton(elem, container) {
         stopTabTransform = 600;
       } else {
          stopTabTransform = 430;
-       }
-      
-     
-      
+      }    
+            
       if (window.innerWidth < stopTabTransform) {        
         if (showIndex === 0) {
           this.tabsContainer.classList.remove("carousel__tabs-container--end");
           this.tabsContainer.classList.add("carousel__tabs-container--start");
-          if(this.container.id == "carousel-container") {
-            persentTab = 14;
+          
+          if(this.container.id == "popup-container") {
+            persentTab =  this.tabsOffset + 15; 
           } else {
-            persentTab = 53;
-          }
+            persentTab = this.tabsOffset 
+          }  
           
         } else if (showIndex === 1) {
           this.tabsContainer.classList.remove("carousel__tabs-container--end");
@@ -270,18 +271,20 @@ function addRemoveScrollButton(elem, container) {
           persentTab = 0;         
         } else if (showIndex === 2) {
           this.tabsContainer.classList.remove("carousel__tabs-container--start");
-          this.tabsContainer.classList.add("carousel__tabs-container--end");  
-          if(this.container.id == "carousel-container") {
-            persentTab = -20;
+          this.tabsContainer.classList.add("carousel__tabs-container--end");           
+          
+          if(this.container.id == "popup-container") {
+            persentTab = - (this.tabsOffset + 10); 
           } else {
-            persentTab = -51;
+            persentTab = - (this.tabsOffset + 20);
           }
+          
         }
       } else {
-        tabTransform = 'translate3d(0, 0, 0)';
+        persentTab = 0;
       }
       
-      tabTransform = 'translate3d('+persentTab+'%, 0, 0)';
+      tabTransform = 'translate3d('+persentTab+'px, 0, 0)';
       this.tabs.style.transform = tabTransform;
       this.tabs.style.mozTransform = tabTransform;
       this.tabs.style.webkitTransform = tabTransform;
