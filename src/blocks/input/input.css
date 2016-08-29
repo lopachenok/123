@@ -95,6 +95,10 @@
       text-transform: uppercase;
     }
     
+    &--error {
+      border: 1px solid red;
+    }
+    
   }
   
 }
