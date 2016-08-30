@@ -499,62 +499,94 @@ function openPopup(e) {
 document.addEventListener("DOMContentLoaded", function() {
   var cartNumberInput = document.getElementById("cc-number");
   cartNumberInput.addEventListener("keyup", function() {
-    this.value = cc_format(this.value);
-    detectCard(this.value);
+    this.value = cc_format(this);
   });
+  
   cartNumberInput.addEventListener("change", function() {
-    this.value = cc_format(this.value);
-    detectCard(this.value);
+    this.value = cc_format(this);    
+    if(validateEmpty(this.value, validateLengthInRange, 13, 19) === false) {
+      addRemoveErrorState('add', this, 'Пожалуйста, введите корректный номер карты.'); 
+    } else {
+      addRemoveErrorState('remove', this, ''); 
+    }
+    detectCard(this);
   });
   
-  document.getElementById("cc-summ").addEventListener("keyup", function() {
-    this.value = validateNumber(this);
+  var summ = document.getElementById("cc-summ");
+  var month = document.getElementById("cc-month");
+  var year = document.getElementById("cc-year");
+  var cvv = document.getElementById("cc-cvv");
+  var name = document.getElementById("cc-name");
+  var email = document.getElementById("cc-email");
+  
+  summ.addEventListener("keyup", function() {
+    this.value = sanitizeValue(this.value, true);
   });
   
-  document.getElementById("cc-summ").addEventListener("change", function() {
-    this.value = validateNumber(this);
+  summ.addEventListener("change", function() {
+    this.value = sanitizeValue(this.value, true);    
   });
   
-  document.getElementById("cc-month").addEventListener("keyup", function() {
-    this.value = validateNumber(this, 1, 12);
+  month.addEventListener("keyup", function() {
+    this.value = sanitizeValue(this.value, true);
   });
   
-  document.getElementById("cc-month").addEventListener("change", function() {
-    this.value = validateMonth(this, 1, 12);
+  month.addEventListener("change", function() {
+    this.value = sanitizeValue(this.value, true);
+    if(validateEmpty(this.value, validateInRange, 1, 12) === false) {
+      addRemoveErrorState('add', this, 'Пожалуйста, введите корректный месяц.'); 
+    } else {
+      addRemoveErrorState('remove', this, ''); 
+    }
   });
   
-  document.getElementById("cc-year").addEventListener("keyup", function() {
-    this.value = validateNumber(this);
+  year.addEventListener("keyup", function() {
+    this.value = sanitizeValue(this.value, true);
   });
   
-  document.getElementById("cc-year").addEventListener("change", function() {
-    this.value = validateYear(this);
+  year.addEventListener("change", function() {
+    this.value = sanitizeValue(this.value, true);
+    if(validateEmpty(this.value, validateLength, 4) == false) {
+      addRemoveErrorState('add', this, 'Пожалуйста, введите корректный год.'); 
+    } else {
+      addRemoveErrorState('remove', this, ''); 
+    }
   });  
   
-  document.getElementById("cc-cvv").addEventListener("keyup", function() {
-    this.value = validateNumber(this);
+  cvv.addEventListener("keyup", function() {
+    this.value = sanitizeValue(this.value, true);
   });  
   
-  document.getElementById("cc-cvv").addEventListener("change", function() {
-    this.value = validateCVV(this);
+  cvv.addEventListener("change", function() {
+    this.value = sanitizeValue(this.value, true);
+    if(validateEmpty(this.value, validateLength, 3) == false) {
+      addRemoveErrorState('add', this, 'Пожалуйста, введите корректный код CVV.'); 
+    } else {
+      addRemoveErrorState('remove', this, ''); 
+    }
   });
   
-  document.getElementById("cc-name").addEventListener("keyup", function() {
-    this.value = validateCardName(this);
+  name.addEventListener("keyup", function() {
+    this.value = sanitizeValue(this.value, false, true);
   });
   
-  document.getElementById("cc-name").addEventListener("change", function() {
-    this.value = validateCardName(this);
+  name.addEventListener("change", function() {
+    this.value = sanitizeValue(this.value, false, true);
   });
   
-  document.getElementById("cc-email").addEventListener("change", function() {
-    validateEmail(this);
+  email.addEventListener("change", function() {
+    if(validateEmpty(this.value, validateEmail) == false) {
+      addRemoveErrorState('add', this, 'Пожалуйста, введите корректный адрес электронной почты.'); 
+    } else {
+      addRemoveErrorState('remove', this, 'Мы вышлем квитанцию Вам на электронную почту. Никакого спама, обещаем.'); 
+    }
   });
   
 });
 
-function cc_format(value) {
-  var v = value.replace(/\s+/g, '').replace(/[^-0-9]/gim,'').replace("-", "");  
+function cc_format(el) {
+  var v = el.value.replace(/\s+/g, '').replace(/[^-0-9]/gim,'').replace("-", "");  
+    
   var parts = [];
   var k;
   if(v.length <= 16) {
@@ -580,11 +612,13 @@ var cards = [
   {name: "Maestro", firstNumber: [5018, 5020, 5038, 5893, 6304, 6759, 6761, 6762, 6763], numberLength: [16, 17, 18, 19]}
 ];
 
-function detectCard(value) {
-  value = value.replace(/\s+/g, "");
-  if(value.length < 13 && value.length > 19) {
+function detectCard(el) {
+  value = el.value.replace(/\s+/g, "");
+  
+  if(value.length < 13 || value.length > 19) {   
     return;
   }
+  el.classList.remove("input-block__input--error");
   var filtredLengthCards = [];
   cards.forEach(function(card) {    
     if(card.numberLength.indexOf(value.length) !== -1) {
@@ -604,64 +638,77 @@ function detectCard(value) {
   
   if(cardName) {
     document.querySelector(".donate-form__card[value='"+cardName+"']").setAttribute("checked", true);
+    addRemoveErrorState('remove', el, ''); 
+  } else {
+    addRemoveErrorState('add', el, 'Пожалуйста, введите корректный номер карты.'); 
   }
   
 }
 
-function validateNumber(el, min, max) {
-  var v = el.value.replace(/\s+/g, '').replace(/[^-0-9]/gim,'').replace("-", "");  
-  if(max && min) {
-    if(v < min || v > max) { 
-      el.classList.add("input-block__input--error");
-    }
+function validateEmail(value) {
+  if(/^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,10}$/.test(value) === false) {
+    return false;
   } else {
+    return true;
+  }
+}
+
+function validateEmpty(value, validateFunction) {
+  if(value === '') {
+    return false;
+  } else {
+    var arg = Array.prototype.slice.call(arguments, 2);
+    arg.unshift(value);    
+    return validateFunction.apply(null, arg);
+  }
+}
+
+function sanitizeValue(value, number, name) {
+  var newValue = '';
+  if(number) {
+    newValue = value.replace(/\s+/g, '').replace(/[^-0-9]/gim,'').replace("-", "")
+  } else if(name) {
+    newValue = value.replace(/[^a-zA-Z.-]/g, '');
+  }  
+  return newValue;
+}
+
+function validateLength(value, length) {  
+  if(value.length < length) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function validateInRange(value, min, max) {
+  value = value|0;
+  if(value < min || value > max) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function validateLengthInRange(value, min, max) {
+  value = value.replace(/\s+/g, "");
+  if(value.length < min || value.length > max) {
+    return false;
+  } else {
+    return true;
+  }
+}
+  
+function addRemoveErrorState(flag, el, text) {
+  if(flag == 'add') {
+    el.classList.add("input-block__input--error");
+  } else if(flag == 'remove') {
     el.classList.remove("input-block__input--error");
   }
-  return v;
-}
-
-function validateMonth(el, min, max) {  
-  var v = el.value.replace(/\s+/g, '').replace(/[^-0-9]/gim,'').replace("-", ""); 
-  if(v < min || v > max) { 
-    el.classList.add("input-block__input--error");
-  }
-  if(v.length == 1) {
-    return '0'+v;
+  if(el.parentElement.nextElementSibling && el.parentElement.nextElementSibling.nodeName == 'P') {
+    el.parentElement.nextElementSibling.innerHTML = text;
   } else {
-    return v;
-  }
-}
-
-function validateCVV(el) {
-  var v = el.value.replace(/\s+/g, '').replace(/[^-0-9]/gim,'').replace("-", "");
-  if(v.length < 3) {
-    el.classList.add("input-block__input--error");
-  } else {
-    el.classList.remove("input-block__input--error");
-  }
-  return v;
-}
-
-function validateYear(el) {
-  var v = el.value.replace(/\s+/g, '').replace(/[^-0-9]/gim,'').replace("-", ""); 
-  if(v.length < 4) {
-    el.classList.add("input-block__input--error");
-  } else {
-    el.classList.remove("input-block__input--error");
-  }
-  return v;
-}
-
-function validateCardName(el) {
-  var v = el.value.replace(/[^a-zA-Z.-]/g, '');
-  return v;
-}
-
-function validateEmail(el) {
-  if(/^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,10}$/.test(el.value) === false) {
-    el.classList.add("input-block__input--error");
-  } else {
-    el.classList.remove("input-block__input--error");
+    el.parentElement.parentElement.nextElementSibling.innerHTML = text;
   }
 }
 document.addEventListener("DOMContentLoaded", function() {
