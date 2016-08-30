@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
  
   var scrollOffset, k;
   if(window.innerWidth >= tabletSize && window.innerWidth < desctopSize) {
-    k = 2.15;
+    k = 2.5;
   } else {
-    k = 3.1;
+    k = 3.2;
   }  
   
   scrollOffset = parseInt(window.getComputedStyle(document.querySelector(".medium-column5"), null).width) * k;
@@ -260,7 +260,7 @@ function addRemoveScrollButton(elem, container) {
           this.tabsContainer.classList.add("carousel__tabs-container--start");
           
           if(this.container.id == "popup-container") {
-            persentTab =  this.tabsOffset + 15; 
+            persentTab =  this.tabsOffset + 45; 
           } else {
             persentTab = this.tabsOffset 
           }  

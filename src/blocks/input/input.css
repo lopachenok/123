@@ -37,10 +37,12 @@
       
       @media (min-width: $medium-breakpoint) {
         font-size: 28px;
+        height: 40px;
       }
       
       @media (min-width: $large-breakpoint) {
         font-size: 34px;
+        height: 48px;
       }
       
     }

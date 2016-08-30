@@ -7,6 +7,10 @@
     display: flex;
     justify-content: center;
     
+    @media (min-width: $medium-breakpoint) {
+      display: block;
+    }
+    
     &:before {
       content: '';
       position: absolute;
@@ -76,6 +80,11 @@
     width: 426px;
     flex-grow: 1;
     flex-shrink: 0;
+    
+    @media (min-width: $medium-breakpoint) {
+      width: auto;
+    }
+    
   }
   
   &__tab {
@@ -483,6 +492,11 @@
   .carousel__tabs {
     transition: transform .6s ease;
     width: 588px;
+    
+    @media (min-width: $medium-breakpoint) {
+      width: auto;
+    }
+    
   }
   
   .carousel__tab {

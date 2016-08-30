@@ -47,7 +47,7 @@
     
     @media (min-width: $footer-medium-breakpoint) {
       margin-bottom: 63px;
-      flex-basis: 175px;
+      flex-basis: 176px;
       
       &:first-of-type {
         display: none;
@@ -65,7 +65,7 @@
     
     @media (min-width: $large-breakpoint) {
       margin-bottom: 58px;
-      flex-basis: 210px;
+      flex-basis: 211px;
       
       &:nth-of-type(2) {
         flex-basis: 175px;
@@ -78,7 +78,7 @@
     }
     
     @media (min-width: 1400px) {
-      flex-basis: 210px;
+      flex-basis: 211px;
       
       &:nth-of-type(2) {
         flex-basis: 190px;
