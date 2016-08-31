@@ -61,17 +61,17 @@
 
             <div class="payment-block  main-banner__payment-block">
               <div class="input-block  input-block--icon  payment-block__input">
-                <input type="text" class="input-block__input" value="100" maxlength="5" placeholder="100">
+                <input type="text" class="input-block__input" value="100" maxlength="5" placeholder="100" id="hero-input">
               </div>
-              <div class="dropdown  payment-block__dropdown">
+              <div class="dropdown  payment-block__dropdown" id="hero-dropdown">
                 <ul class="dropdown__list">
-                  <li class="dropdown__item  dropdown__item--selected">Ежемесячно</li>
-                  <li class="dropdown__item">Разово</li>
+                  <li class="dropdown__item  dropdown__item--selected" data-value="monthly">Ежемесячно</li>
+                  <li class="dropdown__item" data-value="once">Разово</li>
                 </ul>
               </div>
 
               <div class="payment-block__btn-wrap">
-                <button class="btn payment-block__btn" data-popups="1">Пожертвовать</button>
+                <button class="btn payment-block__btn" data-popups="1" data-count="100" data-period="monthly" id="hero-btn">Пожертвовать</button>
               </div>
 
             </div>
@@ -487,7 +487,7 @@
               <p class="donate-action__count">300</p>
               <p class="donate-action__text">Вы также можете указать <span class="donate-action__highlight">другую сумму.</span></p>
               <div class="donate-action__btn-wrap">
-                <button class="btn  donate-action__btn">Пожертвовать</button>
+                <button class="btn  donate-action__btn" data-popups="1" data-count="300" data-period="once">Пожертвовать</button>
               </div>
 
             </div>
@@ -498,7 +498,7 @@
               <p class="donate-action__count">100</p>
               <p class="donate-action__text">Помогайте <span class="donate-action__highlight">каждый месяц.</span> Вы также можете указать другую сумму.</p>
               <div class="donate-action__btn-wrap">
-                <button class="btn  donate-action__btn">Пожертвовать</button>
+                <button class="btn  donate-action__btn" data-popups="1" data-count="100" data-period="monthly">Пожертвовать</button>
               </div>
             </div>
           </div>
@@ -739,10 +739,10 @@
                           <p class="donate-form__checkbox-description">Ежемесячное пожертвование</p>
                         </label>
                         
-                        <div class="dropdown  donate-form__dropdown">
+                        <div class="dropdown  donate-form__dropdown" id="cc-dropdown">
                           <ul class="dropdown__list">
-                            <li class="dropdown__item  dropdown__item--selected">Ежемесячно</li>
-                            <li class="dropdown__item">Разово</li>
+                            <li class="dropdown__item  dropdown__item--selected" data-value="monthly">Ежемесячно</li>
+                            <li class="dropdown__item" data-value="once">Разово</li>
                           </ul>
                         </div>
                         
@@ -819,7 +819,7 @@
                     </div>
 
                     <div class="donate-form__btn-wrap">
-                      <button class="btn  btn--dark">подтвердить 500p/мес</button>
+                      <button class="btn  btn--dark">подтвердить <span id="final-count">500p/мес</span></button>
                     </div>
 
 

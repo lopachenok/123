@@ -6,3 +6,4 @@
 //= ../blocks/popups/popups.js
 //= ../blocks/donate-form/donate-form.js
 //= ../blocks/rehub-popup/rehub-popup.js
+//= ../blocks/main-banner/main-banner.js

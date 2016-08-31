@@ -22,7 +22,7 @@ function toggleDropdown(e) {
   elem.classList.toggle("dropdown--open");
   var options = elem.children[0].children;
   for(var i = 0; i < options.length; i++) {
-    options[i].addEventListener("click", selectOption);
+    options[i].addEventListener("click", selectOption.bind(null, options[i]));
   }
 }
 
@@ -36,10 +36,12 @@ function closeDropdown(e) {
   
 }
 
-function selectOption(e) {  
-  var elem = e.target; 
+function selectOption(elem) {  
   var option = elem.parentElement.querySelectorAll(".dropdown .dropdown__item--selected");
    
   option[0].classList.remove("dropdown__item--selected");
   elem.classList.add("dropdown__item--selected");
+  
+  var event = new CustomEvent("choose", {"detail": elem});
+  elem.parentElement.parentElement.dispatchEvent(event);
 }

@@ -46,7 +46,7 @@ function toggleDropdown(e) {
   elem.classList.toggle("dropdown--open");
   var options = elem.children[0].children;
   for(var i = 0; i < options.length; i++) {
-    options[i].addEventListener("click", selectOption);
+    options[i].addEventListener("click", selectOption.bind(null, options[i]));
   }
 }
 
@@ -60,12 +60,14 @@ function closeDropdown(e) {
   
 }
 
-function selectOption(e) {  
-  var elem = e.target; 
+function selectOption(elem) {  
   var option = elem.parentElement.querySelectorAll(".dropdown .dropdown__item--selected");
    
   option[0].classList.remove("dropdown__item--selected");
   elem.classList.add("dropdown__item--selected");
+  
+  var event = new CustomEvent("choose", {"detail": elem});
+  elem.parentElement.parentElement.dispatchEvent(event);
 }
 document.addEventListener("DOMContentLoaded", function () {
   var player = document.getElementById('video-player');
@@ -491,6 +493,7 @@ document.addEventListener("DOMContentLoaded", function() {
 var popupOverlay;
 var scrollTopOffset;
 var flag = false;
+var donateCount, donatePeriod;
 
 function openPopup(e) {
   if(e.target.offsetParent.id.indexOf("popup") !== -1) {
@@ -498,15 +501,47 @@ function openPopup(e) {
   } else {
     flag = false;
   }
-  var popupNumber = e.currentTarget.getAttribute("data-popups");
+  var btn = e.currentTarget;
+  var popupNumber = btn.getAttribute("data-popups");
   popupOverlay.classList.add("no-animate");
   HammerCarousel.prototype.show.apply(popups, [popupNumber, 0, true]);
+  
+  if(popupNumber == 1) {
+    donateCount = btn.getAttribute("data-count");
+    donatePeriod = btn.getAttribute("data-period");
+    
+    if(donateCount) {
+      summ.value = donateCount;
+    }
+    
+    if(donatePeriod) {
+      selectOption(formDropdown.querySelector("*[data-value='"+donatePeriod+"']"));
+    }
+    
+    var substr;
+    if(window.innerWidth < tabletSize) {
+      substr = "/мес";
+    } else {
+      substr = " в месяц";
+    }
+    
+    if(donatePeriod && donateCount) {
+      finalCount.innerHTML = donateCount+'&#8381;'+(donatePeriod == 'monthly'?substr:'');
+    }
+    
+  }
+  
   var body = document.body;
   scrollTopOffset = body.scrollTop;
   body.classList.add("ov-hidden"); 
   popupOverlay.classList.add("popups-overlay--open");
   popupOverlay.classList.remove("no-animate");
 }
+var summ, 
+    formDropdown, 
+    finalCount,
+    btnPeriod;
+
 document.addEventListener("DOMContentLoaded", function() {
   var cartNumberInput = document.getElementById("cc-number");
   cartNumberInput.addEventListener("keyup", function() {
@@ -523,19 +558,22 @@ document.addEventListener("DOMContentLoaded", function() {
     detectCard(this);
   });
   
-  var summ = document.getElementById("cc-summ");
+  summ = document.getElementById("cc-summ");
   var month = document.getElementById("cc-month");
   var year = document.getElementById("cc-year");
   var cvv = document.getElementById("cc-cvv");
   var name = document.getElementById("cc-name");
   var email = document.getElementById("cc-email");
+  formDropdown = document.getElementById("cc-dropdown");
+  finalCount = document.getElementById("final-count");
   
   summ.addEventListener("keyup", function() {
     this.value = sanitizeValue(this.value, true);
   });
   
   summ.addEventListener("change", function() {
-    this.value = sanitizeValue(this.value, true);    
+    this.value = sanitizeValue(this.value, true);   
+    changeBtnInnerText(this.value);
   });
   
   month.addEventListener("keyup", function() {
@@ -591,6 +629,11 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
       addRemoveErrorState('remove', this, 'Мы вышлем квитанцию Вам на электронную почту. Никакого спама, обещаем.'); 
     }
+  });
+  
+  formDropdown.addEventListener("choose", function(e) {
+    btnPeriod = e.detail.getAttribute("data-value");
+    changeBtnInnerText(null, e.detail.getAttribute("data-value"));
   });
   
 });
@@ -722,6 +765,19 @@ function addRemoveErrorState(flag, el, text) {
     el.parentElement.parentElement.nextElementSibling.innerHTML = text;
   }
 }
+
+function changeBtnInnerText(count, period) {
+  count = count || donateCount;
+  period = period || btnPeriod;
+  
+  var substr;
+  if(window.innerWidth < tabletSize) {
+    substr = "/мес";
+  } else {
+    substr = " в месяц";
+  }
+  finalCount.innerHTML = count+'&#8381;'+(period == 'monthly'?substr:'');
+}
 document.addEventListener("DOMContentLoaded", function() {
   var links = document.querySelectorAll("*[data-popup]");
   Array.prototype.forEach.call(links, function(link) {
@@ -754,4 +810,15 @@ function closeRehabPopup(event) {
   body.classList.remove("ov-hidden");
   body.scrollTop = scrollTopOffsetRehab;  event.target.parentElement.parentElement.parentElement.parentElement.parentElement.classList.remove("rehub-popup--open");
 }
+document.addEventListener("DOMContentLoaded", function () {
+  var heroBtn = document.getElementById("hero-btn");
+  document.getElementById("hero-dropdown").addEventListener("choose", function(e) {
+    heroBtn.setAttribute("data-period", e.detail.getAttribute("data-value"));
+  })
+  
+  document.getElementById("hero-input").addEventListener("change", function(e){
+    heroBtn.setAttribute("data-count", e.target.value);
+  });
+  
+});
 //# sourceMappingURL=main.js.map

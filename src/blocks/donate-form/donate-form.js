@@ -1,3 +1,8 @@
+var summ, 
+    formDropdown, 
+    finalCount,
+    btnPeriod;
+
 document.addEventListener("DOMContentLoaded", function() {
   var cartNumberInput = document.getElementById("cc-number");
   cartNumberInput.addEventListener("keyup", function() {
@@ -14,19 +19,22 @@ document.addEventListener("DOMContentLoaded", function() {
     detectCard(this);
   });
   
-  var summ = document.getElementById("cc-summ");
+  summ = document.getElementById("cc-summ");
   var month = document.getElementById("cc-month");
   var year = document.getElementById("cc-year");
   var cvv = document.getElementById("cc-cvv");
   var name = document.getElementById("cc-name");
   var email = document.getElementById("cc-email");
+  formDropdown = document.getElementById("cc-dropdown");
+  finalCount = document.getElementById("final-count");
   
   summ.addEventListener("keyup", function() {
     this.value = sanitizeValue(this.value, true);
   });
   
   summ.addEventListener("change", function() {
-    this.value = sanitizeValue(this.value, true);    
+    this.value = sanitizeValue(this.value, true);   
+    changeBtnInnerText(this.value);
   });
   
   month.addEventListener("keyup", function() {
@@ -82,6 +90,11 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
       addRemoveErrorState('remove', this, 'Мы вышлем квитанцию Вам на электронную почту. Никакого спама, обещаем.'); 
     }
+  });
+  
+  formDropdown.addEventListener("choose", function(e) {
+    btnPeriod = e.detail.getAttribute("data-value");
+    changeBtnInnerText(null, e.detail.getAttribute("data-value"));
   });
   
 });
@@ -212,4 +225,17 @@ function addRemoveErrorState(flag, el, text) {
   } else {
     el.parentElement.parentElement.nextElementSibling.innerHTML = text;
   }
+}
+
+function changeBtnInnerText(count, period) {
+  count = count || donateCount;
+  period = period || btnPeriod;
+  
+  var substr;
+  if(window.innerWidth < tabletSize) {
+    substr = "/мес";
+  } else {
+    substr = " в месяц";
+  }
+  finalCount.innerHTML = count+'&#8381;'+(period == 'monthly'?substr:'');
 }
