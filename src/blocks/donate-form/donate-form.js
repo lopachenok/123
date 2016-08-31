@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var email = document.getElementById("cc-email");
   formDropdown = document.getElementById("cc-dropdown");
   finalCount = document.getElementById("final-count");
+  var checkbox = document.getElementById("cc-monthly");
   
   summ.addEventListener("keyup", function() {
     this.value = sanitizeValue(this.value, true);
@@ -94,7 +95,23 @@ document.addEventListener("DOMContentLoaded", function() {
   
   formDropdown.addEventListener("choose", function(e) {
     btnPeriod = e.detail.getAttribute("data-value");
-    changeBtnInnerText(null, e.detail.getAttribute("data-value"));
+    changeBtnInnerText(summ.value, e.detail.getAttribute("data-value"));
+    if(btnPeriod == 'once') {
+      checkbox.checked = false;
+    } else {
+      checkbox.checked = true;
+    }
+    
+  });
+  
+  checkbox.addEventListener("change", function() {
+    if(this.checked) {
+      changeBtnInnerText(summ.value, 'monthly');
+      selectOption(formDropdown.querySelector("*[data-value='monthly']"));
+    } else {
+      changeBtnInnerText(summ.value, 'once');
+      selectOption(formDropdown.querySelector("*[data-value='once']"));
+    }
   });
   
 });
@@ -228,8 +245,8 @@ function addRemoveErrorState(flag, el, text) {
 }
 
 function changeBtnInnerText(count, period) {
-  count = count || donateCount;
-  period = period || btnPeriod;
+  count = count;
+  period = period;
   
   var substr;
   if(window.innerWidth < tabletSize) {

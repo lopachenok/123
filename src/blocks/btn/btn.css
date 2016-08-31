@@ -24,6 +24,23 @@
     border: 5px solid $scarlet;       
   }
   
+  &__period {
+    
+    @media (min-width: $medium-breakpoint) {
+      display: none;
+    }
+    
+    &--medium {
+      display: none;
+      
+      @media (min-width: $medium-breakpoint) {
+        display: inline-block;
+      }
+      
+    }
+    
+  }
+  
   &--small {
     font-size: 0.8rem;
     padding: 7px 15px;
