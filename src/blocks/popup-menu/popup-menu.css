@@ -2,8 +2,16 @@
   padding-left: 30px;
   padding-bottom: 18px;
   
+  @media (min-width: $medium-breakpoint) {
+    padding-left: 56px;
+  }
+  
   &__item {
     padding-bottom: 27px;
+    
+    @media (min-width: $medium-breakpoint) {
+      padding-bottom: 53px;
+    }
     
     &--active {
       

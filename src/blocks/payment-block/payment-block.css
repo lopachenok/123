@@ -19,6 +19,14 @@
     @media (min-width: $medium-breakpoint) {
       display: inline-block;
       margin-right: 16px;
+      width: 170px;
+      
+      .input-block__input {
+        font-weight: 600;
+        font-size: 28px;
+        letter-spacing: 2.8px;        
+      }
+      
     }
     
     @media (min-width: $large-breakpoint){

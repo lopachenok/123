@@ -51,14 +51,38 @@
   
   &--count {
     width: 130px;
+    
+    @media (min-width: $medium-breakpoint) {
+      width: 170px;
+    }
+    
   }
   
   &--month {
     width: 50px;
+    
+    @media (min-width: $medium-breakpoint) {
+      width: 75px;
+    }
+    
   }
   
   &--year {
     width: 67px;
+    
+    @media (min-width: $medium-breakpoint) {
+      width: 99px;
+    }
+    
+  }
+  
+  &--cvv {
+    width: 67px;
+    
+    @media (min-width: $medium-breakpoint) {
+      width: 87px;
+    }
+    
   }
   
   &__input {
@@ -73,16 +97,12 @@
     box-sizing: border-box;
     color: $midnight;
     
-    @media (min-width: $medium-breakpoint) {        
-      font-weight: 600;
-      font-size: 28px;
-      letter-spacing: 2.8px;
-      width: 170px;      
-      vertical-align: top;
-      line-height: 40px;
+    @media (min-width: $medium-breakpoint) {      
+      vertical-align: top;      
       padding-left: 25px;
       box-sizing: border-box;
       padding-right: 30px;
+      line-height: 40px;
     }
     
     @media (min-width: $large-breakpoint) {

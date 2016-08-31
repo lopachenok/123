@@ -8,6 +8,11 @@
   &__inner {
     @mixin container;
     padding-top: 13px;
+    
+    @media (min-width: $medium-breakpoint) {
+      padding-top: 28px;
+    }
+    
   }
   
   &__column {
@@ -27,6 +32,12 @@
     color: #F0F1F2;
     padding-top: 3px;
     cursor: pointer;
+    
+    @media (min-width: $medium-breakpoint) {
+      font-size: 0.8rem;
+      padding-top: 4px;
+    }
+    
   }
   
   &__closer-icon {
@@ -101,7 +112,7 @@
   }
   
   @media (min-width: $medium-breakpoint) {
-    display: none;
+    
   }
   
   &.no-animate {

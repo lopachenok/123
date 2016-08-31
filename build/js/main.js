@@ -44,8 +44,7 @@ function toggleDropdown(e) {
   }
   
   elem.classList.toggle("dropdown--open");
-  var options = document.querySelectorAll(".dropdown--open .dropdown__item");
-  
+  var options = elem.children[0].children;
   for(var i = 0; i < options.length; i++) {
     options[i].addEventListener("click", selectOption);
   }
@@ -61,9 +60,10 @@ function closeDropdown(e) {
   
 }
 
-function selectOption(e) {
-  var elem = e.target;
-  var option = document.querySelectorAll(".dropdown .dropdown__item--selected");
+function selectOption(e) {  
+  var elem = e.target; 
+  var option = elem.parentElement.querySelectorAll(".dropdown .dropdown__item--selected");
+   
   option[0].classList.remove("dropdown__item--selected");
   elem.classList.add("dropdown__item--selected");
 }
@@ -158,6 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if(windowSize.x !== window.innerWidth) {
       var i = outer.currentIndex;
       var j = popups.currentIndex;
+      
       if(window.innerWidth >= tabletSize) {        
         outer = new HammerCarousel(carousel);
         popups = new HammerCarousel(popupsEl);
@@ -165,12 +166,19 @@ document.addEventListener("DOMContentLoaded", function () {
         outer = new HammerCarousel(carousel, Hammer.DIRECTION_HORIZONTAL);
         popups = new HammerCarousel(popupsEl, Hammer.DIRECTION_HORIZONTAL);
       }
+      
       HammerCarousel.prototype.show.apply(outer, [i, 0, true]);
       document.getElementById("popups-overlay").classList.add("no-animate");
       HammerCarousel.prototype.show.apply(popups, [j, 0, true]);
       setTimeout(function() {
         document.getElementById("popups-overlay").classList.remove("no-animate");
       }, 0);
+      
+      heightArray = [];
+      Array.prototype.forEach.call(popupContentBlock, function(content) {
+        heightArray.push(content.clientHeight);
+      });
+      
     }
     windowSize.x = window.innerWidth;
   };
@@ -396,13 +404,16 @@ function addRemoveScrollButton(elem, container) {
         }
       
       var paneIndex, pos, translate;
+      
+      if(window.innerWidth < desctopSize) {
+        if(this.container.id == "popup-container") {
+          popupInner.style.height = heightArray[showIndex] + 50 + 'px';
+        } 
+      }
+      
       if (window.innerWidth < tabletSize) {      
         for (paneIndex = 0; paneIndex < this.panes.length; paneIndex++) {
           pos = (this.containerSize / 100) * (((paneIndex - showIndex) * 100) + percent);
-          
-          if(this.container.id == "popup-container") {
-            popupInner.style.height = heightArray[showIndex] + 50 + 'px';
-          } 
           
           if (this.direction & Hammer.DIRECTION_HORIZONTAL) {
             translate = "translate3d(" + pos + "px, 0, 0)";

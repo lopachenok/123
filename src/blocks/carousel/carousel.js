@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if(windowSize.x !== window.innerWidth) {
       var i = outer.currentIndex;
       var j = popups.currentIndex;
+      
       if(window.innerWidth >= tabletSize) {        
         outer = new HammerCarousel(carousel);
         popups = new HammerCarousel(popupsEl);
@@ -70,12 +71,19 @@ document.addEventListener("DOMContentLoaded", function () {
         outer = new HammerCarousel(carousel, Hammer.DIRECTION_HORIZONTAL);
         popups = new HammerCarousel(popupsEl, Hammer.DIRECTION_HORIZONTAL);
       }
+      
       HammerCarousel.prototype.show.apply(outer, [i, 0, true]);
       document.getElementById("popups-overlay").classList.add("no-animate");
       HammerCarousel.prototype.show.apply(popups, [j, 0, true]);
       setTimeout(function() {
         document.getElementById("popups-overlay").classList.remove("no-animate");
       }, 0);
+      
+      heightArray = [];
+      Array.prototype.forEach.call(popupContentBlock, function(content) {
+        heightArray.push(content.clientHeight);
+      });
+      
     }
     windowSize.x = window.innerWidth;
   };
@@ -301,13 +309,16 @@ function addRemoveScrollButton(elem, container) {
         }
       
       var paneIndex, pos, translate;
+      
+      if(window.innerWidth < desctopSize) {
+        if(this.container.id == "popup-container") {
+          popupInner.style.height = heightArray[showIndex] + 50 + 'px';
+        } 
+      }
+      
       if (window.innerWidth < tabletSize) {      
         for (paneIndex = 0; paneIndex < this.panes.length; paneIndex++) {
           pos = (this.containerSize / 100) * (((paneIndex - showIndex) * 100) + percent);
-          
-          if(this.container.id == "popup-container") {
-            popupInner.style.height = heightArray[showIndex] + 50 + 'px';
-          } 
           
           if (this.direction & Hammer.DIRECTION_HORIZONTAL) {
             translate = "translate3d(" + pos + "px, 0, 0)";

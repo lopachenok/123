@@ -668,7 +668,7 @@
 
             <section class="carousel__content">
               <div class="row">
-                <div class="small-column6">
+                <div class="small-column6  medium-column6">
 
                   <nav class="popup-menu">
                     <ul class="popup-menu__list">
@@ -683,6 +683,31 @@
                   </nav>
 
                 </div>
+                
+                <div class="medium-column6">
+                  <div class="contacts  contacts--hide-for-small">
+
+                    <div class="contacts__item">
+                      <p class="contacts__title">Контактный телефон</p>
+                      <a class="contacts__name" href="tel:88125691474">+7 (812) 569-14-74</a>
+                      <p class="contacts__description">Нажмите на номер, чтобы позвонить. отвечаем стабильно с понедельника по воскресениес 10:00 до 22:00.</p>
+                    </div>
+
+                    <div class="contacts__item  contacts__item--divider">
+                      <p class="contacts__title">Электронная почта</p>
+                      <a class="contacts__name" href="mailto:inbox@nitdobra.fund">inbox@nitdobra.fund</a>
+                      <p class="contacts__description">Нажмите на адрес, чтобы отправить письмо. Отвечаем каждый день, время ответа не более трех часов.</p>
+                    </div>
+
+                    <div class="contacts__item  contacts__item--divider">
+                      <p class="contacts__title">Наш офис</p>
+                      <a class="contacts__name" href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%9F%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%BE%20%C2%ABWelcome%C2%BB%2C%20%D0%9D%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C%2048&sll=30.334499%2C59.935376&sspn=0.020428%2C0.005890&ol=biz&oid=1490859453">Пространство «Welcome», Невский проспект, 48, Санкт-Петербург, 194283</a>
+                      <p class="contacts__description">Нажмите, чтобы открыть на карте. Офис открыт для посещения по будням с 10:00 до 19:00, по субботам с 10:00 до 18:00.</p>
+                    </div>
+
+                  </div>
+                </div>
+                
               </div>
             </section>
 
@@ -701,7 +726,7 @@
                     </div>
 
                     <div class="donate-form__item">
-                      <p class="donate-form__title">Сумма пожертвования</p>
+                      <p class="donate-form__title  donate-form__title--hide-for-medium">Сумма пожертвования</p>
 
                       <div class="donate-form__count-block">
                         <div class="input-block  input-block--icon  input-block--count  donate-form__input-block">
@@ -713,6 +738,14 @@
                           <span class="donate-form__checkbox-icon"></span>
                           <p class="donate-form__checkbox-description">Ежемесячное пожертвование</p>
                         </label>
+                        
+                        <div class="dropdown  donate-form__dropdown">
+                          <ul class="dropdown__list">
+                            <li class="dropdown__item  dropdown__item--selected">Ежемесячно</li>
+                            <li class="dropdown__item">Разово</li>
+                          </ul>
+                        </div>
+                        
                       </div>
 
                     </div>
@@ -763,7 +796,7 @@
 
                       <div class="donate-form__card-block">
                         <p class="donate-form__title">Код CVV</p>
-                        <div class="input-block  input-block--year  donate-form__input-block">
+                        <div class="input-block  input-block--cvv  donate-form__input-block">
                           <input type="tel" class="input-block__input" placeholder="657" maxlength="3" id="cc-cvv">
                         </div>
                         <p class="donate-form__description"></p>

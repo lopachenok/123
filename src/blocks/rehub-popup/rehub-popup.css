@@ -11,6 +11,10 @@
   z-index: -10;
   transition: opacity .3s ease, visibility .3s ease, z-index .5s ease, top .5s .3s ease;
   
+  @media (min-width: $medium-breakpoint) {
+    display: none;
+  }
+  
   &--open {
     z-index: 10;
     visibility: visible;

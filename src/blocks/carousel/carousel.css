@@ -476,6 +476,10 @@
 .carousel--popups {
   padding-top: 55px;
   
+  @media (min-width: $medium-breakpoint) {
+    padding-top: 101px;
+  }
+  
   .carousel__tabs-container {
     left: -5px;
     
@@ -508,6 +512,15 @@
       color: #fff;
     }
     
+    @media (min-width: $medium-breakpoint) {
+      padding-right: 98px;
+      
+      &:last-of-type {
+        display: none;
+      
+      }
+    }
+    
   }
   
   .carousel__tab:last-of-type:before {
@@ -517,7 +530,7 @@
   
   .carousel__tab:nth-of-type(2).carousel__tab--active~.carousel__tab:last-of-type:before {
     width: 204px;
-    left: -236px;
+    left: -236px;    
   }
   
   .carousel__tab:first-of-type.carousel__tab--active~.carousel__tab:last-of-type:before {
@@ -525,10 +538,47 @@
     left: -420px;
   }
   
+  @media (min-width: $medium-breakpoint) {
+    
+    .carousel__tab:nth-of-type(2) {
+      position: relative;
+      padding-right: 0;
+      
+      &:before {
+        content: '';
+        border-bottom: 2px solid #fff;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: -17px;
+        border-radius: 1px;
+        transition: left .5s ease;
+      }
+      
+    }
+    
+    .carousel__tab:first-of-type.carousel__tab--active~.carousel__tab:nth-of-type(2):before {
+      width: 190px;
+      left: -292px; 
+    }
+    
+  }
+  
   .carousel__content {
     padding-top: 44px;
     height: auto;
     -webkit-overflow-scrolling: none;
+    
+    @media (min-width: $medium-breakpoint) {
+      padding-top: 96px;
+    }
+    
+  }
+  
+  .carousel__container {
+    &:before, &:after {
+      display: none;
+    }
   }
   
   .carousel__container.animate .carousel__content {
