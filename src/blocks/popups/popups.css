@@ -2,7 +2,7 @@
   background: #E52E53;
   min-height: 100vh;  
   overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
+  
   height: 100%;
   
   &__inner {
