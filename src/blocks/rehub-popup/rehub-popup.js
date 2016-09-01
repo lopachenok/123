@@ -18,7 +18,7 @@ function openRehabPopup(link, event) {
   var body = document.body;
   scrollTopOffsetRehab = body.scrollTop;
   setTimeout( function() {
-    body.classList.add("ov-hidden"); 
+    document.getElementById("wrapper").classList.add("ov-hidden"); 
   }, 300);
   var popup = document.getElementById(link.getAttribute("href"));
   popup.classList.add("rehub-popup--open");
@@ -27,6 +27,6 @@ function openRehabPopup(link, event) {
 function closeRehabPopup(event) {
   event.preventDefault();
   var body = document.body;  
-  body.classList.remove("ov-hidden");
+  document.getElementById("wrapper").classList.remove("ov-hidden");
   body.scrollTop = scrollTopOffsetRehab;  event.target.parentElement.parentElement.parentElement.parentElement.parentElement.classList.remove("rehub-popup--open");
 }

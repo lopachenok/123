@@ -6,11 +6,15 @@ document.addEventListener("DOMContentLoaded", function() {
     el.addEventListener("click", openPopup);
   });
   
+  popupOverlay.children[0].addEventListener("scroll", function(e) {
+    scrollPosition = this.scrollTop;
+  });
+  
   var closer = document.querySelector(".popups__closer");
   
   closer.addEventListener("click", function(e) {
     if(flag === false) {
-      document.body.classList.remove("ov-hidden");
+      document.getElementById("wrapper").classList.remove("ov-hidden");
     }    
     document.body.scrollTop = scrollTopOffset;
     popupOverlay.classList.remove("popups-overlay--open");    
@@ -20,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
 var popupOverlay;
 var scrollTopOffset;
 var flag = false;
-var donateCount, donatePeriod;
+var donateCount, donatePeriod, scrollPosition;
 
 function openPopup(e) {
   if(e.target.offsetParent.id.indexOf("popup") !== -1) {
@@ -60,7 +64,13 @@ function openPopup(e) {
   
   var body = document.body;
   scrollTopOffset = body.scrollTop;
-  body.classList.add("ov-hidden"); 
+  document.getElementById("wrapper").classList.add("ov-hidden"); 
   popupOverlay.classList.add("popups-overlay--open");
   popupOverlay.classList.remove("no-animate");
 }
+
+Array.prototype.forEach.call(document.querySelectorAll("input"), function(input){
+ input.addEventListener("focus", function() {
+  
+ }); 
+})

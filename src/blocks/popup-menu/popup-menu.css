@@ -1,6 +1,8 @@
 .popup-menu {
   padding-left: 30px;
   padding-bottom: 18px;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   
   @media (min-width: $medium-breakpoint) {
     padding-left: 56px;

@@ -48,6 +48,8 @@
     position: relative;
     padding-left: 17px;
     cursor: pointer;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);  
     
     &:hover {
       color: $scarlet;
@@ -80,6 +82,8 @@
     cursor: pointer;
     flex-grow: 0;
     flex-shrink: 0;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     
     @media (min-width: $large-breakpoint) {
       display: none;

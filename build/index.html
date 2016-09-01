@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">    
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="x-rim-auto-match" content="none">
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -13,6 +13,7 @@
 </head>
 
 <body>
+  <div class="wrapper" id="wrapper">
 
   <header class="page-header">
     <div class="page-header__inner">
@@ -601,7 +602,7 @@
               <p class="contact-info__copyright">© «Нить Добра», 2016.</p>
               <p class="contact-info__text">ИНН 7864131528, КПП 781307501, ОГРН 1126800004708. Распространение материалов разрешается только при указании ссылки на первоисточник.</p>
               <div class="contact-info__btn-wrap">
-                <button class="btn  btn--small">Связаться с нами</button>
+                <button class="btn  btn--small" data-popups="0">Контакты</button>
               </div>
             </div>
 
@@ -731,11 +732,11 @@
 
                       <div class="donate-form__count-block">
                         <div class="input-block  input-block--icon  input-block--count  donate-form__input-block">
-                          <input type="tel" class="input-block__input" value="500" placeholder="500" maxlength="5" id="cc-summ" tabindex="1">
+                          <input type="tel" class="input-block__input" value="500" placeholder="500" maxlength="5" id="cc-summ">
                         </div>
 
                         <label class="donate-form__checkbox-label">
-                          <input type="checkbox" class="donate-form__checkbox" id="cc-monthly" checked="true" tabindex="0">
+                          <input type="checkbox" class="donate-form__checkbox" id="cc-monthly" checked="true">
                           <span class="donate-form__checkbox-icon"></span>
                           <p class="donate-form__checkbox-description">Ежемесячное пожертвование</p>
                         </label>
@@ -754,25 +755,25 @@
                     <div class="donate-form__item  donate-form__item--divider">
                       <p class="donate-form__title">Номер банковской карты</p>
                       <div class="input-block  donate-form__input-block">
-                        <input type="tel" class="input-block__input" maxlength="20"  placeholder="1234 5678 9012 3456" id="cc-number" tabindex="2"> 
+                        <input type="tel" class="input-block__input" maxlength="20"  placeholder="1234 5678 9012 3456" id="cc-number"> 
                       </div>
                       <p class="donate-form__description"></p>
 
                       <div class="donate-form__card-box">
                         <label class="donate-form__card-label">
-                          <input type="radio" name="card" class="donate-form__card" value="Visa" disabled tabindex="0">
+                          <input type="radio" name="card" class="donate-form__card" value="Visa" disabled>
                           <p class="donate-form__card-text">Visa</p>
                         </label>
                         <label class="donate-form__card-label">
-                          <input type="radio" name="card" class="donate-form__card" value="MasterCard" disabled tabindex="0">
+                          <input type="radio" name="card" class="donate-form__card" value="MasterCard" disabled>
                           <p class="donate-form__card-text">MasterCard</p>
                         </label>
                         <label class="donate-form__card-label">
-                          <input type="radio" name="card" class="donate-form__card" value="Maestro" disabled tabindex="0">
+                          <input type="radio" name="card" class="donate-form__card" value="Maestro" disabled>
                           <p class="donate-form__card-text">Maestro</p>
                         </label>
                         <label class="donate-form__card-label">
-                          <input type="radio" name="card" class="donate-form__card" value="AmericanExpress" disabled tabindex="0">
+                          <input type="radio" name="card" class="donate-form__card" value="AmericanExpress" disabled>
                           <p class="donate-form__card-text">American Express</p>
                         </label>
                       </div>
@@ -785,10 +786,10 @@
 
                         <div class="donate-form__input-wrap">
                           <div class="input-block  input-block--month  donate-form__input-block">
-                            <input type="tel" class="input-block__input" placeholder="04" maxlength="2" id="cc-month" tabindex="3">
+                            <input type="tel" class="input-block__input" placeholder="04" maxlength="2" id="cc-month">
                           </div>
                           <div class="input-block  input-block--year  donate-form__input-block">
-                            <input type="tel" class="input-block__input" placeholder="2019" maxlength="4" id="cc-year" tabindex="4">
+                            <input type="tel" class="input-block__input" placeholder="2019" maxlength="4" id="cc-year">
                           </div>                          
                         </div>
                         <p class="donate-form__description"></p>
@@ -798,7 +799,7 @@
                       <div class="donate-form__card-block">
                         <p class="donate-form__title">Код CVV</p>
                         <div class="input-block  input-block--cvv  donate-form__input-block">
-                          <input type="tel" class="input-block__input" placeholder="657" maxlength="3" id="cc-cvv" tabindex="5">
+                          <input type="tel" class="input-block__input" placeholder="657" maxlength="3" id="cc-cvv">
                         </div>
                         <p class="donate-form__description"></p>
                       </div>
@@ -807,14 +808,14 @@
                     <div class="donate-form__item">
                       <p class="donate-form__title">Имя на карте</p>
                       <div class="input-block  donate-form__input-block">
-                        <input type="text" class="input-block__input  input-block__input--uppercase" placeholder="KONSTANTIN NAPRIMERNIY" id="cc-name" tabindex="6">
+                        <input type="text" class="input-block__input  input-block__input--uppercase" placeholder="KONSTANTIN NAPRIMERNIY" id="cc-name">
                       </div>
                     </div>
 
                     <div class="donate-form__item  donate-form__item--divider">
                       <p class="donate-form__title">Электронная почта</p>
                       <div class="input-block  donate-form__input-block">
-                        <input type="email" class="input-block__input" placeholder="example.email@domain.com" id="cc-email" tabindex="7">
+                        <input type="email" class="input-block__input" placeholder="example.email@domain.com" id="cc-email">
                       </div>
                       <p class="donate-form__description">Мы вышлем квитанцию Вам на электронную почту. Никакого спама, обещаем.</p>
                     </div>
@@ -1087,7 +1088,7 @@
     </div>
   </div>
 
-
+</div>
 
   <script src="js/vendor.js"></script>
   <script src="js/main.js"></script>

@@ -4,6 +4,8 @@
   align-items: center;
   height: 30px;
   padding-top: 2px;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   
   @media (min-width: $large-breakpoint) {
     height: 36px;

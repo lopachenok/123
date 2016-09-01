@@ -107,3 +107,7 @@
   }
   
 }
+
+.mobile .main-banner {
+  height: 100vh;
+}

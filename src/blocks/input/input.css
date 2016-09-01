@@ -107,8 +107,7 @@
     
     @media (min-width: $large-breakpoint) {
       font-size: 34px;
-      line-height: 48px;
-      width: 205px;
+      line-height: 48px;      
       border-radius: 24px;
       padding-left: 30px;
     }

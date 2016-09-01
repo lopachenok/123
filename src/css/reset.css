@@ -59,18 +59,13 @@ html, body {
   
 }
 
-body {
+.wrapper {
   
   &.ov-hidden {
     overflow: hidden;
-    position: fixed;
+    position: absolute;
     height: 100%;
     width: 100%;
-    
-    @media (min-width: $medium-breakpoint) {
-      overflow: visible;
-    }
-    
   }
   
 }
@@ -106,12 +101,12 @@ a:hover {
 
 
 /*
-.popups-overlay {
+body {
   position: relative;
   
   &:after {
     position: absolute;
-    background: url(index@768px.menu.donate.png);
+    background: url(index@1280px.png);
     bottom: 0;
     left: 0;
     width: 100%;

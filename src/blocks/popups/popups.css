@@ -32,6 +32,8 @@
     color: #F0F1F2;
     padding-top: 3px;
     cursor: pointer;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     
     @media (min-width: $medium-breakpoint) {
       font-size: 0.8rem;
@@ -44,7 +46,7 @@
     display: inline-block;
     position: relative;
     width: 20px;
-    height: 20px;
+    height: 20px;    
     
     &:after {
       content: '';
@@ -91,7 +93,7 @@
 
 .popups-overlay {
   background: #E52E53;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;  
