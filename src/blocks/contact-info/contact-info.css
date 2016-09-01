@@ -41,6 +41,7 @@
     line-height: 19px;
     color: rgba(240, 241, 242, .7);
     margin-top: 10px;
+    hyphens: auto;
   
     @media (min-width: $medium-breakpoint) {
       font-size: 16px;

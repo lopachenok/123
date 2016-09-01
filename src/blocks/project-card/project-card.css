@@ -108,11 +108,13 @@
   
   &__title {
     display: none;
+    hyphens: auto;
   }  
   
   
   &__description {
     display: none;
+    hyphens: auto;
     
     @media (min-width: $medium-breakpoint) {
       display: block;

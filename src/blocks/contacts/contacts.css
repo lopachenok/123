@@ -64,6 +64,7 @@
     line-height: 17px;
     color: $colder;
     margin-top: 10px;
+    hyphens: auto;
     
     @media (min-width: $medium-breakpoint) {
       line-height: 20px;
