@@ -14,6 +14,12 @@ if(is_touch_device()) {
   touchGlobal = true;
 }
 
+if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+    }, false);
+}
+
 Hyphenator_Loader.init({
     "ru": "automatically"
   },
