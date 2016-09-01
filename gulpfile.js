@@ -66,7 +66,7 @@ gulp.task('css', function(){
             
               //stylelint(),
               reporter({ clearMessages: true }),
-              autoprefixer({browsers: ['last 2 version']}),
+              autoprefixer({browsers: ['last 3 version']}),
             //  mqpacker,
               cssnano        
           ]))

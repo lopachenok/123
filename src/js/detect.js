@@ -13,3 +13,9 @@ if(is_touch_device()) {
   document.body.classList.add("touch");
   touchGlobal = true;
 }
+
+Hyphenator_Loader.init({
+    "ru": "automatically"
+  },
+  "js/Hyphenator.js"
+);

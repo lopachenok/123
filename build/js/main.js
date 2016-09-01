@@ -13,6 +13,12 @@ if(is_touch_device()) {
   document.body.classList.add("touch");
   touchGlobal = true;
 }
+
+Hyphenator_Loader.init({
+    "ru": "automatically"
+  },
+  "js/Hyphenator.js"
+);
 if ('objectFit' in document.documentElement.style === false) {
 	document.addEventListener('DOMContentLoaded', function () {
 		Array.prototype.forEach.call(document.querySelectorAll('img[data-object-fit]'), function (image) {
