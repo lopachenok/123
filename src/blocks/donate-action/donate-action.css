@@ -86,7 +86,7 @@
     margin-left: -5px;
     
     @media (min-width: $large-breakpoint) {
-      width: 264px;
+      width: 266px;
       height: 58px;
     }
     
