@@ -51,10 +51,6 @@
     -webkit-user-select: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);  
     
-    &:hover {
-      color: $scarlet;
-    }
-    
     &:after {
       content: '';
       display: inline-block;
