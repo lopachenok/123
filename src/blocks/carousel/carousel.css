@@ -4,8 +4,6 @@
   &__tabs-container {
     position: relative;
     left: 10px;
-    display: flex;
-    justify-content: center;
     
     @media (min-width: $medium-breakpoint) {
       display: block;
@@ -80,6 +78,7 @@
     width: 426px;
     flex-grow: 1;
     flex-shrink: 0;
+    left: 50%;
     
     @media (min-width: $medium-breakpoint) {
       width: auto;

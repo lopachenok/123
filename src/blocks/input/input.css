@@ -11,7 +11,7 @@
       color: #485155;
       text-transform: uppercase;
       font-size: 1rem;
-      line-height: 1rem;
+      line-height: 16px;
       right: 15px;
       top: 7px;
       
@@ -96,6 +96,12 @@
     width: 100%;
     box-sizing: border-box;
     color: $midnight;
+    height: 31px;
+    
+    &::-webkit-input-placeholder {color: #969BA0;}
+    &::-moz-placeholder          {color: #969BA0;}
+    &:-moz-placeholder           {color: #969BA0;}
+    &:-ms-input-placeholder      {color: #969BA0;}
     
     @media (min-width: $medium-breakpoint) {      
       vertical-align: top;      
@@ -103,6 +109,7 @@
       box-sizing: border-box;
       padding-right: 30px;
       line-height: 40px;
+      height: 40px;
     }
     
     @media (min-width: $large-breakpoint) {

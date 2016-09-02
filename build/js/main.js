@@ -25,6 +25,19 @@ Hyphenator_Loader.init({
   },
   "js/Hyphenator.js"
 );
+
+(function () {
+  function CustomEvent ( event, params ) {
+    params = params || { bubbles: false, cancelable: false, detail: undefined };
+    var evt = document.createEvent( 'CustomEvent' );
+    evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
+    return evt;
+   }
+
+  CustomEvent.prototype = window.Event.prototype;
+
+  window.CustomEvent = CustomEvent;
+})();
 if ('objectFit' in document.documentElement.style === false) {
 	document.addEventListener('DOMContentLoaded', function () {
 		Array.prototype.forEach.call(document.querySelectorAll('img[data-object-fit]'), function (image) {
@@ -401,7 +414,7 @@ function addRemoveScrollButton(elem, container) {
         persentTab = 0;
       }
       
-      tabTransform = 'translate3d('+persentTab+'px, 0, 0)';
+      tabTransform = 'translate3d('+(persentTab - this.tabs.clientWidth/2)+'px, 0, 0)';
       this.tabs.style.transform = tabTransform;
       this.tabs.style.mozTransform = tabTransform;
       this.tabs.style.webkitTransform = tabTransform;
@@ -570,8 +583,9 @@ document.addEventListener("DOMContentLoaded", function() {
     this.value = cc_format(this);
   });
   
-  cartNumberInput.addEventListener("change", function() {
-    this.value = cc_format(this);    
+  cartNumberInput.addEventListener("blur", function() {
+    this.value = cc_format(this);  
+    console.log(2)
     if(validateEmpty(this.value, validateLengthInRange, 13, 19) === false) {
       addRemoveErrorState('add', this, 'Пожалуйста, введите корректный номер карты.'); 
     } else {
@@ -594,7 +608,7 @@ document.addEventListener("DOMContentLoaded", function() {
     this.value = sanitizeValue(this.value, true);
   });
   
-  summ.addEventListener("change", function() {
+  summ.addEventListener("blur", function() {
     this.value = sanitizeValue(this.value, true);   
     changeBtnInnerText(this.value);
   });
@@ -603,7 +617,7 @@ document.addEventListener("DOMContentLoaded", function() {
     this.value = sanitizeValue(this.value, true);
   });
   
-  month.addEventListener("change", function() {
+  month.addEventListener("blur", function() {
     this.value = sanitizeValue(this.value, true);
     if(validateEmpty(this.value, validateInRange, 1, 12) === false) {
       addRemoveErrorState('add', this, 'Пожалуйста, введите корректный месяц.'); 
@@ -616,7 +630,7 @@ document.addEventListener("DOMContentLoaded", function() {
     this.value = sanitizeValue(this.value, true);
   });
   
-  year.addEventListener("change", function() {
+  year.addEventListener("blur", function() {
     this.value = sanitizeValue(this.value, true);
     if(validateEmpty(this.value, validateLength, 4) == false) {
       addRemoveErrorState('add', this, 'Пожалуйста, введите корректный год.'); 
@@ -629,7 +643,7 @@ document.addEventListener("DOMContentLoaded", function() {
     this.value = sanitizeValue(this.value, true);
   });  
   
-  cvv.addEventListener("change", function() {
+  cvv.addEventListener("blur", function() {
     this.value = sanitizeValue(this.value, true);
     if(validateEmpty(this.value, validateLength, 3) == false) {
       addRemoveErrorState('add', this, 'Пожалуйста, введите корректный код CVV.'); 
@@ -642,11 +656,11 @@ document.addEventListener("DOMContentLoaded", function() {
     this.value = sanitizeValue(this.value, false, true);
   });
   
-  name.addEventListener("change", function() {
+  name.addEventListener("blur", function() {
     this.value = sanitizeValue(this.value, false, true);
   });
   
-  email.addEventListener("change", function() {
+  email.addEventListener("blur", function() {
     if(validateEmpty(this.value, validateEmail) == false) {
       addRemoveErrorState('add', this, 'Пожалуйста, введите корректный адрес электронной почты.'); 
     } else {
@@ -747,6 +761,7 @@ function validateEmail(value) {
 }
 
 function validateEmpty(value, validateFunction) {
+  console.log(1)
   if(value === '') {
     return false;
   } else {
