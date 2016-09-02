@@ -6,11 +6,11 @@
   position: relative;
   
   @media (min-width: $medium-breakpoint) {
-    height: 790px;
+    height: 100vh;
   }
   
   @media (min-width: $large-breakpoint) {
-    height: 688px;
+    height: 100vh;
   }  
   
   &:after {
@@ -106,8 +106,4 @@
         
   }
   
-}
-
-.mobile .main-banner {
-  height: 100vh;
 }
