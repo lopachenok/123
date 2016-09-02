@@ -100,12 +100,12 @@ a:hover {
 
 
 /*
-body {
+.popups {
   position: relative;
   
   &:after {
     position: absolute;
-    background: url(index@1280px.png);
+    background: url(index@768px.menu.nav.png);
     bottom: 0;
     left: 0;
     width: 100%;
