@@ -584,8 +584,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
   
   cartNumberInput.addEventListener("blur", function() {
-    this.value = cc_format(this);  
-    console.log(2)
+    this.value = cc_format(this); 
     if(validateEmpty(this.value, validateLengthInRange, 13, 19) === false) {
       addRemoveErrorState('add', this, 'Пожалуйста, введите корректный номер карты.'); 
     } else {
@@ -761,7 +760,6 @@ function validateEmail(value) {
 }
 
 function validateEmpty(value, validateFunction) {
-  console.log(1)
   if(value === '') {
     return false;
   } else {
@@ -870,8 +868,13 @@ document.addEventListener("DOMContentLoaded", function () {
     heroBtn.setAttribute("data-period", e.detail.getAttribute("data-value"));
   })
   
-  document.getElementById("hero-input").addEventListener("change", function(e){
+  var heroInput = document.getElementById("hero-input");
+  heroInput.addEventListener("change", function(e){
     heroBtn.setAttribute("data-count", e.target.value);
+  });
+  
+  heroInput.addEventListener("keyup", function() {
+    this.value = sanitizeValue(this.value, true);   
   });
   
 });

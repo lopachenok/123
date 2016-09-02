@@ -4,8 +4,13 @@ document.addEventListener("DOMContentLoaded", function () {
     heroBtn.setAttribute("data-period", e.detail.getAttribute("data-value"));
   })
   
-  document.getElementById("hero-input").addEventListener("change", function(e){
+  var heroInput = document.getElementById("hero-input");
+  heroInput.addEventListener("change", function(e){
     heroBtn.setAttribute("data-count", e.target.value);
+  });
+  
+  heroInput.addEventListener("keyup", function() {
+    this.value = sanitizeValue(this.value, true);   
   });
   
 });

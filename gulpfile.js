@@ -55,11 +55,6 @@ gulp.task('css', function(){
                     let substrStrat = decl.value.slice(0, imgPath+4);
                     let substrEnd = decl.value.slice(imgPath+4, decl.value.length);
                     decl.value = substrStrat + urlBefore + substrEnd;
-                   
-//                    imgPath = imgPath.replace(/url/gi, '');
-//                    imgPath = imgPath.replace(/['"\(\)\s]/gi, '');                    
-//                    decl.value = 'url(' + urlBefore + imgPath + ')';
-                    
                   }
                 });
               },
@@ -67,7 +62,6 @@ gulp.task('css', function(){
               //stylelint(),
               reporter({ clearMessages: true }),
               autoprefixer({browsers: ['last 3 version']}),
-            //  mqpacker,
               cssnano        
           ]))
           .pipe(rename('style.min.css')),
