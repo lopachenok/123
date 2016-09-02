@@ -410,10 +410,11 @@ function addRemoveScrollButton(elem, container) {
           }
           
         }
+        
       } else {
         persentTab = 0;
       }
-      
+      console.log(persentTab)
       tabTransform = 'translate3d('+(persentTab - this.tabs.clientWidth/2)+'px, 0, 0)';
       this.tabs.style.transform = tabTransform;
       this.tabs.style.mozTransform = tabTransform;

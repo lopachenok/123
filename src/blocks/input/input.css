@@ -125,10 +125,12 @@
     }
     
     &--error {
-      color: $scarlet;    
+      color: $scarlet; 
+      position: relative;
       -webkit-animation: 0.3s a linear;
       -o-animation: 0.3s a linear;
       -moz-animation: 0.3s a linear;
+      -ms-animation: 0.3s b linear;
       
       &::-webkit-input-placeholder {color: $scarlet;}
       &::-moz-placeholder          {color: $scarlet;}
@@ -154,4 +156,12 @@
     50%  {transform: translate3d(3px, 0, 0);}
     75%  {transform: translate3d(-3px, 0, 0);}
     100% {transform: translate3d(0, 0, 0);}
+}
+
+@keyframes b {
+    0%   {left: 3px;}
+    25%  {left: -3px;}
+    50%  {left: 3px;}
+    75%  {left: -3px;}
+    100% {left: 0;}
 }

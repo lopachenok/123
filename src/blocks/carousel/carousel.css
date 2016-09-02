@@ -79,9 +79,11 @@
     flex-grow: 1;
     flex-shrink: 0;
     left: 50%;
+    margin: 0;
     
     @media (min-width: $medium-breakpoint) {
       width: auto;
+      margin: 0 auto;
     }
     
   }

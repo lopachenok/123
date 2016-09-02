@@ -82,4 +82,8 @@
     
   }
   
+  &--padding {
+    padding-right: 50px;
+  }
+  
 }
