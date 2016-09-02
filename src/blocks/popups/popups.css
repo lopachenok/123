@@ -33,7 +33,7 @@
     color: #F0F1F2;
     padding-top: 3px;
     cursor: pointer;
-    -webkit-user-select: none;
+    select: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     
     @media (min-width: $medium-breakpoint) {

@@ -153,3 +153,11 @@
   }
   
 }
+
+.mobile .link--carousel {
+  
+  &:hover {
+    color: #969ba0;
+  }
+  
+}
