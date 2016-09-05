@@ -567,7 +567,7 @@ function openPopup(e) {
     
   }
   
-  scrollTopOffset = document.documentElement.scrollTop !== 0 || document.body.scrollTop;
+  scrollTopOffset = document.body.scrollTop || document.documentElement.scrollTop;
   document.getElementById("wrapper").classList.add("ov-hidden"); 
   popupOverlay.classList.add("popups-overlay--open");
   popupOverlay.classList.remove("no-animate");
@@ -853,8 +853,7 @@ var scrollTopOffsetRehab;
 
 function openRehabPopup(link, event) {
   event.preventDefault();  
-  var body = document.body;
-  scrollTopOffsetRehab = body.scrollTop;
+  scrollTopOffsetRehab = document.body.scrollTop || document.documentElement.scrollTop;
   setTimeout( function() {
     document.getElementById("wrapper").classList.add("ov-hidden"); 
   }, 300);
@@ -864,9 +863,10 @@ function openRehabPopup(link, event) {
 
 function closeRehabPopup(event) {
   event.preventDefault();
-  var body = document.body;  
   document.getElementById("wrapper").classList.remove("ov-hidden");
-  body.scrollTop = scrollTopOffsetRehab;  event.target.parentElement.parentElement.parentElement.parentElement.parentElement.classList.remove("rehub-popup--open");
+  document.body.scrollTop = scrollTopOffsetRehab; 
+  document.documentElement.scrollTop = scrollTopOffsetRehab;
+  event.target.parentElement.parentElement.parentElement.parentElement.parentElement.classList.remove("rehub-popup--open");
 }
 document.addEventListener("DOMContentLoaded", function () {
   var heroBtn = document.getElementById("hero-btn");

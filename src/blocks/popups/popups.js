@@ -63,7 +63,7 @@ function openPopup(e) {
     
   }
   
-  scrollTopOffset = document.documentElement.scrollTop !== 0 || document.body.scrollTop;
+  scrollTopOffset = document.body.scrollTop || document.documentElement.scrollTop;
   document.getElementById("wrapper").classList.add("ov-hidden"); 
   popupOverlay.classList.add("popups-overlay--open");
   popupOverlay.classList.remove("no-animate");
