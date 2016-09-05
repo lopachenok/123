@@ -4,14 +4,11 @@
   background-size: cover;
   background-position: center;
   position: relative;
+  overflow-x: hidden;
   
   @media (min-width: $medium-breakpoint) {
     height: 100vh;
-  }
-  
-  @media (min-width: $large-breakpoint) {
-    height: 100vh;
-  }  
+  } 
   
   &:after {
     content: '';
@@ -28,12 +25,20 @@
     padding-top: 130px;
     
     @media (min-width: $medium-breakpoint) {
-      padding-top: 260px;
+      padding-top: 0;
+      position: absolute;
+      bottom: 15vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      z-index: 1;
     }
     
+/*
     @media (min-width: $large-breakpoint) {
       padding-top: 185px;
     }
+*/
     
   }
   
