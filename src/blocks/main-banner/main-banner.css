@@ -34,12 +34,6 @@
       z-index: 1;
     }
     
-/*
-    @media (min-width: $large-breakpoint) {
-      padding-top: 185px;
-    }
-*/
-    
   }
   
   &__name {

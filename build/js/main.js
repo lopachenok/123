@@ -520,6 +520,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if(flag === false) {
       document.getElementById("wrapper").classList.remove("ov-hidden");
     }    
+    document.documentElement.scrollTop = scrollTopOffset;
     document.body.scrollTop = scrollTopOffset;
     popupOverlay.classList.remove("popups-overlay--open");    
   });
@@ -566,8 +567,7 @@ function openPopup(e) {
     
   }
   
-  var body = document.body;
-  scrollTopOffset = body.scrollTop;
+  scrollTopOffset = document.documentElement.scrollTop !== 0 || document.body.scrollTop;
   document.getElementById("wrapper").classList.add("ov-hidden"); 
   popupOverlay.classList.add("popups-overlay--open");
   popupOverlay.classList.remove("no-animate");
