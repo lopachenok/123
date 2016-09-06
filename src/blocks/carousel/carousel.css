@@ -188,7 +188,7 @@
     }
     
     @media (min-width: $medium-breakpoint) {
-      height: 412px;
+      height: 420px;
     }
     
     @media (min-width: $large-breakpoint) {
@@ -210,7 +210,7 @@
     }  
     
     @media (min-width: $medium-breakpoint) {
-      max-width: 1024px;
+      max-width: none;
       -webkit-user-select: initial !important;
       -webkit-user-drag: initial !important;
           touch-action: initial !important;
@@ -348,7 +348,7 @@
       overflow-x: scroll;
       -webkit-overflow-scrolling: touch;
       overflow-y: hidden;
-      max-width: 1104px;
+      max-width: none;
       opacity: 0;
       z-index: -1;
       padding-top: 2rem;
@@ -591,6 +591,11 @@
     &:before, &:after {
       display: none;
     }
+    
+    @media (min-width: $medium-breakpoint) {
+      max-width: 1024px;
+    }
+    
   }
   
   .carousel__container.animate .carousel__content {
