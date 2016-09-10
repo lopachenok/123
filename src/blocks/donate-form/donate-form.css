@@ -2,7 +2,9 @@
   padding-bottom: 63px;
   
   @media (min-width: $medium-breakpoint) {
-    padding: 0 115px 63px;
+    padding-bottom: 63px;
+    padding-left: 56px;
+    width: 65.5%;
   }
   
   &__item {
@@ -227,7 +229,6 @@
     height: 40px;
     display: flex;
     align-items: center;
-    justify-content: center;
     
     @media (min-width: $medium-breakpoint) {
       margin-top: 60px;

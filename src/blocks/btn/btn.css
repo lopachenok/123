@@ -60,10 +60,10 @@
   &--dark {
     background: rgba(0, 0, 0, .5);
     box-shadow: none;
-    border: 0px solid rgba(0, 0, 0, .01);
+    border: none;
     
     &:hover {
-      border: 5px solid rgba(0, 0, 0, .01);       
+      border: none;       
     }
     
   }
