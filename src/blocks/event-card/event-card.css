@@ -217,6 +217,11 @@
     @media (min-width: $medium-breakpoint) {
       color: #485155;
       letter-spacing: 1.6px;
+      
+      &:hover {
+        color: $scarlet;
+      }
+      
     }
     
     @media (min-width: $large-breakpoint) {
