@@ -207,6 +207,15 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       
     }
+    
+    if(window.innerWidth >= tabletSize && window.innerWidth < desctopSize) {
+      k = 2.5;
+    } else {
+      k = 3.2;
+    }  
+  
+    scrollOffset = parseInt(window.getComputedStyle(document.querySelector(".medium-column5"), null).width) * k;
+    
     windowSize.x = window.innerWidth;
   };
   
@@ -346,7 +355,6 @@ function addRemoveScrollButton(elem, container) {
         scrollOffset = parseInt(window.getComputedStyle(document.querySelector(".medium-column5"), null).width) * k;
       }
     
-      addRemoveScrollButton(carouselContent[currentContent], self.container);     
       HammerCarousel.prototype.show.apply(self, [currentContent, 0, true]);
     });    
     
@@ -470,6 +478,7 @@ function addRemoveScrollButton(elem, container) {
             pane.classList.remove("carousel__content--active");
           }
         });
+        addRemoveScrollButton(this.panes[showIndex], this.container);    
         this.panes[showIndex].classList.add("carousel__content--active");
       }
 
