@@ -180,8 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
     y: window.innerHeight
   };
   
-  window.onresize = function () {
-    
+  window.addEventListener("resize", function() {
     if(windowSize.x !== window.innerWidth) {
       var i = outer.currentIndex;
       var j = popups.currentIndex;
@@ -217,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollOffset = parseInt(window.getComputedStyle(document.querySelector(".medium-column5"), null).width) * k;
     
     windowSize.x = window.innerWidth;
-  };
+  });
   
   function contentScroll(e) {    
     var elem = e.target;
@@ -446,11 +445,11 @@ function addRemoveScrollButton(elem, container) {
       
       var paneIndex, pos, translate;
       
-      if(window.innerWidth < desctopSize) {
+      //if(window.innerWidth < desctopSize) {
         if(this.container.id == "popup-container") {
           popupInner.style.height = heightArray[showIndex] + 50 + 'px';
         } 
-      }
+      //}
       
       if (window.innerWidth < tabletSize) {      
         for (paneIndex = 0; paneIndex < this.panes.length; paneIndex++) {
@@ -514,24 +513,62 @@ function addRemoveScrollButton(elem, container) {
 document.addEventListener("DOMContentLoaded", function() {
   var elements = document.querySelectorAll("*[data-popups]");
   popupOverlay = document.getElementById("popups-overlay");
-  
+  popupContact = document.getElementById("contact-popup");
+  var overlays = document.querySelectorAll(".popups-overlay");
+
   Array.prototype.forEach.call(elements, function(el) {
-    el.addEventListener("click", openPopup);
+    if(el.getAttribute("data-popup-contact")) {
+      el.addEventListener("click", openContactsPopup);
+    } else {
+      el.addEventListener("click", openPopup);
+    }
+    
+  });
+  
+  Array.prototype.forEach.call(overlays, function(overlay) {
+    overlay.addEventListener("click", closePopup);
   });
   
   popupOverlay.children[0].addEventListener("scroll", function(e) {
     scrollPosition = this.scrollTop;
   });
   
-  var closer = document.querySelector(".popups__closer");
+  var closers = document.querySelectorAll(".popups__closer");
   
-  closer.addEventListener("click", function(e) {
-    if(flag === false) {
-      document.getElementById("wrapper").classList.remove("ov-hidden");
-    }    
-    document.documentElement.scrollTop = scrollTopOffset;
-    document.body.scrollTop = scrollTopOffset;
-    popupOverlay.classList.remove("popups-overlay--open");    
+  Array.prototype.forEach.call(closers, function(closer){
+    closer.addEventListener("click", closePopup);
+  });
+
+  
+  if(window.innerWidth < desctopSize) {
+    mainElem = document.getElementById("wrapper");
+  } else {
+    mainElem = document.body || document.documentElement;
+  }
+  
+  var windowSizePopup = {
+    x: window.innerWidth,
+    y: window.innerHeight
+  };
+
+  window.addEventListener("resize", function () {
+    if (windowSizePopup.x !== window.innerWidth) {
+      if (window.innerWidth < desctopSize) {
+        mainElem = document.getElementById("wrapper");
+      } else {
+        mainElem = document.body || document.documentElement;
+      }
+    }
+    
+    if(windowSizePopup.x < tabletSize && window.innerWidth > tabletSize && popups.currentIndex === 2) {
+      closePopup();
+    }
+    
+    if(windowSizePopup.x < desctopSize && window.innerWidth > desctopSize && popups.currentIndex === 0) {
+      closePopup();
+    }
+    
+    windowSizePopup.x = window.innerWidth;
   });
   
 });
@@ -539,6 +576,22 @@ var popupOverlay;
 var scrollTopOffset;
 var flag = false;
 var donateCount, donatePeriod, scrollPosition;
+var mainElem;
+var popupContact;
+
+function closePopup(e) {
+  if(e.target !== this) {
+    return false;
+  }
+  if(flag === false) {
+      mainElem.classList.remove("ov-hidden");
+    }    
+    document.documentElement.scrollTop = scrollTopOffset;
+    document.body.scrollTop = scrollTopOffset;
+    popupOverlay.classList.remove("popups-overlay--open");  
+    popupContact.classList.remove("popups-overlay--open");  
+}
+
 
 function openPopup(e) {
   if(e.target.offsetParent.id.indexOf("popup") !== -1) {
@@ -577,16 +630,20 @@ function openPopup(e) {
   }
   
   scrollTopOffset = document.body.scrollTop || document.documentElement.scrollTop;
-  document.getElementById("wrapper").classList.add("ov-hidden"); 
+  mainElem.classList.add("ov-hidden"); 
   popupOverlay.classList.add("popups-overlay--open");
   popupOverlay.classList.remove("no-animate");
 }
 
-Array.prototype.forEach.call(document.querySelectorAll("input"), function(input){
- input.addEventListener("focus", function() {
-  
- }); 
-})
+function openContactsPopup(e) {
+  if(window.innerWidth < desctopSize) {
+    openPopup(e);
+  } else {
+    popupContact.classList.add("popups-overlay--open");
+    mainElem.classList.add("ov-hidden"); 
+    scrollTopOffset = document.body.scrollTop || document.documentElement.scrollTop;
+  }
+}
 var summ, 
     formDropdown, 
     finalCount,

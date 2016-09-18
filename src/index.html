@@ -592,7 +592,7 @@
               <p class="contact-info__copyright">© «Нить Добра», 2016.</p>
               <p class="contact-info__text hyphenate" lang="ru">ИНН 7864131528, КПП 781307501, ОГРН 1126800004708. Распространение материалов разрешается только при указании ссылки на первоисточник.</p>
               <div class="contact-info__btn-wrap">
-                <button class="btn  btn--small" data-popups="0">Контакты</button>
+                <button class="btn  btn--small" data-popups="0" data-popup-contact="true">Контакты</button>
               </div>
             </div>
 
@@ -747,8 +747,9 @@
                       <div class="input-block  donate-form__input-block">
                         <input type="tel" class="input-block__input" maxlength="20"  placeholder="1234 5678 9012 3456" id="cc-number" data-cp="cardNumber"> 
                       </div>
-                      <p class="donate-form__description"></p>
+                      <p class="donate-form__description">Информация передается по защищенному соединению</p>
 
+<!--
                       <div class="donate-form__card-box">
                         <label class="donate-form__card-label">
                           <input type="radio" name="card" class="donate-form__card" value="Visa" disabled>
@@ -767,6 +768,7 @@
                           <p class="donate-form__card-text">American Express</p>
                         </label>
                       </div>
+-->
 
                     </div>
 
@@ -856,6 +858,49 @@
 
     </div>
   </div>
+  
+  <div class="popups-overlay" id="contact-popup">
+  <div class="popups">
+
+    <div class="popups__inner">
+      <div class="row">
+        <div class="popups__column  small-column6  popups__column--flex-start">
+          <p class="popups__title">Свяжитесь с нами</p>
+          <p class="popups__closer">закрыть <span class="popups__closer-icon"></span></p>
+        </div>
+
+        <div class="small-column6">
+          <div class="contacts">
+
+            <div class="contacts__item">
+              <p class="contacts__title">Контактный телефон</p>
+              <a class="contacts__name" href="tel:88125691474">+7 (812) 569-14-74</a>
+              <p class="contacts__description hyphenate" lang="ru">Нажмите на номер, чтобы позвонить. отвечаем стабильно с понедельника по воскресенье с 10:00 до 22:00.</p>
+            </div>
+
+            <div class="contacts__item  contacts__item--divider">
+              <p class="contacts__title">Электронная почта</p>
+              <a class="contacts__name" href="mailto:inbox@nitdobra.fund">inbox@nitdobra.fund</a>
+              <p class="contacts__description hyphenate" lang="ru">Нажмите на адрес, чтобы отправить письмо. Отвечаем каждый день, время ответа не более трех часов.</p>
+            </div>
+
+            <div class="contacts__item  contacts__item--divider">
+              <p class="contacts__title">Наш офис</p>
+              <a class="contacts__name  contacts__name--address" href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%9F%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%BE%20%C2%ABWelcome%C2%BB%2C%20%D0%9D%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C%2048&sll=30.334499%2C59.935376&sspn=0.020428%2C0.005890&ol=biz&oid=1490859453">Пространство «Welcome», Невский проспект, 48, Санкт-Петербург, 194283</a>
+              <p class="contacts__description hyphenate" lang="ru">Офис открыт для посещения по будням с 10:00 до 19:00, по субботам с 10:00 до 18:00.</p>
+              
+              <div class="contacts__map">
+                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=JZFPBBQoHizasv9ovIII8d88rclZMQmC&amp;width=731&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;"></script>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
   <div class="rehub-popup" id="popup-projects">
     <div class="rehub-popup__inner">
@@ -1006,7 +1051,6 @@
       </div>
     </div>
   </div>
-
 
   <div class="rehub-popup" id="popup-kids">
     <div class="rehub-popup__inner">

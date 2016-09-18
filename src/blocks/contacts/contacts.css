@@ -1,5 +1,10 @@
 .contacts {
   
+  @media (min-width: $large-breakpoint) {
+    width: 70%;
+    padding-top: 63px;
+  }
+  
   &__item {
     margin-bottom: 31px;
     
@@ -10,6 +15,10 @@
     &--divider {
       padding-top: 32px;
       position: relative;
+      
+      @media (min-width: $large-breakpoint) {
+        padding-top: 45px;
+      }
       
       &:before {
         content: '';
@@ -56,6 +65,17 @@
       margin-top: 16px;
     }
     
+    @media (min-width: $large-breakpoint) {
+      font-size: 1.5rem;
+      margin-top: 25px;
+    }
+    
+    &--address {
+      @media (min-width: $large-breakpoint) {
+        font-size: 1.2rem;
+      }
+    }
+    
   }
   
   &__description {
@@ -69,6 +89,22 @@
     @media (min-width: $medium-breakpoint) {
       line-height: 20px;
       margin-top: 13px;
+    }
+    
+    @media (min-width: $large-breakpoint) {
+      line-height: 22px;
+      margin-top: 25px;
+    }
+    
+  }
+  
+  &__map {
+    padding-top: 44px;
+    height: 490px;
+    
+    ymaps {
+      position: absolute;
+      z-index: 10;
     }
     
   }

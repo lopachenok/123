@@ -24,7 +24,7 @@
       
       @media (min-width: $large-breakpoint) {
         right: 30px;
-        top: 14px;
+        top: 16px;
       }
     }
     
@@ -56,6 +56,10 @@
       width: 170px;
     }
     
+    @media (min-width: $large-breakpoint) {
+      width: 205px;
+    }
+    
   }
   
   &--month {
@@ -72,6 +76,10 @@
     
     @media (min-width: $medium-breakpoint) {
       width: 99px;
+    }
+    
+    @media (min-width: $large-breakpoint) {
+      width: 107px;
     }
     
   }
@@ -114,10 +122,13 @@
     }
     
     @media (min-width: $large-breakpoint) {
-      font-size: 34px;
+      font-size: 24px;
       line-height: 48px;      
       border-radius: 24px;
       padding-left: 30px;
+      height: 48px;
+      padding-left: 25px;
+      padding-right: 25px;
     }
     
     &--uppercase {

@@ -3,8 +3,16 @@
   min-height: 100vh;  
   overflow-y: scroll;
    -webkit-overflow-scrolling: touch;
-  
   height: 100%;
+  
+  @media (min-width: $large-breakpoint) {
+    width: 922px;
+    margin: 100px auto 100px;
+    overflow-y: hidden;
+    position: relative;
+    height: auto;
+/*    padding-bottom: 30px;*/
+  }
   
   &__inner {
     @mixin container;
@@ -14,6 +22,10 @@
       padding-top: 28px;
     }
     
+    @media (min-width: $large-breakpoint) {
+      padding: 80px 84px 0;
+    }
+    
   }
   
   &__column {
@@ -21,6 +33,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+    @media (min-width: $large-breakpoint) {
+      justify-content: flex-end;
+    }
+    
+    &--flex-start {
+      @media (min-width: $large-breakpoint) {
+        justify-content: space-between;
+      }
+    }
+    
   }
   
   &__closer {
@@ -75,8 +98,27 @@
     
   }
   
+  &__title {
+    
+    @media (min-width: $large-breakpoint) {
+      color: rgba(0, 0, 0, .5);
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      font-family: $ptsans;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+  }
+  
   &__main-logo {
     margin-top: 3px;
+    
+    @media (min-width: $large-breakpoint) {
+      display: none;
+    }
+    
   }
   
 }
@@ -114,8 +156,10 @@
     top: 0;
   }
   
-  @media (min-width: $medium-breakpoint) {
-    
+  @media (min-width: $large-breakpoint) {
+    background: rgba(0,0,0,.4);
+    overflow-y: scroll;
+    position: fixed;
   }
   
   &.no-animate {

@@ -58,8 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     y: window.innerHeight
   };
   
-  window.onresize = function () {
-    
+  window.addEventListener("resize", function() {
     if(windowSize.x !== window.innerWidth) {
       var i = outer.currentIndex;
       var j = popups.currentIndex;
@@ -95,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollOffset = parseInt(window.getComputedStyle(document.querySelector(".medium-column5"), null).width) * k;
     
     windowSize.x = window.innerWidth;
-  };
+  });
   
   function contentScroll(e) {    
     var elem = e.target;
@@ -324,11 +323,11 @@ function addRemoveScrollButton(elem, container) {
       
       var paneIndex, pos, translate;
       
-      if(window.innerWidth < desctopSize) {
+      //if(window.innerWidth < desctopSize) {
         if(this.container.id == "popup-container") {
           popupInner.style.height = heightArray[showIndex] + 50 + 'px';
         } 
-      }
+      //}
       
       if (window.innerWidth < tabletSize) {      
         for (paneIndex = 0; paneIndex < this.panes.length; paneIndex++) {
