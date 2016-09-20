@@ -105,6 +105,8 @@
     ymaps {
       position: absolute;
       z-index: 10;
+      border-radius: 3px;
+      overflow: hidden;
     }
     
   }
