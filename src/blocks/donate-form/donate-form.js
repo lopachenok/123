@@ -1,5 +1,5 @@
-var summ, 
-    formDropdown, 
+var summ,
+    formDropdown,
     finalCount,
     btnPeriod;
 
@@ -8,17 +8,17 @@ document.addEventListener("DOMContentLoaded", function() {
   cartNumberInput.addEventListener("keyup", function() {
     this.value = cc_format(this);
   });
-  
+
   cartNumberInput.addEventListener("blur", function() {
-    this.value = cc_format(this); 
+    this.value = cc_format(this);
     if(validateEmpty(this.value, validateLengthInRange, 13, 19) === false) {
-      addRemoveErrorState('add', this, 'Пожалуйста, введите корректный номер карты.'); 
+      addRemoveErrorState('add', this, 'Пожалуйста, введите корректный номер карты.');
     } else {
-      addRemoveErrorState('remove', this, ''); 
+      addRemoveErrorState('remove', this, '');
     }
     detectCard(this);
   });
-  
+
   summ = document.getElementById("cc-summ");
   var month = document.getElementById("cc-month");
   var year = document.getElementById("cc-year");
@@ -28,71 +28,71 @@ document.addEventListener("DOMContentLoaded", function() {
   formDropdown = document.getElementById("cc-dropdown");
   finalCount = document.getElementById("final-count");
   var checkbox = document.getElementById("cc-monthly");
-  
+
   summ.addEventListener("keyup", function() {
     this.value = sanitizeValue(this.value, true);
   });
-  
+
   summ.addEventListener("blur", function() {
-    this.value = sanitizeValue(this.value, true);   
+    this.value = sanitizeValue(this.value, true);
     changeBtnInnerText(this.value);
   });
-  
+
   month.addEventListener("keyup", function() {
     this.value = sanitizeValue(this.value, true);
   });
-  
+
   month.addEventListener("blur", function() {
     this.value = sanitizeValue(this.value, true);
     if(validateEmpty(this.value, validateInRange, 1, 12) === false) {
-      addRemoveErrorState('add', this, 'Пожалуйста, введите корректный месяц.'); 
+      addRemoveErrorState('add', this, 'Пожалуйста, введите корректный месяц.');
     } else {
-      addRemoveErrorState('remove', this, ''); 
+      addRemoveErrorState('remove', this, '');
     }
   });
-  
+
   year.addEventListener("keyup", function() {
     this.value = sanitizeValue(this.value, true);
   });
-  
+
   year.addEventListener("blur", function() {
     this.value = sanitizeValue(this.value, true);
-    if(validateEmpty(this.value, validateLength, 4) == false) {
-      addRemoveErrorState('add', this, 'Пожалуйста, введите корректный год.'); 
+    if(validateEmpty(this.value, validateYear) == false) {
+      addRemoveErrorState('add', this, 'Пожалуйста, введите корректный год.');
     } else {
-      addRemoveErrorState('remove', this, ''); 
+      addRemoveErrorState('remove', this, '');
     }
-  });  
-  
+  });
+
   cvv.addEventListener("keyup", function() {
     this.value = sanitizeValue(this.value, true);
-  });  
-  
+  });
+
   cvv.addEventListener("blur", function() {
     this.value = sanitizeValue(this.value, true);
     if(validateEmpty(this.value, validateLength, 3) == false) {
-      addRemoveErrorState('add', this, 'Пожалуйста, введите корректный код CVV.'); 
+      addRemoveErrorState('add', this, 'Пожалуйста, введите корректный код CVV.');
     } else {
-      addRemoveErrorState('remove', this, ''); 
+      addRemoveErrorState('remove', this, '');
     }
   });
-  
+
   name.addEventListener("keyup", function() {
     this.value = sanitizeValue(this.value, false, true);
   });
-  
+
   name.addEventListener("blur", function() {
     this.value = sanitizeValue(this.value, false, true);
   });
-  
+
   email.addEventListener("blur", function() {
     if(validateEmpty(this.value, validateEmail) == false) {
-      addRemoveErrorState('add', this, 'Пожалуйста, введите корректный адрес электронной почты.'); 
+      addRemoveErrorState('add', this, 'Пожалуйста, введите корректный адрес электронной почты.');
     } else {
-      addRemoveErrorState('remove', this, 'Мы вышлем квитанцию Вам на электронную почту. Никакого спама, обещаем.'); 
+      addRemoveErrorState('remove', this, 'Мы вышлем квитанцию Вам на электронную почту. Никакого спама, обещаем.');
     }
   });
-  
+
   formDropdown.addEventListener("choose", function(e) {
     btnPeriod = e.detail.getAttribute("data-value");
     changeBtnInnerText(summ.value, e.detail.getAttribute("data-value"));
@@ -101,9 +101,9 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
       checkbox.checked = true;
     }
-    
+
   });
-  
+
   checkbox.addEventListener("change", function() {
     if(this.checked) {
       changeBtnInnerText(summ.value, 'monthly');
@@ -113,12 +113,12 @@ document.addEventListener("DOMContentLoaded", function() {
       selectOption(formDropdown.querySelector("*[data-value='once']"));
     }
   });
-  
+
 });
 
 function cc_format(el) {
-  var v = el.value.replace(/\s+/g, '').replace(/[^-0-9]/gim,'').replace("-", "");  
-    
+  var v = el.value.replace(/\s+/g, '').replace(/[^-0-9]/gim,'').replace("-", "");
+
   var parts = [];
   var k;
   if(v.length <= 16) {
@@ -129,7 +129,7 @@ function cc_format(el) {
     parts.push(v.substring(0, 8));
     parts.push(v.substring(8, v.length));
   }
-  
+
   if (parts.length) {
     return parts.join(' ');
   } else {
@@ -146,18 +146,18 @@ var cards = [
 
 function detectCard(el) {
   value = el.value.replace(/\s+/g, "");
-  
-  if(value.length < 13 || value.length > 19) {   
+
+  if(value.length < 13 || value.length > 19) {
     return;
   }
   el.classList.remove("input-block__input--error");
   var filtredLengthCards = [];
-  cards.forEach(function(card) {    
+  cards.forEach(function(card) {
     if(card.numberLength.indexOf(value.length) !== -1) {
       filtredLengthCards.push(card);
     }
   });
-  
+
   var cardName;
   filtredLengthCards.forEach(function(card) {
     for(var i = 1; i <= 4; i++) {
@@ -167,14 +167,14 @@ function detectCard(el) {
       }
     }
   });
-  
+
   if(cardName) {
     document.querySelector(".donate-form__card[value='"+cardName+"']").setAttribute("checked", true);
-    addRemoveErrorState('remove', el, ''); 
+    addRemoveErrorState('remove', el, '');
   } else {
-    addRemoveErrorState('add', el, 'Пожалуйста, введите корректный номер карты.'); 
+    addRemoveErrorState('add', el, 'Пожалуйста, введите корректный номер карты.');
   }
-  
+
 }
 
 function validateEmail(value) {
@@ -190,7 +190,7 @@ function validateEmpty(value, validateFunction) {
     return false;
   } else {
     var arg = Array.prototype.slice.call(arguments, 2);
-    arg.unshift(value);    
+    arg.unshift(value);
     return validateFunction.apply(null, arg);
   }
 }
@@ -200,16 +200,29 @@ function sanitizeValue(value, number, name) {
   if(number) {
     newValue = value.replace(/\s+/g, '').replace(/[^-0-9]/gim,'').replace("-", "")
   } else if(name) {
-    newValue = value.replace(/[^a-zA-Z.-]/g, '');
-  }  
+    newValue = value.replace(/[^a-zA-Z.-\s]/g, '');
+  }
   return newValue;
 }
 
-function validateLength(value, length) {  
+function validateLength(value, length) {
   if(value.length < length) {
     return false;
   } else {
     return true;
+  }
+}
+
+function validateYear(value) {
+  if(value.length < 4) {
+    return false;
+  } else {
+    var now = new Date();
+    if(value < now.getFullYear() ) {
+      return false;
+    } else {
+      return true;
+    }
   }
 }
 
@@ -230,7 +243,7 @@ function validateLengthInRange(value, min, max) {
     return true;
   }
 }
-  
+
 function addRemoveErrorState(flag, el, text) {
   if(flag == 'add') {
     el.classList.add("input-block__input--error");
@@ -240,14 +253,26 @@ function addRemoveErrorState(flag, el, text) {
   if(el.parentElement.nextElementSibling && el.parentElement.nextElementSibling.nodeName == 'P') {
     el.parentElement.nextElementSibling.innerHTML = text;
   } else {
-    el.parentElement.parentElement.nextElementSibling.innerHTML = text;
+    var error;
+    switch (el.id) {
+      case 'cc-month':
+        error = document.getElementById("month-error-text")
+        break;
+      case 'cc-year':
+        error = document.getElementById("year-error-text")
+        break;
+      case 'cc-cvv':
+        error = document.getElementById("cvv-error-text")
+        break;
+    }
+    error.innerHTML = text;
   }
 }
 
 function changeBtnInnerText(count, period) {
   count = count;
   period = period;
-  
+
   var substr;
   if(window.innerWidth < tabletSize) {
     substr = "/мес";

@@ -675,7 +675,7 @@
                   </nav>
 
                 </div>
-                
+
                 <div class="medium-column6">
                   <div class="contacts  contacts--hide-for-small  contacts--padding">
 
@@ -699,7 +699,7 @@
 
                   </div>
                 </div>
-                
+
               </div>
             </section>
 
@@ -730,14 +730,14 @@
                           <span class="donate-form__checkbox-icon"></span>
                           <p class="donate-form__checkbox-description">Ежемесячное пожертвование</p>
                         </label>
-                        
+
                         <div class="dropdown  donate-form__dropdown" id="cc-dropdown">
                           <ul class="dropdown__list">
                             <li class="dropdown__item  dropdown__item--selected" data-value="monthly">Ежемесячно</li>
                             <li class="dropdown__item" data-value="once">Разово</li>
                           </ul>
                         </div>
-                        
+
                       </div>
 
                     </div>
@@ -745,7 +745,7 @@
                     <div class="donate-form__item  donate-form__item--divider">
                       <p class="donate-form__title">Номер банковской карты</p>
                       <div class="input-block  donate-form__input-block">
-                        <input type="tel" class="input-block__input" maxlength="20"  placeholder="1234 5678 9012 3456" id="cc-number" data-cp="cardNumber"> 
+                        <input type="tel" class="input-block__input" maxlength="20"  placeholder="1234 5678 9012 3456" id="cc-number" data-cp="cardNumber">
                       </div>
                       <p class="donate-form__description">Информация передается по защищенному соединению</p>
 
@@ -772,7 +772,8 @@
 
                     </div>
 
-                    <div class="donate-form__item  donate-form__item--flex">
+                    <div class="donate-form__item">
+                      <div class="donate-form__item--flex">
                       <div class="donate-form__card-block">
                         <p class="donate-form__title">Срок истечения</p>
 
@@ -782,9 +783,8 @@
                           </div>
                           <div class="input-block  input-block--year  donate-form__input-block">
                             <input type="tel" class="input-block__input" placeholder="2019" maxlength="4" id="cc-year" data-cp="expDateYear">
-                          </div>                          
+                          </div>
                         </div>
-                        <p class="donate-form__description"></p>
 
                       </div>
 
@@ -793,8 +793,11 @@
                         <div class="input-block  input-block--cvv  donate-form__input-block">
                           <input type="tel" class="input-block__input" placeholder="657" maxlength="3" id="cc-cvv" data-cp="cvv">
                         </div>
-                        <p class="donate-form__description"></p>
                       </div>
+                      </div>
+                      <p class="donate-form__description" id="month-error-text"></p>
+                      <p class="donate-form__description" id="year-error-text"></p>
+                      <p class="donate-form__description" id="cvv-error-text"></p>
                     </div>
 
                     <div class="donate-form__item">
@@ -858,7 +861,7 @@
 
     </div>
   </div>
-  
+
   <div class="popups-overlay" id="contact-popup">
   <div class="popups">
 
@@ -888,7 +891,7 @@
               <p class="contacts__title">Наш офис</p>
               <a class="contacts__name  contacts__name--address" href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%9F%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%BE%20%C2%ABWelcome%C2%BB%2C%20%D0%9D%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C%2048&sll=30.334499%2C59.935376&sspn=0.020428%2C0.005890&ol=biz&oid=1490859453">Пространство «Welcome», Невский проспект, 48, Санкт-Петербург, 194283</a>
               <p class="contacts__description hyphenate" lang="ru">Офис открыт для посещения по будням с 10:00 до 19:00, по субботам с 10:00 до 18:00.</p>
-              
+
               <div class="contacts__map">
                 <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=JZFPBBQoHizasv9ovIII8d88rclZMQmC&amp;width=731&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;"></script>
               </div>
@@ -1012,7 +1015,7 @@
 
             <div class="rehub-popup__container">
               <h4 class="rehub-popup__subtitle">Прошедшие</h4>
-              
+
                <div class="event-card  rehub-popup__event">
                 <div class="event-card__main">
                   <img src="img/kids-laptop.jpg" alt="" class="event-card__img" data-object-fit="cover">
@@ -1040,7 +1043,7 @@
                 </div>
                 <div class="event-card__footer"><a href="" class="event-card__link  link link--white  link--small">Смотреть отчет</a></div>
               </div>
-              
+
             </div>
 
           </div>
