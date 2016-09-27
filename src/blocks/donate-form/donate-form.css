@@ -1,47 +1,48 @@
 .donate-form {
   padding-bottom: 63px;
-  
+
   @media (min-width: $medium-breakpoint) {
     padding-bottom: 63px;
     padding-left: 56px;
     width: 65.5%;
   }
-  
+
   @media (min-width: $large-breakpoint) {
-    padding: 0;
+    padding-left: 0;
+    padding-bottom: 30px;
     width: 543px;
   }
-  
+
   &__item {
-    margin-bottom: 31px;    
-    
+    margin-bottom: 31px;
+
     &:nth-last-child(2) {
       margin-bottom: 25px;
     }
-    
+
     @media (min-width: $medium-breakpoint) {
       margin-bottom: 22px;
       position: relative;
-      
+
       &--margin-bottom {
         margin-bottom: 31px;
       }
-      
+
     }
-    
+
     @media (min-width: $large-breakpoint) {
       margin-bottom: 27px;
-      
+
       &--margin-bottom {
         margin-bottom: 32px;
       }
-      
+
     }
-    
+
     &--divider {
-      padding-top: 32px;  
+      padding-top: 32px;
       position: relative;
-      
+
       &:before {
         content: '';
         position: relative;
@@ -53,111 +54,111 @@
         border-radius: 1px;
         background: rgba(0, 0, 0, .15);
       }
-      
+
       @media (min-width: $medium-breakpoint) {
         padding-top: 57px;
-        
+
         &:before {
           top: -40px;
         }
-        
+
       }
-      
+
       @media (min-width: $large-breakpoint) {
         padding-top: 64px;
-        
+
         &:before {
           top: -48px;
         }
-        
+
       }
-      
+
     }
-    
+
     &--flex {
       display: flex;
       justify-content: space-between;
-      
+
       @media (min-width: $large-breakpoint) {
         margin-top: 49px;
         margin-bottom: 36px;
       }
-      
-    }   
-    
+
+    }
+
   }
-  
+
   &__title {
     font-family: $ptsans;
     font-weight: bold;
     font-size: 1rem;
     line-height: 1rem;
     color: $colder;
-    
+
     &--hide-for-medium {
-      
+
       @media (min-width: $medium-breakpoint) {
         display: none;
       }
-      
+
     }
-    
+
   }
-  
+
   &__input-block {
     margin-top: 18px;
-    
+
     @media (min-width: $large-breakpoint) {
       margin-top: 20px;
     }
-    
+
   }
-  
+
   &__description {
     font-family: $ptsans;
     font-size: 13px;
     line-height: 17px;
     color: $colder;
     margin-top: 13px;
-    
+
     @media (min-width: $medium-breakpoint) {
       line-height: 19px;
       font-size: 16px;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       font-size: 19px;
       line-height: 24px;
       margin-top: 15px;
     }
-    
+
   }
-  
+
   &__count-block {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  
+
   &__checkbox-label {
     display: flex;
     align-items: center;
     cursor: pointer;
-    
+
     @media (min-width: $medium-breakpoint) {
       display: none;
     }
-    
+
   }
-  
+
   &__checkbox {
     display: none;
   }
-  
+
   &__checkbox:checked ~ &__checkbox-icon:before {
     opacity: 1;
   }
-  
+
   &__checkbox-icon {
     display: block;
     height: 24px;
@@ -169,7 +170,7 @@
     margin-top: 16px;
     text-align: center;
     position: relative;
-    
+
     &:before {
       content: '';
       color: rgba(0, 0, 0, .5);
@@ -177,7 +178,7 @@
       background: url(icon-heard.svg);
       display: block;
       height: 12px;
-      width: 14px;   
+      width: 14px;
       position: absolute;
       left: 50%;
       top: 50%;
@@ -185,19 +186,19 @@
       opacity: 0;
     }
   }
-  
+
   &__checkbox-description {
     font-family: $ptsans;
     font-size: 13px;
     line-height: 17px;
     color: $colder;
     margin-top: 16px;
-    width: 90px;    
+    width: 90px;
   }
-  
+
   &__dropdown {
     display: none;
-    
+
     @media (min-width: $medium-breakpoint) {
       display: block;
       margin-top: 18px;
@@ -206,79 +207,79 @@
       top: 0;
       z-index: 2;
     }
-    
+
   }
-  
+
   &__card-box {
     display: flex;
     margin-top: 14px;
     padding-right: 10px;
     justify-content: space-between;
-    
+
     @media (min-width: $medium-breakpoint) {
       margin-bottom: 38px;
     }
-    
+
   }
-  
+
   &__card-block:last-of-type {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    
+
     .donate-form__description {
      text-align: right;
     }
-    
+
   }
-  
+
   &__card-label {
     display: block;
   }
-  
+
   &__card {
     display: none;
   }
-  
+
   &__card:checked ~  &__card-text {
     color: $colder;
   }
-  
+
   &__card-text {
     font-family: $ptsans;
     font-size: 0.85rem;
-    line-height : 17px;  
+    line-height : 17px;
     color: rgba(0, 0, 0, .5);
   }
-  
+
   &__input-wrap {
     display: flex;
-    
+
     .donate-form__input-block:first-of-type {
       margin-right: 8px;
-      
+
       @media (min-width: $medium-breakpoint) {
         margin-right: 19px;
       }
-      
+
     }
-    
+
   }
-  
+
   &__btn-wrap {
     height: 40px;
     display: flex;
     align-items: center;
-    
+
     @media (min-width: $medium-breakpoint) {
       margin-top: 60px;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       margin-top: 82px;
       height: 52px;
     }
-    
+
   }
-  
+
 }

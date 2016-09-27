@@ -1,67 +1,66 @@
 .contact-info {
   padding-bottom: 30px;
-  
+
   @media (min-width: $medium-breakpoint) {
     padding-bottom: 39px;
   }
-  
+
   @media (min-width: $footer-medium-breakpoint) {
     padding-bottom: 29px;
   }
-  
+
   @media (min-width: $large-breakpoint) {
     padding-bottom: 35px;
   }
-  
+
   &__copyright {
     font-family: $ptserif;
     font-size: 13px;
     line-height: 19px;
     color: rgba(240, 241, 242, .7);
-    
+
     @media (min-width: $medium-breakpoint) {
       font-size: 16px;
       line-height: 24px;
     }
-    
+
     @media (min-width: $footer-medium-breakpoint) {
        font-size: 14px;
        line-height: 22px;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       font-size: 15px;
     }
-    
+
   }
-  
+
   &__text {
     font-family: $ptserif;
     font-size: 13px;
     line-height: 19px;
     color: rgba(240, 241, 242, .7);
     margin-top: 10px;
-    hyphens: auto;
-  
+
     @media (min-width: $medium-breakpoint) {
       font-size: 16px;
       line-height: 24px;
     }
-    
+
     @media (min-width: $footer-medium-breakpoint) {
        font-size: 14px;
        line-height: 22px;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       font-size: 15px;
     }
-    
+
   }
-  
+
   &__btn-wrap {
     display: none;
-    
+
     @media (min-width: $medium-breakpoint) {
       display: block;
       margin-top: 18px;
@@ -72,17 +71,17 @@
       align-items: center;
       margin-left: -4px;
     }
-    
+
     @media (min-width: $footer-medium-breakpoint) {
       width: 130px;
       margin-left: -7px;
       margin-top: 14px;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       margin-top: 18px;
     }
-    
+
   }
-  
+
 }

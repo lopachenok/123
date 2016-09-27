@@ -1,25 +1,25 @@
 .contacts {
-  
+
   @media (min-width: $large-breakpoint) {
     width: 70%;
     padding-top: 63px;
   }
-  
+
   &__item {
     margin-bottom: 31px;
-    
+
     @media (min-width: $medium-breakpoint) {
       margin-bottom: 4px;
     }
-    
+
     &--divider {
       padding-top: 32px;
       position: relative;
-      
+
       @media (min-width: $large-breakpoint) {
         padding-top: 45px;
       }
-      
+
       &:before {
         content: '';
         position: relative;
@@ -31,19 +31,19 @@
         border-radius: 1px;
         background: rgba(0, 0, 0, .15);
       }
-      
+
       @media (min-width: $medium-breakpoint) {
-        
+
         &:before {
           display: none;
         }
-        
+
       }
-      
+
     }
-    
+
   }
-  
+
   &__title {
     font-family: $ptsans;
     font-weight: bold;
@@ -51,7 +51,7 @@
     line-height : 1rem;
     color: $colder;
   }
-  
+
   &__name {
     font-family: $ptsans;
     font-size: 1.5rem;
@@ -59,25 +59,25 @@
     margin-top: 19px;
     display: block;
     line-height : 28px;
-    
+
     @media (min-width: $medium-breakpoint) {
       font-size: 1.2rem;
       margin-top: 16px;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       font-size: 1.5rem;
       margin-top: 25px;
     }
-    
+
     &--address {
       @media (min-width: $large-breakpoint) {
         font-size: 1.2rem;
       }
     }
-    
+
   }
-  
+
   &__description {
     font-family: $ptsans;
     font-size: .81rem;
@@ -85,43 +85,42 @@
     color: $colder;
     margin-top: 10px;
     hyphens: auto;
-    
+
     @media (min-width: $medium-breakpoint) {
       line-height: 20px;
       margin-top: 13px;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       line-height: 22px;
       margin-top: 25px;
     }
-    
+
   }
-  
+
   &__map {
     padding-top: 44px;
     height: 490px;
-    
+
     ymaps {
       position: absolute;
       z-index: 10;
       border-radius: 3px;
-      overflow: hidden;
     }
-    
+
   }
-  
+
   &--hide-for-small {
     display: none;
-    
+
     @media (min-width: $medium-breakpoint) {
       display: block;
     }
-    
+
   }
-  
+
   &--padding {
     padding-right: 50px;
   }
-  
+
 }

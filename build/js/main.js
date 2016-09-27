@@ -660,7 +660,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if(validateEmpty(this.value, validateLengthInRange, 13, 19) === false) {
       addRemoveErrorState('add', this, 'Пожалуйста, введите корректный номер карты.');
     } else {
-      addRemoveErrorState('remove', this, '');
+      addRemoveErrorState('remove', this, 'Информация передается по защищенному соединению');
     }
     detectCard(this);
   });
@@ -899,19 +899,7 @@ function addRemoveErrorState(flag, el, text) {
   if(el.parentElement.nextElementSibling && el.parentElement.nextElementSibling.nodeName == 'P') {
     el.parentElement.nextElementSibling.innerHTML = text;
   } else {
-    var error;
-    switch (el.id) {
-      case 'cc-month':
-        error = document.getElementById("month-error-text")
-        break;
-      case 'cc-year':
-        error = document.getElementById("year-error-text")
-        break;
-      case 'cc-cvv':
-        error = document.getElementById("cvv-error-text")
-        break;
-    }
-    error.innerHTML = text;
+    document.getElementById("own-error-text").innerHTML = text;
   }
 }
 
