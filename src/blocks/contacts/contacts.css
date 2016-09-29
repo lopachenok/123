@@ -68,6 +68,7 @@
     @media (min-width: $large-breakpoint) {
       font-size: 1.5rem;
       margin-top: 25px;
+      line-height: 32px;
     }
 
     &--address {
@@ -102,7 +103,7 @@
     padding-top: 44px;
     height: 490px;
 
-    ymaps {
+    > ymaps {
       position: absolute;
       z-index: 10;
       border-radius: 3px;
