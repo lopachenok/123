@@ -2,6 +2,11 @@ var summ,
     formDropdown,
     finalCount,
     btnPeriod;
+var allError = {
+  month: '',
+  year: '',
+  cvv: ''
+};
 
 document.addEventListener("DOMContentLoaded", function() {
   var cartNumberInput = document.getElementById("cc-number");
@@ -46,8 +51,16 @@ document.addEventListener("DOMContentLoaded", function() {
     this.value = sanitizeValue(this.value, true);
     if(validateEmpty(this.value, validateInRange, 1, 12) === false) {
       addRemoveErrorState('add', this, 'Пожалуйста, введите корректный месяц.');
+      allError.month = 'Пожалуйста, введите корректный месяц.';
     } else {
-      addRemoveErrorState('remove', this, '');
+      allError.month = '';
+      if(allError.year !== '') {
+        addRemoveErrorState('remove', this, allError.year);
+      } else if(allError.cvv !== '') {
+        addRemoveErrorState('remove', this, allError.cvv);
+      } else {
+        addRemoveErrorState('remove', this, '');
+      }
     }
   });
 
@@ -59,8 +72,16 @@ document.addEventListener("DOMContentLoaded", function() {
     this.value = sanitizeValue(this.value, true);
     if(validateEmpty(this.value, validateYear) == false) {
       addRemoveErrorState('add', this, 'Пожалуйста, введите корректный год.');
+      allError.year = 'Пожалуйста, введите корректный год.';
     } else {
-      addRemoveErrorState('remove', this, '');
+      allError.year = '';
+      if(allError.month !== '') {
+        addRemoveErrorState('remove', this, allError.month);
+      } else if(allError.cvv !== '') {
+        addRemoveErrorState('remove', this, allError.cvv);
+      } else {
+        addRemoveErrorState('remove', this, '');
+      }
     }
   });
 
@@ -72,8 +93,16 @@ document.addEventListener("DOMContentLoaded", function() {
     this.value = sanitizeValue(this.value, true);
     if(validateEmpty(this.value, validateLength, 3) == false) {
       addRemoveErrorState('add', this, 'Пожалуйста, введите корректный код CVV.');
+      allError.cvv = 'Пожалуйста, введите корректный код CVV.';
     } else {
-      addRemoveErrorState('remove', this, '');
+      allError.cvv = '';
+      if(allError.month !== '') {
+        addRemoveErrorState('remove', this, allError.month);
+      } else if(allError.year !== '') {
+        addRemoveErrorState('remove', this, allError.year);
+      } else {
+        addRemoveErrorState('remove', this, '');
+      }
     }
   });
 
