@@ -90,7 +90,7 @@
 
   &__title {
     font-family: $ptsans;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 1rem;
     line-height: 1rem;
     color: $colder;
@@ -247,7 +247,7 @@
 
   &__card-text {
     font-family: $ptsans;
-    font-size: 0.85rem;
+    font-size: .85rem;
     line-height : 17px;
     color: rgba(0, 0, 0, .5);
   }

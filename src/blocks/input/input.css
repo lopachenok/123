@@ -1,178 +1,242 @@
 .input-block {
   position: relative;
-  
+
   &--icon {
-    
+
     &:after {
       content: '\20BD';
       position: absolute;
       font-family: $ptsans;
-      font-weight: bold;
+      font-weight: 600;
       color: #485155;
       text-transform: uppercase;
       font-size: 1rem;
       line-height: 16px;
       right: 15px;
       top: 7px;
-      
-      @media (min-width: $medium-breakpoint) {        
+
+      @media (min-width: $medium-breakpoint) {
         font-size: .8rem;
-        line-height: 17px; 
+        line-height: 17px;
         top: 12px;
         right: 25px;
       }
-      
+
       @media (min-width: $large-breakpoint) {
         right: 30px;
         top: 16px;
       }
     }
-    
+
     .input-block__input {
-      font-weight: bold;
+      font-weight: 600;
       letter-spacing: 2.2px;
       text-transform: uppercase;
       font-size: 22px;
       color: #969BA0;
-      
+
       @media (min-width: $medium-breakpoint) {
         font-size: 28px;
         height: 40px;
       }
-      
+
       @media (min-width: $large-breakpoint) {
         font-size: 34px;
         height: 48px;
       }
-      
+
     }
-    
+
   }
-  
+
   &--count {
     width: 130px;
-    
+
     @media (min-width: $medium-breakpoint) {
       width: 170px;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       width: 205px;
     }
-    
+
   }
-  
+
   &--month {
     width: 50px;
-    
+
     @media (min-width: $medium-breakpoint) {
       width: 75px;
     }
-    
+
   }
-  
+
   &--year {
     width: 67px;
-    
+
     @media (min-width: $medium-breakpoint) {
       width: 99px;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       width: 107px;
     }
-    
+
   }
-  
+
   &--cvv {
     width: 67px;
-    
+
     @media (min-width: $medium-breakpoint) {
       width: 87px;
     }
-    
+
   }
-  
+
   &__input {
     font-family: $ptsans;
     font-size: 1rem;
-    line-height: 31px;  
+    line-height: 31px;
     padding-left: 1rem;
     padding-right: 1rem;
-    border-radius: 19px;    
+    border-radius: 19px;
     display: block;
     width: 100%;
     box-sizing: border-box;
     color: $midnight;
     height: 31px;
-    
-    
-    &::-webkit-input-placeholder {color: #969BA0;}
-    &::-moz-placeholder          {color: #969BA0;}
-    &:-moz-placeholder           {color: #969BA0;}
-    &:-ms-input-placeholder      {color: #969BA0;}
-    
-    @media (min-width: $medium-breakpoint) {      
-      vertical-align: top;      
+
+    /* stylelint-disable */
+    &::-webkit-input-placeholder {
+      color: #969BA0;
+    }
+
+    &::-moz-placeholder {
+      color: #969BA0;
+    }
+
+    &:-moz-placeholder {
+      color: #969BA0;
+    }
+
+    &:-ms-input-placeholder {
+      color: #969BA0;
+    }
+    /* stylelint-enable */
+
+    @media (min-width: $medium-breakpoint) {
+      vertical-align: top;
       padding-left: 25px;
       box-sizing: border-box;
       padding-right: 30px;
       line-height: 40px;
       height: 40px;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       font-size: 24px;
-      line-height: 48px;      
+      line-height: 48px;
       border-radius: 24px;
-      padding-left: 30px;
       height: 48px;
       padding-left: 25px;
       padding-right: 25px;
     }
-    
+
     &--uppercase {
       text-transform: uppercase;
     }
-    
+
     &--error {
-      color: $scarlet; 
+      color: $scarlet;
       position: relative;
+      /* stylelint-disable */
       -webkit-animation: 0.3s a linear;
       -o-animation: 0.3s a linear;
       -moz-animation: 0.3s a linear;
       -ms-animation: 0.3s b linear;
-      
-      &::-webkit-input-placeholder {color: $scarlet;}
-      &::-moz-placeholder          {color: $scarlet;}
-      &:-moz-placeholder           {color: $scarlet;}
-      &:-ms-input-placeholder      {color: $scarlet;}
-      
-    }
-    
 
-    
+      &::-webkit-input-placeholder {
+          color: $scarlet;
+      }
+
+      &::-moz-placeholder {
+          color: $scarlet;
+      }
+
+      &:-moz-placeholder {
+          color: $scarlet;
+      }
+
+      &:-ms-input-placeholder {
+          color: $scarlet;
+      }
+
+    }
+    /* stylelint-enable */
+
+    &--only-error {
+      color: $scarlet;
+
+      /* stylelint-disable */
+      &::-webkit-input-placeholder {
+          color: $scarlet;
+      }
+
+      &::-moz-placeholder {
+          color: $scarlet;
+      }
+
+      &:-moz-placeholder {
+          color: $scarlet;
+      }
+
+      &:-ms-input-placeholder {
+          color: $scarlet;
+      }
+    }
+    /* stylelint-enable */
+
     &--empty {
       background: $scarlet;
       border: 1px solid $midnight;
     }
-    
+
   }
-  
+
 }
 
 @keyframes a {
-    0%   {transform: translate3d(3px, 0, 0);}
-    25%  {transform: translate3d(-3px, 0, 0);}
-    50%  {transform: translate3d(3px, 0, 0);}
-    75%  {transform: translate3d(-3px, 0, 0);}
-    100% {transform: translate3d(0, 0, 0);}
+    0% {
+        transform: translate3d(3px, 0, 0);
+    }
+    25% {
+        transform: translate3d(-3px, 0, 0);
+    }
+    50% {
+        transform: translate3d(3px, 0, 0);
+    }
+    75% {
+        transform: translate3d(-3px, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
 }
 
 @keyframes b {
-    0%   {left: 3px;}
-    25%  {left: -3px;}
-    50%  {left: 3px;}
-    75%  {left: -3px;}
-    100% {left: 0;}
+    0% {
+        left: 3px;
+    }
+    25% {
+        left: -3px;
+    }
+    50% {
+        left: 3px;
+    }
+    75% {
+        left: -3px;
+    }
+    100% {
+        left: 0;
+    }
 }

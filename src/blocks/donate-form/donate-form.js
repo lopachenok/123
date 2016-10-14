@@ -10,19 +10,6 @@ var allError = {
 
 document.addEventListener("DOMContentLoaded", function() {
   var cartNumberInput = document.getElementById("cc-number");
-  cartNumberInput.addEventListener("keyup", function() {
-    this.value = cc_format(this);
-  });
-
-  cartNumberInput.addEventListener("blur", function() {
-    this.value = cc_format(this);
-    if(validateEmpty(this.value, validateLengthInRange, 13, 19) === false) {
-      addRemoveErrorState('add', this, 'Пожалуйста, введите корректный номер карты.');
-    } else {
-      addRemoveErrorState('remove', this, 'Информация передается по защищенному соединению');
-    }
-    detectCard(this);
-  });
 
   summ = document.getElementById("cc-summ");
   var month = document.getElementById("cc-month");
@@ -43,8 +30,32 @@ document.addEventListener("DOMContentLoaded", function() {
     changeBtnInnerText(this.value);
   });
 
+  cartNumberInput.addEventListener("keyup", function() {
+    this.value = cc_format(this);
+    if(validateEmpty(this.value, validateLengthInRange, 13, 19) === false) {
+      addRemoveErrorState('keyup-add', this, '');
+    } else {
+      addRemoveErrorState('keyup-remove', this, '');
+    }
+  });
+
+  cartNumberInput.addEventListener("blur", function() {
+    this.value = cc_format(this);
+    if(validateEmpty(this.value, validateLengthInRange, 13, 19) === false) {
+      addRemoveErrorState('add', this, 'Пожалуйста, введите корректный номер карты.');
+    } else {
+      addRemoveErrorState('remove', this, 'Информация передается по защищенному соединению');
+    }
+    detectCard(this);
+  });
+
   month.addEventListener("keyup", function() {
     this.value = sanitizeValue(this.value, true);
+    if(validateEmpty(this.value, validateInRange, 1, 12) === false) {
+      addRemoveErrorState('keyup-add', this, '');
+    } else {
+      addRemoveErrorState('keyup-remove', this, '');
+    }
   });
 
   month.addEventListener("blur", function() {
@@ -66,6 +77,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
   year.addEventListener("keyup", function() {
     this.value = sanitizeValue(this.value, true);
+    if(validateEmpty(this.value, validateYear) == false) {
+      addRemoveErrorState('keyup-add', this, '');
+    } else {
+      addRemoveErrorState('keyup-remove', this, '');
+    }
   });
 
   year.addEventListener("blur", function() {
@@ -87,6 +103,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
   cvv.addEventListener("keyup", function() {
     this.value = sanitizeValue(this.value, true);
+    if(validateEmpty(this.value, validateLength, 3) == false) {
+      addRemoveErrorState('keyup-add', this, '');
+    } else {
+      addRemoveErrorState('keyup-remove', this, '');
+    }
   });
 
   cvv.addEventListener("blur", function() {
@@ -112,6 +133,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
   name.addEventListener("blur", function() {
     this.value = sanitizeValue(this.value, false, true);
+  });
+
+  email.addEventListener("keyup", function() {
+    if(validateEmpty(this.value, validateEmail) == false) {
+      addRemoveErrorState('keyup-add', this, '');
+    } else {
+      addRemoveErrorState('keyup-remove', this, '');
+    }
   });
 
   email.addEventListener("blur", function() {
@@ -274,16 +303,25 @@ function validateLengthInRange(value, min, max) {
 }
 
 function addRemoveErrorState(flag, el, text) {
-  if(flag == 'add') {
-    el.classList.add("input-block__input--error");
-  } else if(flag == 'remove') {
-    el.classList.remove("input-block__input--error");
+  switch(flag) {
+    case 'add':
+      el.classList.add("input-block__input--error"); break;
+    case 'remove':
+      el.classList.remove("input-block__input--error"); break;
+    case 'keyup-add':
+      el.classList.add("input-block__input--only-error"); break;
+    case 'keyup-remove':
+      el.classList.remove("input-block__input--only-error"); break;
   }
-  if(el.parentElement.nextElementSibling && el.parentElement.nextElementSibling.nodeName == 'P') {
-    el.parentElement.nextElementSibling.innerHTML = text;
-  } else {
-    document.getElementById("own-error-text").innerHTML = text;
+
+  if(flag == 'add' || flag == 'remove') {
+    if(el.parentElement.nextElementSibling && el.parentElement.nextElementSibling.nodeName == 'P') {
+      el.parentElement.nextElementSibling.innerHTML = text;
+    } else {
+      document.getElementById("own-error-text").innerHTML = text;
+    }
   }
+
 }
 
 function changeBtnInnerText(count, period) {

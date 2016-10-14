@@ -1,13 +1,13 @@
 .popups {
-  background: #E52E53;
+  background: #e52e53;
   min-height: 100vh;
   overflow-y: scroll;
-   -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
   height: 100%;
 
   @media (min-width: $large-breakpoint) {
     width: 922px;
-    margin: 100px auto 100px;
+    margin: 100px auto;
     overflow-y: hidden;
     position: relative;
     height: auto;
@@ -18,6 +18,7 @@
 
   &__inner {
     @mixin container;
+
     padding-top: 13px;
 
     @media (min-width: $medium-breakpoint) {
@@ -27,7 +28,6 @@
     @media (min-width: $large-breakpoint) {
       padding: 80px 84px 0;
     }
-
   }
 
   &__column {
@@ -45,12 +45,11 @@
         justify-content: space-between;
       }
     }
-
   }
 
   &__closer {
     font-family: $ptsans;
-    font-weight : bold;
+    font-weight: 600;
     font-size: 1rem;
     line-height: 1rem;
     letter-spacing: 1.6px;

@@ -3,68 +3,68 @@
   background-size: 150%;
   background-position: 70%;
   background-repeat: no-repeat;
-  
+
   @media (min-width: 440px) {
     background-size: 130%;
     background-position: 93%;
     background-repeat: no-repeat;
   }
-  
-  
+
   @media (min-width: 640px) {
     background-size: 120%;
     background-position: 90%;
   }
-  
+
   @media (min-width: $medium-breakpoint) {
     width: 50%;
     background: url(typewriter.jpg);
     background-position: 414px 464px;
     background-size: 530px;
   }
-  
+
   @media (min-width: 820px) {
     background-position: 79% 90%;
   }
-  
+
   @media (min-width: 1060px) {
     background-position: 79% 90%;
     background-size: 600px;
   }
-  
+
   @media (min-width: 1200px) {
     background-size: 640px;
   }
-  
+
   @media (min-width: $large-breakpoint) {
     background: url(typewriter-landscape.jpg);
     background-size: 1020px;
     background-position: 790px 370px;
   }
-  
+
   @media (min-width: 1580px) {
     background-size: 1070px;
     background-position: 60% 370px;
   }
-  
+
   @media (min-width: 1780px) {
     background-position: 35% 370px;
   }
-  
+
   @media (min-width: 1880px) {
     background-position: 0 370px;
   }
-  
+
   &__inner {
+
     @mixin container;
     padding-top: 39px;
     padding-bottom: 39px;
-    
+
     @media (min-width: 480px) {
       padding-top: 60px;
       padding-bottom: 60px;
     }
-    
+
     @media (min-width: $medium-breakpoint) {
       padding-top: 250px;
       padding-bottom: 51px;
@@ -72,49 +72,48 @@
       margin-left: auto;
       margin-right: 0;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       padding-top: 75px;
       padding-bottom: 49px;
       padding-right: 37px;
       max-width: 720px;
     }
-    
+
   }
-  
+
   &__text {
     font-family: $ptserif;
     font-size: 13px;
     line-height: 19px;
     color: #485155;
-    letter-spacing: 0.01em;
-    
+    letter-spacing: .01em;
+
     @media (min-width: $medium-breakpoint) {
       font-size: 20px;
       line-height: 30px;
       max-width: 284px;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       font-size: 24px;
       line-height: 36px;
-/*      padding-left: 176px;*/
       max-width: 400px;
     }
-    
+
   }
-  
+
   &__link {
     margin-top: 1rem;
-    
+
     @media (min-width: $medium-breakpoint) {
       margin-top: 1.5rem;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       margin-top: 1.3rem;
     }
-    
+
   }
-  
+
 }

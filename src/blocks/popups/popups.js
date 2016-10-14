@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function() {
     closer.addEventListener("click", closeOnClick);
   });
 
-
   if(window.innerWidth < desctopSize) {
     mainElem = document.getElementById("wrapper");
   } else {
@@ -41,12 +40,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
   window.addEventListener("resize", function () {
     if (windowSizePopup.x !== window.innerWidth) {
+      mainElem.classList.remove("ov-hidden");
       if (window.innerWidth < desctopSize) {
         mainElem = document.getElementById("wrapper");
       } else {
         mainElem = document.body || document.documentElement;
       }
     }
+    mainElem.classList.add("ov-hidden");
 
     if(windowSizePopup.x < tabletSize && window.innerWidth > tabletSize && popups.currentIndex === 2) {
       closeOnClick()

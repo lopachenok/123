@@ -42,6 +42,7 @@
     "precss": "^1.4.0",
     "streamqueue": "^1.1.1",
     "stylelint": "^6.3.3",
+    "stylelint-config-standard": "^13.0.2",
     "through2": "^2.0.1"
   },
   "config": {
@@ -51,56 +52,10 @@
       "build": "./build"
     }
   },
- "stylelint": {
+  "stylelint": {
+    "extends": "stylelint-config-standard",
     "rules": {
-      "at-rule-empty-line-before": "always",
-      "at-rule-name-case": "lower",
-      "at-rule-no-vendor-prefix": true,
-      "block-closing-brace-newline-after": "always",
-      "block-no-empty": null,
-      "block-closing-brace-newline-before": "always",
-      "block-opening-brace-newline-after": "always",
-      "block-opening-brace-space-before": "always-single-line",
-      "color-hex-length": "short",
-      "color-no-invalid-hex": true,
-      "declaration-block-no-duplicate-properties": true,
-      "declaration-block-no-shorthand-property-overrides": true,
-      "declaration-block-semicolon-newline-after": "always",
-      "declaration-block-semicolon-newline-before": "never-multi-line",
-      "font-family-name-quotes": "always-where-required",
-      "font-weight-notation": "numeric",
-      "function-linear-gradient-no-nonstandard-direction": true,
-      "function-url-quotes": "never",
-      "max-empty-lines": 2,
-      "no-duplicate-selectors": true,
-      "no-invalid-double-slash-comments": true,
-      "number-leading-zero": "never",
-      "length-zero-no-unit": true,
-      "property-case": "lower",
-      "property-no-vendor-prefix": true,
-      
-      "selector-max-empty-lines": 1,
-      "selector-no-attribute": true,
-      "selector-no-combinator": true,
-      "selector-no-id": true,
-      "selector-no-qualifying-type": true,
-      "selector-no-type": true,
-      "selector-no-vendor-prefix": true,
-      "selector-pseudo-class-case": "lower",
-      "selector-pseudo-element-case": "lower",
-      "selector-pseudo-element-colon-notation": "single",
-      "shorthand-property-no-redundant-values": true,
-      "string-quotes": "single",
-      "unit-whitelist": [
-        "em",
-        "rem",
-        "%",
-        "px"
-      ],
-      "unit-case": "lower",
-      "unit-no-unknown": true,
-      "value-keyword-case": "lower",
-      "value-no-vendor-prefix": true
+      "number-leading-zero": null
     }
   }
 }
