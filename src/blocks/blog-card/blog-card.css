@@ -55,8 +55,8 @@
   }
 
   &__inner {
-
     @mixin container;
+
     padding-top: 39px;
     padding-bottom: 39px;
 
@@ -79,7 +79,6 @@
       padding-right: 37px;
       max-width: 720px;
     }
-
   }
 
   &__text {
@@ -100,7 +99,6 @@
       line-height: 36px;
       max-width: 400px;
     }
-
   }
 
   &__link {
@@ -113,7 +111,5 @@
     @media (min-width: $large-breakpoint) {
       margin-top: 1.3rem;
     }
-
   }
-
 }

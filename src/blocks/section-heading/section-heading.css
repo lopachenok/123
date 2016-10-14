@@ -4,13 +4,12 @@
   font-size: 1.5rem;
   line-height: 1.15;
   color: $midnight;
-  
+
   @media (min-width: $medium-breakpoint) {
     line-height: 1.18;
   }
-  
+
   &--white {
     color: #fff;
   }
-  
 }

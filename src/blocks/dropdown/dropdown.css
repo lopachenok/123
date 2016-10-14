@@ -4,8 +4,8 @@
   font-weight: 600;
   font-size: .8rem;
   letter-spacing: 0.1em;
-  width: 188px;  
-  height: 40px;  
+  width: 188px;
+  height: 40px;
   box-sizing: border-box;
   background: #fff;
   position: relative;
@@ -13,83 +13,73 @@
   transition: height .2s ease;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
-  
+
   @media (min-width: $large-breakpoint) {
     border-radius: 24px;
     width: 224px;
     height: 48px;
   }
-  
+
   &--open {
     height: 80px;
-    
+
     @media (min-width: $large-breakpoint) {
       height: 96px;
     }
-    
+
     .dropdown__item {
       visibility: visible;
       opacity: 1;
     }
-    
   }
-  
-  &:after {
+
+  &::after {
     content: '';
     position: absolute;
-    border: 6px solid transparent;	
+    border: 6px solid transparent;
     border-top: 6px solid $midnight;
     top: 18px;
     right: 25px;
     transition: border-top .2s ease;
-    
+
     @media (min-width: $large-breakpoint) {
       right: 30px;
       top: 21px;
     }
-      
   }
-  
-  &:hover:after {
+
+  &:hover::after {
     border-top: 6px solid $scarlet;
   }
-  
+
   &__list {
     display: flex;
     flex-direction: column;
     height: 100%;
   }
-  
+
   &__item {
     height: 28px;
-    padding-left: 25px;
-    padding-right: 45px;
-    padding-top: 12px;
-    padding-bottom: 15px;
+    padding: 12px 45px 15px 25px;
     text-transform: uppercase;
-    color: #485155; 
+    color: #485155;
     visibility: hidden;
     opacity: 0;
     transition: visibility .2s ease, opacity .2s ease, color .2s ease;
-    
+
     @media (min-width: $large-breakpoint) {
       height: 33px;
-      padding-left: 30px;
-      padding-right: 55px;
-      padding-top: 15px; 
-      padding-bottom: 14px;
+      padding: 15px 55px 14px 30px;
     }
-    
+
     &:hover {
-      color: $scarlet;      
+      color: $scarlet;
     }
-    
+
     &--selected {
       visibility: visible;
       opacity: 1;
-      order: -1;      
+      order: -1;
     }
-    
   }
-    
 }

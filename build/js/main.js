@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var scrollButtonLeft = document.querySelector(".carousel__scroll-button--left");
 
   var scrollOffset, k;
-  if(window.innerWidth >= tabletSize && window.innerWidth < desctopSize) {
+  if (window.innerWidth >= tabletSize && window.innerWidth < desctopSize) {
     k = 2.5;
   } else {
     k = 3.2;
@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
         heightArray.push(content.clientHeight);
       });
 
-      if(window.innerWidth >= tabletSize) {
+      if (window.innerWidth >= tabletSize) {
         outer = new HammerCarousel(carousel);
         popups = new HammerCarousel(popupsEl);
       } else {
@@ -558,11 +558,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     mainElem.classList.add("ov-hidden");
 
-    if(windowSizePopup.x < tabletSize && window.innerWidth > tabletSize && popups.currentIndex === 2) {
-      closeOnClick()
+    if(windowSizePopup.x < tabletSize && window.innerWidth >= tabletSize && popups.currentIndex === 2) {
+      closeOnClick();
     }
 
-    if(windowSizePopup.x < desctopSize && window.innerWidth > desctopSize && popups.currentIndex === 0) {
+    if(windowSizePopup.x < desctopSize && window.innerWidth >= desctopSize && popups.currentIndex === 0) {
       closeOnClick();
     }
 
@@ -586,7 +586,7 @@ function closePopup(e) {
 
 function closeOnClick() {
   if(flag === false) {
-      mainElem.classList.remove("ov-hidden");
+    mainElem.classList.remove("ov-hidden");
   }
   document.documentElement.scrollTop = scrollTopOffset;
   document.body.scrollTop = scrollTopOffset;

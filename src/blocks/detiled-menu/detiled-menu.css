@@ -1,99 +1,90 @@
-.detiled-menu {  
+.detiled-menu {
   flex: 1 0;
-  
+
   @media (min-width: $medium-breakpoint) {
     padding-left: 20px;
     flex-basis: 189px;
   }
-  
+
   @media (min-width: $footer-medium-breakpoint) {
     padding-left: .4rem;
   }
-  
+
   @media (min-width: $large-breakpoint) {
     padding-left: 63px;
     padding-right: 0;
   }
-  
+
   &__list {
     display: none;
-    
+
     @media (min-width: $medium-breakpoint) {
       display: block;
     }
-    
+
     @media (min-width: $footer-medium-breakpoint) {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
     }
-    
   }
-  
+
   &__item {
-    
     @media (min-width: $medium-breakpoint) {
       margin-bottom: 29px;
-      
+
       &--active {
-        
+
         .detiled-menu__link {
           color: $scarlet;
         }
-        
       }
-      
     }
-    
+
     @media (min-width: $footer-medium-breakpoint) {
       margin-bottom: 63px;
       flex-basis: 176px;
-      
+
       &:first-of-type {
         display: none;
       }
-      
+
       &:nth-of-type(2) {
         flex-basis: 165px;
       }
-      
+
       &:nth-of-type(5) {
         flex-basis: 165px;
-      } 
-      
-    }  
-    
+      }
+    }
+
     @media (min-width: $large-breakpoint) {
       margin-bottom: 58px;
       flex-basis: 211px;
-      
+
       &:nth-of-type(2) {
         flex-basis: 175px;
       }
-      
+
       &:nth-of-type(5) {
         flex-basis: 175px;
-      } 
-      
+      }
     }
-    
+
     @media (min-width: 1400px) {
       flex-basis: 211px;
-      
+
       &:nth-of-type(2) {
         flex-basis: 190px;
       }
-      
+
       &:nth-of-type(5) {
         flex-basis: 190px;
-      } 
-      
+      }
     }
-    
   }
-  
+
   &__link {
-    
     @media (min-width: $medium-breakpoint) {
       font-family: $ptsans;
       font-weight: bold;
@@ -102,62 +93,58 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       color: $colder;
-      transition: color .2s ease;      
-    
+      transition: color .2s ease;
+
       &:hover {
         color: $scarlet;
       }
     }
-    
+
     @media (min-width: $footer-medium-breakpoint) {
       font-size: 0.8rem;
       line-height: 0.8rem;
     }
-    
   }
-  
+
   &__sublist {
     display: none;
-    
+
     @media (min-width: $footer-medium-breakpoint) {
       display: block;
       margin-top: 18px;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       margin-top: 16px;
     }
-    
   }
-  
+
   &__subitem {
-    
     @media (min-width: $footer-medium-breakpoint) {
       margin-bottom: 13px;
-      
+
       &:last-of-type {
         margin-bottom: 0;
       }
     }
-    
+
     @media (min-width: $large-breakpoint) {
       margin-bottom: 8px;
     }
-    
   }
-  
+
   &__sublink {
     font-family: $ptsans;
     font-size: 0.8rem;
     line-height: 1;
-    color: #969BA0;
+    color: #969ba0;
     transition: color .2s ease;
-    
+
     &:hover {
       color: $scarlet;
     }
   }
-  
+
   &__toggler {
     padding-top: 8px;
     float: right;
@@ -167,28 +154,26 @@
     cursor: pointer;
     flex-grow: 0;
     flex-shrink: 0;
-    
+
     @media (min-width: $medium-breakpoint) {
       display: none;
     }
-    
   }
-  
+
   &__toggler-text {
-    font-family: $ptsans; 
+    font-family: $ptsans;
     font-weight: 600;
     font-size: 1rem;
     color: #fff;
     text-transform: uppercase;
     margin-right: 10px;
     letter-spacing: 1.6px;
-    
+
     @media (min-width: $medium-breakpoint) {
       font-size: 0.8rem;
     }
-    
   }
-  
+
   &__toggler-icon {
     background-color: $scarlet;
     display: block;
@@ -196,8 +181,8 @@
     height: 2px;
     border-radius: 2px;
     position: relative;
-    
-    &:after {
+
+    &::after {
       content: '';
       position: absolute;
       width: 100%;
@@ -206,8 +191,8 @@
       border-radius: 2px;
       top: 7px;
     }
-    
-    &:before {
+
+    &::before {
       content: '';
       position: absolute;
       width: 100%;
@@ -216,7 +201,5 @@
       border-radius: 2px;
       top: -7px;
     }
-    
   }
-  
 }

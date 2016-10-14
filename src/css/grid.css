@@ -4,19 +4,18 @@
   max-width: 600px;
   margin: 0 auto;
   box-sizing: border-box;
-  
+
   @media (min-width: $medium-breakpoint) {
     padding-left: $medium-grid-padding;
     padding-right: $medium-grid-padding;
     max-width: 1024px;
   }
-  
+
   @media (min-width: $large-breakpoint) {
     max-width: 1440px;
     padding-left: $large-grid-padding;
     padding-right: $large-grid-padding;
   }
-  
 }
 
 .row {
@@ -24,26 +23,24 @@
   width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
-  
+
   &--centred {
     justify-content: center;
   }
-  
+
   @media (min-width: $medium-breakpoint) {
-  
+
     &--no-wrap {
       flex-wrap: nowrap;
       height: 100%;
-    
-      .medium-column5, .medium-column8 {
+
+      .medium-column5,
+      .medium-column8 {
         flex-shrink: 0;
         flex-grow: 1;
       }
-    
     }
-    
   }
-  
 }
 
 .small-column1 {
@@ -68,7 +65,7 @@
   box-sizing: border-box;
   width: 66.6667%;
   padding: 0 $grid-gutter;
-} 
+}
 
 .small-column5 {
   box-sizing: border-box;
@@ -87,190 +84,186 @@
 }
 
 @media (min-width: $medium-breakpoint) {
-  
+
   .small-column-offset2 {
-  margin-left: 0;
+    margin-left: 0;
   }
-  
+
   .medium-column1 {
     box-sizing: border-box;
     width: 8.3333%;
     padding: 0 $grid-gutter;
   }
-  
+
   .medium-column2 {
     box-sizing: border-box;
     width: 16.6667%;
     padding: 0 $grid-gutter;
   }
-    
+
   .medium-column3 {
     box-sizing: border-box;
     width: 25%;
     padding: 0 $grid-gutter;
   }
-  
+
   .medium-column4 {
     box-sizing: border-box;
     width: 33.3333%;
     padding: 0 $grid-gutter;
   }
-  
+
   .medium-column5 {
     box-sizing: border-box;
     width: 41.6667%;
     padding: 0 $grid-gutter;
   }
-  
+
   .medium-column6 {
     box-sizing: border-box;
     width: 50%;
     padding: 0 $grid-gutter;
   }
-  
+
   .medium-column7 {
     box-sizing: border-box;
     width: 58.3333%;
     padding: 0 $grid-gutter;
   }
-  
+
   .medium-column8 {
     box-sizing: border-box;
     width: 66.6667%;
     padding: 0 $grid-gutter;
   }
-  
+
   .medium-column9 {
     box-sizing: border-box;
     width: 75%;
     padding: 0 $grid-gutter;
   }
-  
+
   .medium-column10 {
     box-sizing: border-box;
     width: 83.3333%;
     padding: 0 $grid-gutter;
   }
-  
+
   .medium-column11 {
     box-sizing: border-box;
     width: 91.6667%;
     padding: 0 $grid-gutter;
   }
-  
+
   .medium-column12 {
     box-sizing: border-box;
     width: 100%;
     padding: 0 $grid-gutter;
   }
-  
+
   .medium-column-offset1 {
     margin-left: 8.3333%;
   }
-  
+
   .medium-column-offset2 {
     margin-left: 16.6667%;
   }
-  
 }
 
 @media (min-width: $footer-medium-breakpoint) {
-  
+
   .footer-medium-column4 {
     box-sizing: border-box;
     width: 33.3333%;
     padding: 0 $grid-gutter;
   }
-  
+
   .footer-medium-column8 {
     box-sizing: border-box;
     width: 66.6667%;
     padding: 0 $grid-gutter;
   }
-  
 }
-
 
 @media (min-width: $large-breakpoint) {
-  
+
   .small-column-offset2 {
-  margin-left: 33.3333%;
-}
-  
+    margin-left: 33.3333%;
+  }
+
   .large-column1 {
     box-sizing: border-box;
     width: 8.3333%;
     padding: 0 $grid-gutter;
   }
-  
+
   .large-column2 {
     box-sizing: border-box;
     width: 16.6667%;
     padding: 0 $grid-gutter;
   }
-  
+
   .large-column3 {
     box-sizing: border-box;
     width: 25%;
     padding: 0 $grid-gutter;
   }
-  
+
   .large-column4 {
     box-sizing: border-box;
     width: 33.3333%;
     padding: 0 $grid-gutter;
   }
-  
+
   .large-column5 {
     box-sizing: border-box;
     width: 41.6667%;
     padding: 0 $grid-gutter;
   }
-  
+
   .large-column6 {
     box-sizing: border-box;
     width: 50%;
     padding: 0 $grid-gutter;
   }
-  
+
   .large-column7 {
     box-sizing: border-box;
     width: 58.3333%;
     padding: 0 $grid-gutter;
   }
-  
+
   .large-column8 {
     box-sizing: border-box;
     width: 66.6667%;
     padding: 0 $grid-gutter;
   }
-  
+
   .large-column9 {
     box-sizing: border-box;
     width: 75%;
     padding: 0 $grid-gutter;
   }
-  
+
   .large-column10 {
     box-sizing: border-box;
     width: 83.3333%;
     padding: 0 $grid-gutter;
   }
-  
+
   .large-column11 {
     box-sizing: border-box;
     width: 91.6667%;
     padding: 0 $grid-gutter;
   }
-  
+
   .large-column12 {
     box-sizing: border-box;
     width: 100%;
     padding: 0 $grid-gutter;
   }
-  
+
   .large-column-offset1 {
     margin-left: 8.3333%;
   }
-  
 }

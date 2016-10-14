@@ -6,59 +6,54 @@
   transition: transform 0.2s ease;
   user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  
+
   &:hover {
-    transform: scale(1.1);    
+    transform: scale(1.1);
   }
-  
+
   @media (min-width: $large-breakpoint) {
     height: 36px;
     width: 60px;
   }
-  
+
   &--bigger {
-    
     @media (min-width: $medium-breakpoint) {
       height: 40px;
       width: 67px;
     }
-    
+
     @media (min-width: $footer-medium-breakpoint) {
       height: 36px;
       width: 61px;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       height: 40px;
       width: 67px;
     }
-    
+
     &:hover {
-      transform: scale(1);    
+      transform: scale(1);
     }
-    
   }
-  
+
   &--dark {
-    
+
     &:hover {
-      transform: scale(1);    
+      transform: scale(1);
     }
-    
   }
-  
+
   &--black {
-    
+
     &:hover {
-      transform: scale(1);    
+      transform: scale(1);
     }
-    
   }
-  
+
   &__img {
     height: 100%;
     width: 100%;
     -webkit-user-select: none;
   }
-  
 }

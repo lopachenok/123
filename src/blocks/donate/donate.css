@@ -1,46 +1,44 @@
 .donate {
   background: $colder;
-  
+
   @media (min-width: $medium-breakpoint) {
     background: $colder url(nd-pattern.svg);
     background-size: 2560px 1821px;
   }
-  
+
   &__inner {
     @mixin container;
+
     padding-top: 40px;
     padding-bottom: 35px;
-    
+
     @media (min-width: $medium-breakpoint) {
       padding-top: 69px;
       padding-bottom: 65px;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       padding-top: 72px;
       padding-bottom: 70px;
     }
-    
   }
-  
+
   &__heading {
     margin-top: 1.8rem;
-    
+
     @media (min-width: $medium-breakpoint) {
       margin-top: 1.5rem;
     }
-    
   }
-  
+
   &__text {
     margin-top: 0.8rem;
-    
+
     @media (min-width: $medium-breakpoint) {
       margin-top: 1rem;
     }
-    
   }
-  
+
   &__btn-wrap {
     display: flex;
     align-items: center;
@@ -49,15 +47,13 @@
     margin-top: 1.7rem;
     width: 182px;
     margin-left: -5px;
-    
+
     @media (min-width: $medium-breakpoint) {
       display: none;
     }
-    
   }
-  
+
   &__action {
     margin-top: 2.5rem;
   }
-  
 }

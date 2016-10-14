@@ -49,11 +49,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     mainElem.classList.add("ov-hidden");
 
-    if(windowSizePopup.x < tabletSize && window.innerWidth > tabletSize && popups.currentIndex === 2) {
-      closeOnClick()
+    if(windowSizePopup.x < tabletSize && window.innerWidth >= tabletSize && popups.currentIndex === 2) {
+      closeOnClick();
     }
 
-    if(windowSizePopup.x < desctopSize && window.innerWidth > desctopSize && popups.currentIndex === 0) {
+    if(windowSizePopup.x < desctopSize && window.innerWidth >= desctopSize && popups.currentIndex === 0) {
       closeOnClick();
     }
 
@@ -77,7 +77,7 @@ function closePopup(e) {
 
 function closeOnClick() {
   if(flag === false) {
-      mainElem.classList.remove("ov-hidden");
+    mainElem.classList.remove("ov-hidden");
   }
   document.documentElement.scrollTop = scrollTopOffset;
   document.body.scrollTop = scrollTopOffset;

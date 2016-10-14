@@ -6,24 +6,24 @@
   height: 26px;
   align-items: center;
   overflow: hidden;
-  
+
   @media (min-width: $medium-breakpoint) {
     padding-top: 20px;
     width: calc(100% - 21px);
   }
-  
+
   @media (min-width: $footer-medium-breakpoint) {
     width: 100%;
     height: 21px;
   }
-  
+
   @media (min-width: $large-breakpoint) {
     padding-top: 19px;
     width: calc(100% - 16px);
     height: 26px;
   }
-  
-  &:before {
+
+  &::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -31,119 +31,112 @@
     left: 0;
     border-top: 1px solid rgba(240, 241, 242, .15);
   }
-  
+
   &__link {
     display: block;
     flex-grow: 1;
-    
+
     &:last-of-type {
       flex-grow: 0;
     }
-    
   }
-  
+
   &__icon {
     display: block;
-    
+
     &:hover {
+
       svg .cls-1 {
         opacity: 1;
       }
     }
-    
+
     svg {
       width: 100%;
       height: 100%;
     }
-    
+
     & svg .cls-1 {
       opacity: .7;
       transition: opacity .2s ease;
     }
-    
+
     & svg .cls-2 {
       fill: $colder;
     }
-    
+
     &--vk {
       height: 20px;
       width: 31px;
-      
+
       @media (min-width: $footer-medium-breakpoint) {
         height: 18px;
         width: 26px;
       }
-      
+
       @media (min-width: $large-breakpoint) {
         height: 20px;
         width: 31px;
       }
-      
     }
-    
+
     &--ok {
       height: 26px;
       width: 15px;
-      
+
       @media (min-width: $footer-medium-breakpoint) {
         height: 21px;
         width: 15px;
       }
-      
+
       @media (min-width: $large-breakpoint) {
         height: 26px;
         width: 15px;
       }
-      
     }
-    
+
     &--insta {
       height: 22px;
       width: 22px;
-      
+
       @media (min-width: $footer-medium-breakpoint) {
         height: 19px;
         width: 19px;
       }
-      
+
       @media (min-width: $large-breakpoint) {
         height: 22px;
         width: 22px;
       }
-      
     }
-    
+
     &--fb {
       height: 25px;
       width: 12px;
-      
+
       @media (min-width: $footer-medium-breakpoint) {
         height: 20px;
       }
-      
+
       @media (min-width: $large-breakpoint) {
         height: 25px;
         width: 12px;
       }
-      
     }
-    
+
     &--tw {
       height: 22px;
       width: 26px;
-      
+
       @media (min-width: $footer-medium-breakpoint) {
         height: 17px;
         width: 28px;
       }
-      
+
       @media (min-width: $large-breakpoint) {
         height: 22px;
         width: 26px;
       }
-      
     }
-    
   }
-  
 }

@@ -1,5 +1,4 @@
 .contacts {
-
   @media (min-width: $large-breakpoint) {
     width: 70%;
     padding-top: 63px;
@@ -20,7 +19,7 @@
         padding-top: 45px;
       }
 
-      &:before {
+      &::before {
         content: '';
         position: relative;
         display: block;
@@ -34,21 +33,18 @@
 
       @media (min-width: $medium-breakpoint) {
 
-        &:before {
+        &::before {
           display: none;
         }
-
       }
-
     }
-
   }
 
   &__title {
     font-family: $ptsans;
     font-weight: bold;
     font-size: 1rem;
-    line-height : 1rem;
+    line-height: 1rem;
     color: $colder;
   }
 
@@ -58,7 +54,7 @@
     color: #fff;
     margin-top: 19px;
     display: block;
-    line-height : 28px;
+    line-height: 28px;
 
     @media (min-width: $medium-breakpoint) {
       font-size: 1.2rem;
@@ -76,7 +72,6 @@
         font-size: 1.2rem;
       }
     }
-
   }
 
   &__description {
@@ -96,7 +91,6 @@
       line-height: 22px;
       margin-top: 25px;
     }
-
   }
 
   &__map {
@@ -108,7 +102,6 @@
       z-index: 10;
       border-radius: 3px;
     }
-
   }
 
   &--hide-for-small {
@@ -117,11 +110,9 @@
     @media (min-width: $medium-breakpoint) {
       display: block;
     }
-
   }
 
   &--padding {
     padding-right: 50px;
   }
-
 }

@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var scrollButtonLeft = document.querySelector(".carousel__scroll-button--left");
 
   var scrollOffset, k;
-  if(window.innerWidth >= tabletSize && window.innerWidth < desctopSize) {
+  if (window.innerWidth >= tabletSize && window.innerWidth < desctopSize) {
     k = 2.5;
   } else {
     k = 3.2;
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
         heightArray.push(content.clientHeight);
       });
 
-      if(window.innerWidth >= tabletSize) {
+      if (window.innerWidth >= tabletSize) {
         outer = new HammerCarousel(carousel);
         popups = new HammerCarousel(popupsEl);
       } else {

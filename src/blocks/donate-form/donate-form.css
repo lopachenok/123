@@ -27,7 +27,6 @@
       &--margin-bottom {
         margin-bottom: 31px;
       }
-
     }
 
     @media (min-width: $large-breakpoint) {
@@ -36,14 +35,13 @@
       &--margin-bottom {
         margin-bottom: 32px;
       }
-
     }
 
     &--divider {
       padding-top: 32px;
       position: relative;
 
-      &:before {
+      &::before {
         content: '';
         position: relative;
         display: block;
@@ -58,21 +56,18 @@
       @media (min-width: $medium-breakpoint) {
         padding-top: 57px;
 
-        &:before {
+        &::before {
           top: -40px;
         }
-
       }
 
       @media (min-width: $large-breakpoint) {
         padding-top: 64px;
 
-        &:before {
+        &::before {
           top: -48px;
         }
-
       }
-
     }
 
     &--flex {
@@ -83,9 +78,7 @@
         margin-top: 49px;
         margin-bottom: 36px;
       }
-
     }
-
   }
 
   &__title {
@@ -96,13 +89,10 @@
     color: $colder;
 
     &--hide-for-medium {
-
       @media (min-width: $medium-breakpoint) {
         display: none;
       }
-
     }
-
   }
 
   &__input-block {
@@ -111,7 +101,6 @@
     @media (min-width: $large-breakpoint) {
       margin-top: 20px;
     }
-
   }
 
   &__description {
@@ -131,7 +120,6 @@
       line-height: 24px;
       margin-top: 15px;
     }
-
   }
 
   &__count-block {
@@ -148,14 +136,13 @@
     @media (min-width: $medium-breakpoint) {
       display: none;
     }
-
   }
 
   &__checkbox {
     display: none;
   }
 
-  &__checkbox:checked ~ &__checkbox-icon:before {
+  &__checkbox:checked ~ &__checkbox-icon::before {
     opacity: 1;
   }
 
@@ -165,13 +152,13 @@
     width: 24px;
     box-sizing: border-box;
     border: 2px solid $colder;
-    border-radius : 3px;
+    border-radius: 3px;
     margin-right: 12px;
     margin-top: 16px;
     text-align: center;
     position: relative;
 
-    &:before {
+    &::before {
       content: '';
       color: rgba(0, 0, 0, .5);
       line-height: 22px;
@@ -182,7 +169,7 @@
       position: absolute;
       left: 50%;
       top: 50%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%);
       opacity: 0;
     }
   }
@@ -207,7 +194,6 @@
       top: 0;
       z-index: 2;
     }
-
   }
 
   &__card-box {
@@ -219,7 +205,6 @@
     @media (min-width: $medium-breakpoint) {
       margin-bottom: 38px;
     }
-
   }
 
   &__card-block:last-of-type {
@@ -228,9 +213,8 @@
     align-items: flex-end;
 
     .donate-form__description {
-     text-align: right;
+      text-align: right;
     }
-
   }
 
   &__card-label {
@@ -241,14 +225,14 @@
     display: none;
   }
 
-  &__card:checked ~  &__card-text {
+  &__card:checked ~ &__card-text {
     color: $colder;
   }
 
   &__card-text {
     font-family: $ptsans;
     font-size: .85rem;
-    line-height : 17px;
+    line-height: 17px;
     color: rgba(0, 0, 0, .5);
   }
 
@@ -261,9 +245,7 @@
       @media (min-width: $medium-breakpoint) {
         margin-right: 19px;
       }
-
     }
-
   }
 
   &__btn-wrap {
@@ -279,7 +261,5 @@
       margin-top: 82px;
       height: 52px;
     }
-
   }
-
 }

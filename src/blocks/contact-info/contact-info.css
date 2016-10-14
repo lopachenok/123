@@ -25,14 +25,13 @@
     }
 
     @media (min-width: $footer-medium-breakpoint) {
-       font-size: 14px;
-       line-height: 22px;
+      font-size: 14px;
+      line-height: 22px;
     }
 
     @media (min-width: $large-breakpoint) {
       font-size: 15px;
     }
-
   }
 
   &__text {
@@ -48,21 +47,19 @@
     }
 
     @media (min-width: $footer-medium-breakpoint) {
-       font-size: 14px;
-       line-height: 22px;
+      font-size: 14px;
+      line-height: 22px;
     }
 
     @media (min-width: $large-breakpoint) {
       font-size: 15px;
     }
-
   }
 
   &__btn-wrap {
     display: none;
 
     @media (min-width: $medium-breakpoint) {
-      display: block;
       margin-top: 18px;
       height: 34px;
       width: 134px;
@@ -81,7 +78,5 @@
     @media (min-width: $large-breakpoint) {
       margin-top: 18px;
     }
-
   }
-
 }

@@ -1,24 +1,21 @@
-/*-------Breakpoints-------*/
+/* -------Breakpoints------- */
 
 $medium-breakpoint: 768px;
 $large-breakpoint: 1280px;
 $footer-medium-breakpoint: 940px;
 
-/*----------Grid-----------*/
-
+/* ----------Grid----------- */
 $small-grid-padding: .5rem;
 $medium-grid-padding: 2rem;
 $large-grid-padding: 3rem;
 $grid-gutter: .5rem;
 
-/*---------Colors----------*/
+/* ---------Colors---------- */
+$scarlet: #fa325a;
+$midnight: #041b26;
+$colder: #f0f1f2;
 
-$scarlet: #FA325A;
-$midnight: #041B26;
-$colder: #F0F1F2;
-
-/*----------Fonts----------*/
-
+/* ----------Fonts---------- */
 $ptsans: 'PT Sans', sans-serif;
 $ptserif: 'PT Serif', serif;
 $ptsans-caption: 'PT Sans Caption', sans-serif;

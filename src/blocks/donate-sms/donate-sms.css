@@ -1,6 +1,6 @@
-.donate-sms {  
+.donate-sms {
   position: relative;
-  
+
   &__bg {
     background: url(bg-sms.png);
     background-size: 200%;
@@ -11,80 +11,75 @@
     height: 100%;
     top: 0;
     left: 0;
-    
+
     @media (min-width: $medium-breakpoint) {
       background-size: cover;
     }
-    
   }
-  
-  &:before {
+
+  &::before {
     position: absolute;
     content: '';
     top: 0;
     left: 0;
     width: 100%;
     height: 101%;
-    background:  rgba(4, 27, 38, .9);
+    background: rgba(4, 27, 38, .9);
     z-index: 1;
   }
-  
+
   &__inner {
     @mixin container;
+
     padding-top: 39px;
     position: relative;
     z-index: 1;
-    
+
     @media (min-width: $medium-breakpoint) {
       padding-top: 44px;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       padding-top: 30px;
     }
-    
   }
-  
+
   &__heading {
-    
     @media (min-width: $medium-breakpoint) {
       margin-top: 20px;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       margin-top: 39px;
       padding-left: 22px;
     }
-    
   }
-  
+
   &__text {
     margin-top: 1rem;
     letter-spacing: 0.1px;
-    
+
     @media (min-width: $medium-breakpoint) {
       padding-right: 20px;
       line-height: 30px;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       margin-top: 0.6rem;
       padding-right: 68px;
       padding-left: 22px;
       line-height: 36px;
     }
-    
   }
-  
+
   &__highlight {
     color: $scarlet;
-    
+
     @media (min-width: $medium-breakpoint) {
       font-weight: bold;
     }
-    
   }
-  
+
   &__img {
     background: url(donate-sms-phone.png);
     background-size: 130%;
@@ -92,17 +87,15 @@
     margin: 26px auto 0;
     height: 210px;
     width: 230px;
-    
+
     @media (min-width: $medium-breakpoint) {
       margin: 0;
       float: right;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       width: 100%;
       height: 241px;
     }
-    
   }
-  
 }

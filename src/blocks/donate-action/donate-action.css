@@ -1,10 +1,10 @@
 .donate-action {
   display: none;
-  
+
   @media (min-width: $medium-breakpoint) {
     display: block;
   }
-  
+
   &__count {
     font-family: $ptsans;
     font-weight: bold;
@@ -12,69 +12,62 @@
     line-height: 68px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #969BA0;
+    color: #969ba0;
     position: relative;
     user-select: none;
     left: -2px;
-/*
-    @media (min-width: $large-breakpoint) {
-      font-size: 81px;
-    }
-*/
-    
-    &:after {
+
+    &::after {
       content: '\20BD';
       position: absolute;
-      font-size: 1.5rem;      
+      font-size: 1.5rem;
       color: #485155;
       line-height: 41px;
       left: 143px;
-      
+
       @media (min-width: $large-breakpoint) {
         left: 175px;
         line-height: 37px;
       }
-      
     }
   }
-  
+
   &__text {
     margin-top: 10px;
     font-family: 'Myriad Pro';
     font-size: 16px;
     line-height: 22px;
     color: #485155;
-    
+
     @media (min-width: $large-breakpoint) {
       font-size: 19px;
-      line-height : 28.5px;
+      line-height: 28.5px;
       margin-top: 20px;
     }
-    
   }
-  
+
   &__highlight {
     font-weight: bold;
   }
-  
+
   &__item {
     height: 215px;
-    position: relative;    
+    position: relative;
   }
-  
+
   &__separate {
     position: relative;
-      
-      &:after {
-        content: '';
-        position: absolute;
-        border-right: 1px solid rgba(4, 27, 38, .1);;
-        height: 235px;
-        top: 0;
-        right: 0;
-      }
+
+    &::after {
+      content: '';
+      position: absolute;
+      border-right: 1px solid rgba(4, 27, 38, .1);
+      height: 235px;
+      top: 0;
+      right: 0;
+    }
   }
-  
+
   &__btn-wrap {
     position: absolute;
     bottom: 0;
@@ -84,12 +77,10 @@
     justify-content: center;
     align-items: center;
     margin-left: -5px;
-    
+
     @media (min-width: $large-breakpoint) {
       width: 266px;
       height: 58px;
     }
-    
   }
-  
 }

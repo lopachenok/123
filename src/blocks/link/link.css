@@ -11,92 +11,86 @@
   transition: color .2s ease;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
-  
+
   @media (min-width: $large-breakpoint) {
     letter-spacing: 2.4px;
   }
-  
-  &:after {
+
+  &::after {
     content: '';
     display: inline-block;
     background: url(chevron.svg);
     height: 1rem;
     width: 9px;
     position: absolute;
-    top: 0px;
+    top: 0;
     right: -16px;
-    
+
     @media (min-width: $medium-breakpoint) {
       width: 11px;
       right: -20px;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       width: 14px;
       right: -22px;
       top: -1px;
     }
-    
   }
-  
+
   &:hover {
-    color: $scarlet;    
+    color: $scarlet;
   }
-  
-  
+
   &--white {
-    color: #F0F1F2;
-    
+    color: #f0f1f2;
 
     &:hover {
-      color: #F0F1F2;
+      color: #f0f1f2;
     }
-
   }
-  
+
   &--small {
     font-size: 13px;
     line-height: 13px;
-    
-    &:after {
+
+    &::after {
       width: 7px;
       height: 12px;
       right: -11px;
     }
-    
+
     @media (min-width: $medium-breakpoint) {
       font-size: 16px;
       line-height: 16px;
-    
-      &:after {
+
+      &::after {
         width: 9px;
         height: 16px;
         right: -14px;
       }
     }
-    
+
     @media (min-width: $large-breakpoint) {
       font-size: 19px;
       line-height: 19px;
-      
-      &:after {
+
+      &::after {
         width: 11px;
         height: 19px;
         right: -19px;
       }
-      
-    }      
-    
+    }
   }
-  
+
   &--carousel {
     letter-spacing: 1.3px;
-    color: #969BA0;    
+    color: #969ba0;
     font-size: 13px;
     line-height: 13px;
     left: 50%;
     transform: translateX(-50%);
-    
+
     @media (min-width: $medium-breakpoint) {
       color: #485155;
       letter-spacing: 1.6px;
@@ -105,59 +99,54 @@
       transform: translateX(0);
       line-height: 1rem;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       letter-spacing: 2.4px;
     }
-    
-    &:after {
+
+    &::after {
       width: 7px;
       height: 12px;
       right: -11px;
-      
+
       @media (min-width: $medium-breakpoint) {
         width: 11px;
         right: -20px;
         height: 1rem;
       }
-      
+
       @media (min-width: $large-breakpoint) {
         width: 14px;
         right: -22px;
       }
-      
     }
   }
-  
+
   &--down {
-    
-    &:after {
+
+    &::after {
       transform: rotate(90deg);
       right: -15px;
       top: 1px;
     }
-    
   }
-  
+
   &--disabled {
-     color: rgba(255, 255, 255, .5);
-    
-    &:after {
+    color: rgba(255, 255, 255, .5);
+
+    &::after {
       display: none;
     }
-    
+
     &:hover {
       color: rgba(255, 255, 255, .5);
     }
-    
   }
-  
 }
 
 .mobile .link--carousel {
-  
+
   &:hover {
     color: #969ba0;
   }
-  
 }

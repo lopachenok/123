@@ -1,84 +1,68 @@
 .rehab {
-  padding-bottom: 42px;  
-  
+  padding-bottom: 42px;
+
   @media (min-width: $medium-breakpoint) {
     padding-bottom: 66px;
     background: url(nd-pattern.svg);
     background-size: 2560px 1821px;
     position: relative;
-    
-/*
-    &:after {
-      position: absolute;
-      content: '';
-      height: 100%;
-      width: 100%;
-      top: 0;
-      left: 0;
-      opacity: 0.3;
-    }
-*/
   }
-  
+
   @media (min-width: $large-breakpoint) {
     padding-bottom: 50px;
   }
-  
+
   &__inner {
     @mixin container;
+
     padding-top: 2.5rem;
-    
+
     @media (min-width: $medium-breakpoint) {
       padding-top: 69px;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       padding-top: 63px;
     }
-    
   }
-  
+
   &__title {
     width: 215px;
-    
+
     @media (min-width: $medium-breakpoint) {
       width: 100%;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       width: 480px;
     }
-    
   }
-  
+
   &__heading {
     margin-top: 1.5rem;
-    
+
     @media (min-width: $large-breakpoint) {
       margin-top: 34px;
     }
   }
-  
+
   &__text {
     margin-top: 1rem;
-    
+
     @media (min-width: $large-breakpoint) {
       margin-top: .6rem;
     }
-    
   }
-  
+
   &__carousel {
     margin-top: 26px;
-    
+
     @media (min-width: $medium-breakpoint) {
       margin-top: 3rem;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       margin-top: 56px;
     }
-    
   }
-  
 }

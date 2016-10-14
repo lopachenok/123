@@ -1,15 +1,15 @@
 .video-section {
   position: relative;
-  
+
   &__image {
     height: 100%;
     width: 100%;
-    object-fit: cover;  
+    object-fit: cover;
     filter: grayscale(1);
     position: absolute;
   }
-  
-  &:after {
+
+  &::after {
     position: absolute;
     content: '';
     height: 100%;
@@ -19,42 +19,41 @@
     background: $midnight;
     opacity: .9;
   }
-  
+
   &__inner {
     @mixin container;
+
     padding-top: 39px;
     padding-bottom: 39px;
-    
+
     @media (min-width: $medium-breakpoint) {
       padding-top: 70px;
       padding-bottom: 69px;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       padding-bottom: 55px;
     }
   }
-  
+
   &__text {
     font-family: $ptsans;
     font-size: 13px;
     line-height: 17px;
-    color: #969BA0;
+    color: #969ba0;
     text-align: center;
     position: relative;
     z-index: 1;
     padding: 0 10px;
     margin-top: 1rem;
-    
+
     @media (min-width: $medium-breakpoint) {
       font-size: .8rem;
       line-height: 19px;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       line-height: 22px;
     }
-    
   }
-  
 }

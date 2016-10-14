@@ -4,17 +4,16 @@
   line-height: 1.5rem;
   color: #485155;
   hyphens: auto;
-  
+
   @media (min-width: $medium-breakpoint) {
     line-height: 32px;
   }
-  
+
   @media (min-width: $large-breakpoint) {
     line-height: 41px;
   }
-  
+
   &--white {
     color: $colder;
   }
-  
 }

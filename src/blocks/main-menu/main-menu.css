@@ -6,68 +6,62 @@
   padding-top: 2px;
   user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  
+
   @media (min-width: $large-breakpoint) {
     height: 36px;
     width: calc(92% - 43px);
     padding-top: 0;
   }
-  
+
   &__list {
     display: none;
-    
+
     @media (min-width: $medium-breakpoint) {
       display: flex;
       height: 100%;
       align-items: center;
     }
-    
+
     @media (min-width: $large-breakpoint) {
       width: 100%;
       display: flex;
       justify-content: space-between;
     }
-    
   }
-  
+
   &__item {
-    
     @media (min-width: $medium-breakpoint) {
       display: inline-block;
-      font-family: $ptsans; 
+      font-family: $ptsans;
       font-weight: 600;
       font-size: 0.8rem;
       text-transform: uppercase;
       margin-right: 40px;
       letter-spacing: 0.1em;
-      
+
       &:nth-child(n+4) {
         display: none;
       }
-      
-    }  
-    
+    }
+
     @media (min-width: $large-breakpoint) {
       margin-right: 0;
-      
+
       &:nth-child(n+4) {
         display: inline-block;
       }
-      
     }
-    
   }
-  
+
   &__link {
     color: #fff;
     transition: color .2s ease;
-    
+
     &:hover {
       color: $scarlet;
     }
-    
   }
-  
+
   &__toggler {
     float: right;
     display: block;
@@ -76,28 +70,26 @@
     cursor: pointer;
     flex-grow: 0;
     flex-shrink: 0;
-    
+
     @media (min-width: $large-breakpoint) {
       display: none;
     }
-    
   }
-  
+
   &__toggler-text {
-    font-family: $ptsans; 
+    font-family: $ptsans;
     font-weight: 600;
     font-size: 1rem;
     color: #fff;
     text-transform: uppercase;
     margin-right: 10px;
     letter-spacing: 1.6px;
-    
+
     @media (min-width: $medium-breakpoint) {
       font-size: 0.8rem;
     }
-    
   }
-  
+
   &__toggler-icon {
     background-color: $scarlet;
     display: block;
@@ -105,8 +97,8 @@
     height: 2px;
     border-radius: 2px;
     position: relative;
-    
-    &:after {
+
+    &::after {
       content: '';
       position: absolute;
       width: 100%;
@@ -115,8 +107,8 @@
       border-radius: 2px;
       top: 7px;
     }
-    
-    &:before {
+
+    &::before {
       content: '';
       position: absolute;
       width: 100%;
@@ -125,7 +117,5 @@
       border-radius: 2px;
       top: -7px;
     }
-    
   }
-  
 }
