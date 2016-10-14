@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   month.addEventListener("blur", function() {
     this.value = sanitizeValue(this.value, true);
+    this.value = formatMonth(this.value);
     if(validateEmpty(this.value, validateInRange, 1, 12) === false) {
       addRemoveErrorState('add', this, 'Пожалуйста, введите корректный месяц.');
       allError.month = 'Пожалуйста, введите корректный месяц.';
@@ -251,6 +252,13 @@ function validateEmpty(value, validateFunction) {
     arg.unshift(value);
     return validateFunction.apply(null, arg);
   }
+}
+
+function formatMonth(value) {
+  if(value.length === 1) {
+    return '0'+value;
+  }
+  return value;
 }
 
 function sanitizeValue(value, number, name) {
