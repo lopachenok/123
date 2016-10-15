@@ -40,21 +40,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
   window.addEventListener("resize", function () {
     if (windowSizePopup.x !== window.innerWidth) {
-      mainElem.classList.remove("ov-hidden");
       if (window.innerWidth < desctopSize) {
         mainElem = document.getElementById("wrapper");
       } else {
         mainElem = document.body || document.documentElement;
       }
-    }
-    mainElem.classList.add("ov-hidden");
 
-    if(windowSizePopup.x < tabletSize && window.innerWidth >= tabletSize && popups.currentIndex === 2) {
-      closeOnClick();
-    }
+      if(popupOverlay.classList[1] === 'popups-overlay--open') {
+        mainElem.classList.remove("ov-hidden");
+        mainElem.classList.add("ov-hidden");
+      }
 
-    if(windowSizePopup.x < desctopSize && window.innerWidth >= desctopSize && popups.currentIndex === 0) {
-      closeOnClick();
+      if(windowSizePopup.x < tabletSize && window.innerWidth >= tabletSize && popups.currentIndex === 2) {
+        closeOnClick();
+      }
+
+      if(windowSizePopup.x < desctopSize && window.innerWidth >= desctopSize && popups.currentIndex === 0) {
+        closeOnClick();
+      }
     }
 
     windowSizePopup.x = window.innerWidth;
