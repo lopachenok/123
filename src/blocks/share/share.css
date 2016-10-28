@@ -19,6 +19,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    box-sizing: border-box;
 
     @media (min-width: $medium-breakpoint) {
       width: 210px;

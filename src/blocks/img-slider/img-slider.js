@@ -37,12 +37,5 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function openFullScreen(e) {
-  var element = e.target;
-  if(element.requestFullScreen) {
-    element.requestFullScreen();
-  } else if(element.mozRequestFullScreen) {
-    element.mozRequestFullScreen();
-  } else if(element.webkitRequestFullScreen) {
-    element.webkitRequestFullScreen();
-  }
+  
 }
