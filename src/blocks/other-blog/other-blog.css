@@ -1,0 +1,22 @@
+.other-blog {
+  background: #f0f1f2;
+  padding-bottom: 22px;
+
+  &__inner {
+    @mixin container;
+
+    padding-top: 24px;
+  }
+
+  &__title {
+    font-family: $ptsans-caption;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 28px;
+    color: #5d5d5d;
+
+    &--margin {
+      margin-top: 24px;
+    }
+  }
+}

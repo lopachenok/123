@@ -1,0 +1,52 @@
+.blog-donate {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 101%;
+    background: rgba(4, 27, 38, .9);
+    z-index: 1;
+  }
+
+  &__bg {
+    background: url(../img/crayons-heart.jpg);
+    background-size: 130%;
+    background-position: 50%;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &__inner {
+    @mixin container;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__text {
+    font-size: 13px;
+    margin-top: 0.8rem;
+    hyphens: auto;
+  }
+
+  &__btn-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    margin-top: 1.5rem;
+    width: 182px;
+    margin-left: -5px;
+  }
+}

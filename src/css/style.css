@@ -37,3 +37,9 @@
 @import '../.././src/blocks/donate-form/donate-form.css';
 @import '../.././src/blocks/contacts/contacts.css';
 @import '../.././src/blocks/rehub-popup/rehub-popup.css';
+@import '../.././src/blocks/blog-hero/blog-hero.css';
+@import '../.././src/blocks/blog-content/blog-content.css';
+@import '../.././src/blocks/img-slider/img-slider.css';
+@import '../.././src/blocks/other-blog/other-blog.css';
+@import '../.././src/blocks/share/share.css';
+@import '../.././src/blocks/blog-donate/blog-donate.css';

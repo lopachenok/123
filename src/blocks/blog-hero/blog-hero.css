@@ -1,0 +1,71 @@
+.blog-hero {
+  height: 460px;
+  background: url(meeting-stickers.jpg);
+  background-size: cover;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .4);
+  }
+
+  &__inner {
+    @mixin container;
+
+    padding-top: 235px;
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__name {
+    font-family: $ptsans;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  &__data {
+    position: absolute;
+    right: 1rem;
+    top: 233px;
+    font-family: $ptsans;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0.65px;
+    color: #969ba0;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 3px;
+    padding: 5px 8px;
+    z-index: 1;
+  }
+
+  &__caption {
+    margin-top: 1rem;
+    font-family: $ptsans-caption;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 33px;
+  }
+
+  &__description {
+    font-family: $ptserif;
+    position: relative;
+    z-index: 1;
+    color: $colder;
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 17px;
+  }
+}

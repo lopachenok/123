@@ -330,6 +330,10 @@
     padding-top: 1rem;
     max-width: 616px;
 
+    &--blog {
+      padding-top: 8px;
+    }
+
     @media (min-width: $medium-breakpoint) {
       overflow-x: scroll;
       -webkit-overflow-scrolling: touch;

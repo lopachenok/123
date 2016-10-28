@@ -140,4 +140,35 @@
       bottom: 70px;
     }
   }
+
+  &--article {
+
+    .project-card__content {
+      position: absolute;
+      z-index: 2;
+      left: 1rem;
+      bottom: 50px;
+      top: auto;
+      text-align: left;
+      height: auto;
+      transform: translate(0, 0);
+    }
+
+    .project-card__title {
+      display: block;
+      font-family: $ptsans;
+      font-weight: bold;
+      font-size: 24px;
+      color: #fff;
+      margin-right: 56px;
+    }
+
+    .project-card__link {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      left: 1rem;
+      bottom: 24px;
+    }
+  }
 }

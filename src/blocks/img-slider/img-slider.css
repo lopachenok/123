@@ -1,0 +1,39 @@
+.img-slider {
+  height: 215px;
+  margin-top: 32px;
+
+  &__inner {
+    position: absolute;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+    left: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+  }
+
+  img {
+    object-fit: cover;
+    height: 215px;
+    margin-top: 0;
+    width: 90%;
+    border-radius: 0;
+
+    &:first-of-type {
+      border-radius: 3px 0 0 3px;
+    }
+
+    &:last-of-type {
+      border-radius: 0 3px 3px 0;
+    }
+  }
+
+  &__divider {
+    width: 1rem;
+    height: 215px;
+    flex-shrink: 0;
+  }
+}

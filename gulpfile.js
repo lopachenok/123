@@ -44,44 +44,44 @@ gulp.task('css', function(){
   return streamqueue(
         { objectMode: true },
         gulp.src(dirs.source + '/css/style.css')
-          .pipe(gulpIf(isDev, sourcemaps.init()))    
+          .pipe(gulpIf(isDev, sourcemaps.init()))
           .pipe(postcss([
               precss(),
               function (css) {
                 css.walkDecls(/^background/, function (decl) {
                   if (decl.value.indexOf('url') !== -1) {
                     const urlBefore = '../img/';
-                    let imgPath = decl.value.search(/url\((.)*\)/gi);  
+                    let imgPath = decl.value.search(/url\((.)*\)/gi);
                     let substrStrat = decl.value.slice(0, imgPath+4);
                     let substrEnd = decl.value.slice(imgPath+4, decl.value.length);
                     decl.value = substrStrat + urlBefore + substrEnd;
                   }
                 });
               },
-            
+
               //stylelint(),
               reporter({ clearMessages: true }),
               autoprefixer({browsers: ['last 3 version']}),
-              cssnano        
+              cssnano
           ]))
           .pipe(rename('style.min.css')),
-        gulp.src(dirs.source + '/css/vendor.css') 
+        gulp.src(dirs.source + '/css/vendor.css')
           .pipe(postcss([
-              precss(),        
+              precss(),
               autoprefixer({browsers: ['last 2 version']}),
               mqpacker,
-              cssnano        
+              cssnano
           ]))
           .pipe(rename('vendor.min.css'))
-        )  
-    
+        )
+
     .on('error', notify.onError(function(err){
       return {
         title: 'Styles compilation error',
         message: err.message
       }
     }))
-   
+
     .pipe(gulpIf(isDev, sourcemaps.write('.')))
     .pipe(gulp.dest(dirs.build + '/css'))
     .pipe(browserSync.stream());
@@ -114,10 +114,10 @@ gulp.task('svg', function() {
 
 //TODO: Newer не работает, т к меняется путь.
 // Копирование и оптимизация изображений из папки img
-gulp.task('img', function () { 
-  return gulp.src(dirs.source + '/blocks/**/*.{png,jpg}',  {since: gulp.lastRun('img')}) // только для изменившихся с последнего запуска файлов   
+gulp.task('img', function () {
+  return gulp.src(dirs.source + '/blocks/**/*.{png,jpg}',  {since: gulp.lastRun('img')}) // только для изменившихся с последнего запуска файлов
     .pipe(debug({title: 'img'}))
-    .pipe(newer(dirs.build + '/img'))  
+    .pipe(newer(dirs.build + '/img'))
     .pipe(debug({title: 'cached'}))
     .pipe(imagemin({
             progressive: true,
@@ -130,7 +130,7 @@ gulp.task('img', function () {
       path.dirname = '';
       return path;
     }))
-   
+
     .pipe(gulp.dest(dirs.build + '/img'));
 });
 
@@ -140,15 +140,15 @@ gulp.task('img', function () {
 //      .pipe(svgSprite({
 //        mode: {
 //          css: {
-//            dest:       '.', 
+//            dest:       '.',
 //            bust:       false,
-//            sprite:     'sprite.svg', 
+//            sprite:     'sprite.svg',
 //            layout:     'vertical',
-//            prefix:     '.', 
+//            prefix:     '.',
 //            dimensions: true,
 //            render:     {
 //              css: {
-//                dest: 'sprite.css'  
+//                dest: 'sprite.css'
 //              }
 //            }
 //          }
@@ -182,7 +182,7 @@ gulp.task('video', function() {
 
 //Конкатенация и минификация js
 
-gulp.task('js', function () {      
+gulp.task('js', function () {
   return streamqueue(
         { objectMode: true },
         gulp.src(dirs.source+'/js/main.js')
@@ -191,9 +191,9 @@ gulp.task('js', function () {
           .pipe(jshint.reporter(stylish)),
         gulp.src(dirs.source+'/js/vendor.js')
           .pipe(rigger())
-      )  
+      )
     //.pipe(concat('main.js'))
-    .pipe(gulpIf(isDev, sourcemaps.init()))        
+    .pipe(gulpIf(isDev, sourcemaps.init()))
     .pipe(gulpIf(!isDev, rename({ suffix: '.min' })))
     .pipe(gulpIf(!isDev, uglify()))
     .on('error', notify.onError(function(err){
@@ -202,11 +202,11 @@ gulp.task('js', function () {
           message: err.message
         }
      }))
-     .pipe(gulpIf(isDev, sourcemaps.write('.')))        
+     .pipe(gulpIf(isDev, sourcemaps.write('.')))
      .pipe(gulp.dest(dirs.build+'/js'))
 });
 
-// Сборка 
+// Сборка
 gulp.task('build', gulp.series(
   'clean',
 //  'svgsprite',
@@ -233,15 +233,15 @@ gulp.task('server', gulp.series('build', function() {
     dirs.source + '/blocks/**/*.html',
   ], gulp.series('html', reloader));
   gulp.watch([
-    dirs.source + '/css/*.css', 
+    dirs.source + '/css/*.css',
     dirs.source + '/blocks/**/*.css'
   ], gulp.series('css'));
   gulp.watch(dirs.source + '/blocks/**/*.{png,jpg}', gulp.series('img', reloader));
   gulp.watch([
     dirs.source + '/blocks/**/*.js',
-    dirs.source + '/js/*.js' 
+    dirs.source + '/js/*.js'
   ], gulp.series('js', reloader));
-  
+
 }));
 
 // Задача по умолчанию
@@ -250,7 +250,7 @@ gulp.task('default',
 );
 
 // Отправка в git pages
-gulp.task('deploy', function() {  
+gulp.task('deploy', function() {
   return gulp.src('./build/**/*')
     .pipe(ghPages());
 });

@@ -1,0 +1,123 @@
+.blog-content {
+
+  &__inner {
+    @mixin container;
+
+    padding-top: 8px;
+    padding-bottom: 47px;
+  }
+
+  p {
+    font-family: $ptserif;
+    font-size: 1rem;
+    line-height: 24px;
+    color: #485155;
+    margin-top: 1rem;
+    hyphens: auto;
+  }
+
+  blockquote {
+    font-family: 'Myriad Pro';
+    font-size: 20px;
+    line-height: 26px;
+    color: #041b26;
+    position: relative;
+    padding-left: 51px;
+    margin-top: 32px;
+    hyphens: auto;
+
+    &::before {
+      content: '';
+      position: absolute;
+    }
+  }
+
+  blockquote + p {
+    margin-top: 30px;
+  }
+
+  a {
+    color: $scarlet;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+    margin-top: 32px;
+  }
+
+  .img-caption {
+    font-family: $ptsans;
+    font-size: 13px;
+    line-height: 17px;
+    color: #6b7277;
+  }
+
+  h3 {
+    margin-top: 32px;
+    font-family: $ptsans-caption;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #041b26;
+  }
+
+  h4 {
+    margin-top: 24px;
+    font-family: $ptsans-caption;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+    color: #041b26;
+  }
+
+  ul {
+
+    li {
+      font-family: $ptserif;
+      font-size: 1rem;
+      line-height: 24px;
+      color: #485155;
+      margin-top: 1rem;
+      padding-left: 32px;
+      position: relative;
+      hyphens: auto;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 8px;
+        left: 10px;
+        width: 8px;
+        height: 7px;
+        background: url(../img/heard.svg);
+      }
+    }
+  }
+
+  ol {
+    counter-reset: list 0;
+
+    li {
+      font-family: $ptserif;
+      font-size: 1rem;
+      line-height: 24px;
+      color: #485155;
+      margin-top: 1rem;
+      padding-left: 32px;
+      position: relative;
+      hyphens: auto;
+
+      &::before {
+        content: counter(list) ".";
+        position: absolute;
+        counter-increment: list;
+        color: $scarlet;
+        left: 10px;
+      }
+    }
+  }
+}
