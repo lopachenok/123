@@ -32,12 +32,23 @@
     padding-bottom: 30px;
     position: relative;
     z-index: 1;
+
+    @media (min-width: $medium-breakpoint) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
   }
 
   &__text {
     font-size: 13px;
     margin-top: 0.8rem;
     hyphens: auto;
+
+    @media (min-width: $medium-breakpoint) {
+      margin-top: 20px;
+      font-size: 20px;
+      line-height: 34px;
+    }
   }
 
   &__btn-wrap {
@@ -48,5 +59,10 @@
     margin-top: 1.5rem;
     width: 182px;
     margin-left: -5px;
+
+    @media (min-width: $medium-breakpoint) {
+      height: 50px;
+      width: 226px;
+    }
   }
 }

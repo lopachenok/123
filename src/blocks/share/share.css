@@ -5,6 +5,11 @@
   padding-bottom: 24px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 
+  @media (min-width: $medium-breakpoint) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
   &__btn {
     width: 85px;
     height: 30px;
@@ -14,6 +19,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (min-width: $medium-breakpoint) {
+      width: 210px;
+      padding-left: 20px;
+      padding-right: 20px;
+      justify-content: space-between;
+      height: 38px;
+    }
 
     .share__icon {
       display: block;
@@ -53,6 +66,33 @@
         height: 16px;
         width: 20px;
       }
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @media (min-width: $medium-breakpoint) {
+      display: block;
+      font-family: $ptsans;
+      font-size: 16px;
+      line-height: 16px;
+      color: #f0f1f2;
+    }
+  }
+
+  &__counter {
+    display: none;
+
+    @media (min-width: $medium-breakpoint) {
+      display: block;
+      font-family: $ptsans;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .7);
     }
   }
 }

@@ -6,17 +6,25 @@
     @mixin container;
 
     padding-top: 24px;
+
+    @media (min-width: $medium-breakpoint) {
+      padding-top: 30px;
+    }
   }
 
   &__title {
     font-family: $ptsans-caption;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 28px;
     color: #5d5d5d;
 
     &--margin {
       margin-top: 24px;
+
+      @media (min-width: $medium-breakpoint) {
+        margin-top: 41px;
+      }
     }
   }
 }

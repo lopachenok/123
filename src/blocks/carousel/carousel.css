@@ -332,6 +332,10 @@
 
     &--blog {
       padding-top: 8px;
+
+      @media (min-width: $medium-breakpoint) {
+        padding-top: 28px;
+      }
     }
 
     @media (min-width: $medium-breakpoint) {

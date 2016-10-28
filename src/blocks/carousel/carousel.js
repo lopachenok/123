@@ -242,7 +242,7 @@ function HammerCarousel(container, direction) {
 
       if(self.currentIndex == 0) {
         k = 1.75;
-        scrollOffset = parseInt(window.getComputedStyle(document.querySelector(".medium-column5"), null).width) * k;
+        scrollOffset = parseInt(window.innerWidth / 12 * 5) * k;
       }
 
       HammerCarousel.prototype.show.apply(self, [currentContent, 0, true]);

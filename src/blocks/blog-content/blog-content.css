@@ -5,6 +5,10 @@
 
     padding-top: 8px;
     padding-bottom: 47px;
+
+    @media (min-width: $medium-breakpoint) {
+      padding-top: 20px;
+    }
   }
 
   p {
@@ -14,6 +18,10 @@
     color: #485155;
     margin-top: 1rem;
     hyphens: auto;
+
+    @media (min-width: $medium-breakpoint) {
+      line-height: 34px;
+    }
   }
 
   blockquote {
@@ -30,10 +38,26 @@
       content: '';
       position: absolute;
     }
+
+    @media (min-width: $medium-breakpoint) {
+      line-height: 25px;
+      float: right;
+      width: 182px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      padding-left: 53px;
+      position: relative;
+      padding-right: 0;
+      left: 10%;
+    }
   }
 
   blockquote + p {
     margin-top: 30px;
+
+    @media (min-width: $medium-breakpoint) {
+      margin-top: 0;
+    }
   }
 
   a {
@@ -54,6 +78,11 @@
     font-size: 13px;
     line-height: 17px;
     color: #6b7277;
+
+    @media (min-width: $medium-breakpoint) {
+      font-size: 16px;
+      line-height: 17px;
+    }
   }
 
   h3 {
@@ -63,6 +92,11 @@
     font-size: 24px;
     line-height: 28px;
     color: #041b26;
+
+    @media (min-width: $medium-breakpoint) {
+      margin-top: 40px;
+      font-size: 30px;
+    }
   }
 
   h4 {
@@ -72,9 +106,17 @@
     font-size: 16px;
     line-height: 18px;
     color: #041b26;
+
+    @media (min-width: $medium-breakpoint) {
+      margin-top: 30px;
+      font-size: 20px;
+    }
   }
 
   ul {
+    @media (min-width: $medium-breakpoint) {
+      padding-right: 73px;
+    }
 
     li {
       font-family: $ptserif;
@@ -100,6 +142,10 @@
 
   ol {
     counter-reset: list 0;
+
+    @media (min-width: $medium-breakpoint) {
+      padding-right: 73px;
+    }
 
     li {
       font-family: $ptserif;
