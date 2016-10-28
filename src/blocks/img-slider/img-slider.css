@@ -55,7 +55,7 @@
     }
   }
 
-  &--start {
+  &.carousel__container--start {
 
     &::before {
       opacity: 0;
@@ -68,7 +68,7 @@
     }
   }
 
-  &--end {
+  &.carousel__container--end {
 
     &::after {
       opacity: 0;
@@ -139,6 +139,7 @@
       justify-content: center;
       align-items: center;
       display: flex;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
       &--right {
         right: 15px;

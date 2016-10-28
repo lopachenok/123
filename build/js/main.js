@@ -136,6 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var carouselContent = document.querySelectorAll("#carousel-container .carousel__content");
   var popupContentBlock = document.querySelectorAll("#popup-container .carousel__content");
   popupInner = document.querySelector("#popups .carousel__inner");
+  var carouselArticleContent = document.getElementById("carousel-article-content");
 
   var scrollButtonRight = document.querySelector(".carousel__scroll-button--right");
   var scrollButtonLeft = document.querySelector(".carousel__scroll-button--left");
@@ -150,14 +151,23 @@ document.addEventListener("DOMContentLoaded", function () {
   scrollOffset = parseInt(window.innerWidth / 12 * 5) * k;
 
   scrollButtonRight.addEventListener("click", function(e) {
-    var currentContent = outer.currentIndex;
-    var el = outer.panes[currentContent];
+    var el;
+    if(outer) {
+      var currentContent = outer.currentIndex;
+      el = outer.panes[currentContent];
+    } else {
+      el = e.target.parentElement.parentElement.firstElementChild;
+    }
     smooth_scroll_to(el, el.scrollLeft + scrollOffset, 500);
   });
 
   scrollButtonLeft.addEventListener("click", function(e) {
-    var currentContent = outer.currentIndex;
-    var el = outer.panes[currentContent];
+    if(outer) {
+      var currentContent = outer.currentIndex;
+      var el = outer.panes[currentContent];
+    } else {
+      el = e.target.parentElement.parentElement.firstElementChild;
+    }
     smooth_scroll_to(el, el.scrollLeft - scrollOffset, 500);
   });
 
@@ -165,6 +175,10 @@ document.addEventListener("DOMContentLoaded", function () {
     for(var i = 0; i < carouselContent.length; i++) {
       carouselContent[i].addEventListener("scroll", contentScroll);
     }
+  }
+
+  if(carouselArticleContent) {
+    carouselArticleContent.addEventListener("scroll", contentScroll);
   }
 
   heightArray = [];
@@ -235,81 +249,70 @@ document.addEventListener("DOMContentLoaded", function () {
     windowSize.x = window.innerWidth;
   });
 
-  function contentScroll(e) {
-    var elem = e.target;
-    addRemoveScrollButton(elem, elem.parentElement);
-  }
+});
 
-  var smooth_scroll_to = function(element, target, duration) {
-    target = Math.round(target);
-    duration = Math.round(duration);
-    if (duration < 0) {
-        return;
-    }
-    if (duration === 0) {
-        element.scrollLeft = target;
-        return scroll();
-    }
-
-    var start_time = Date.now();
-    var end_time = start_time + duration;
-
-    var start_top = element.scrollLeft;
-    var distance = target - start_top;
-
-    // based on http://en.wikipedia.org/wiki/Smoothstep
-    var smooth_step = function(start, end, point) {
-        if(point <= start) { return 0; }
-        if(point >= end) { return 1; }
-        var x = (point - start) / (end - start); // interpolation
-        return x*x*(3 - 2*x);
-    }
-
-    function scroll() {
-        // This is to keep track of where the element's scrollLeft is
-        // supposed to be, based on what we're doing
-        var previous_top = element.scrollLeft;
-
-        // This is like a think function from a game loop
-        var scroll_frame = function() {
-            if(element.scrollLeft != previous_top) {
-                return;
-            }
-
-            // set the scrollLeft for this frame
-            var now = Date.now();
-            var point = smooth_step(start_time, end_time, now);
-            var frameTop = Math.round(start_top + (distance * point));
-            element.scrollLeft = frameTop;
-
-            // check if we're done!
-            if(now >= end_time) {
-                scroll();
-                return;
-            }
-
-            // If we were supposed to scroll but didn't, then we
-            // probably hit the limit, so consider it done; not
-            // interrupted.
-            if(element.scrollLeft === previous_top
-                && element.scrollLeft !== frameTop) {
-                scroll();
-                return;
-            }
-            previous_top = element.scrollLeft;
-
-            // schedule next frame for execution
-            setTimeout(scroll_frame, 0);
-        }
-
-        // boostrap the animation process
-        setTimeout(scroll_frame, 0);
-    }
-
-    return scroll();
+function contentScroll(e) {
+  var elem = e.target;
+  addRemoveScrollButton(elem, elem.parentElement);
 }
 
-});
+var smooth_scroll_to = function(element, target, duration) {
+  target = Math.round(target);
+  duration = Math.round(duration);
+  if (duration < 0) {
+      return;
+  }
+  if (duration === 0) {
+      element.scrollLeft = target;
+      return scroll();
+  }
+
+  var start_time = Date.now();
+  var end_time = start_time + duration;
+
+  var start_top = element.scrollLeft;
+  var distance = target - start_top;
+
+  // based on http://en.wikipedia.org/wiki/Smoothstep
+  var smooth_step = function(start, end, point) {
+      if(point <= start) { return 0; }
+      if(point >= end) { return 1; }
+      var x = (point - start) / (end - start); // interpolation
+      return x*x*(3 - 2*x);
+  }
+
+  function scroll() {
+      var previous_top = element.scrollLeft;
+
+      var scroll_frame = function() {
+          if(element.scrollLeft != previous_top) {
+              return;
+          }
+
+          var now = Date.now();
+          var point = smooth_step(start_time, end_time, now);
+          var frameTop = Math.round(start_top + (distance * point));
+          element.scrollLeft = frameTop;
+
+          if(now >= end_time) {
+              scroll();
+              return;
+          }
+
+          if(element.scrollLeft === previous_top
+              && element.scrollLeft !== frameTop) {
+              scroll();
+              return;
+          }
+          previous_top = element.scrollLeft;
+          setTimeout(scroll_frame, 0);
+      }
+
+      setTimeout(scroll_frame, 0);
+  }
+
+  return scroll();
+}
 
 function addRemoveScrollButton(elem, container) {
     if(elem.clientWidth + elem.scrollLeft === elem.scrollWidth) {
@@ -1065,12 +1068,40 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 document.addEventListener("DOMContentLoaded", function() {
   var sliderImgs = document.querySelectorAll(".img-slider__slide");
+  var sliderLeftBtn = document.querySelector(".img-slider__scroll-button--left");
+  var sliderRightBtn = document.querySelector(".img-slider__scroll-button--right");
+  var slider = document.querySelector(".img-slider__inner");
 
   if(sliderImgs) {
     Array.prototype.forEach.call(sliderImgs, function(slide) {
       slide.addEventListener("click", openFullScreen)
     });
   }
+  var k = 2.1;
+  var scrollOffset = parseInt(window.innerWidth / 12 * 5) * k;
+
+  if(sliderLeftBtn) {
+    sliderLeftBtn.addEventListener('click', function(e) {
+      var el = e.target.parentElement.parentElement.firstElementChild;
+      smooth_scroll_to(el, el.scrollLeft - scrollOffset, 500);
+    });
+  }
+
+  if(sliderRightBtn) {
+    sliderRightBtn.addEventListener('click', function(e) {
+      var el = e.target.parentElement.parentElement.firstElementChild;
+      smooth_scroll_to(el, el.scrollLeft + scrollOffset, 500);
+    });
+  }
+
+  if(slider) {
+    slider.addEventListener("scroll", contentScroll);
+  }
+
+  window.addEventListener("resize", function() {
+    scrollOffset = parseInt(window.innerWidth / 12 * 5) * k;
+  });
+
 });
 
 function openFullScreen(e) {
