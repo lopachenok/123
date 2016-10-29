@@ -9,7 +9,13 @@ document.addEventListener("DOMContentLoaded", function() {
       slide.addEventListener("click", openFullScreen)
     });
   }
-  var k = 2.1;
+
+  if(window.innerWidth < desctopSize) {
+    var k = 2.1;
+  } else {
+    k = 1.83;
+  }
+
   var scrollOffset = parseInt(window.innerWidth / 12 * 5) * k;
 
   if(sliderLeftBtn) {
@@ -31,11 +37,16 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   window.addEventListener("resize", function() {
+    if(window.innerWidth < desctopSize) {
+      var k = 2.1;
+    } else {
+      k = 1.83;
+    }
     scrollOffset = parseInt(window.innerWidth / 12 * 5) * k;
   });
 
 });
 
 function openFullScreen(e) {
-  
+
 }

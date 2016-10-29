@@ -157,6 +157,11 @@
         bottom: 105px;
         left: 0;
       }
+
+      @media (min-width: $large-breakpoint) {
+        padding-left: 36px;
+        padding-right: 36px;
+      }
     }
 
     .project-card__title {
@@ -171,6 +176,11 @@
         font-size: 30px;
         line-height: 33px;
         margin-right: 0;
+      }
+
+      @media (min-width: $large-breakpoint) {
+        font-size: 36px;
+        line-height: 39px;
       }
     }
 
@@ -188,6 +198,10 @@
       @media (min-width: $medium-breakpoint) {
         bottom: 50px;
         left: 30px;
+      }
+
+      @media (min-width: $large-breakpoint) {
+        left: 36px;
       }
     }
   }

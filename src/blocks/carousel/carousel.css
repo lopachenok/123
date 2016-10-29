@@ -331,11 +331,7 @@
     max-width: 616px;
 
     &--blog {
-      padding-top: 8px;
-
-      @media (min-width: $medium-breakpoint) {
-        padding-top: 28px;
-      }
+      padding-top: 0 !important;
     }
 
     @media (min-width: $medium-breakpoint) {

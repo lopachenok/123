@@ -8,6 +8,10 @@
     height: 560px;
   }
 
+  @media (min-width: $large-breakpoint) {
+    height: 670px;
+  }
+
   &::after {
     content: '';
     position: absolute;
@@ -27,6 +31,10 @@
     @media (min-width: $medium-breakpoint) {
       padding-top: 204px;
     }
+
+    @media (min-width: $large-breakpoint) {
+      padding-top: 250px;
+    }
   }
 
   &__container {
@@ -44,8 +52,8 @@
 
   &__data {
     position: absolute;
-    right: .5rem;
-    top: 233px;
+    right: 1rem;
+    top: 231px;
     font-family: $ptsans;
     font-size: 13px;
     line-height: 16px;
@@ -65,6 +73,14 @@
       left: 2.5rem;
       right: auto;
     }
+
+    @media (min-width: $large-breakpoint) {
+      left: 3.5rem;
+      font-size: 19px;
+      padding: 7px 16px;
+      bottom: -68px;
+      letter-spacing: 0.95px;
+    }
   }
 
   &__caption {
@@ -82,6 +98,12 @@
       line-height: 49.5px;
       margin-top: 30px;
     }
+
+    @media (min-width: $large-breakpoint) {
+      font-size: 54px;
+      line-height: 59.5px;
+      margin-top: 36px;
+    }
   }
 
   &__description {
@@ -89,7 +111,7 @@
     position: relative;
     z-index: 1;
     color: $colder;
-    margin-top: 10px;
+    margin-top: 12px;
     font-size: 13px;
     line-height: 17px;
 
@@ -97,6 +119,12 @@
       font-size: 20px;
       line-height: 34px;
       margin-top: 20px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      font-size: 24px;
+      line-height: 36px;
+      margin-top: 23px;
     }
   }
 }

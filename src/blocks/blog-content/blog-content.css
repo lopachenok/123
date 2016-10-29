@@ -1,13 +1,20 @@
 .blog-content {
+  overflow-x: hidden;
 
   &__inner {
     @mixin container;
 
-    padding-top: 8px;
+    padding-top: 5px;
     padding-bottom: 47px;
 
     @media (min-width: $medium-breakpoint) {
-      padding-top: 20px;
+      padding-top: 15px;
+      padding-bottom: 60px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      padding-top: 48px;
+      padding-bottom: 72px;
     }
   }
 
@@ -22,41 +29,79 @@
     @media (min-width: $medium-breakpoint) {
       line-height: 34px;
     }
+
+    @media (min-width: $large-breakpoint) {
+      line-height: 36px;
+      width: 81%;
+    }
   }
 
   blockquote {
-    font-family: 'Myriad Pro';
+    font-family: $ptserif-caption;
     font-size: 20px;
     line-height: 26px;
     color: #041b26;
     position: relative;
     padding-left: 51px;
-    margin-top: 32px;
+    margin-top: 27px;
     hyphens: auto;
-
-    &::before {
-      content: '';
-      position: absolute;
-    }
 
     @media (min-width: $medium-breakpoint) {
       line-height: 25px;
       float: right;
-      width: 182px;
-      margin-top: 20px;
+      width: 213px;
+      margin-top: 13px;
       margin-bottom: 30px;
-      padding-left: 53px;
+      padding-left: 22px;
       position: relative;
       padding-right: 0;
       left: 10%;
     }
+
+    @media (min-width: $large-breakpoint) {
+      font-size: 24px;
+      line-height: 30px;
+      margin: 0;
+      margin-top: -16px;
+      padding-left: 0;
+      width: 257px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      background: url(quotemark.svg) no-repeat;
+      height: 26px;
+      width: 37px;
+      top: 2px;
+      left: 0;
+      background-size: cover;
+
+      @media (min-width: $medium-breakpoint) {
+        height: 23px;
+        width: 33px;
+        top: 2px;
+        left: -32px;
+      }
+
+      @media (min-width: $large-breakpoint) {
+        height: 36px;
+        width: 48px;
+        left: 0;
+        top: -48px;
+      }
+    }
   }
 
   blockquote + p {
-    margin-top: 30px;
+    margin-top: 27px;
 
     @media (min-width: $medium-breakpoint) {
-      margin-top: 0;
+      margin-top: 5px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      margin-top: 1rem;
     }
   }
 
@@ -71,17 +116,30 @@
     border-radius: 3px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
     margin-top: 32px;
+
+    @media (min-width: $medium-breakpoint) {
+      margin-top: 40px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      margin-top: 48px;
+    }
   }
 
   .img-caption {
     font-family: $ptsans;
     font-size: 13px;
-    line-height: 17px;
+    line-height: 14px;
     color: #6b7277;
 
     @media (min-width: $medium-breakpoint) {
       font-size: 16px;
       line-height: 17px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      font-size: 19px;
+      line-height: 24px;
     }
   }
 
@@ -97,6 +155,11 @@
       margin-top: 40px;
       font-size: 30px;
     }
+
+    @media (min-width: $large-breakpoint) {
+      font-size: 36px;
+      margin-top: 48px;
+    }
   }
 
   h4 {
@@ -110,6 +173,11 @@
     @media (min-width: $medium-breakpoint) {
       margin-top: 30px;
       font-size: 20px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      font-size: 24px;
+      margin-top: 37px;
     }
   }
 
@@ -128,6 +196,16 @@
       position: relative;
       hyphens: auto;
 
+      @media (min-width: $large-breakpoint) {
+        line-height: 25px;
+        padding-left: 36px;
+      }
+
+      @media (min-width: $large-breakpoint) {
+        line-height: 30px;
+        padding-left: 56px;
+      }
+
       &::before {
         content: '';
         position: absolute;
@@ -135,7 +213,18 @@
         left: 10px;
         width: 8px;
         height: 7px;
-        background: url(../img/heard.svg);
+        background: url(../img/heard.svg) no-repeat;
+
+        @media (min-width: $medium-breakpoint) {
+          width: 11px;
+          height: 9px;
+        }
+
+        @media (min-width: $large-breakpoint) {
+          width: 15px;
+          height: 12px;
+          left: 24px;
+        }
       }
     }
   }
@@ -156,6 +245,16 @@
       padding-left: 32px;
       position: relative;
       hyphens: auto;
+
+      @media (min-width: $large-breakpoint) {
+        line-height: 25px;
+        padding-left: 36px;
+      }
+
+      @media (min-width: $large-breakpoint) {
+        line-height: 30px;
+        padding-left: 56px;
+      }
 
       &::before {
         content: counter(list) ".";

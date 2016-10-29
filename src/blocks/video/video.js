@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var video = document.querySelector('.video__item');
   var flag = false;
 
-  if(!mobileGlobal) {
+  if(!mobileGlobal && video) {
     video.setAttribute("preload", "true");
   }
   if(video) {

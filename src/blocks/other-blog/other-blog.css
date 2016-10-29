@@ -2,6 +2,14 @@
   background: #f0f1f2;
   padding-bottom: 22px;
 
+  @media (min-width: $medium-breakpoint) {
+    padding-bottom: 30px;
+  }
+
+  @media (min-width: $large-breakpoint) {
+    padding-bottom: 48px;
+  }
+
   &__inner {
     @mixin container;
 
@@ -9,6 +17,10 @@
 
     @media (min-width: $medium-breakpoint) {
       padding-top: 30px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      padding-top: 48px;
     }
   }
 
@@ -25,6 +37,26 @@
       @media (min-width: $medium-breakpoint) {
         margin-top: 41px;
       }
+
+      @media (min-width: $large-breakpoint) {
+        margin-top: 48px;
+      }
+    }
+  }
+
+  &__carousel {
+    margin-top: 8px;
+
+    @media (min-width: $medium-breakpoint) {
+      margin-top: 28px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      margin-top: 36px;
+    }
+
+    .carousel__scroll-button-wrap {
+      top: 50%;
     }
   }
 }
