@@ -109,6 +109,14 @@
     }
   }
 
+  &__inner::-webkit-scrollbar {
+    width: 0;
+  }
+
+  &__inner {
+    -ms-overflow-style: none;
+  }
+
   img {
     object-fit: cover;
     height: 215px;

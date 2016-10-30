@@ -5,6 +5,10 @@
     height: 570px;
   }
 
+  @media (min-width: $large-breakpoint) {
+    height: 672px;
+  }
+
   &::before {
     position: absolute;
     content: '';
@@ -17,6 +21,10 @@
 
     @media (min-width: $medium-breakpoint) {
       height: 570px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      height: 672px;
     }
   }
 
@@ -32,6 +40,10 @@
     @media (min-width: $medium-breakpoint) {
       height: 570px;
     }
+
+    @media (min-width: $large-breakpoint) {
+      height: 672px;
+    }
   }
 
   &__inner {
@@ -46,6 +58,10 @@
       padding-top: 230px;
       border-bottom: none;
       height: 100%;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      padding-top: 250px;
     }
   }
 
@@ -68,6 +84,11 @@
       transform: translateX(0);
       left: 0;
       top: 0;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      height: 240px;
+      width: 240px;
     }
   }
 
@@ -107,6 +128,13 @@
       bottom: 60px;
       right: auto;
     }
+
+    @media (min-width: $large-breakpoint) {
+      font-size: 19px;
+      padding: 7px 16px;
+      letter-spacing: 0.95px;
+      bottom: 72px;
+    }
   }
 
   &__caption {
@@ -125,6 +153,12 @@
       line-height: 49.5px;
       margin-top: 30px;
     }
+
+    @media (min-width: $large-breakpoint) {
+      font-size: 54px;
+      line-height: 59.5px;
+      margin-top: 36px;
+    }
   }
 
   &__description {
@@ -141,6 +175,12 @@
       line-height: 24px;
       color: $colder;
       margin-top: 20px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      font-size: 24px;
+      line-height: 36px;
+      height: 24px;
     }
   }
 }
