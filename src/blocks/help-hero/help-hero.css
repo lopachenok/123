@@ -49,7 +49,7 @@
   &__inner {
     @mixin container;
 
-    padding-top: 260px;
+    padding-top: 257px;
     padding-bottom: 31px;
     border-bottom: 1px solid rgba(0, 0, 0, .15);
     position: relative;
@@ -108,7 +108,7 @@
   &__data {
     position: absolute;
     right: 1rem;
-    top: 256px;
+    top: 253px;
     font-family: $ptsans;
     font-size: 13px;
     line-height: 16px;
