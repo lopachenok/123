@@ -1,6 +1,5 @@
 .blog-hero {
   height: 460px;
-  background: url(meeting-stickers.jpg);
   background-size: cover;
   position: relative;
 
@@ -126,5 +125,11 @@
       line-height: 36px;
       margin-top: 23px;
     }
+  }
+
+  &__link {
+    position: relative;
+    z-index: 2;
+    margin-top: 24px;
   }
 }

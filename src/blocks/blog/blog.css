@@ -1,0 +1,19 @@
+.blog {
+
+  &__inner {
+    @mixin container;
+
+    padding-top: 32px;
+  }
+
+  &__text {
+    margin-top: 16px;
+  }
+
+  &__footer {
+    height: 62px;
+    display: flex;
+    align-items: center;
+    background: $colder;
+  }
+}
