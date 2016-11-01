@@ -1,0 +1,43 @@
+.docs-item {
+  margin-top: 24px;
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, .3);
+  padding: 17px 20px;
+  display: flex;
+
+  &__icon {
+    height: 48px;
+    width: 38px;
+    margin-right: 16px;
+  }
+
+  &__title {
+    font-family: $ptsans;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 18px;
+    color: #041b26;
+    padding-right: 30px;
+  }
+
+  &__labels {
+    display: flex;
+  }
+
+  &__label {
+    font-family: $ptsans;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0.65px;
+    color: #6b7277;
+    background: $colder;
+    border-radius: 3px;
+    padding: 5px 8px;
+    margin-top: 12px;
+
+    &:first-of-type {
+      margin-right: 15px;
+    }
+  }
+}

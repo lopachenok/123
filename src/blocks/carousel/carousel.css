@@ -617,3 +617,62 @@
     transition: all .8s ease;
   }
 }
+
+.carousel--docs {
+  position: relative;
+  top: -34px;
+
+  .carousel__content {
+    padding-top: 8px;
+    height: auto;
+    -webkit-overflow-scrolling: none;
+  }
+
+  .carousel__tabs-container {
+    left: 0;
+  }
+
+  .carousel__tabs-container::before,
+  .carousel__tabs-container::after {
+    display: none;
+  }
+
+  .carousel__tabs {
+    width: auto;
+    max-width: none;
+    justify-content: flex-start;
+    left: 0;
+    overflow-x: scroll;
+    transform: translateX(0) !important;
+    height: 40px;
+  }
+
+  .carousel__tabs::-webkit-scrollbar {
+    width: 0;
+  }
+
+  .carousel__tabs {
+    -ms-overflow-style: none;
+  }
+
+  .carousel__tab {
+    color: #fff;
+  }
+
+  .carousel__tab:last-of-type::before {
+    display: none;
+  }
+
+  .carousel__tab:last-of-type {
+    padding-right: 1rem;
+  }
+
+  .carousel__tab-dividier {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-bottom: 2px solid $scarlet;
+    border-radius: 1px;
+    transition: all .3s ease;
+  }
+}

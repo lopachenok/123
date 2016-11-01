@@ -128,14 +128,19 @@ var scrollButtonCount = 2;
 var tabletSize = 768;
 var desctopSize = 1280;
 var popupInner;
+var docsInner;
 var heightArray;
+var heightArrayDocs;
 
 document.addEventListener("DOMContentLoaded", function () {
   var carousel = document.getElementById("carousel");
   var popupsEl = document.getElementById("popups");
+  var docs = document.getElementById('docs');
   var carouselContent = document.querySelectorAll("#carousel-container .carousel__content");
   var popupContentBlock = document.querySelectorAll("#popup-container .carousel__content");
+  var docsContentBlock = document.querySelectorAll("#docs-container .carousel__content");
   popupInner = document.querySelector("#popups .carousel__inner");
+  docsInner = document.querySelector("#docs .carousel__inner");
   var carouselArticleContent = document.getElementById("carousel-article-content");
 
   var scrollButtonRight = document.querySelector(".carousel__scroll-button--right");
@@ -149,27 +154,30 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   scrollOffset = parseInt(window.innerWidth / 12 * 5) * k;
+  if(scrollButtonRight) {
+    scrollButtonRight.addEventListener("click", function(e) {
+      var el;
+      if(outer) {
+        var currentContent = outer.currentIndex;
+        el = outer.panes[currentContent];
+      } else {
+        el = e.target.parentElement.parentElement.firstElementChild;
+      }
+      smooth_scroll_to(el, el.scrollLeft + scrollOffset, 500);
+    });
+  }
 
-  scrollButtonRight.addEventListener("click", function(e) {
-    var el;
-    if(outer) {
-      var currentContent = outer.currentIndex;
-      el = outer.panes[currentContent];
-    } else {
-      el = e.target.parentElement.parentElement.firstElementChild;
-    }
-    smooth_scroll_to(el, el.scrollLeft + scrollOffset, 500);
-  });
-
-  scrollButtonLeft.addEventListener("click", function(e) {
-    if(outer) {
-      var currentContent = outer.currentIndex;
-      var el = outer.panes[currentContent];
-    } else {
-      el = e.target.parentElement.parentElement.firstElementChild;
-    }
-    smooth_scroll_to(el, el.scrollLeft - scrollOffset, 500);
-  });
+  if(scrollButtonLeft) {
+    scrollButtonLeft.addEventListener("click", function(e) {
+      if(outer) {
+        var currentContent = outer.currentIndex;
+        var el = outer.panes[currentContent];
+      } else {
+        el = e.target.parentElement.parentElement.firstElementChild;
+      }
+      smooth_scroll_to(el, el.scrollLeft - scrollOffset, 500);
+    });
+  }
 
   if(carouselContent) {
     for(var i = 0; i < carouselContent.length; i++) {
@@ -178,6 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   if(carouselArticleContent) {
+    addRemoveScrollButton(carouselArticleContent, carouselArticleContent.parentElement);
     carouselArticleContent.addEventListener("scroll", contentScroll);
   }
 
@@ -186,14 +195,25 @@ document.addEventListener("DOMContentLoaded", function () {
     heightArray.push(content.clientHeight);
   });
 
+  heightArrayDocs = [];
+  Array.prototype.forEach.call(docsContentBlock, function(content) {
+    heightArrayDocs.push(content.clientHeight);
+  });
+
   if(window.innerWidth >= tabletSize) {
     if(carousel) {
       var outer = new HammerCarousel(carousel);
+    }
+    if(docs) {
+      var doc = new HammerCarousel(docs);
     }
     popups = new HammerCarousel(popupsEl);
   } else {
     if(carousel) {
       var outer = new HammerCarousel(carousel, Hammer.DIRECTION_HORIZONTAL);
+    }
+    if(docs) {
+      var doc = new HammerCarousel(docs, Hammer.DIRECTION_HORIZONTAL);
     }
     popups = new HammerCarousel(popupsEl, Hammer.DIRECTION_HORIZONTAL);
   }
@@ -215,14 +235,25 @@ document.addEventListener("DOMContentLoaded", function () {
         heightArray.push(content.clientHeight);
       });
 
+      heightArrayDocs = [];
+      Array.prototype.forEach.call(docsContentBlock, function(content) {
+        heightArrayDocs.push(content.clientHeight);
+      });
+
       if (window.innerWidth >= tabletSize) {
         if(carousel) {
           outer = new HammerCarousel(carousel);
+        }
+        if(docs) {
+          var doc = new HammerCarousel(docs);
         }
         popups = new HammerCarousel(popupsEl);
       } else {
         if(carousel) {
           outer = new HammerCarousel(carousel, Hammer.DIRECTION_HORIZONTAL);
+        }
+        if(docs) {
+          var doc = new HammerCarousel(docs, Hammer.DIRECTION_HORIZONTAL);
         }
         popups = new HammerCarousel(popupsEl, Hammer.DIRECTION_HORIZONTAL);
       }
@@ -245,6 +276,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     scrollOffset = parseInt(window.innerWidth / 12 * 5) * k;
+
+    if(carouselArticleContent) {
+      addRemoveScrollButton(carouselArticleContent, carouselArticleContent.parentElement);
+    }
 
     windowSize.x = window.innerWidth;
   });
@@ -403,12 +438,7 @@ function HammerCarousel(container, direction) {
 
       var tabTransform, persentTab;
 
-      var stopTabTransform;
-      if(this.container.id == "popup-container") {
-        stopTabTransform = 600;
-      } else {
-         stopTabTransform = 430;
-      }
+      var stopTabTransform = this.tabs.clientWidth;
 
       if (window.innerWidth < stopTabTransform) {
         if (showIndex === 0) {
@@ -416,7 +446,7 @@ function HammerCarousel(container, direction) {
           this.tabsContainer.classList.add("carousel__tabs-container--start");
 
           if(this.container.id == "popup-container") {
-            persentTab =  this.tabsOffset + 45;
+            persentTab = this.tabsOffset + 45;
           } else {
             persentTab = this.tabsOffset
           }
@@ -447,6 +477,27 @@ function HammerCarousel(container, direction) {
         tabTransform = 'translate3d(0px, 0, 0)';
       }
 
+      if(this.container.id == "docs-container") {
+        var tabsObj = [];
+        var dividier = this.tabs.children[this.tabs.children.length - 1];
+        Array.prototype.forEach.call(this.tabs.children, function(tab) {
+          tabsObj.push(tab.clientWidth);
+        });
+        var padding = window.getComputedStyle(this.tabs.children[0]).paddingRight;
+
+        dividier.style.width = tabsObj[showIndex] - parseInt(padding) + 2 + 'px';
+        console.dir(this.tabs.children[showIndex].offsetLeft)
+        dividier.style.left = this.tabs.children[showIndex].offsetLeft + 1 + 'px';
+
+        var summ = 0;
+        for(var i = 0; i < showIndex; i++) {
+          summ += tabsObj[i]
+        }
+
+        var tabsScroll =  summ - ((window.innerWidth - tabsObj[showIndex])/2);
+        smooth_scroll_to(this.tabs, tabsScroll, 500);
+      }
+
       this.tabs.style.transform = tabTransform;
       this.tabs.style.mozTransform = tabTransform;
       this.tabs.style.webkitTransform = tabTransform;
@@ -466,6 +517,10 @@ function HammerCarousel(container, direction) {
 
       if(this.container.id == "popup-container") {
         popupInner.style.height = heightArray[showIndex] + 50 + 'px';
+      }
+
+      if(this.container.id == "docs-container") {
+        docsInner.style.height = heightArrayDocs[showIndex] + 3 + 'px';
       }
 
       if (window.innerWidth < tabletSize) {

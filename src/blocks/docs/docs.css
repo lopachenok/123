@@ -1,0 +1,42 @@
+.docs {
+
+  &__footer {
+    height: 62px;
+    display: flex;
+    align-items: center;
+    background: $colder;
+    justify-content: center;
+
+    @media (min-width: $medium-breakpoint) {
+      height: 77px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      height: 97px;
+    }
+  }
+
+  &__link {
+    font-size: 0.8rem;
+    color: #969ba0;
+
+    &::after {
+      width: 7px;
+      height: 12px;
+      top: 2px;
+
+      @media (min-width: $medium-breakpoint) {
+        height: 16px;
+        width: 9px;
+        top: 2px;
+        right: -15px;
+      }
+
+      @media (min-width: $large-breakpoint) {
+        height: 19px;
+        width: 11px;
+        right: -22px;
+      }
+    }
+  }
+}

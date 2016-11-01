@@ -47,3 +47,6 @@
 @import '../.././src/blocks/blog-help/blog-help.css';
 @import '../.././src/blocks/blog/blog.css';
 @import '../.././src/blocks/article/article.css';
+@import '../.././src/blocks/docs-hero/docs-hero.css';
+@import '../.././src/blocks/docs/docs.css';
+@import '../.././src/blocks/docs-item/docs-item.css';
