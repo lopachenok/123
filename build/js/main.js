@@ -484,9 +484,9 @@ function HammerCarousel(container, direction) {
           tabsObj.push(tab.clientWidth);
         });
         var padding = window.getComputedStyle(this.tabs.children[showIndex]).paddingRight;
+        console.log(tabsObj[showIndex])
 
         dividier.style.width = tabsObj[showIndex] - parseInt(padding) + 2 + 'px';
-        console.dir(this.tabs.children[showIndex].offsetLeft)
         dividier.style.left = this.tabs.children[showIndex].offsetLeft + 1 + 'px';
 
         var summ = 0;

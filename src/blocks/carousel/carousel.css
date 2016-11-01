@@ -626,6 +626,10 @@
     top: -60px;
   }
 
+  @media (min-width: $large-breakpoint) {
+    top: -78px;
+  }
+
   .carousel__content {
     padding-top: 8px;
     height: auto;
@@ -634,10 +638,22 @@
     @media (min-width: $medium-breakpoint) {
       padding-top: 15px;
     }
+
+    @media (min-width: $large-breakpoint) {
+      padding-top: 48px;
+    }
   }
 
   .carousel__tabs-container {
     left: 0;
+
+    @media (min-width: $medium-breakpoint) {
+      max-width: 1024px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      max-width: 1440px;
+    }
   }
 
   .carousel__tabs-container::before,
@@ -657,6 +673,10 @@
     @media (min-width: $medium-breakpoint) {
       padding-left: 2.5rem;
       height: 47px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      padding-left: 3.5rem;
     }
   }
 

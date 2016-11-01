@@ -176,6 +176,7 @@
     line-height: 24px;
     color: #485155;
     margin-top: 1rem;
+    hyphens: auto;
 
     @media (min-width: $medium-breakpoint) {
       line-height: 34px;

@@ -15,6 +15,7 @@
 
     @media (min-width: $large-breakpoint) {
       height: 97px;
+      margin-top: -6px;
     }
   }
 

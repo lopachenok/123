@@ -30,6 +30,10 @@
     @media (min-width: $medium-breakpoint) {
       padding-top: 253px;
     }
+
+    @media (min-width: $large-breakpoint) {
+      padding-top: 297px;
+    }
   }
 
   &__caprion {
