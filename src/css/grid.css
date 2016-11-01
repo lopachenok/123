@@ -178,6 +178,12 @@
     padding: 0 $grid-gutter;
   }
 
+  .footer-medium-column6 {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 0 $grid-gutter;
+  }
+
   .footer-medium-column8 {
     box-sizing: border-box;
     width: 66.6667%;

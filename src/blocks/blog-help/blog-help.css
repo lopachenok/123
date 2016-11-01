@@ -1,3 +1,21 @@
 .blog-help {
   display: none;
+
+  @media (min-width: $medium-breakpoint) {
+    display: block;
+    background: $colder;
+    padding-bottom: 30px;
+  }
+
+  &__inner {
+    @media (min-width: $medium-breakpoint) {
+      @mixin container;
+
+      padding-top: 40px;
+    }
+  }
+
+  &__text {
+    margin-top: 20px;
+  }
 }

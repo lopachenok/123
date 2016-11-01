@@ -114,10 +114,18 @@
     font-size: 13px;
     line-height: 17px;
 
+    &.hide-for-small {
+      display: none;
+    }
+
     @media (min-width: $medium-breakpoint) {
       font-size: 20px;
       line-height: 34px;
       margin-top: 20px;
+
+      &.hide-for-small {
+        display: block;
+      }
     }
 
     @media (min-width: $large-breakpoint) {
@@ -131,5 +139,9 @@
     position: relative;
     z-index: 2;
     margin-top: 24px;
+
+    @media (min-width: $medium-breakpoint) {
+      margin-top: 40px;
+    }
   }
 }

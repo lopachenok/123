@@ -4,10 +4,14 @@
     @mixin container;
 
     padding-top: 32px;
+
+    @media (min-width: $medium-breakpoint) {
+      padding-top: 40px;
+    }
   }
 
   &__text {
-    margin-top: 16px;
+    margin-top: 1rem;
   }
 
   &__footer {
@@ -15,5 +19,39 @@
     display: flex;
     align-items: center;
     background: $colder;
+
+    @media (min-width: $medium-breakpoint) {
+      height: 77px;
+      justify-content: center;
+    }
+  }
+
+  &__article-inner {
+    @media (min-width: $footer-medium-breakpoint) {
+      @mixin container;
+    }
+  }
+
+  &__footer-link-medium {
+    display: none;
+
+    @media (min-width: $medium-breakpoint) {
+      display: block;
+      font-size: 16px;
+      color: #969ba0;
+
+      &::after {
+        height: 16px;
+        width: 9px;
+        top: 2px;
+        right: -15px;
+      }
+    }
+  }
+
+  &__footer-link-little {
+    @media (min-width: $medium-breakpoint) {
+      display: none;
+    }
   }
 }

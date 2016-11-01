@@ -47,6 +47,11 @@
   &__carousel {
     margin-top: 8px;
 
+    .carousel__container::before,
+    .carousel__container::after {
+      top: 0;
+    }
+
     @media (min-width: $medium-breakpoint) {
       margin-top: 28px;
     }
