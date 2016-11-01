@@ -6,9 +6,11 @@
     align-items: center;
     background: $colder;
     justify-content: center;
+    margin-top: -13px;
 
     @media (min-width: $medium-breakpoint) {
       height: 77px;
+      margin-top: -20px;
     }
 
     @media (min-width: $large-breakpoint) {

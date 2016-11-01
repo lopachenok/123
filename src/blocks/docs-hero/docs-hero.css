@@ -4,6 +4,14 @@
   background-size: cover;
   position: relative;
 
+  @media (min-width: $medium-breakpoint) {
+    height: 480px;
+  }
+
+  @media (min-width: $large-breakpoint) {
+    height: 576px;
+  }
+
   &::after {
     content: '';
     position: absolute;
@@ -18,10 +26,13 @@
     @mixin container;
 
     padding-top: 146px;
+
+    @media (min-width: $medium-breakpoint) {
+      padding-top: 253px;
+    }
   }
 
   &__caprion {
-    margin-top: 12px;
     font-family: $ptsans-caption;
     color: #fff;
     position: relative;
@@ -33,13 +44,11 @@
     @media (min-width: $medium-breakpoint) {
       font-size: 45px;
       line-height: 49.5px;
-      margin-top: 30px;
     }
 
     @media (min-width: $large-breakpoint) {
       font-size: 54px;
       line-height: 59.5px;
-      margin-top: 36px;
     }
   }
 

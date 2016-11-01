@@ -358,7 +358,7 @@ function HammerCarousel(container, direction) {
         Array.prototype.forEach.call(this.tabs.children, function(tab) {
           tabsObj.push(tab.clientWidth);
         });
-        var padding = window.getComputedStyle(this.tabs.children[0]).paddingRight;
+        var padding = window.getComputedStyle(this.tabs.children[showIndex]).paddingRight;
 
         dividier.style.width = tabsObj[showIndex] - parseInt(padding) + 2 + 'px';
         console.dir(this.tabs.children[showIndex].offsetLeft)

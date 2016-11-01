@@ -6,6 +6,14 @@
   padding: 17px 20px;
   display: flex;
 
+  @media (min-width: $medium-breakpoint) {
+    margin-top: 20px;
+    height: 241px;
+    padding: 30px;
+    box-sizing: border-box;
+    flex-direction: column;
+  }
+
   &__icon {
     height: 48px;
     width: 38px;
@@ -19,6 +27,11 @@
     line-height: 18px;
     color: #041b26;
     padding-right: 30px;
+
+    @media (min-width: $medium-breakpoint) {
+      margin-top: 20px;
+      line-height: 24px;
+    }
   }
 
   &__labels {
@@ -36,8 +49,25 @@
     padding: 5px 8px;
     margin-top: 12px;
 
+    @media (min-width: $medium-breakpoint) {
+      font-size: 16px;
+      letter-spacing: 0.8px;
+      padding: 6px 13px;
+      margin-top: 15px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      font-size: 19px;
+      padding: 7px 16px;
+      letter-spacing: 0.95px;
+    }
+
     &:first-of-type {
       margin-right: 15px;
+
+      @media (min-width: $medium-breakpoint) {
+        margin-right: 20px;
+      }
     }
   }
 }

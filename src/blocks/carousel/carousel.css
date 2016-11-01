@@ -620,12 +620,20 @@
 
 .carousel--docs {
   position: relative;
-  top: -34px;
+  top: -45px;
+
+  @media (min-width: $medium-breakpoint) {
+    top: -60px;
+  }
 
   .carousel__content {
     padding-top: 8px;
     height: auto;
     -webkit-overflow-scrolling: none;
+
+    @media (min-width: $medium-breakpoint) {
+      padding-top: 15px;
+    }
   }
 
   .carousel__tabs-container {
@@ -645,6 +653,11 @@
     overflow-x: scroll;
     transform: translateX(0) !important;
     height: 40px;
+
+    @media (min-width: $medium-breakpoint) {
+      padding-left: 2.5rem;
+      height: 47px;
+    }
   }
 
   .carousel__tabs::-webkit-scrollbar {
@@ -674,5 +687,9 @@
     border-bottom: 2px solid $scarlet;
     border-radius: 1px;
     transition: all .3s ease;
+  }
+
+  .row {
+    padding-bottom: 3px;
   }
 }
