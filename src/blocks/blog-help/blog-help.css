@@ -7,15 +7,23 @@
     padding-bottom: 30px;
   }
 
+  @media (min-width: $large-breakpoint) {
+    padding-bottom: 48px;
+  }
+
   &__inner {
     @media (min-width: $medium-breakpoint) {
       @mixin container;
 
       padding-top: 40px;
     }
+
+    @media (min-width: $large-breakpoint) {
+      padding-top: 48px;
+    }
   }
 
   &__text {
-    margin-top: 20px;
+    margin-top: 1rem;
   }
 }

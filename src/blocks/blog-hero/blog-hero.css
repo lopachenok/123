@@ -143,5 +143,9 @@
     @media (min-width: $medium-breakpoint) {
       margin-top: 40px;
     }
+
+    @media (min-width: $large-breakpoint) {
+      margin-top: 48px;
+    }
   }
 }

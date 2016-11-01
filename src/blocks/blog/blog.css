@@ -8,6 +8,10 @@
     @media (min-width: $medium-breakpoint) {
       padding-top: 40px;
     }
+
+    @media (min-width: $large-breakpoint) {
+      padding-top: 48px;
+    }
   }
 
   &__text {
@@ -24,6 +28,10 @@
       height: 77px;
       justify-content: center;
     }
+
+    @media (min-width: $large-breakpoint) {
+      height: 97px;
+    }
   }
 
   &__article-inner {
@@ -37,14 +45,22 @@
 
     @media (min-width: $medium-breakpoint) {
       display: block;
-      font-size: 16px;
+      font-size: 0.8rem;
       color: #969ba0;
+    }
 
-      &::after {
+    &::after {
+      @media (min-width: $medium-breakpoint) {
         height: 16px;
         width: 9px;
         top: 2px;
         right: -15px;
+      }
+
+      @media (min-width: $large-breakpoint) {
+        height: 19px;
+        width: 11px;
+        right: -22px;
       }
     }
   }

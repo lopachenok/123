@@ -6,10 +6,15 @@
   @media (min-width: $medium-breakpoint) {
     padding-top: 40px;
     padding-bottom: 40px;
+  }
 
-    @media (min-width: $footer-medium-breakpoint) {
-      padding-top: 20px;
-    }
+  @media (min-width: $footer-medium-breakpoint) {
+    padding-top: 20px;
+  }
+
+  @media (min-width: $large-breakpoint) {
+    padding-bottom: 48px;
+    padding-top: 48px;
   }
 
   &:first-of-type {
@@ -22,11 +27,19 @@
     @media (min-width: $footer-medium-breakpoint) {
       margin-top: 20px;
     }
+
+    @media (min-width: $large-breakpoint) {
+      margin-top: 0;
+    }
   }
 
   &:nth-of-type(2) {
     @media (min-width: $footer-medium-breakpoint) {
       margin-top: 20px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      margin-top: 0;
     }
   }
 
@@ -149,6 +162,12 @@
     @media (min-width: $footer-medium-breakpoint) {
       padding: 0 30px;
     }
+
+    @media (min-width: $large-breakpoint) {
+      padding: 0 35px;
+      font-size: 36px;
+      line-height: 39px;
+    }
   }
 
   &__description {
@@ -160,6 +179,10 @@
 
     @media (min-width: $medium-breakpoint) {
       line-height: 34px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      line-height: 36px;
     }
   }
 
