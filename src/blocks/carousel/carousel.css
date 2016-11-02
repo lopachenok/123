@@ -670,13 +670,25 @@
     transform: translateX(0) !important;
     height: 40px;
 
+    @media (min-width: 600px) {
+      padding-left: calc(((100vw - 600px) / 2) + 1rem);
+    }
+
     @media (min-width: $medium-breakpoint) {
       padding-left: 2.5rem;
       height: 47px;
     }
 
+    @media (min-width: 1024px) {
+      padding-left: calc(((100vw - 1024px) / 2) + 2.5rem);
+    }
+
     @media (min-width: $large-breakpoint) {
       padding-left: 3.5rem;
+    }
+
+    @media (min-width: 1440px) {
+      padding-left: calc(((100vw - 1440px) / 2) + 3.5rem);
     }
   }
 

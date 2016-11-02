@@ -483,11 +483,12 @@ function HammerCarousel(container, direction) {
         Array.prototype.forEach.call(this.tabs.children, function(tab) {
           tabsObj.push(tab.clientWidth);
         });
-        var padding = window.getComputedStyle(this.tabs.children[showIndex]).paddingRight;
-        console.log(tabsObj[showIndex])
-
-        dividier.style.width = tabsObj[showIndex] - parseInt(padding) + 2 + 'px';
-        dividier.style.left = this.tabs.children[showIndex].offsetLeft + 1 + 'px';
+        var self = this;
+        setTimeout(function() {
+          var padding = window.getComputedStyle(self.tabs.children[showIndex]).paddingRight;
+          dividier.style.width = tabsObj[showIndex] - parseInt(padding) + 2 + 'px';
+          dividier.style.left = self.tabs.children[showIndex].offsetLeft + 1 + 'px';
+        }, 10);
 
         var summ = 0;
         for(var i = 0; i < showIndex; i++) {

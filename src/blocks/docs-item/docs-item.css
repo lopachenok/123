@@ -25,6 +25,82 @@
     height: 48px;
     width: 38px;
     margin-right: 16px;
+    flex-shrink: 0;
+
+    &--ai {
+      background: url(ai.svg);
+      background-size: cover;
+    }
+
+    &--docx {
+      background: url(docx.svg);
+      background-size: cover;
+    }
+
+    &--eps {
+      background: url(eps.svg);
+      background-size: cover;
+    }
+
+    &--gif {
+      background: url(gif.svg);
+      background-size: cover;
+    }
+
+    &--indd {
+      background: url(indd.svg);
+      background-size: cover;
+    }
+
+    &--jpg {
+      background: url(jpg.svg);
+      background-size: cover;
+    }
+
+    &--msg {
+      background: url(msg.svg);
+      background-size: cover;
+    }
+
+    &--pdf {
+      background: url(pdf.svg);
+      background-size: cover;
+    }
+
+    &--png {
+      background: url(png.svg);
+      background-size: cover;
+    }
+
+    &--pptx {
+      background: url(pptx.svg);
+      background-size: cover;
+    }
+
+    &--ps {
+      background: url(ps.svg);
+      background-size: cover;
+    }
+
+    &--rtf {
+      background: url(rtf.svg);
+      background-size: cover;
+    }
+
+    &--svg {
+      background: url(svg.svg);
+      background-size: cover;
+    }
+
+    &--txt {
+      background: url(txt.svg);
+      background-size: cover;
+    }
+
+    &--xlsx {
+      background: url(xlsx.svg);
+      background-size: cover;
+    }
   }
 
   &__title {
