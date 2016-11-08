@@ -725,3 +725,7 @@
     padding-bottom: 3px;
   }
 }
+
+.mobile .carousel--docs .carousel__tab-dividier {
+  bottom: 15px;
+}
