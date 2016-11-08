@@ -5,6 +5,7 @@
   box-shadow: 1px 1px 2px rgba(0, 0, 0, .3);
   padding: 17px 20px;
   display: flex;
+  background: #fff;
 
   @media (min-width: $medium-breakpoint) {
     margin-top: 20px;

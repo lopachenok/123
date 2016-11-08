@@ -3,8 +3,10 @@
 
   @media (min-width: $medium-breakpoint) {
     display: block;
-    background: $colder;
     padding-bottom: 30px;
+    background: $colder url(nd-pattern.svg);
+    background-size: 2560px 1821px;
+    position: relative;
   }
 
   @media (min-width: $large-breakpoint) {

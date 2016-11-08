@@ -1,4 +1,7 @@
 .blog {
+  background: url(nd-pattern.svg);
+  background-size: 2560px 1821px;
+  position: relative;
 
   &__inner {
     @mixin container;

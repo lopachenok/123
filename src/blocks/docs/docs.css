@@ -1,4 +1,9 @@
 .docs {
+  @media (min-width: $medium-breakpoint) {
+    background: url(nd-pattern.svg);
+    background-size: 2560px 1821px;
+    position: relative;
+  }
 
   &__footer {
     height: 62px;
