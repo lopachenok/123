@@ -113,6 +113,7 @@
     margin-top: 12px;
     font-size: 13px;
     line-height: 17px;
+    hyphens: auto;
 
     &.hide-for-small {
       display: none;

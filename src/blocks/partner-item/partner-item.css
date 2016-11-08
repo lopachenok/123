@@ -1,0 +1,38 @@
+.partners-item {
+  border-top: 1px solid rgba(0, 0, 0, .1);
+  padding: 32px 0;
+
+  @media (min-width: $medium-breakpoint) {
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    margin-top: 1rem;
+    padding: 26px 35px;
+    min-height: 270px;
+    box-sizing: border-box;
+    background: #fff;
+  }
+
+  &__logo {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+
+    @media (min-width: $medium-breakpoint) {
+      width: 100%;
+      height: 100px;
+    }
+  }
+
+  &__text {
+    font-family: $ptserif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #485155;
+    margin-top: 1.5rem;
+    hyphens: auto;
+
+    @media (min-width: $medium-breakpoint) {
+      margin-top: 16px;
+    }
+  }
+}

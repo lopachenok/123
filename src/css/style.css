@@ -50,3 +50,8 @@
 @import '../.././src/blocks/docs-hero/docs-hero.css';
 @import '../.././src/blocks/docs/docs.css';
 @import '../.././src/blocks/docs-item/docs-item.css';
+@import '../.././src/blocks/partners-hero/partners-hero.css';
+@import '../.././src/blocks/partner-section/partner-section.css';
+@import '../.././src/blocks/partner-item/partner-item.css';
+@import '../.././src/blocks/sponsors/sponsors.css';
+@import '../.././src/blocks/partners-form/partners-form.css';

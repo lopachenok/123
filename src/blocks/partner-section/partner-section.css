@@ -1,0 +1,25 @@
+.partner-section {
+
+  &__inner {
+    @mixin container;
+
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    @media (min-width: $medium-breakpoint) {
+      padding-top: 43px;
+      padding-bottom: 40px;
+      background: #fff url(nd-pattern.svg);
+      background-size: 2560px 1821px;
+    }
+  }
+
+  &__text {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+
+    @media (min-width: $medium-breakpoint) {
+      margin-bottom: 1rem;
+    }
+  }
+}
