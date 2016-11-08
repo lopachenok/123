@@ -140,6 +140,10 @@
     z-index: 2;
     margin-top: 24px;
 
+    &:hover {
+      color: $scarlet;
+    }
+
     @media (min-width: $medium-breakpoint) {
       margin-top: 40px;
     }

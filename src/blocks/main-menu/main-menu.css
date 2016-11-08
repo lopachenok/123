@@ -42,6 +42,20 @@
       &:nth-child(n+4) {
         display: none;
       }
+
+      &--active {
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          border-bottom: 2px solid #fa325a;
+          border-radius: 1px;
+          left: 0;
+          bottom: -9px;
+        }
+      }
     }
 
     @media (min-width: $large-breakpoint) {

@@ -56,6 +56,13 @@
       &:nth-of-type(5) {
         flex-basis: 165px;
       }
+
+      &--active {
+
+        .detiled-menu__link {
+          color: $colder;
+        }
+      }
     }
 
     @media (min-width: $large-breakpoint) {
