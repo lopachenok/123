@@ -10,6 +10,13 @@
     @media (min-width: $medium-breakpoint) {
       background: $colder url(nd-pattern.svg);
       background-size: 2560px 1821px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      padding-top: 48px;
+      padding-bottom: 48px;
     }
   }
 
@@ -26,6 +33,11 @@
     @media (min-width: $medium-breakpoint) {
       height: 121px;
       padding: 20px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      height: 130px;
+      padding: 24px;
     }
   }
 

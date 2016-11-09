@@ -12,6 +12,11 @@
       background: #fff url(nd-pattern.svg);
       background-size: 2560px 1821px;
     }
+
+    @media (min-width: $large-breakpoint) {
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
   }
 
   &__text {

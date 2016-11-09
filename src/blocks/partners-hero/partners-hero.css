@@ -49,13 +49,11 @@
     @media (min-width: $medium-breakpoint) {
       font-size: 45px;
       line-height: 49.5px;
-      margin-top: 30px;
     }
 
     @media (min-width: $large-breakpoint) {
       font-size: 54px;
       line-height: 59.5px;
-      margin-top: 36px;
     }
   }
 

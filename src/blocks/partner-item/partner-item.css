@@ -12,6 +12,11 @@
     background: #fff;
   }
 
+  @media (min-width: $large-breakpoint) {
+    padding: 37px;
+    min-height: 302px;
+  }
+
   &__logo {
     width: 80%;
     height: auto;
@@ -33,6 +38,10 @@
 
     @media (min-width: $medium-breakpoint) {
       margin-top: 16px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      margin-top: 24px;
     }
   }
 }
