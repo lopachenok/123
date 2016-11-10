@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html lang="ru-RU">
-@@include('include/head.html')
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">    
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="x-rim-auto-match" content="none">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Sans+Caption:400,700|PT+Serif:400,400italic,700,700italic|PT+Serif+Caption:400,400italic&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/vendor.min.css">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
 <body>
-@@include('include/bottom.html')
+<script src="js/vendor.js"></script>
+<script src="https://widget.cloudpayments.ru/bundles/checkout"></script>
+<script src="js/main.js"></script>
 </body>
   <div class="wrapper" id="wrapper">
     <header class="page-header">
@@ -18,10 +30,10 @@
               <ul class="main-menu__list">
                 <li class="main-menu__item"><a href="" class="main-menu__link">Проекты</a></li>
                 <li class="main-menu__item"><a href="" class="main-menu__link">Волонтёрство</a></li>
-                <li class="main-menu__item"><a href="" class="main-menu__link">О фонде</a></li>
+                <li class="main-menu__item  main-menu__item--active"><a href="" class="main-menu__link">О фонде</a></li>
                 <li class="main-menu__item"><a href="" class="main-menu__link">Партнёры</a></li>
                 <li class="main-menu__item"><a href="" class="main-menu__link">Документы</a></li>
-                <li class="main-menu__item  main-menu__item--active"><a href="" class="main-menu__link">Блог</a></li>
+                <li class="main-menu__item"><a href="" class="main-menu__link">Блог</a></li>
               </ul>
 
               <a class="main-menu__toggler" data-popups="0">
@@ -35,254 +47,213 @@
       </div>
     </header>
     <main>
-
-      <section class="hero"  style="background: url(img/happy-book.jpg) center; background-size: cover;">
+      <section class="hero" style="background: url(../img/volunteers-stand.jpg) 50%; background-size: cover;">
         <div class="hero__inner">
           <div class="row">
             <div class="small-column6  medium-column11  large-column9">
-              <p class="hero__name">Избранная статья</p>
-              <h1 class="hero__caption">Как 30 минут чтения поднимет настроение</h1>
+              <h1 class="hero__caption">Мы развиваемся, чтобы сделать этот мир лучше.</h1>
             </div>
             <div class="small-column6  medium-column11  large-column10">
-              <p class="hero__description  hyphenate  hide-for-small" lang="ru">Отложите ноутбуки и телефоны, выйдите из дома и возьмите с собой книгу. Хорошее настроение — гарантировано. </p>
-            </div>
-            <div class="small-column6  medium-column11  large-column10">
-              <a href="" class="link  link--white  hero__link">Читать статью</a>
+              <p class="hero__description  hyphenate" lang="ru">Мы начинали с волонёрской организации, и уже через два года получили полноценный статус фонда.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="blog-help">
-        <div class="blog-help__inner">
+      <section class="about">
+        <div class="about__inner">
           <div class="row">
-            <div class="medium-column11">
-                <p class="section-heading  blog-help__heading">Уже помогли</p>
-                <p class="section-text  blog-help__text hyphenate" lang="ru">Посмотрите истории из наших подопечных и узнайте, как наши проекты помогают им вернуться в жизнь.</p>
+            <div class="small-column6  medium-column11  large-column11">
+              <p class="section-heading">О фонде «Нить Добра»</p>
+              <p class="section-text  about__text hyphenate  about__text" lang="ru">Пример текста или описания к этому разделу. Информация о фонде, послание от основателей, история создания. Здесь можно написать много чего интересного. </p>
+              <p class="section-text  about__text hyphenate  about__text" lang="ru">Наш фонд основан в 1996 году, двумя студентами из ПГБСУ — Алексеем Петровым и Валерием Сифоновым. Тогда мы решили, что фонд это интересное и важное дело, и потому написали этот очень странный текст. </p>
             </div>
           </div>
-        </div>
-        <div class="carousel  blog-help__carousel"  >
-
-            <div class="carousel__inner">
-                <div class="carousel__container  carousel__container--start">
-
-                    <section class="carousel__content  carousel__content--active" id="carousel-article-content">
-                        <div class="row  row--no-wrap">
-
-                            <div class="carousel__column  small-column6  medium-column5  large-column4">
-                                <div class="event-card  carousel__event">
-                                    <div class="event-card__main  event-card__main--gradient">
-                                        <img src="img/lisa.jpg" alt="" class="event-card__img" data-object-fit="cover">
-
-                                        <div class="event-card__content">
-                                            <h3 class="event-card__title">Лиза</h3>
-                                            <p class="event-card__description hyphenate" lang="ru">18 лет, мечтает сниматься в кино.</p>
-                                        </div>
-
-                                    </div>
-                                    <div class="event-card__footer"><a href="" class="event-card__link  link link--white  link--small">Читать историю</a></div>
-                                </div>
-                            </div>
-
-                            <div class="carousel__column  small-column6  medium-column5  large-column4">
-                                <div class="event-card  carousel__event">
-                                    <div class="event-card__main  event-card__main--gradient">
-                                        <img src="img/dima.jpg" alt="" class="event-card__img" data-object-fit="cover">
-
-                                        <div class="event-card__content">
-                                            <h3 class="event-card__title">Дима</h3>
-                                            <p class="event-card__description hyphenate" lang="ru">6 лет, мечтает стать инженером и уже собрал свого первого робота ЛЕГО.</p>
-                                        </div>
-
-                                    </div>
-                                    <div class="event-card__footer"><a href="" class="event-card__link  link link--white  link--small">Читать историю</a></div>
-                                </div>
-                            </div>
-
-                            <div class="carousel__column  small-column6  medium-column5  large-column4">
-                                <div class="event-card  carousel__event">
-                                    <div class="event-card__main  event-card__main--gradient">
-                                        <img src="img/ivan.jpg" alt="" class="event-card__img" data-object-fit="cover">
-
-                                        <div class="event-card__content">
-                                            <h3 class="event-card__title">Ваня</h3>
-                                            <p class="event-card__description hyphenate" lang="ru">17 лет, мечтает готовить, как настоящий шеф-повар.</p>
-                                        </div>
-
-                                    </div>
-                                    <div class="event-card__footer"><a href="" class="event-card__link  link link--white  link--small">Читать историю</a></div>
-                                </div>
-                            </div>
-
-                            <a href="popup-kids" class="carousel__link  link  link--carousel" data-popup="true">смотреть все истории</a>
-
-                        </div>
-                    </section>
-
-                    <div class="carousel__scroll-button-wrap  carousel__scroll-button-wrap--right"><span class="carousel__scroll-button  carousel__scroll-button--right"></span></div>
-                    <div class="carousel__scroll-button-wrap  carousel__scroll-button-wrap--left"><span class="carousel__scroll-button  carousel__scroll-button--left"></span></div>
-                </div>
-            </div>
-
         </div>
       </section>
 
-      <section class="blog">
-        <div class="blog__inner">
+      <section class="council">
+        <div class="council__inner">
           <div class="row">
-            <div class="small-column6  medium-column11">
-              <p class="section-heading  blog__heading">Блог фонда</p>
-              <p class="section-text  blog__text hyphenate" lang="ru">Новости, истории, полезные советы и все яркие моменты жизни нашего фонда.</p>
+            <div class="small-column6  medium-column11  large-column11">
+              <p class="section-heading">Попечительский совет</p>
+              <p class="section-text  council__text hyphenate" lang="ru">Пример текста или описания к этому разделу. Мы полагаемся на наших попечителей, их мудрость и опыт ведут наш фонд в лучший мир.</p>
+            </div>
+
+            <div class="small-column6 medium-column6  large-column4">
+              <div class="member-item  member-item--grey">
+                <img src="img/5.jpg" alt="" class="member-item__img" data-object-fit="cover">
+                <div class="member-item__content">
+                  <h3 class="member-item__name">Давид Евдимошвили</h3>
+                  <p class="member-item__description">Известный художник-декоратор Галереи им. Павлова-Петрова</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="small-column6 medium-column6  large-column4">
+              <div class="member-item  member-item--grey">
+                <img src="img/24.jpg" alt="" class="member-item__img" data-object-fit="cover">
+                <div class="member-item__content">
+                  <h3 class="member-item__name">Алина Чербоширова</h3>
+                  <p class="member-item__description">Известная актриса, телеведущая</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="small-column6 medium-column6  large-column4">
+              <div class="member-item  member-item--grey">
+                <img src="img/61.jpg" alt="" class="member-item__img" data-object-fit="cover">
+                <div class="member-item__content">
+                  <h3 class="member-item__name">Ратмир Желеваленко</h3>
+                  <p class="member-item__description">Предприниматель, владелец компании «Супердульки Inc.»</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="small-column6 medium-column6  large-column4">
+              <div class="member-item  member-item--grey">
+                <img src="img/20.jpg" alt="" class="member-item__img" data-object-fit="cover">
+                <div class="member-item__content">
+                  <h3 class="member-item__name">Ярослав Маков</h3>
+                  <p class="member-item__description">Гражданин, без определённого места жительства</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="small-column6 medium-column6 large-column4">
+              <div class="member-item  member-item--grey">
+                <img src="img/27.jpg" alt="" class="member-item__img" data-object-fit="cover">
+                <div class="member-item__content">
+                  <h3 class="member-item__name">Василий Давиденко</h3>
+                  <p class="member-item__description">Журналист, редактор издания «Polosochka.ru»</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="members">
+        <div class="members__inner">
+          <div class="row">
+            <div class="small-column6  medium-column11  large-column11">
+              <p class="section-heading">Команда администрации</p>
+              <p class="section-text  members__text hyphenate" lang="ru">Наша команда максимально эффективно справляется во всеми задачами реабилитации. Мы работаем как вот тот рабочий. </p>
+            </div>
+
+            <div class="small-column6 medium-column6  large-column4  members__item">
+              <div class="member-item">
+                <img src="img/20.jpg" alt="" class="member-item__img">
+                <div class="member-item__content">
+                  <h3 class="member-item__name">Ярослав Маков</h3>
+                  <p class="member-item__description">Гражданин, без определённого места жительства</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="small-column6 medium-column6  large-column4  members__item">
+              <div class="member-item">
+                <img src="img/27.jpg" alt="" class="member-item__img">
+                <div class="member-item__content">
+                  <h3 class="member-item__name">Василий Давиденко</h3>
+                  <p class="member-item__description">Журналист, редактор издания «Polosochka.ru»</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="small-column6 medium-column6  large-column4  members__item">
+              <div class="member-item">
+                <img src="img/5.jpg" alt="" class="member-item__img" data-object-fit="cover">
+                <div class="member-item__content">
+                  <h3 class="member-item__name">Давид Евдимошвили</h3>
+                  <p class="member-item__description">Известный художник-декоратор Галереи им. Павлова-Петрова</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="small-column6 medium-column6  large-column4  members__item">
+              <div class="member-item">
+                <img src="img/24.jpg" alt="" class="member-item__img" data-object-fit="cover">
+                <div class="member-item__content">
+                  <h3 class="member-item__name">Алина Чербоширова</h3>
+                  <p class="member-item__description">Известная актриса, телеведущая</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="small-column6 medium-column6  large-column4  members__item">
+              <div class="member-item">
+                <img src="img/61.jpg" alt="" class="member-item__img" data-object-fit="cover">
+                <div class="member-item__content">
+                  <h3 class="member-item__name">Ратмир Желеваленко</h3>
+                  <p class="member-item__description">Предприниматель, владелец компании «Супердульки Inc.»</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="small-column6 medium-column6  large-column4  members__item">
+              <div class="member-item">
+                <img src="img/20.jpg" alt="" class="member-item__img" data-object-fit="cover">
+                <div class="member-item__content">
+                  <h3 class="member-item__name">Ярослав Маков</h3>
+                  <p class="member-item__description">Гражданин, без определённого места жительства</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="small-column6 medium-column6  large-column4  members__item">
+              <div class="member-item">
+                <img src="img/27.jpg" alt="" class="member-item__img" data-object-fit="cover">
+                <div class="member-item__content">
+                  <h3 class="member-item__name">Василий Давиденко</h3>
+                  <p class="member-item__description">Журналист, редактор издания «Polosochka.ru»</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="small-column6 medium-column6  large-column4  members__item">
+              <div class="member-item">
+                <img src="img/61.jpg" alt="" class="member-item__img" data-object-fit="cover">
+                <div class="member-item__content">
+                  <h3 class="member-item__name">Ратмир Желеваленко</h3>
+                  <p class="member-item__description">Предприниматель, владелец компании «Супердульки Inc.»</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="blog__article-inner">
-          <div class="row">
-
-              <atricle class="article  small-column6  footer-medium-column6">
-                <div class="article__content">
-                  <p class="article__data">18.09.2016</p>
-                  <div class="article__cover">
-                    <img src="img/kids-outdoors.jpg" alt="" class="article__img" data-object-fit="cover">
-                    <h4 class="article__title">10 причин выбраться загород этим летом</h4>
-                  </div>
-                  <p class="article__description hyphenate" lang="ru">Что делать, если сидеть дома надоело, но нет идей чем заняться на свежем воздухе.</p>
-                  <a href="" class="link article__link">Читать статью</a>
-                </div>
-              </atricle>
-
-              <atricle class="article  small-column6  footer-medium-column6">
-                <div class="article__content">
-                <p class="article__data">16.09.2016</p>
-                <div class="article__cover">
-                  <img src="img/meeting-stickers.jpg" alt="" class="article__img" data-object-fit="cover">
-                  <h4 class="article__title">Семь способов отвлечься во время лечения</h4>
-                </div>
-                <p class="article__description hyphenate" lang="ru">Способы время провождения, которые помогут расслабиться и не думать о плохом.</p>
-                <a href="" class="link article__link">Читать статью</a>
-              </div>
-              </atricle>
-
-              <atricle class="article  small-column6  article--help">
-                <div class="article__content">
-                <p class="article__caption">Уже помогли</p>
-                <div class="article__cover">
-                  <img src="img/lisa.jpg" alt="" class="article__img" data-object-fit="cover">
-                  <h4 class="article__title">Елизавета Кантемировская</h4>
-                </div>
-                <p class="article__description hyphenate" lang="ru">В рамках проекта «Заветная мечта» мы помогли Лизе исполнить свою мечту и стать настоящей актрисой!</p>
-                <a href="" class="link article__link">Читать историю</a>
-              </div>
-              </atricle>
-
-              <atricle class="article  small-column6  footer-medium-column6">
-                <div class="article__content">
-                <p class="article__data">14.09.2016</p>
-                <div class="article__cover">
-                  <img src="img/woman-window.jpg" alt="" class="article__img" data-object-fit="cover">
-                  <h4 class="article__title">Как научиться просыпаться вовремя</h4>
-                </div>
-                <p class="article__description hyphenate" lang="ru">Как не проспать что-то важное и не чувствовать себя разбитым с утра.</p>
-                <a href="" class="link article__link">Читать статью</a>
-              </div>
-              </atricle>
-
-              <atricle class="article  small-column6  footer-medium-column6">
-                <div class="article__content">
-                <p class="article__data">06.09.2016</p>
-                <div class="article__cover">
-                  <img src="img/foods.jpg" alt="" class="article__img" data-object-fit="cover">
-                  <h4 class="article__title">Шесть вкусных и полезных рецептов</h4>
-                </div>
-                <p class="article__description hyphenate" lang="ru">Современные блюда, которые займут максимум 15 минут — готовим вместе и зовём друзей на обед.</p>
-                <a href="" class="link article__link">Читать статью</a>
-              </div>
-              </atricle>
-
-              <atricle class="article  small-column6  footer-medium-column6">
-                <div class="article__content">
-                <p class="article__data">03.09.2016</p>
-                <div class="article__cover">
-                  <img src="img/microphone.jpg" alt="" class="article__img" data-object-fit="cover">
-                  <h4 class="article__title">Как избавиться от боязни сцены</h4>
-                </div>
-                <p class="article__description hyphenate" lang="ru">Учимся выступать на публике без нервов и стресса — это очень просто!</p>
-                <a href="" class="link article__link">Читать статью</a>
-              </div>
-              </atricle>
-
-              <atricle class="article  small-column6  article--help">
-                <div class="article__content">
-                <p class="article__caption">Уже помогли</p>
-                <div class="article__cover">
-                  <img src="img/ivan.jpg" alt="" class="article__img" data-object-fit="cover">
-                  <h4 class="article__title">Иван Петренко</h4>
-                </div>
-                <p class="article__description hyphenate" lang="ru">Ваня всю жизнь мечтал стать профессиональным поваром и вчера у него появилась возможность исполнить свою мечту!</p>
-                <a href="" class="link article__link">Читать историю</a>
-              </div>
-              </atricle>
-
-              <atricle class="article  small-column6  footer-medium-column6">
-                <div class="article__content">
-                <p class="article__data">01.09.2016</p>
-                <div class="article__cover">
-                  <img src="img/people-crosswalk.jpg" alt="" class="article__img" data-object-fit="cover">
-                  <h4 class="article__title">Почему городская суета пагубно влияет на здоровье </h4>
-                </div>
-                <p class="article__description hyphenate" lang="ru">И как жить в большом городе без вреда для своего организма.</p>
-                <a href="" class="link article__link">Читать статью</a>
-              </div>
-              </atricle>
-
-              <atricle class="article  small-column6  footer-medium-column6">
-                <div class="article__content">
-                <p class="article__data">29.08.2016</p>
-                <div class="article__cover">
-                  <img src="img/signing-documents.jpg" alt="" class="article__img" data-object-fit="cover">
-                  <h4 class="article__title">На что обращать внимание в договорах и докуметнах</h4>
-                </div>
-                <p class="article__description hyphenate" lang="ru">Становясь взрослее нам приходится сталкиваться с большим количеством докуметов — на что смотреть и как обезопасить себя.</p>
-                <a href="" class="link article__link">Читать статью</a>
-              </div>
-              </atricle>
-
-              <atricle class="article  small-column6  footer-medium-column6">
-                <div class="article__content">
-                <p class="article__data">27.08.2016</p>
-                <div class="article__cover">
-                  <img src="img/kids-laptop.jpg" alt="" class="article__img" data-object-fit="cover">
-                  <h4 class="article__title">Компьютер как полезное развлечение</h4>
-                </div>
-                <p class="article__description hyphenate" lang="ru">Несколько способов использовать технологии с пользой для ума.</p>
-                <a href="" class="link article__link">Читать статью</a>
-              </div>
-              </atricle>
-
-          </div>
+        <div class="members__footer">
+          <a href="popup-members" class="link  link--carousel  members__footer-link-small" data-popup="true">смотреть Всю команду</a>
+          <a href="" class="link  link--down  members__footer-link-medium">Показать больше сотрудников</a>
         </div>
-
-          <div class="blog__footer">
-            <a href="" class="link  link--down  blog__footer-link-medium">Загрузить больше историй</a>
-            <a href="" class="link link--carousel  link--down  blog__footer-link-little">Больше историй</a>
-          </div>
       </section>
 
-      <section class="donate-sms">
-          <div class="donate-sms__bg"></div>
-          <div class="donate-sms__inner">
-              <div class="row">
-                  <div class="small-column6  medium-column7  large-column9">
-                      <p class="section-heading  section-heading--white  donate-sms__heading">Пожертвовать через СМС</p>
-                      <p class="section-text  section-text--white  donate-sms__text">Отправьте сообщение на номер <a href="sms:7715" class="donate-sms__highlight">7715</a> с кодовым словом «Нить» и суммой пожертвования.</p>
-                  </div>
-                  <div class="small-column6  medium-column5  large-column3">
-                      <div class="donate-sms__img"></div>
-                  </div>
-              </div>
+      <section class="partners-form">
+        <img src="img/meeting-notes.jpg" alt="" class="partners-form__bg"  data-object-fit="cover">
+        <div class="partners-form__inner">
+          <div class="row">
+            <div class="small-column6  medium-column11  large-column8">
+              <p class="section-heading  section-heading--white">Хотите стать частью нашей команды?</p>
+              <p class="section-text  partners-form__text hyphenate  section-text--white" lang="ru">Заполните форму ниже наш менеджер по работе с партнёрами свяжется с вами для обсуждения деталей.</p>
+            </div>
+
+            <div class="small-column6  medium-column8  large-column6">
+              <form action="" class="partners-form__form">
+                <div class="input-block partners-form__input">
+                  <input type="text" class="input-block__input" placeholder="Ваше имя">
+                </div>
+                <div class="input-block partners-form__input">
+                  <input type="text" class="input-block__input" placeholder="Контактный телефон или эл. почта">
+                </div>
+                <div class="partners-form__btn-wrap">
+                  <button class="btn">Отправить</button>
+                </div>
+              </form>
+            </div>
           </div>
+        </div>
       </section>
     </main>
 
@@ -311,7 +282,7 @@
                   <li class="detiled-menu__subitem"><a class="detiled-menu__sublink" href="">Стать волонтёром</a></li>
                 </ul>
               </li>
-              <li class="detiled-menu__item">
+              <li class="detiled-menu__item  detiled-menu__item--active">
                 <a class="detiled-menu__link" href="">О фонде</a>
                 <ul class="detiled-menu__sublist">
                   <li class="detiled-menu__subitem"><a class="detiled-menu__sublink" href="">Попечительский совет</a></li>
@@ -335,7 +306,7 @@
                   <li class="detiled-menu__subitem"><a class="detiled-menu__sublink" href="">Категория документов</a></li>
                 </ul>
               </li>
-              <li class="detiled-menu__item  detiled-menu__item--active">
+              <li class="detiled-menu__item">
                 <a class="detiled-menu__link" href="">блог</a>
                 <ul class="detiled-menu__sublist">
                   <li class="detiled-menu__subitem"><a class="detiled-menu__sublink" href="">Новости</a></li>
@@ -649,6 +620,73 @@
               </div>
           </div>
 
+      </div>
+  </div>
+
+  <div class="rehub-popup" id="popup-members">
+      <div class="rehub-popup__inner">
+          <div class="row">
+              <div class="small-column6">
+
+                  <div class="rehub-popup__header">
+                      <a href="" class="rehub-popup__back">назад</a>
+                      <a href="index.html" class="main-logo  main-logo--black  rehub-popup__main-logo">
+                          <img src="img/logo-black.svg" alt="Logo" class="main-logo__img">
+                      </a>
+                      <a class="rehub-popup__toggler" data-popups="0">
+                          <p class="rehub-popup__toggler-text">Меню</p>
+                          <span class="rehub-popup__toggler-icon"></span>
+                      </a>
+                  </div>
+
+                  <div class="rehub-popup__content">
+                      <h3 class="rehub-popup__title">Команда администрации</h3>
+                      <p class="rehub-popup__text hyphenate" lang="ru">Наша команда максимально эффективно справляется во всеми задачами реабилитации. Мы работаем как вот тот рабочий. </p>
+
+                    <div class="member-item">
+                      <img src="img/5.jpg" alt="" class="member-item__img" data-object-fit="cover">
+                      <div class="member-item__content">
+                        <h3 class="member-item__name">Давид Евдимошвили</h3>
+                        <p class="member-item__description">Известный художник-декоратор Галереи им. Павлова-Петрова</p>
+                      </div>
+                    </div>
+
+                    <div class="member-item">
+                      <img src="img/24.jpg" alt="" class="member-item__img" data-object-fit="cover">
+                      <div class="member-item__content">
+                        <h3 class="member-item__name">Алина Чербоширова</h3>
+                        <p class="member-item__description">Известная актриса, телеведущая</p>
+                      </div>
+                    </div>
+
+                    <div class="member-item">
+                      <img src="img/61.jpg" alt="" class="member-item__img" data-object-fit="cover">
+                      <div class="member-item__content">
+                        <h3 class="member-item__name">Ратмир Желеваленко</h3>
+                        <p class="member-item__description">Предприниматель, владелец компании «Супердульки Inc.»</p>
+                      </div>
+                    </div>
+
+                    <div class="member-item">
+                      <img src="img/20.jpg" alt="" class="member-item__img" data-object-fit="cover">
+                      <div class="member-item__content">
+                        <h3 class="member-item__name">Ярослав Маков</h3>
+                        <p class="member-item__description">Гражданин, без определённого места жительства</p>
+                      </div>
+                    </div>
+
+                    <div class="member-item">
+                      <img src="img/27.jpg" alt="" class="member-item__img" data-object-fit="cover">
+                      <div class="member-item__content">
+                        <h3 class="member-item__name">Василий Давиденко</h3>
+                        <p class="member-item__description">Журналист, редактор издания «Polosochka.ru»</p>
+                      </div>
+                    </div>
+
+                    <a href="" class="link  link--carousel  link--down  rehub-popup__link">больше статей</a>
+                  </div>
+              </div>
+          </div>
       </div>
   </div>
 

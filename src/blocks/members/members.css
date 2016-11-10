@@ -1,0 +1,85 @@
+.members {
+
+  &__inner {
+    @mixin container;
+
+    padding-top: 32px;
+
+    @media (min-width: $medium-breakpoint) {
+      padding-top: 40px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      padding-top: 48px;
+    }
+  }
+
+  &__text {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__item {
+    display: none;
+
+    @media (min-width: $medium-breakpoint) {
+      display: flex;
+    }
+
+    &:nth-of-type(-n+3) {
+      display: flex;
+    }
+  }
+
+  &__footer {
+    margin-top: 25px;
+    padding-bottom: 32px;
+    width: 100%;
+
+    @media (min-width: $medium-breakpoint) {
+      display: flex;
+      align-items: center;
+      background: $colder;
+      height: 77px;
+      justify-content: center;
+      margin-top: 40px;
+      padding: 0;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      height: 97px;
+      margin-top: 48px;
+    }
+  }
+
+  &__footer-link-medium {
+    display: none;
+
+    @media (min-width: $medium-breakpoint) {
+      display: block;
+      font-size: .8rem;
+      color: #969ba0;
+    }
+
+    &::after {
+      @media (min-width: $medium-breakpoint) {
+        height: 16px;
+        width: 9px;
+        top: 2px;
+        right: -15px;
+      }
+
+      @media (min-width: $large-breakpoint) {
+        height: 19px;
+        width: 11px;
+        right: -22px;
+      }
+    }
+  }
+
+  &__footer-link-small {
+    @media (min-width: $medium-breakpoint) {
+      display: none;
+    }
+  }
+}

@@ -37,7 +37,6 @@
 @import '../.././src/blocks/donate-form/donate-form.css';
 @import '../.././src/blocks/contacts/contacts.css';
 @import '../.././src/blocks/rehub-popup/rehub-popup.css';
-@import '../.././src/blocks/blog-hero/blog-hero.css';
 @import '../.././src/blocks/blog-content/blog-content.css';
 @import '../.././src/blocks/img-slider/img-slider.css';
 @import '../.././src/blocks/other-blog/other-blog.css';
@@ -50,8 +49,12 @@
 @import '../.././src/blocks/docs-hero/docs-hero.css';
 @import '../.././src/blocks/docs/docs.css';
 @import '../.././src/blocks/docs-item/docs-item.css';
-@import '../.././src/blocks/partners-hero/partners-hero.css';
+@import '../.././src/blocks/hero/hero.css';
 @import '../.././src/blocks/partner-section/partner-section.css';
 @import '../.././src/blocks/partner-item/partner-item.css';
 @import '../.././src/blocks/sponsors/sponsors.css';
 @import '../.././src/blocks/partners-form/partners-form.css';
+@import '../.././src/blocks/member-item/member-item.css';
+@import '../.././src/blocks/about/about.css';
+@import '../.././src/blocks/council/council.css';
+@import '../.././src/blocks/members/members.css';

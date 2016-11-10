@@ -1,4 +1,4 @@
-.partners-hero {
+.hero {
   height: 460px;
   position: relative;
   background: url(hands.jpg) center;
@@ -25,19 +25,60 @@
   &__inner {
     @mixin container;
 
-    padding-top: 201px;
-    position: relative;
+    position: absolute;
+    bottom: 48px;
 
     @media (min-width: $medium-breakpoint) {
-      padding-top: 289px;
+      bottom: 60px;
     }
 
     @media (min-width: $large-breakpoint) {
-      padding-top: 356px;
+      bottom: 72px;
+    }
+  }
+
+  &__name {
+    font-family: $ptsans;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  &__data {
+    position: absolute;
+    right: 1rem;
+    top: -3px;
+    font-family: $ptsans;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0.65px;
+    color: #6b7277;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 3px;
+    padding: 5px 8px;
+    z-index: 1;
+
+    @media (min-width: $medium-breakpoint) {
+      position: static;
+      font-size: 16px;
+      letter-spacing: 0.8px;
+      padding: 6px 13px;
+      margin-top: 40px;
+      float: left;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      font-size: 19px;
+      padding: 7px 16px;
+      letter-spacing: 0.95px;
+      margin-top: 47px;
     }
   }
 
   &__caption {
+    margin-top: 1rem;
     font-family: $ptsans-caption;
     color: #fff;
     position: relative;
@@ -77,6 +118,24 @@
       font-size: 24px;
       line-height: 36px;
       margin-top: 23px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    z-index: 2;
+    margin-top: 24px;
+
+    &:hover {
+      color: $scarlet;
+    }
+
+    @media (min-width: $medium-breakpoint) {
+      margin-top: 40px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      margin-top: 48px;
     }
   }
 }

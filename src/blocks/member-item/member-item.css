@@ -1,0 +1,74 @@
+.member-item {
+  margin-top: 1rem;
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 3px;
+  padding: 17px 17px 21px;
+  display: flex;
+  background: #fff;
+
+  @media (min-width: $medium-breakpoint) {
+    padding: 21px 30px;
+    height: 132px;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: $large-breakpoint) {
+    height: 152px;
+    padding: 25px 37px;
+  }
+
+  &__img {
+    height: 52px;
+    width: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    @media (min-width: $medium-breakpoint) {
+      height: 60px;
+      width: 60px;
+    }
+  }
+
+  &__content {
+    margin-left: 1rem;
+    margin-top: 9px;
+
+    @media (min-width: $large-breakpoint) {
+      margin-top: 0;
+    }
+  }
+
+  &__name {
+    font-family: $ptsans;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    color: #041b26;
+
+    @media (min-width: $large-breakpoint) {
+      font-size: 19px;
+    }
+  }
+
+  &__description {
+    font-family: $ptsans;
+    font-size: 13px;
+    line-height: 17px;
+    color: #485155;
+
+    @media (min-width: $medium-breakpoint) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      font-size: 19px;
+      line-height: 24px;
+      margin-top: 8px;
+    }
+  }
+
+  &--grey {
+    background: $colder;
+  }
+}

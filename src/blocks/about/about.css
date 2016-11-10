@@ -1,0 +1,27 @@
+.about {
+  @media (min-width: $medium-breakpoint) {
+    background: #fff url(nd-pattern.svg);
+    background-size: 2560px 1821px;
+  }
+
+  &__inner {
+    @mixin container;
+
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    @media (min-width: $medium-breakpoint) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+  }
+
+  &__text {
+    margin-top: 1rem;
+  }
+}
