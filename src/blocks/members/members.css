@@ -1,4 +1,8 @@
 .members {
+  @media (min-width: $medium-breakpoint) {
+    background: #fff url(nd-pattern.svg);
+    background-size: 2560px 1821px;
+  }
 
   &__inner {
     @mixin container;
