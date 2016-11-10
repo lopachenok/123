@@ -4,7 +4,6 @@
     @mixin container;
 
     padding-top: 32px;
-    padding-bottom: 32px;
 
     @media (min-width: $medium-breakpoint) {
       padding-top: 43px;
@@ -21,10 +20,10 @@
 
   &__text {
     margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 
     @media (min-width: $medium-breakpoint) {
-      margin-bottom: 1rem;
+      margin-bottom: 11px;
     }
   }
 }
