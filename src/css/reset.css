@@ -110,7 +110,7 @@ a:hover {
 
 
 
-body {
+/*body {
   position: relative;
 
   &:after {
@@ -125,7 +125,7 @@ body {
     z-index: 7;
     top: 0;
   }
-}
+}*/
 
 
 /* stylelint-enable */
