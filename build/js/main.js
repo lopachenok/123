@@ -6,7 +6,7 @@ var mobileGlobal, touchGlobal;
 
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
  document.body.classList.add("mobile");
- mobileGlobal = true; 
+ mobileGlobal = true;
 }
 
 if(is_touch_device()) {
@@ -20,12 +20,6 @@ if ('addEventListener' in document) {
     }, false);
 }
 
-Hyphenator_Loader.init({
-    "ru": "automatically"
-  },
-  "js/Hyphenator.js"
-);
-
 (function () {
   function CustomEvent ( event, params ) {
     params = params || { bubbles: false, cancelable: false, detail: undefined };
@@ -38,6 +32,19 @@ Hyphenator_Loader.init({
 
   window.CustomEvent = CustomEvent;
 })();
+Hyphenator_Loader.init({
+    "ru": "automatically"
+  },
+  "js/Hyphenator.js"
+);
+
+document.addEventListener("DOMContentLoaded", function () {
+  var blogContent = document.querySelectorAll(".blog-content p");
+  Array.prototype.forEach.call(blogContent, function(content) {
+    content.classList.add("hyphenate");
+    content.setAttribute('lang', 'ru');
+  });
+});
 if ('objectFit' in document.documentElement.style === false) {
 	document.addEventListener('DOMContentLoaded', function () {
 		Array.prototype.forEach.call(document.querySelectorAll('img[data-object-fit]'), function (image) {

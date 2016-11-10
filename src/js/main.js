@@ -1,4 +1,5 @@
 //= detect.js
+//= hyphenate.js
 //= object-fit-polyfill.js
 //= ../blocks/dropdown/dropdown.js
 //= ../blocks/video/video.js

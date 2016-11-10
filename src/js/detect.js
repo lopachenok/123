@@ -6,7 +6,7 @@ var mobileGlobal, touchGlobal;
 
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
  document.body.classList.add("mobile");
- mobileGlobal = true; 
+ mobileGlobal = true;
 }
 
 if(is_touch_device()) {
@@ -19,12 +19,6 @@ if ('addEventListener' in document) {
         FastClick.attach(document.body);
     }, false);
 }
-
-Hyphenator_Loader.init({
-    "ru": "automatically"
-  },
-  "js/Hyphenator.js"
-);
 
 (function () {
   function CustomEvent ( event, params ) {

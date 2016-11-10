@@ -265,4 +265,40 @@
       }
     }
   }
+
+  .section-heading {
+    font-family: $ptsans-caption;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.15;
+    color: $midnight;
+    margin-top: 0;
+
+    @media (min-width: $medium-breakpoint) {
+      line-height: 1.18;
+    }
+
+    &--white {
+      color: #fff;
+    }
+  }
+
+  &--volonteer .blog-content__inner {
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    @media (min-width: $medium-breakpoint) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+
+    p {
+      width: 100%;
+    }
+  }
 }

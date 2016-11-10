@@ -27,4 +27,44 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
+
+  &__footer-link-medium {
+    display: none;
+
+    @media (min-width: $medium-breakpoint) {
+      display: block;
+      font-size: .8rem;
+      color: #969ba0;
+      margin-top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @media (min-width: $large-breakpoint) {
+      margin-top: 36px;
+    }
+
+    &::after {
+      @media (min-width: $medium-breakpoint) {
+        height: 16px;
+        width: 9px;
+        top: 2px;
+        right: -15px;
+      }
+
+      @media (min-width: $large-breakpoint) {
+        height: 19px;
+        width: 11px;
+        right: -22px;
+      }
+    }
+  }
+
+  &__footer-link-small {
+    margin-top: 24px;
+
+    @media (min-width: $medium-breakpoint) {
+      display: none;
+    }
+  }
 }
