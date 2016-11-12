@@ -666,7 +666,7 @@
     max-width: none;
     justify-content: flex-start;
     left: 0;
-    overflow-x: scroll;
+    overflow-x: auto;
     transform: translateX(0) !important;
     height: 40px;
 

@@ -489,14 +489,14 @@ function HammerCarousel(container, direction) {
         var dividier = this.tabs.children[this.tabs.children.length - 1];
         var self = this;
 
-        setTimeout(function() {
+        //setTimeout(function() {
           Array.prototype.forEach.call(self.tabs.children, function(tab) {
             tabsObj.push(tab.clientWidth);
           });
           var padding = window.getComputedStyle(self.tabs.children[showIndex]).paddingRight;
           dividier.style.width = tabsObj[showIndex] - parseInt(padding) + 'px';
           dividier.style.left = self.tabs.children[showIndex].offsetLeft + 1 + 'px';
-        }, 1000);
+        //}, 1000);
 
 
         var summ = 0;
