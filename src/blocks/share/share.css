@@ -93,6 +93,7 @@
       .share__icon {
         height: 20px;
         width: 22px;
+        background: url(vk.svg);
       }
     }
 
