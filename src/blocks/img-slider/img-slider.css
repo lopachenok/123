@@ -177,6 +177,17 @@
         left: 35px;
       }
     }
+
+    @media (min-width: $large-breakpoint) {
+
+      &--right {
+        right: calc(9.3% + 35px);
+      }
+
+      &--left {
+        left: calc(-9.3% + 35px);
+      }
+    }
   }
 
   &__scroll-button {

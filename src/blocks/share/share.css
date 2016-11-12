@@ -18,17 +18,39 @@
     padding-bottom: 48px;
   }
 
-  &__btn {
+  .social-likes__widget {
     width: 85px;
     height: 30px;
-    border-radius: 100px;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, .3);
     border: none;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     box-sizing: border-box;
+    cursor: pointer;
+    background: transparent;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block !important;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      border-radius: 100px;
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, .3);
+      transition: all .3s ease;
+      transform: scale(1);
+    }
+
+    &:hover {
+
+      &::before {
+        transform: scale(1.05, 1.2);
+      }
+    }
 
     @media (min-width: $medium-breakpoint) {
       width: 210px;
@@ -48,6 +70,10 @@
     .share__icon {
       display: block;
 
+      @media (min-width: $medium-breakpoint) {
+        margin-right: 18px;
+      }
+
       svg {
         height: 100%;
         width: 100%;
@@ -58,8 +84,11 @@
       }
     }
 
-    &--vk {
-      background: #426b9a;
+    &_vkontakte {
+
+      &::before {
+        background: #426b9a;
+      }
 
       .share__icon {
         height: 20px;
@@ -67,8 +96,11 @@
       }
     }
 
-    &--fb {
-      background: #4c68b3;
+    &_facebook {
+
+      &::before {
+        background: #4c68b3;
+      }
 
       .share__icon {
         height: 20px;
@@ -76,13 +108,31 @@
       }
     }
 
-    &--tw {
-      background: #00abed;
+    &_twitter {
+
+      &::before {
+        background: #00abed;
+      }
 
       .share__icon {
         height: 22px;
         width: 20px;
       }
+    }
+  }
+
+  .social-likes__icon {
+    display: none !important;
+  }
+
+  .social-likes__button {
+    display: flex;
+    padding: 0;
+    width: 100%;
+    justify-content: center;
+
+    @media (min-width: $medium-breakpoint) {
+      justify-content: flex-start;
     }
   }
 
@@ -93,17 +143,19 @@
       display: block;
       font-family: $ptsans;
       font-size: 16px;
-      line-height: 16px;
+      line-height: 20px;
       color: #f0f1f2;
     }
 
     @media (min-width: $large-breakpoint) {
       font-size: 19px;
+      line-height: 20px;
     }
   }
 
-  &__counter {
+  .social-likes__counter {
     display: none;
+    border-left: none;
 
     @media (min-width: $medium-breakpoint) {
       display: block;
