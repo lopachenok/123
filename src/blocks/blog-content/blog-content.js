@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var blogContentImg = document.querySelectorAll('.blog-content img');
   var wrapEl = document.createElement('div');
   wrapEl.classList.add('img-slider');
+  wrapEl.classList.add('carousel__container--start');
   var imgs = [];
 
   Array.prototype.forEach.call(blogContentImg, function(img) {

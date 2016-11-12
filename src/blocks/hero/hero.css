@@ -54,14 +54,16 @@
     font-size: 13px;
     line-height: 16px;
     letter-spacing: 0.65px;
-    color: #6b7277;
+    color: #969ba0;
     background: rgba(0, 0, 0, .5);
     border-radius: 3px;
     padding: 5px 8px;
     z-index: 1;
 
     @media (min-width: $medium-breakpoint) {
-      position: static;
+      position: relative;
+      top: 0;
+      right: 0;
       font-size: 16px;
       letter-spacing: 0.8px;
       padding: 6px 13px;

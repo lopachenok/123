@@ -2,8 +2,6 @@
 <html lang="ru-RU">
 @@include('include/head.html')
 <body>
-@@include('include/bottom.html')
-</body>
   <div class="wrapper" id="wrapper">
     <header class="page-header">
       <div class="page-header__inner">
@@ -16,13 +14,14 @@
 
             <nav class="main-menu">
               <ul class="main-menu__list">
-                <li class="main-menu__item"><a href="" class="main-menu__link">Проекты</a></li>
-                <li class="main-menu__item  main-menu__item--active"><a href="" class="main-menu__link">Волонтёрство</a></li>
-                <li class="main-menu__item"><a href="" class="main-menu__link">О фонде</a></li>
-                <li class="main-menu__item"><a href="" class="main-menu__link">Партнёры</a></li>
-                <li class="main-menu__item"><a href="" class="main-menu__link">Документы</a></li>
-                <li class="main-menu__item"><a href="" class="main-menu__link">Блог</a></li>
+                <li class="main-menu__item"><a href="/project.html" class="main-menu__link">Проекты</a></li>
+                <li class="main-menu__item  main-menu__item--active"><a href="/volonteer.html" class="main-menu__link">Волонтёрство</a></li>
+                <li class="main-menu__item"><a href="/about.html" class="main-menu__link">О фонде</a></li>
+                <li class="main-menu__item"><a href="/partners.html" class="main-menu__link">Партнёры</a></li>
+                <li class="main-menu__item"><a href="/docs.html" class="main-menu__link">Документы</a></li>
+                <li class="main-menu__item"><a href="/blog.html" class="main-menu__link">Блог</a></li>
               </ul>
+
 
               <a class="main-menu__toggler" data-popups="0">
                 <p class="main-menu__toggler-text">Меню</p>
@@ -604,4 +603,7 @@
   </div>
 
 </div>
+
+@@include('include/bottom.html')
+</body>
 </html>

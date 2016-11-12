@@ -170,11 +170,11 @@
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
       &--right {
-        right: calc(9.3% + 35px);
+        right: 35px;
       }
 
       &--left {
-        left: calc(-9.3% + 35px);
+        left: 35px;
       }
     }
   }
