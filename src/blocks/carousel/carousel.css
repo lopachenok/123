@@ -702,6 +702,10 @@
 
   .carousel__tab {
     color: #fff;
+
+    &:hover {
+      color: $scarlet;
+    }
   }
 
   .carousel__tab:last-of-type::before {
