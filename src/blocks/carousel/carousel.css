@@ -733,3 +733,55 @@
 .mobile .carousel--docs .carousel__tab-dividier {
   bottom: 15px;
 }
+
+.carousel--about {
+
+  .carousel__tabs {
+    width: 320px;
+
+    @media (min-width: $medium-breakpoint) {
+      width: auto;
+    }
+  }
+
+  .carousel__tabs-container {
+    left: 0;
+  }
+
+  .carousel__tabs-container::before,
+  .carousel__tabs-container::after {
+    display: none;
+  }
+
+  .carousel__tabs {
+
+    .medium {
+      display: none;
+
+      @media (min-width: $medium-breakpoint) {
+        display: inline-block;
+      }
+    }
+
+    .small {
+      @media (min-width: $medium-breakpoint) {
+        display: none;
+      }
+    }
+  }
+
+  .carousel__tab:first-of-type.carousel__tab--active ~ .carousel__tab:last-of-type::before {
+    width: 126px;
+    left: -159px;
+
+    @media (min-width: $medium-breakpoint) {
+      width: 263px;
+      left: -301px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      width: 313px;
+      left: -384px;
+    }
+  }
+}

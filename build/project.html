@@ -1,4 +1,4 @@
-/nit-dobra/build<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru-RU">
 <head>
   <meta charset="UTF-8">
@@ -25,12 +25,12 @@
 
             <nav class="main-menu">
               <ul class="main-menu__list">
-                <li class="main-menu__item"><a href="/nit-dobra/build/project.html" class="main-menu__link">Проекты</a></li>
-                <li class="main-menu__item"><a href="/nit-dobra/build/volonteer.html" class="main-menu__link">Волонтёрство</a></li>
-                <li class="main-menu__item"><a href="/nit-dobra/build/about.html" class="main-menu__link">О фонде</a></li>
-                <li class="main-menu__item"><a href="/nit-dobra/build/partners.html" class="main-menu__link">Партнёры</a></li>
-                <li class="main-menu__item"><a href="/nit-dobra/build/docs.html" class="main-menu__link">Документы</a></li>
-                <li class="main-menu__item   main-menu__item--active"><a href="/nit-dobra/build/blog.html" class="main-menu__link">Блог</a></li>
+                <li class="main-menu__item  main-menu__item--active"><a href="/project.html" class="main-menu__link">Проекты</a></li>
+                <li class="main-menu__item"><a href="/volonteer.html" class="main-menu__link">Волонтёрство</a></li>
+                <li class="main-menu__item"><a href="/about.html" class="main-menu__link">О фонде</a></li>
+                <li class="main-menu__item"><a href="/partners.html" class="main-menu__link">Партнёры</a></li>
+                <li class="main-menu__item"><a href="/docs.html" class="main-menu__link">Документы</a></li>
+                <li class="main-menu__item"><a href="/blog.html" class="main-menu__link">Блог</a></li>
               </ul>
 
               <a class="main-menu__toggler" data-popups="0">
@@ -45,38 +45,163 @@
     </header>
     <main>
 
-      <section class="hero"  style="background: url(img/happy-book.jpg) center; background-size: cover;">
+      <section class="hero" style="background: url(img/project1.jpg) center; background-size: cover;">
         <div class="hero__inner">
           <div class="row">
-            <div class="small-column6  medium-column11  large-column9">
-              <p class="hero__name">Избранная статья</p>
-              <h1 class="hero__caption">Как 30 минут чтения поднимет настроение</h1>
-            </div>
-            <div class="small-column6  medium-column11  large-column10">
-              <p class="hero__description  hyphenate  hide-for-small" lang="ru">Отложите ноутбуки и телефоны, выйдите из дома и возьмите с собой книгу. Хорошее настроение — гарантировано. </p>
-            </div>
-            <div class="small-column6  medium-column11  large-column10">
-              <a href="" class="link  link--white  hero__link">Читать статью</a>
+            <div class="small-column6">
+              <img src="img/dreem_logo.svg" alt="" class="hero__logo" data-object-fit="cover">
+              <p class="hero__description  hero__description--center">Уникальная возможность для детей и подростков попробовать себя в профессии мечты.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="blog-help">
-        <div class="blog-help__inner">
+      <section class="video-section  video-section--padding">
+          <img src="img/founders.jpg" alt="" class="video-section__image">
+          <div class="video-section__inner">
+            <div class="row  row--centred">
+              <div class="small-column6  medium-column12  large-column8">
+                <div class="video" id="video-player">
+                  <video class="video__item" controls>
+                    <source src="video/videoplayback.mp4" type="video/mp4">
+                  </video>
+                  <img src="img/founders.jpg" alt="" class="video__preview" data-object-fit="cover">
+                  <span class="video__controls-play">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 75 75"><defs><style>.cls-1{opacity:0.3;}.cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><title>Asset 6</title><g id="Layer_2" data-name="Layer 2"><g id="index_320px" data-name="index@320px"><g id="video"><g id="player"><image class="cls-1" width="75" height="75" xlink:href="data:image/png;base64,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"/><g id="play-icon"><circle class="cls-2" cx="36.2" cy="37" r="30"/><polygon class="cls-2" points="31.95 49.49 44.45 36.99 31.95 24.5 31.95 49.49"/></g></g></g></g></g></svg>
+                  </span>
+                </div>
+                <p class="video-section__text">Основатели фонда Василий Петров и Семён Ефременко о проекте «Заветная мечта»</p>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <section class="about-project">
+        <div class="about-project__inner">
           <div class="row">
-            <div class="medium-column11">
-                <p class="section-heading  blog-help__heading">Уже помогли</p>
-                <p class="section-text  blog-help__text hyphenate" lang="ru">Посмотрите истории из наших подопечных и узнайте, как наши проекты помогают им вернуться в жизнь.</p>
+            <div class="small-column6  medium-column11">
+                <p class="section-heading">О проекте</p>
+                <p class="section-text  about-project__text hyphenate" lang="ru">Пример текста или описания к этому разделу. Информация о фонде, послание от основателей, история создания. Здесь можно написать много чего интересного. </p>
+                <p class="section-text  about-project__text hyphenate" lang="ru">Наш фонд основан в 1996 году, двумя студентами из ПГБСУ — Алексеем Петровым и Валерием Сифоновым. Тогда мы решили, что фонд это интересное и важное дело, и потому написали этот очень странный текст. </p>
             </div>
           </div>
         </div>
-        <div class="carousel  blog-help__carousel"  >
+        <div class="carousel  about-project__carousel  carousel--about" id="carousel">
+
+            <div class="carousel__tabs-container">
+                <div class="carousel__tabs" id="tabs">
+                    <a href="" class="carousel__tab" data-tab="0"><span class="small">мероприятия</span><span class="medium">мероприятия проекта</span></a>
+                    <a href="" class="carousel__tab" data-tab="1">уже помогли</a>
+                </div>
+            </div>
 
             <div class="carousel__inner">
-                <div class="carousel__container  carousel__container--start">
+                <div class="carousel__container  carousel__container--start" id="carousel-container">
 
-                    <section class="carousel__content  carousel__content--active" id="carousel-article-content">
+                    <section class="carousel__content  carousel__content--active">
+                        <div class="row  row--no-wrap">
+
+                            <div class="carousel__column  small-column6  medium-column5  large-column4">
+                                <div class="event-card  carousel__event">
+                                    <div class="event-card__main">
+                                        <img src="img/paris.jpg" alt="" class="event-card__img" data-object-fit="cover">
+                                        <p class="event-card__date">17 сентября</p>
+
+                                        <div class="event-card__content">
+                                            <h3 class="event-card__title">Парижский вечер</h3>
+                                            <p class="event-card__description hyphenate" lang="ru">Окунёмся в атмосферу мягких французских булок и выпьем чаю. Специальными гостями будут какие-то французы.</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="event-card__footer"><a href="" class="event-card__link  link link--white  link--small">Записаться</a></div>
+                                </div>
+                            </div>
+
+                            <div class="carousel__column  small-column6  medium-column5  large-column4">
+                                <div class="event-card  carousel__event">
+                                    <div class="event-card__main">
+                                        <img src="img/volunteer-supplies.jpg" alt="" class="event-card__img" data-object-fit="cover">
+                                        <p class="event-card__date">22 сентября</p>
+
+                                        <div class="event-card__content">
+                                            <h3 class="event-card__title">Большой субботник во Всеволожске</h3>
+                                            <p class="event-card__description hyphenate" lang="ru">В эту субботу мы едем помогать ребятам из 31-й больницы Всеволожского района делать свой город чище.</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="event-card__footer"><a href="" class="event-card__link  link link--white  link--small">Записаться</a></div>
+                                </div>
+                            </div>
+
+                            <div class="carousel__column  small-column6  medium-column5  large-column4">
+                                <div class="event-card  carousel__event">
+                                    <div class="event-card__main">
+                                        <img src="img/microphone.jpg" alt="" class="event-card__img" data-object-fit="cover">
+                                        <p class="event-card__date">2 октября</p>
+
+                                        <div class="event-card__content">
+                                            <h3 class="event-card__title">Вечер караоке</h3>
+                                            <p class="event-card__description hyphenate" lang="ru">Каждый четверг наши ребята устраивают настоящий концерт! Готовьте тексты, у нас будет весело.</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="event-card__footer"><a href="" class="event-card__link  link link--white  link--small">Записаться</a></div>
+                                </div>
+                            </div>
+
+                            <div class="carousel__column  small-column6  medium-column5  large-column4">
+                                <div class="event-card  carousel__event">
+                                    <div class="event-card__main">
+                                        <img src="img/paris.jpg" alt="" class="event-card__img" data-object-fit="cover">
+                                        <p class="event-card__date">17 сентября</p>
+
+                                        <div class="event-card__content">
+                                            <h3 class="event-card__title">Парижский вечер</h3>
+                                            <p class="event-card__description hyphenate" lang="ru">Окунёмся в атмосферу мягких французских булок и выпьем чаю. Специальными гостями будут какие-то французы.</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="event-card__footer"><a href="" class="event-card__link  link link--white  link--small">Записаться</a></div>
+                                </div>
+                            </div>
+
+                            <div class="carousel__column  small-column6  medium-column5  large-column4">
+                                <div class="event-card  carousel__event">
+                                    <div class="event-card__main">
+                                        <img src="img/volunteer-supplies.jpg" alt="" class="event-card__img" data-object-fit="cover">
+                                        <p class="event-card__date">22 сентября</p>
+
+                                        <div class="event-card__content">
+                                            <h3 class="event-card__title">Большой субботник во Всеволожске</h3>
+                                            <p class="event-card__description hyphenate" lang="ru">В эту субботу мы едем помогать ребятам из 31-й больницы Всеволожского района делать свой город чище.</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="event-card__footer"><a href="" class="event-card__link  link link--white  link--small">Записаться</a></div>
+                                </div>
+                            </div>
+
+                            <div class="carousel__column  small-column6  medium-column5  large-column4">
+                                <div class="event-card  carousel__event">
+                                    <div class="event-card__main">
+                                        <img src="img/microphone.jpg" alt="" class="event-card__img" data-object-fit="cover">
+                                        <p class="event-card__date">2 октября</p>
+
+                                        <div class="event-card__content">
+                                            <h3 class="event-card__title">Вечер караоке</h3>
+                                            <p class="event-card__description hyphenate" lang="ru">Каждый четверг наши ребята устраивают настоящий концерт! Готовьте тексты, у нас будет весело.</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="event-card__footer"><a href="" class="event-card__link  link link--white  link--small">Записаться</a></div>
+                                </div>
+                            </div>
+
+                            <a href="popup-events" class="carousel__link  link  link--carousel" data-popup="true">смотреть Все мероприятия</a>
+                        </div>
+                    </section>
+
+                    <section class="carousel__content">
                         <div class="row  row--no-wrap">
 
                             <div class="carousel__column  small-column6  medium-column5  large-column4">
@@ -137,161 +262,76 @@
         </div>
       </section>
 
-      <section class="blog">
-        <div class="blog__inner">
+      <section class="history-project">
+        <div class="history-project__inner">
           <div class="row">
             <div class="small-column6  medium-column11">
-              <p class="section-heading  blog__heading">Блог фонда</p>
-              <p class="section-text  blog__text hyphenate" lang="ru">Новости, истории, полезные советы и все яркие моменты жизни нашего фонда.</p>
+              <p class="section-heading">История проекта</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="small-column6  medium-column11  large-column6">
+              <p class="section-text  history-project__text hyphenate" lang="ru">Пример текста или описания к этому разделу. Информация о фонде, послание от основателей, история создания. Здесь можно написать много чего интересного. Информация о фонде, послание от основателей, история создания.</p>
+              <p class="section-text  history-project__text hyphenate" lang="ru">Наш фонд основан в 1996 году, двумя студентами из ПГБСУ — Алексеем Петровым и Валерием Сифоновым. Тогда мы решили, что фонд это интересное и важное дело, и потому написали этот очень странный текст. Информация о фонде, послание от основателей, история создания. Здесь можно написать много чего интересного.</p>
+              <p class="section-text  history-project__text hyphenate" lang="ru">Здесь можно написать много чего интересного. Информация о фонде, послание от основателей, история создания. Пример текста или описания к этому разделу. </p>
+            </div>
+            <div class="small-column6  medium-column9  medium-column-offset1  large-column6  large-no-offset">
+                <div class="timeline  history-project__timeline">
+                  <div class="timeline__item">
+                    <h4 class="timeline__date">22 сентября 2014</h4>
+                    <p class="timeline__description">Мы собрали среди знакомых команду волонтёров для помощи онкобольным детям</p>
+                  </div>
+                  <div class="timeline__item">
+                    <h4 class="timeline__date">6 января 2015</h4>
+                    <p class="timeline__description">Мы помогли уже 100 детям в детских домах и больницах Санкт-Петербурга</p>
+                  </div>
+                  <div class="timeline__item">
+                    <h4 class="timeline__date">18 августа 2015</h4>
+                    <p class="timeline__description">Придумали название «Нить Добра»</p>
+                  </div>
+                  <div class="timeline__item">
+                    <h4 class="timeline__date">13 декабря 2015</h4>
+                    <p class="timeline__description">Получили официальный статус волонтёрской организации</p>
+                  </div>
+                  <div class="timeline__item">
+                    <h4 class="timeline__date">12 марта 2016</h4>
+                    <p class="timeline__description">Стали полноценным благотворительным фондом!</p>
+                  </div>
+                  <div class="timeline__item">
+                    <h4 class="timeline__date">Сейчас</h4>
+                    <p class="timeline__description">Ведём 3 проекта, исполнили мечты более 30 подопечных, работаем над созданием своего пространства в Санкт-Петербурге.</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="partners-form">
+        <img src="img/volunteers-balloons.jpg" alt="" class="partners-form__bg"  data-object-fit="cover">
+        <div class="partners-form__inner">
+          <div class="row">
+            <div class="small-column6  medium-column11  large-column8">
+              <p class="section-heading  section-heading--white">Мечтаешь попробовать себя в профессии?</p>
+              <p class="section-text  partners-form__text hyphenate  section-text--white" lang="ru">Мы осуществим профессиональные мечты всех детей в радиусе двадцати километров. Хочешь, не хочешь — работать придётся. </p>
+            </div>
+
+            <div class="small-column6  medium-column8  large-column6">
+              <form action="" class="partners-form__form">
+                <div class="input-block partners-form__input">
+                  <input type="text" class="input-block__input" placeholder="Ваше имя">
+                </div>
+                <div class="input-block partners-form__input">
+                  <input type="text" class="input-block__input" placeholder="Контактный телефон или эл. почта">
+                </div>
+                <div class="partners-form__btn-wrap">
+                  <button class="btn">Отправить</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
-
-        <div class="blog__article-inner">
-          <div class="row">
-
-              <atricle class="article  small-column6  footer-medium-column6">
-                <div class="article__content">
-                  <p class="article__data">18.09.2016</p>
-                  <div class="article__cover">
-                    <img src="img/kids-outdoors.jpg" alt="" class="article__img" data-object-fit="cover">
-                    <h4 class="article__title">10 причин выбраться загород этим летом</h4>
-                  </div>
-                  <p class="article__description hyphenate" lang="ru">Что делать, если сидеть дома надоело, но нет идей чем заняться на свежем воздухе.</p>
-                  <a href="" class="link article__link">Читать статью</a>
-                </div>
-              </atricle>
-
-              <atricle class="article  small-column6  footer-medium-column6">
-                <div class="article__content">
-                <p class="article__data">16.09.2016</p>
-                <div class="article__cover">
-                  <img src="img/meeting-stickers.jpg" alt="" class="article__img" data-object-fit="cover">
-                  <h4 class="article__title">Семь способов отвлечься во время лечения</h4>
-                </div>
-                <p class="article__description hyphenate" lang="ru">Способы время провождения, которые помогут расслабиться и не думать о плохом.</p>
-                <a href="" class="link article__link">Читать статью</a>
-              </div>
-              </atricle>
-
-              <atricle class="article  small-column6  article--help">
-                <div class="article__content">
-                <p class="article__caption">Уже помогли</p>
-                <div class="article__cover">
-                  <img src="img/lisa.jpg" alt="" class="article__img" data-object-fit="cover">
-                  <h4 class="article__title">Елизавета Кантемировская</h4>
-                </div>
-                <p class="article__description hyphenate" lang="ru">В рамках проекта «Заветная мечта» мы помогли Лизе исполнить свою мечту и стать настоящей актрисой!</p>
-                <a href="" class="link article__link">Читать историю</a>
-              </div>
-              </atricle>
-
-              <atricle class="article  small-column6  footer-medium-column6">
-                <div class="article__content">
-                <p class="article__data">14.09.2016</p>
-                <div class="article__cover">
-                  <img src="img/woman-window.jpg" alt="" class="article__img" data-object-fit="cover">
-                  <h4 class="article__title">Как научиться просыпаться вовремя</h4>
-                </div>
-                <p class="article__description hyphenate" lang="ru">Как не проспать что-то важное и не чувствовать себя разбитым с утра.</p>
-                <a href="" class="link article__link">Читать статью</a>
-              </div>
-              </atricle>
-
-              <atricle class="article  small-column6  footer-medium-column6">
-                <div class="article__content">
-                <p class="article__data">06.09.2016</p>
-                <div class="article__cover">
-                  <img src="img/foods.jpg" alt="" class="article__img" data-object-fit="cover">
-                  <h4 class="article__title">Шесть вкусных и полезных рецептов</h4>
-                </div>
-                <p class="article__description hyphenate" lang="ru">Современные блюда, которые займут максимум 15 минут — готовим вместе и зовём друзей на обед.</p>
-                <a href="" class="link article__link">Читать статью</a>
-              </div>
-              </atricle>
-
-              <atricle class="article  small-column6  footer-medium-column6">
-                <div class="article__content">
-                <p class="article__data">03.09.2016</p>
-                <div class="article__cover">
-                  <img src="img/microphone.jpg" alt="" class="article__img" data-object-fit="cover">
-                  <h4 class="article__title">Как избавиться от боязни сцены</h4>
-                </div>
-                <p class="article__description hyphenate" lang="ru">Учимся выступать на публике без нервов и стресса — это очень просто!</p>
-                <a href="" class="link article__link">Читать статью</a>
-              </div>
-              </atricle>
-
-              <atricle class="article  small-column6  article--help">
-                <div class="article__content">
-                <p class="article__caption">Уже помогли</p>
-                <div class="article__cover">
-                  <img src="img/ivan.jpg" alt="" class="article__img" data-object-fit="cover">
-                  <h4 class="article__title">Иван Петренко</h4>
-                </div>
-                <p class="article__description hyphenate" lang="ru">Ваня всю жизнь мечтал стать профессиональным поваром и вчера у него появилась возможность исполнить свою мечту!</p>
-                <a href="" class="link article__link">Читать историю</a>
-              </div>
-              </atricle>
-
-              <atricle class="article  small-column6  footer-medium-column6">
-                <div class="article__content">
-                <p class="article__data">01.09.2016</p>
-                <div class="article__cover">
-                  <img src="img/people-crosswalk.jpg" alt="" class="article__img" data-object-fit="cover">
-                  <h4 class="article__title">Почему городская суета пагубно влияет на здоровье </h4>
-                </div>
-                <p class="article__description hyphenate" lang="ru">И как жить в большом городе без вреда для своего организма.</p>
-                <a href="" class="link article__link">Читать статью</a>
-              </div>
-              </atricle>
-
-              <atricle class="article  small-column6  footer-medium-column6">
-                <div class="article__content">
-                <p class="article__data">29.08.2016</p>
-                <div class="article__cover">
-                  <img src="img/signing-documents.jpg" alt="" class="article__img" data-object-fit="cover">
-                  <h4 class="article__title">На что обращать внимание в договорах и докуметнах</h4>
-                </div>
-                <p class="article__description hyphenate" lang="ru">Становясь взрослее нам приходится сталкиваться с большим количеством докуметов — на что смотреть и как обезопасить себя.</p>
-                <a href="" class="link article__link">Читать статью</a>
-              </div>
-              </atricle>
-
-              <atricle class="article  small-column6  footer-medium-column6">
-                <div class="article__content">
-                <p class="article__data">27.08.2016</p>
-                <div class="article__cover">
-                  <img src="img/kids-laptop.jpg" alt="" class="article__img" data-object-fit="cover">
-                  <h4 class="article__title">Компьютер как полезное развлечение</h4>
-                </div>
-                <p class="article__description hyphenate" lang="ru">Несколько способов использовать технологии с пользой для ума.</p>
-                <a href="" class="link article__link">Читать статью</a>
-              </div>
-              </atricle>
-
-          </div>
-        </div>
-
-          <div class="blog__footer">
-            <a href="" class="link  link--down  blog__footer-link-medium">Загрузить больше историй</a>
-            <a href="" class="link link--carousel  link--down  blog__footer-link-little">Больше историй</a>
-          </div>
-      </section>
-
-      <section class="donate-sms">
-          <div class="donate-sms__bg"></div>
-          <div class="donate-sms__inner">
-              <div class="row">
-                  <div class="small-column6  medium-column7  large-column9">
-                      <p class="section-heading  section-heading--white  donate-sms__heading">Пожертвовать через СМС</p>
-                      <p class="section-text  section-text--white  donate-sms__text">Отправьте сообщение на номер <a href="sms:7715" class="donate-sms__highlight">7715</a> с кодовым словом «Нить» и суммой пожертвования.</p>
-                  </div>
-                  <div class="small-column6  medium-column5  large-column3">
-                      <div class="donate-sms__img"></div>
-                  </div>
-              </div>
-          </div>
       </section>
     </main>
 
@@ -320,7 +360,7 @@
                   <li class="detiled-menu__subitem"><a class="detiled-menu__sublink" href="">Стать волонтёром</a></li>
                 </ul>
               </li>
-              <li class="detiled-menu__item">
+              <li class="detiled-menu__item  detiled-menu__item--active">
                 <a class="detiled-menu__link" href="">О фонде</a>
                 <ul class="detiled-menu__sublist">
                   <li class="detiled-menu__subitem"><a class="detiled-menu__sublink" href="">Попечительский совет</a></li>
@@ -344,7 +384,7 @@
                   <li class="detiled-menu__subitem"><a class="detiled-menu__sublink" href="">Категория документов</a></li>
                 </ul>
               </li>
-              <li class="detiled-menu__item  detiled-menu__item--active">
+              <li class="detiled-menu__item">
                 <a class="detiled-menu__link" href="">блог</a>
                 <ul class="detiled-menu__sublist">
                   <li class="detiled-menu__subitem"><a class="detiled-menu__sublink" href="">Новости</a></li>
@@ -661,7 +701,172 @@
       </div>
   </div>
 
+  <div class="rehub-popup" id="popup-events">
+      <div class="rehub-popup__inner">
+          <div class="row">
+              <div class="small-column6">
+
+                  <div class="rehub-popup__header">
+                      <a href="" class="rehub-popup__back">назад</a>
+                      <a href="index.html" class="main-logo  rehub-popup__main-logo">
+                          <img src="img/logo-black.svg" alt="Logo" class="main-logo__img">
+                      </a>
+                      <a class="rehub-popup__toggler" data-popups="0">
+                          <p class="rehub-popup__toggler-text">Меню</p>
+                          <span class="rehub-popup__toggler-icon"></span>
+                      </a>
+                  </div>
+
+                  <div class="rehub-popup__content">
+                      <h3 class="rehub-popup__title">Мероприятия</h3>
+                      <p class="rehub-popup__text hyphenate" lang="ru">Каждую неделю мы устраиваем встречи в нашем пространстве, чтобы узнать друг друга лучше и хорошо проводить время.</p>
+
+                      <div class="rehub-popup__container">
+                          <h4 class="rehub-popup__subtitle">Близжайшие</h4>
+
+                          <div class="event-card  rehub-popup__event">
+                              <div class="event-card__main">
+                                  <img src="img/paris.jpg" alt="" class="event-card__img" data-object-fit="cover">
+                                  <p class="event-card__date">17 сентября</p>
+
+                                  <div class="event-card__content">
+                                      <h3 class="event-card__title">Парижский вечер</h3>
+                                      <p class="event-card__description hyphenate" lang="ru">Окунёмся в атмосферу мягких французских булок и выпьем чаю. Специальными гостями будут какие-то французы.</p>
+                                  </div>
+
+                              </div>
+                              <div class="event-card__footer"><a href="" class="event-card__link  link link--white  link--small">Записаться</a></div>
+                          </div>
+
+                          <div class="event-card  rehub-popup__event">
+                              <div class="event-card__main">
+                                  <img src="img/volunteer-supplies.jpg" alt="" class="event-card__img" data-object-fit="cover">
+                                  <p class="event-card__date">22 сентября</p>
+
+                                  <div class="event-card__content">
+                                      <h3 class="event-card__title">Большой субботник во Всеволожске</h3>
+                                      <p class="event-card__description hyphenate" lang="ru">В эту субботу мы едем помогать ребятам из 31-й больницы Всеволожского района делать свой город чище.</p>
+                                  </div>
+
+                              </div>
+                              <div class="event-card__footer"><a href="" class="event-card__link  link link--white  link--small">Записаться</a></div>
+                          </div>
+
+                      </div>
+
+                      <div class="rehub-popup__container">
+                          <h4 class="rehub-popup__subtitle">Прошедшие</h4>
+
+                          <div class="event-card  rehub-popup__event">
+                              <div class="event-card__main">
+                                  <img src="img/kids-laptop.jpg" alt="" class="event-card__img" data-object-fit="cover">
+                                  <p class="event-card__date">30 августа</p>
+
+                                  <div class="event-card__content">
+                                      <h3 class="event-card__title">Вечер приключений</h3>
+                                      <p class="event-card__description hyphenate" lang="ru">Окунёмся в атмосферу мягких французских булок и выпьем чаю. Специальными гостями будут какие-то французы.</p>
+                                  </div>
+
+                              </div>
+                              <div class="event-card__footer"><a href="" class="event-card__link  link  link--white  link--disabled  link--small">мероприятие проведено</a></div>
+                          </div>
+
+                          <div class="event-card  rehub-popup__event">
+                              <div class="event-card__main">
+                                  <img src="img/sokolovsky.jpg" alt="" class="event-card__img" data-object-fit="cover">
+                                  <p class="event-card__date">22 сентября</p>
+
+                                  <div class="event-card__content">
+                                      <h3 class="event-card__title hyphenate" lang="ru">Чаепитие с Александром Соколовским</h3>
+                                      <p class="event-card__description hyphenate" lang="ru">В эту субботу мы едем помогать ребятам из 31-й больницы Всеволожского района делать свой город чище.</p>
+                                  </div>
+
+                              </div>
+                              <div class="event-card__footer"><a href="" class="event-card__link  link link--white  link--small">Смотреть отчет</a></div>
+                          </div>
+
+                      </div>
+
+                  </div>
+
+                  <a href="" class="link  link--carousel  link--down  rehub-popup__link">больше мероприятий</a>
+
+              </div>
+          </div>
+      </div>
   </div>
+
+  <div class="rehub-popup" id="popup-kids">
+      <div class="rehub-popup__inner">
+          <div class="row">
+              <div class="small-column6">
+
+                  <div class="rehub-popup__header">
+                      <a href="" class="rehub-popup__back">назад</a>
+                      <a href="index.html" class="main-logo  rehub-popup__main-logo">
+                          <img src="img/logo-black.svg" alt="Logo" class="main-logo__img">
+                      </a>
+                      <a class="rehub-popup__toggler" data-popups="0">
+                          <p class="rehub-popup__toggler-text">Меню</p>
+                          <span class="rehub-popup__toggler-icon"></span>
+                      </a>
+                  </div>
+
+                  <div class="rehub-popup__content">
+                      <h3 class="rehub-popup__title">Уже помогли</h3>
+                      <p class="rehub-popup__text">Посмотрите истории наших подопечных и узнайте, как наши проекты помогают им вернуться в жизнь.</p>
+
+
+                      <div class="event-card  rehub-popup__event">
+                          <div class="event-card__main  event-card__main--gradient">
+                              <img src="img/lisa.jpg" alt="" class="event-card__img" data-object-fit="cover">
+
+                              <div class="event-card__content">
+                                  <h3 class="event-card__title">Лиза</h3>
+                                  <p class="event-card__description">18 лет, мечтает сниматься в кино.</p>
+                              </div>
+
+                          </div>
+                          <div class="event-card__footer"><a href="" class="event-card__link  link link--white  link--small">Читать историю</a></div>
+                      </div>
+
+                      <div class="event-card  rehub-popup__event">
+                          <div class="event-card__main  event-card__main--gradient">
+                              <img src="img/dima.jpg" alt="" class="event-card__img" data-object-fit="cover">
+
+                              <div class="event-card__content">
+                                  <h3 class="event-card__title">Дима</h3>
+                                  <p class="event-card__description">6 лет, мечтает стать инженером и уже собрал свого первого робота ЛЕГО.</p>
+                              </div>
+
+                          </div>
+                          <div class="event-card__footer"><a href="" class="event-card__link  link link--white  link--small">Читать историю</a></div>
+                      </div>
+
+                      <div class="event-card  rehub-popup__event">
+                          <div class="event-card__main  event-card__main--gradient">
+                              <img src="img/ivan.jpg" alt="" class="event-card__img" data-object-fit="cover">
+
+                              <div class="event-card__content">
+                                  <h3 class="event-card__title">Ваня</h3>
+                                  <p class="event-card__description">17 лет, мечтает готовить, как настоящий шеф-повар.</p>
+                              </div>
+
+                          </div>
+                          <div class="event-card__footer"><a href="" class="event-card__link  link link--white  link--small">Читать историю</a></div>
+                      </div>
+
+
+                  </div>
+
+                  <a href="" class="link  link--carousel  link--down  rehub-popup__link">больше мероприятий</a>
+
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
 <script
   src="https://code.jquery.com/jquery-2.2.4.min.js"
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="

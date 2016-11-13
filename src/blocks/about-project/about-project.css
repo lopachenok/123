@@ -1,0 +1,22 @@
+.about-project {
+  padding-bottom: calc(2rem - 10px);
+
+  @media (min-width: $medium-breakpoint) {
+    background: #fff url(nd-pattern.svg);
+    background-size: 2560px 1821px;
+  }
+
+  &__inner {
+    @mixin container;
+
+    padding-top: 2rem;
+  }
+
+  &__text {
+    margin-top: 1rem;
+  }
+
+  &__carousel {
+    margin-top: 2rem;
+  }
+}

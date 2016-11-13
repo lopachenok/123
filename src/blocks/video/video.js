@@ -10,7 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if(video) {
     video.addEventListener("loadedmetadata", function() {
       var duration = Math.round(video.duration)/100;
-      document.querySelector('.video-section__duration').innerHTML = duration;
+      var durationEl = document.querySelector('.video-section__duration');
+      if(durationEl)
+        durationEl.innerHTML = duration;
     });
   }
 

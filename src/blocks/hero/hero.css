@@ -121,6 +121,18 @@
       line-height: 36px;
       margin-top: 23px;
     }
+
+    &--center {
+      text-align: center;
+
+      @media (min-width: $medium-breakpoint) {
+        padding: 0 9%;
+      }
+
+      @media (min-width: $large-breakpoint) {
+        padding: 0 16%;
+      }
+    }
   }
 
   &__link {
@@ -138,6 +150,26 @@
 
     @media (min-width: $large-breakpoint) {
       margin-top: 48px;
+    }
+  }
+
+  &__logo {
+    height: 132px;
+    width: 138px;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    display: block;
+
+    @media (min-width: $medium-breakpoint) {
+      height: 142px;
+      width: 154px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      height: 243px;
+      width: 265px;
     }
   }
 }

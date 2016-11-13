@@ -113,7 +113,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if(video) {
     video.addEventListener("loadedmetadata", function() {
       var duration = Math.round(video.duration)/100;
-      document.querySelector('.video-section__duration').innerHTML = duration;
+      var durationEl = document.querySelector('.video-section__duration');
+      if(durationEl)
+        durationEl.innerHTML = duration;
     });
   }
 
@@ -404,11 +406,17 @@ function HammerCarousel(container, direction) {
 
       carouselContent = self.panes;
       e.preventDefault();
-      if (e.target.tagName !== "A") {
+      var el;
+
+      if(e.target.tagName !== "A") {
+        el = e.target.parentElement;
+      } else {
+        el = e.target;
+      }
+      if (el.tagName !== "A") {
         return;
       }
-
-      currentContent = e.target.getAttribute("data-tab");
+      currentContent = el.getAttribute("data-tab");
 
       if(self.currentIndex == 0) {
         k = 1.75;

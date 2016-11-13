@@ -272,11 +272,17 @@ function HammerCarousel(container, direction) {
 
       carouselContent = self.panes;
       e.preventDefault();
-      if (e.target.tagName !== "A") {
+      var el;
+
+      if(e.target.tagName !== "A") {
+        el = e.target.parentElement;
+      } else {
+        el = e.target;
+      }
+      if (el.tagName !== "A") {
         return;
       }
-
-      currentContent = e.target.getAttribute("data-tab");
+      currentContent = el.getAttribute("data-tab");
 
       if(self.currentIndex == 0) {
         k = 1.75;

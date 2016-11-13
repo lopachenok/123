@@ -58,3 +58,6 @@
 @import '../.././src/blocks/about/about.css';
 @import '../.././src/blocks/council/council.css';
 @import '../.././src/blocks/members/members.css';
+@import '../.././src/blocks/about-project/about-project.css';
+@import '../.././src/blocks/history-project/history-project.css';
+@import '../.././src/blocks/timeline/timeline.css';

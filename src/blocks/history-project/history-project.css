@@ -1,0 +1,31 @@
+.history-project {
+  background: $colder;
+
+  @media (min-width: $medium-breakpoint) {
+    background: $colder url(nd-pattern.svg);
+    background-size: 2560px 1821px;
+  }
+
+  &__inner {
+    @mixin container;
+
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    @media (min-width: $medium-breakpoint) {
+      padding-bottom: 60px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      padding-bottom: 75px;
+    }
+  }
+
+  &__text {
+    margin-top: 1rem;
+  }
+
+  &__carousel {
+    margin-top: 2rem;
+  }
+}

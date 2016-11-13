@@ -56,4 +56,19 @@
       line-height: 22px;
     }
   }
+
+  &--padding {
+
+    .video-section__inner {
+      @media (min-width: $medium-breakpoint) {
+        padding-top: 39px;
+        padding-bottom: 39px;
+      }
+
+      @media (min-width: $large-breakpoint) {
+        padding-top: 72px;
+        padding-bottom: 72px;
+      }
+    }
+  }
 }
