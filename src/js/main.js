@@ -10,3 +10,4 @@
 //= ../blocks/main-banner/main-banner.js
 //= ../blocks/blog-content/blog-content.js
 //= ../blocks/img-slider/img-slider.js
+//= footer-nav.js

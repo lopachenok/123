@@ -6,6 +6,7 @@ var popupInner;
 var docsInner;
 var heightArray;
 var heightArrayDocs;
+var doc;
 
 document.addEventListener("DOMContentLoaded", function () {
   var carousel = document.getElementById("carousel");
@@ -80,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var outer = new HammerCarousel(carousel);
     }
     if(docs) {
-      var doc = new HammerCarousel(docs);
+      doc = new HammerCarousel(docs);
     }
     popups = new HammerCarousel(popupsEl);
   } else {
@@ -88,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var outer = new HammerCarousel(carousel, Hammer.DIRECTION_HORIZONTAL);
     }
     if(docs) {
-      var doc = new HammerCarousel(docs, Hammer.DIRECTION_HORIZONTAL);
+      doc = new HammerCarousel(docs, Hammer.DIRECTION_HORIZONTAL);
     }
     popups = new HammerCarousel(popupsEl, Hammer.DIRECTION_HORIZONTAL);
   }
@@ -120,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
           outer = new HammerCarousel(carousel);
         }
         if(docs) {
-          var doc = new HammerCarousel(docs);
+          doc = new HammerCarousel(docs);
         }
         popups = new HammerCarousel(popupsEl);
       } else {
@@ -128,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
           outer = new HammerCarousel(carousel, Hammer.DIRECTION_HORIZONTAL);
         }
         if(docs) {
-          var doc = new HammerCarousel(docs, Hammer.DIRECTION_HORIZONTAL);
+          doc = new HammerCarousel(docs, Hammer.DIRECTION_HORIZONTAL);
         }
         popups = new HammerCarousel(popupsEl, Hammer.DIRECTION_HORIZONTAL);
       }
