@@ -1,6 +1,7 @@
 .partners-item {
   border-top: 1px solid rgba(0, 0, 0, .1);
   padding: 31px 0;
+  display: block;
 
   @media (min-width: $medium-breakpoint) {
     border-radius: 3px;

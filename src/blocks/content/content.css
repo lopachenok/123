@@ -1,0 +1,172 @@
+.content {
+
+  p {
+    font-family: $ptserif !important;
+    font-size: 1rem !important;
+    line-height: 24px !important;
+    color: #485155;
+    margin-top: 1rem;
+    hyphens: auto;
+
+    @media (min-width: $medium-breakpoint) {
+      line-height: 34px !important;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      line-height: 36px !important;
+    }
+  }
+
+  p + h2,
+  img + h2,
+  h3 + h2,
+  ul + h2,
+  ol + h2 {
+    margin-top: 32px;
+
+    @media (min-width: $medium-breakpoint) {
+      margin-top: 40px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      margin-top: 48px;
+    }
+  }
+
+  h2 {
+    font-family: $ptsans-caption !important;
+    font-weight: bold !important;
+    font-size: 24px !important;
+    line-height: 28px !important;
+    color: #041b26;
+
+    @media (min-width: $medium-breakpoint) {
+      font-size: 30px !important;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      font-size: 36px !important;
+    }
+  }
+
+  h3 {
+    margin-top: 24px;
+    font-family: $ptsans-caption !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    line-height: 18px !important;
+    color: #041b26;
+
+    @media (min-width: $medium-breakpoint) {
+      margin-top: 30px;
+      font-size: 20px !important;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      font-size: 24px !important;
+      margin-top: 37px;
+    }
+  }
+
+  ul {
+    @media (min-width: $medium-breakpoint) {
+      padding-right: 73px;
+    }
+
+    li {
+      font-family: $ptserif !important;
+      font-size: 1rem !important;
+      line-height: 24px !important;
+      color: #485155;
+      margin-top: 1rem;
+      padding-left: 32px;
+      position: relative;
+      hyphens: auto;
+
+      @media (min-width: $large-breakpoint) {
+        line-height: 25px !important;
+        padding-left: 36px;
+      }
+
+      @media (min-width: $large-breakpoint) {
+        line-height: 30px !important;
+        padding-left: 56px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 8px;
+        left: 10px;
+        width: 8px;
+        height: 7px;
+        background: url(../img/heard.svg) no-repeat;
+
+        @media (min-width: $medium-breakpoint) {
+          width: 11px;
+          height: 9px;
+        }
+
+        @media (min-width: $large-breakpoint) {
+          width: 15px;
+          height: 12px;
+          left: 24px;
+        }
+      }
+    }
+  }
+
+  ol {
+    counter-reset: list 0;
+
+    @media (min-width: $medium-breakpoint) {
+      padding-right: 73px;
+    }
+
+    li {
+      font-family: $ptserif !important;
+      font-size: 1rem !important;
+      line-height: 24px !important;
+      color: #485155;
+      margin-top: 1rem;
+      padding-left: 32px;
+      position: relative;
+      hyphens: auto;
+
+      @media (min-width: $large-breakpoint) {
+        line-height: 25px !important;
+        padding-left: 36px;
+      }
+
+      @media (min-width: $large-breakpoint) {
+        line-height: 30px !important;
+        padding-left: 56px;
+      }
+
+      &::before {
+        content: counter(list) ".";
+        position: absolute;
+        counter-increment: list;
+        color: $scarlet;
+        left: 10px;
+      }
+    }
+  }
+
+  .section-heading {
+    font-family: $ptsans-caption;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.15;
+    color: $midnight;
+    margin-top: 0;
+
+    @media (min-width: $medium-breakpoint) {
+      line-height: 1.18;
+    }
+
+    &--white {
+      color: #fff;
+    }
+  }
+}

@@ -6,7 +6,9 @@ var popupInner;
 var docsInner;
 var heightArray;
 var heightArrayDocs;
+var heightArrayMain;
 var doc;
+var mainInner;
 
 document.addEventListener("DOMContentLoaded", function () {
   var carousel = document.getElementById("carousel");
@@ -17,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var docsContentBlock = document.querySelectorAll("#docs-container .carousel__content");
   popupInner = document.querySelector("#popups .carousel__inner");
   docsInner = document.querySelector("#docs .carousel__inner");
+  mainInner = document.querySelector("#carousel .carousel__inner");
   var carouselArticleContent = document.getElementById("carousel-article-content");
 
   var scrollButtonRight = document.querySelector(".carousel__scroll-button--right");
@@ -26,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (window.innerWidth >= tabletSize && window.innerWidth < desctopSize) {
     k = 2.5;
   } else {
-    k = 3.2;
+    k = 2;
   }
 
   scrollOffset = parseInt(window.innerWidth / 12 * 5) * k;
@@ -76,6 +79,11 @@ document.addEventListener("DOMContentLoaded", function () {
     heightArrayDocs.push(content.clientHeight);
   });
 
+  heightArrayMain = [];
+  Array.prototype.forEach.call(carouselContent, function(content) {
+    heightArrayMain.push(content.clientHeight);
+  });
+
   if(window.innerWidth >= tabletSize) {
     if(carousel) {
       var outer = new HammerCarousel(carousel);
@@ -116,6 +124,19 @@ document.addEventListener("DOMContentLoaded", function () {
         heightArrayDocs.push(content.clientHeight);
       });
 
+      heightArrayMain = [];
+      Array.prototype.forEach.call(carouselContent, function(content) {
+        heightArrayMain.push(content.clientHeight);
+      });
+
+      if(window.innerWidth >= tabletSize && window.innerWidth < desctopSize) {
+        k = 2.5;
+      } else {
+        k = 2;
+      }
+
+      scrollOffset = parseInt(window.innerWidth / 12 * 5) * k;
+
       if (window.innerWidth >= tabletSize) {
         if(carousel) {
           outer = new HammerCarousel(carousel);
@@ -144,14 +165,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("popups-overlay").classList.remove("no-animate");
       }, 0);
     }
-
-    if(window.innerWidth >= tabletSize && window.innerWidth < desctopSize) {
-      k = 2.5;
-    } else {
-      k = 3.2;
-    }
-
-    scrollOffset = parseInt(window.innerWidth / 12 * 5) * k;
 
     if(carouselArticleContent) {
       addRemoveScrollButton(carouselArticleContent, carouselArticleContent.parentElement);
@@ -293,6 +306,11 @@ function HammerCarousel(container, direction) {
       HammerCarousel.prototype.show.apply(self, [currentContent, 0, true]);
     });
 
+    if(self.currentIndex == 0) {
+      k = 1;
+      scrollOffset = parseInt(window.innerWidth / 12 * 5) * k;
+    }
+
     this.containerSize = this.container[dirProp(direction, "offsetWidth", "offsetHeight")];
 
     this.hammer = new Hammer.Manager(this.container);
@@ -408,10 +426,13 @@ function HammerCarousel(container, direction) {
         docsInner.style.height = heightArrayDocs[showIndex] + 3 + 'px';
       }
 
+      if(this.container.id == "carousel-container") {
+        mainInner.style.height = heightArrayMain[showIndex] + 'px';
+      }
+
       if (window.innerWidth < tabletSize) {
         for (paneIndex = 0; paneIndex < this.panes.length; paneIndex++) {
           pos = (this.containerSize / 100) * (((paneIndex - showIndex) * 100) + percent);
-
           if (this.direction & Hammer.DIRECTION_HORIZONTAL) {
             translate = "translate3d(" + pos + "px, 0, 0)";
           } else {
@@ -424,6 +445,7 @@ function HammerCarousel(container, direction) {
 
       } else {
         for (paneIndex = 0; paneIndex < this.panes.length; paneIndex++) {
+
           translate = "translate3d(0, 0, 0)";
           this.panes[paneIndex].style.transform = translate;
           this.panes[paneIndex].style.mozTransform = translate;

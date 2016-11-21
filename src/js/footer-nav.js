@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $(document).on("click", ".detiled-menu__sublink", function (event) {
+    $(document).on("click", ".detiled-menu__sublink, .main-menu__link--project", function (event) {
         event.preventDefault();
           var navitem  = $(this).attr('href').split('#');
           var activeLink = document.location.origin + document.location.pathname;

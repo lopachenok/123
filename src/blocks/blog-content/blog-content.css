@@ -143,8 +143,23 @@
     }
   }
 
-  h3 {
+  p + h2,
+  img + h2,
+  h3 + h2,
+  ul + h2,
+  ol + h2 {
     margin-top: 32px;
+
+    @media (min-width: $medium-breakpoint) {
+      margin-top: 40px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      margin-top: 48px;
+    }
+  }
+
+  h2 {
     font-family: $ptsans-caption;
     font-weight: bold;
     font-size: 24px;
@@ -152,17 +167,15 @@
     color: #041b26;
 
     @media (min-width: $medium-breakpoint) {
-      margin-top: 40px;
       font-size: 30px;
     }
 
     @media (min-width: $large-breakpoint) {
       font-size: 36px;
-      margin-top: 48px;
     }
   }
 
-  h4 {
+  h3 {
     margin-top: 24px;
     font-family: $ptsans-caption;
     font-weight: bold;

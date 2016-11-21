@@ -5,16 +5,16 @@
   padding: 17px 17px 21px;
   display: flex;
   width: 100%;
+  box-sizing: border-box;
 
   @media (min-width: $medium-breakpoint) {
-    padding: 21px 30px;
+    padding: 21px 17px;
     height: 132px;
-    box-sizing: border-box;
   }
 
   @media (min-width: $large-breakpoint) {
     height: 152px;
-    padding: 25px 37px;
+    padding: 25px 11px;
   }
 
   &__img {

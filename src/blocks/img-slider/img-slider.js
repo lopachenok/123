@@ -11,24 +11,24 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   if(window.innerWidth < desctopSize) {
-    var k = 2.1;
+    var t = 2.1;
   } else {
-    k = 1.83;
+    t = 1.83;
   }
 
-  var scrollOffset = parseInt(window.innerWidth / 12 * 5) * k;
+  var scrollOff = parseInt(window.innerWidth / 12 * 5) * t;
 
   if(sliderLeftBtn) {
     sliderLeftBtn.addEventListener('click', function(e) {
       var el = e.target.parentElement.parentElement.firstElementChild;
-      smooth_scroll_to(el, el.scrollLeft - scrollOffset, 500);
+      smooth_scroll_to(el, el.scrollLeft - scrollOff, 500);
     });
   }
 
   if(sliderRightBtn) {
     sliderRightBtn.addEventListener('click', function(e) {
       var el = e.target.parentElement.parentElement.firstElementChild;
-      smooth_scroll_to(el, el.scrollLeft + scrollOffset, 500);
+      smooth_scroll_to(el, el.scrollLeft + scrollOff, 500);
     });
   }
 
@@ -38,11 +38,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
   window.addEventListener("resize", function() {
     if(window.innerWidth < desctopSize) {
-      var k = 2.1;
+      var t = 2.1;
     } else {
-      k = 1.83;
+      t = 1.83;
     }
-    scrollOffset = parseInt(window.innerWidth / 12 * 5) * k;
+    scrollOff = parseInt(window.innerWidth / 12 * 5) * t;
   });
 
 });

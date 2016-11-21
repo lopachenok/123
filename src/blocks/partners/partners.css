@@ -111,7 +111,7 @@
     }
 
     @media (min-width: $medium-breakpoint) {
-      height: 35px;
+      height: 45px;
       margin-right: 72px;
       margin-bottom: 30px;
 

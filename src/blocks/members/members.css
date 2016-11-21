@@ -18,6 +18,18 @@
     }
   }
 
+  .rows {
+    @mixin container;
+
+    @media (min-width: $medium-breakpoint) {
+      padding-bottom: 40px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      padding-bottom: 48px;
+    }
+  }
+
   &__text {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -36,8 +48,6 @@
   }
 
   &__footer {
-    margin-top: 25px;
-    padding-bottom: 32px;
     width: 100%;
 
     @media (min-width: $medium-breakpoint) {
@@ -46,13 +56,12 @@
       background: $colder;
       height: 77px;
       justify-content: center;
-      margin-top: 40px;
       padding: 0;
+      margin-top: 0;
     }
 
     @media (min-width: $large-breakpoint) {
       height: 97px;
-      margin-top: 48px;
     }
   }
 
@@ -82,6 +91,9 @@
   }
 
   &__footer-link-small {
+    margin-top: 25px;
+    padding-bottom: 32px;
+
     @media (min-width: $medium-breakpoint) {
       display: none;
     }

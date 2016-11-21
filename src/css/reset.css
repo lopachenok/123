@@ -112,6 +112,9 @@ a:hover {
   overflow-x: hidden;
 }
 
+.pagination {
+  display: none;
+}
 /*body {
   position: relative;
 

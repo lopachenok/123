@@ -11,3 +11,4 @@
 //= ../blocks/blog-content/blog-content.js
 //= ../blocks/img-slider/img-slider.js
 //= footer-nav.js
+//= ../blocks/popup-menu/popup-menu.js

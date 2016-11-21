@@ -169,12 +169,8 @@
   }
 
   &__inner {
-    height: 405px;
     position: relative;
-
-    @media (min-width: 480px) {
-      height: 564px;
-    }
+    transition: all .4s ease;
 
     @media (min-width: $medium-breakpoint) {
       height: 420px;
@@ -302,6 +298,7 @@
 
     @media (min-width: $medium-breakpoint) {
       display: block;
+      flex-grow: 0 !important;
 
       &:last-of-type {
         padding-right: 2.5rem;
@@ -322,7 +319,7 @@
     @mixin container;
 
     width: 100%;
-    height: 100%;
+    height: auto;
     position: absolute;
     left: 0;
     top: 0;
@@ -342,6 +339,7 @@
       opacity: 0;
       z-index: -1;
       padding-top: 2rem;
+      height: 100%;
 
       &--active {
         opacity: 1;
@@ -783,5 +781,15 @@
       width: 313px;
       left: -384px;
     }
+  }
+}
+
+#carousel .carousel__inner {
+  @media (min-width: $medium-breakpoint) {
+    height: 420px !important;
+  }
+
+  @media (min-width: $large-breakpoint) {
+    height: 425px !important;
   }
 }

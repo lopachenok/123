@@ -27,6 +27,7 @@
 
     position: absolute;
     bottom: 48px;
+    width: 100%;
 
     @media (min-width: $medium-breakpoint) {
       bottom: 60px;
@@ -156,7 +157,7 @@
   &__logo {
     height: 132px;
     width: 138px;
-    object-fit: cover;
+    object-fit: contain;
     position: relative;
     z-index: 1;
     margin: 0 auto;

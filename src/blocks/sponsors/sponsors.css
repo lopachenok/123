@@ -29,6 +29,7 @@
     padding: 12px 10px;
     margin-top: 1rem;
     box-sizing: border-box;
+    display: block;
 
     @media (min-width: $medium-breakpoint) {
       height: 121px;

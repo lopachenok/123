@@ -5,6 +5,7 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
   position: relative;
   cursor: pointer;
+  display: block;
 
   @media (min-width: 480px) {
     height: 240px;
